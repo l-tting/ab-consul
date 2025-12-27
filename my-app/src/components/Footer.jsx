@@ -49,7 +49,7 @@ function Footer() {
   return <footer className=" mt-auto py-10 px-4 sm:px-6 lg:px-8 font-inter relative overflow-hidden ">
       <div className="max-w-7xl mx-auto flex flex-col items-center relative z-10">
         <div className="mb-6 flex items-center justify-center">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 200 200" width="48" height="48" className="coolshapes flower-3 mr-3 drop-shadow-lg">
+          {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 200 200" width="48" height="48" className="coolshapes flower-3 mr-3 drop-shadow-lg">
             <g clipPath="url(#cs_clip_1_flower-3)">
               <mask id="cs_mask_1_flower-3" style={{
               maskType: "alpha"
@@ -92,9 +92,10 @@ function Footer() {
                 <feBlend in="SourceGraphic" in2="out2" mode="overlay" result="out3"></feBlend>
               </filter>
             </defs>
-          </svg>
-          <span className="text-gray-900 dark:text-white text-3xl font-extrabold tracking-wide">
-            AB Consul
+          </svg> */}
+          <MountainIcon className="h-6 w-6 text-gray-900 dark:text-white" />
+          <span className="text-gray-900 dark:text-white text-2xl font-extrabold tracking-wide ml-2">
+            AB CONSUL
           </span>
         </div>
 
@@ -120,4 +121,10 @@ function Footer() {
       </div>
     </footer>;
 }
+
+const MountainIcon = ({
+  className
+}) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+        <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
+    </svg>;
 export default Footer;

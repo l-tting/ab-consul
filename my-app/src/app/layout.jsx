@@ -6,7 +6,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       {/* 1. Added flex, flex-col, and min-h-screen to the body */}
-      <body className="flex flex-col min-h-screen">
+      <body className="flex flex-col min-h-screen bg-stone-50">
         <Navbar />
         
         {/* 2. Wrap children in a main tag with flex-grow */}

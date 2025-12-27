@@ -46,13 +46,13 @@ const Navbar = () => {
   } = useTheme();
   const navLinks = [{
     href: "#",
-    label: "Features"
-  }, {
-    href: "#",
-    label: "Pricing"
-  }, {
-    href: "#",
     label: "About"
+  }, {
+    href: "#",
+    label: "Services"
+  }, {
+    href: "#",
+    label: "Our Work"
   }, {
     href: "#",
     label: "Contact"
@@ -68,7 +68,7 @@ const Navbar = () => {
           <div className="flex-shrink-0">
             <a href="#" className="flex items-center gap-2">
                <MountainIcon className="h-6 w-6 text-gray-900 dark:text-white" />
-              <span className="text-xl font-semibold text-gray-900 dark:text-white">AB Consul</span>
+              <span className="text-xl font-semibold text-gray-900 dark:text-white">AB CONSUL</span>
             </a>
           </div>
 
@@ -81,14 +81,14 @@ const Navbar = () => {
 
           {}
           <div className="flex items-center gap-4">
-             <a href="#" className="hidden sm:inline-flex items-center justify-center rounded-md text-md font-medium h-10 px-4 py-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors duration-300">
+             <a href="#" className="hidden sm:inline-flex items-center justify-center rounded-md text-lg font-medium h-10 px-4 py-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors duration-300">
                 Get Started
              </a>
 
             {}
-            <button onClick={toggleTheme} className="p-2 rounded-md text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500 dark:focus:ring-gray-400 transition-colors duration-300" aria-label="Toggle theme">
+            {/* <button onClick={toggleTheme} className="p-2 rounded-md text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500 dark:focus:ring-gray-400 transition-colors duration-300" aria-label="Toggle theme">
               {theme === 'dark' ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
-            </button>
+            </button> */}
 
             {}
             <div className="md:hidden">

@@ -5,7 +5,7 @@ import Process from "@/components/Process"
 const HomePage = () => {
     return (
         <div>
-             <section className="ml-4">
+             <section className="ml-4 ">
                 <p className="text-xl font-medium uppercase tracking-widest text-muted-foreground mb-2 mt-4">
                     AB CONSUL
                 </p>

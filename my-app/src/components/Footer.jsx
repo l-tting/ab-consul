@@ -2,10 +2,7 @@
 
 import React from "react";
 function Footer() {
-  const navLinks = [{
-    name: "Features",
-    href: "#"
-  }, {
+  const navLinks = [ {
     name: "Solution",
     href: "#"
   }, {

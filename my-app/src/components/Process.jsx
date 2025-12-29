@@ -2,64 +2,89 @@
 
 const steps = [
   {
-    step: "01",
+    step: "1",
     title: "Discovery",
-    description: "We understand your goals, constraints,  and real-world context."
+    description: "Understand your goals, constraints and real context."
   },
   {
-    step: "02",
+    step: "2",
     title: "Strategy",
-    description: "We define the right approach — aligned with business impact."
+    description: "Define the right approach aligned with business impact."
   },
   {
-    step: "03",
+    step: "3",
     title: "Execution",
-    description: "We build, integrate, and ship with full visibility."
+    description: "Build, Integrate and Ship with full visibility."
   },
   {
-    step: "04",
+    step: "4",
     title: "Iteration",
-    description: "We refine, scale, and optimize based on real outcomes."
+    description: "Refine, Scale, and Optimize based on outcomes."
   }
 ];
 
 export default function Process() {
   return (
-    <section className="w-full py-10">
-      <div className=" mx-auto px-6">
-        
+    <section className="w-full py-24 bg-background">
+      <div className="max-w-7xl mx-auto px-6">
+
         {/* Heading */}
-        <div className="text-center mb-14">
-          <p className="text-sm uppercase font-bold tracking-widest text-muted-foreground mb-2">
+        <div className="text-center mb-20">
+          <p className="text-sm uppercase font-semibold tracking-widest text-muted-foreground mb-3">
             Our approach
           </p>
-          <h2 className="text-2xl  font-thin">
+          <h2 className="text-3xl font-light">
             How we deliver results
           </h2>
         </div>
 
-        {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-          {steps.map((item) => (
-            <div key={item.step} className="relative">
-              
-              {/* Step number */}
-              <div className="text-sm font-semibold text-muted-foreground mb-2">
-                {item.step}
+        {/* Steps Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-20">
+          {steps.map((item, index) => (
+            <div
+              key={item.step}
+              className="flex flex-col items-center text-center"
+            >
+              {/* Circle Wrapper - Centering the Connector relative to the Circle only */}
+              <div className="relative flex items-center justify-center">
+                
+                {/* The Circle */}
+                <div className="relative z-10 w-40 h-40 rounded-full border border-border  border-black
+                  flex items-center justify-center text-lg font-medium bg-background shadow-sm">
+                  {item.title}
+                </div>
+
+                {/* The SVG Connector */}
+                {index !== steps.length - 1 && (
+                  <div className="hidden md:block absolute left-full w-full z-0">
+                    <svg
+                      className="w-full h-20 overflow-visible"
+                      viewBox="0 0 100 60"
+                      fill="none"
+                      preserveAspectRatio="none"
+                    >
+                      <path
+                        d="M0 30 C 25 0, 75 60, 100 30"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeDasharray="6 8"
+                        className="text-muted-foreground/40"
+                      />
+                    </svg>
+                  </div>
+                )}
               </div>
 
-              {/* Title */}
-              <h3 className="text-xl font-semibold mb-3">
-                {item.title}
-              </h3>
+              {/* Description - Positioned below the Circle Wrapper */}
+              <div className="mt-8">
+                <span className="text-sm font-mono text-muted-foreground/60 block mb-2">
+                  # {item.step}
+                </span>
+                <p className="text-md text-muted-foreground leading-relaxed ">
+                  {item.description}
+                </p>
+              </div>
 
-              {/* Description */}
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                {item.description}
-              </p>
-
-              {/* Connector line */}
-              <div className="hidden md:block absolute top-4 right-[-1.25rem] w-5 h-px bg-border last:hidden" />
             </div>
           ))}
         </div>

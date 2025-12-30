@@ -1,11 +1,12 @@
 import HeroHome from "@/components/HeroHome"
 import TrustedLogos from "@/components/PartnerLogo"
 import Process from "@/components/Process"
+import ResultsSection from "@/components/ProofOfVal"
 
 const HomePage = () => {
     return (
         <div>
-             <section className="ml-4 ">
+            <section className="ml-4 ">
                 <p className="text-xl font-medium uppercase tracking-widest text-muted-foreground mb-2 mt-4">
                     AB CONSUL
                 </p>
@@ -14,13 +15,32 @@ const HomePage = () => {
                     Consulting services built for modern teams
                 </h2>
 
-                
-             </section> 
+
+            </section>
+
+                {/* Hero comp */}
+            <div>
+                <HeroHome />
+            </div>
+
+                {/* Partnerships */}
+            <div>
+                <TrustedLogos />
+            </div>
+
+                {/* Process comp */}
+            <div>
+                <Process />
+            </div>
+
+                {/* final CTA comp */}
+            <div>
+                <ResultsSection />
+            </div>
 
 
-            <HeroHome />
-            <TrustedLogos/>
-            <Process/>
+
+
 
         </div>
     )

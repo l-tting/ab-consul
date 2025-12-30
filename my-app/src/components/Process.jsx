@@ -25,7 +25,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="w-full py-24 bg-background">
+    <section className="w-full py-16 ">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}

@@ -1,8 +1,13 @@
+import ContactHero from "@/components/ContactHero"
+
 const ContactPage = () => {
 
     return (
         <div> 
-            <p>This is contact</p>
+          
+            <div>
+                <ContactHero/>
+            </div>
         </div>
     )
 }

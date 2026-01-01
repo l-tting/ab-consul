@@ -32,7 +32,7 @@ export default function Navbar() {
   const navLinks = [
     { href: "/about", label: "About" },
     { href: "/services", label: "Services" },
-    { href: "/work", label: "Our Work" },
+    { href: "/pricing", label: "Pricing" },
     { href: "/contact", label: "Contact" },
   ];
 

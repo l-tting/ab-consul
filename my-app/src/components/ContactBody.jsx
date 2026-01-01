@@ -48,37 +48,37 @@ export default function ContactBody() {
             <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase text-slate-400 ml-1">Full Name</label>
+                  <label className="text-sm font-bold uppercase text-slate-400 ml-1">Full Name</label>
                   <input 
                     type="text"
                     placeholder="Steve Jobs" 
-                    className="w-full h-14 px-4 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all placeholder:text-slate-300" 
+                    className="w-full h-14 px-4 rounded-xl border border-black focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all placeholder:text-slate-300" 
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase text-slate-400 ml-1">Work Email</label>
+                  <label className="text-sm font-bold uppercase text-slate-400 ml-1">Work Email</label>
                   <input 
                     type="email"
-                    placeholder="steve@apple.com" 
-                    className="w-full h-14 px-4 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all placeholder:text-slate-300" 
+                    placeholder="abconsul@mail.com" 
+                    className="w-full h-14 px-4 rounded-xl border border-black focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all placeholder:text-slate-300" 
                   />
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase text-slate-400 ml-1">Company Website</label>
+              {/* <div className="space-y-2">
+                <label className="text-sm font-bold uppercase text-slate-400 ml-1">Company Website</label>
                 <input 
                   type="url"
                   placeholder="https://acme.com" 
-                  className="w-full h-14 px-4 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all placeholder:text-slate-300" 
+                  className="w-full h-14 px-4 rounded-xl border border-black focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all placeholder:text-slate-300" 
                 />
-              </div>
+              </div> */}
 
               <div className="space-y-2">
-                <label className="text-xs font-bold uppercase text-slate-400 ml-1">Project Details</label>
+                <label className="text-sm font-bold uppercase text-slate-400 ml-1">Project Details</label>
                 <textarea 
                   placeholder="Tell us about your technical hurdles..." 
-                  className="w-full min-h-[140px] p-4 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all placeholder:text-slate-300 resize-none" 
+                  className="w-full min-h-[140px] p-4 rounded-xl border border-black focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all placeholder:text-slate-300 resize-none" 
                 />
               </div>
 

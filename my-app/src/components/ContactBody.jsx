@@ -24,8 +24,8 @@ export default function ContactBody() {
                       <CheckCircle2 className="w-5 h-5 text-blue-600" />
                     </div>
                     <div>
-                      <p className="font-bold text-slate-900">{item.title}</p>
-                      <p className="text-slate-500 leading-relaxed text-sm">{item.desc}</p>
+                      <p className="font-bold text-slate-900 text-lg">{item.title}</p>
+                      <p className="text-slate-500 leading-relaxed text-lg">{item.desc}</p>
                     </div>
                   </li>
                 ))}
@@ -36,10 +36,10 @@ export default function ContactBody() {
             <div className="p-8 bg-slate-50 rounded-[2rem] border border-slate-100">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Currently Accepting Clients</p>
+                <p className="text-sm font-bold text-slate-400 uppercase tracking-widest">Currently Accepting Clients</p>
               </div>
-              <p className="text-slate-900 font-semibold text-lg">partners@acme.com</p>
-              <p className="text-slate-500 text-sm mt-1">Typical response time: 4-6 hours</p>
+              <p className="text-slate-900 font-semibold text-lg">abconsul@mail.com</p>
+              <p className="text-slate-500 text-md mt-1">Typical response time: 4-6 hours</p>
             </div>
           </div>
 

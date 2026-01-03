@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 
 const MenuIcon = ({ className }) => (
@@ -27,6 +28,7 @@ const MountainIcon = ({ className }) => (
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
   const { theme, setTheme } = useTheme();
 
   const navLinks = [
@@ -44,20 +46,33 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <MountainIcon className="h-6 w-6" />
-            <span className="text-xl font-semibold">AB CONSUL</span>
+            <span className="text-xl font-semibold tracking-tighter">AB CONSUL</span>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-16">
-            {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-lg font-medium text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
+          <nav className="hidden md:flex items-center gap-12">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              
+              return (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className={`relative text-lg font-medium transition-colors pb-1 ${
+                    isActive 
+                      ? "text-gray-900 dark:text-white" 
+                      : "text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+                  }`}
+                >
+                  {link.label}
+                  
+                  {/* Underline logic */}
+                  {isActive && (
+                    <span className="absolute bottom-0 left-0 h-[2px] w-full bg-gray-900 dark:bg-white" />
+                  )}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Actions */}
@@ -69,7 +84,6 @@ export default function Navbar() {
               Get Started
             </Link>
 
-            {/* Mobile menu button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden rounded-md p-2 hover:bg-gray-100 dark:hover:bg-gray-800"
@@ -84,16 +98,23 @@ export default function Navbar() {
       {isMenuOpen && (
         <div className="md:hidden border-t">
           <div className="space-y-1 px-4 py-3">
-            {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                onClick={() => setIsMenuOpen(false)}
-                className="block rounded-md px-3 py-2 text-base font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block rounded-md px-3 py-2 text-base font-medium ${
+                    isActive 
+                      ? "bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-white" 
+                      : "text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </div>
         </div>
       )}

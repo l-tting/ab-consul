@@ -17,7 +17,7 @@ export default function PricingCalculator() {
   }, [revenue, isSeeded, companySize]);
 
   return (
-    <section className="w-full py-24 flex justify-center">
+    <section className="w-full py-20 flex justify-center">
       {/* Increased max-w to 7xl for a wider, more cinematic card */}
       <div className="w-[92%] max-w-7xl">
         

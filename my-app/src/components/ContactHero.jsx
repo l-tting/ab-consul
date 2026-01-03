@@ -16,7 +16,7 @@ export default function ContactHero() {
         </div>
 
         {/* Main Title */}
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-slate-900 mb-6">
+        <h1 className="text-5xl md:text-6xl font-bold tracking-tighter text-slate-900 mb-6">
           Let’s talk <span className="text-blue-600">Scale.</span>
         </h1>
 

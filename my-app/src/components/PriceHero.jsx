@@ -21,7 +21,7 @@ export default function PricingHero() {
 
   return (
     <section className="w-full pt-2 pb- flex justify-center ">
-      <div className="w-[92%] max-w-7xl">
+      <div className="w-[92%] max-w-7xl inset-0">
         
         {/* Main Hero Header */}
         <div className="text-center mb-20">
@@ -29,9 +29,9 @@ export default function PricingHero() {
             <span>Investment Structure</span>
           </div>
 
-          <h1 className="text-2xl md:text-5xl font-bold tracking-tighter text-slate-900 mb-8 leading-[0.9]">
-            Built for <span className="text-blue-600">ROI</span>,<br /> 
-            not just <span className="text-slate-400">billable hours.</span>
+          <h1 className="text-2xl md:text-6xl font-bold tracking-tighter text-slate-900 mb-8 leading-[0.9]">
+            Built for <span className="text-blue-600">ROI</span><br /> 
+            {/* not just <span className="text-slate-400">billable hours.</span> */}
           </h1>
 
           <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed">
@@ -56,8 +56,8 @@ export default function PricingHero() {
         </div>
 
         {/* Transition to Calculator */}
-        <div className="flex flex-col items-center gap-4 animate-bounce text-slate-300">
-          <p className="text-[10px] font-bold uppercase tracking-[0.3em]">Calculate your rate</p>
+        <div className="flex flex-col items-center gap-4 animate-bounce text-slate-500 pt-8 ">
+          <p className="text-[14px] font-bold uppercase tracking-[0.3em]">Calculate your rate</p>
           <ArrowDown className="w-5 h-5" />
         </div>
 

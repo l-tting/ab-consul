@@ -28,7 +28,7 @@ export default function TeamSection() {
         
         {/* Header - Centered for the 2-card layout */}
         <div className="text-center mb-20">
-          <h2 className="text-xs font-black uppercase tracking-[0.3em] text-blue-600 mb-4">The Personnel</h2>
+          <h2 className="text-md font-black uppercase tracking-[0.3em] text-blue-600 mb-4">The Personnel</h2>
           <p className="text-4xl md:text-5xl font-bold tracking-tighter text-slate-900 mb-6">
             Direct access to <span className="text-slate-400 italic font-medium">founders.</span>
           </p>

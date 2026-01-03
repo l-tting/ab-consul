@@ -1,94 +1,92 @@
 "use client";
 
+import React from "react";
+
 const steps = [
   {
-    step: "1",
+    step: "01",
     title: "Discovery",
-    description: "Understand your goals, constraints and real context."
+    description: "We audit your technical debt and business bottlenecks to find the highest-leverage entry point."
   },
   {
-    step: "2",
+    step: "02",
     title: "Strategy",
-    description: "Define the right approach aligned with business impact."
+    description: "We architect a roadmap where every engineering decision is a calculated move toward revenue."
   },
   {
-    step: "3",
+    step: "03",
     title: "Execution",
-    description: "Build, Integrate and Ship with full visibility."
+    description: "High-velocity implementation with transparent PRs and real-time infrastructure visibility."
   },
   {
-    step: "4",
+    step: "04",
     title: "Iteration",
-    description: "Refine, Scale, and Optimize based on outcomes."
+    description: "Post-launch optimization focusing on unit economics and system hardening for 10x scale."
   }
 ];
 
 export default function Process() {
   return (
-    <section className="w-full py-16 ">
+    <section className="w-full py-12 ">
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* Heading */}
-        <div className="text-center mb-20">
-          <p className="text-sm uppercase font-semibold tracking-widest text-muted-foreground mb-3">
-            Our approach
+        {/* Heading - Aligned with your "Quiet" brand */}
+        <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-6">
+          <div className="max-w-xl">
+            <h2 className="text-[14px] font-black uppercase tracking-[0.4em] text-blue-600 mb-4">
+              Our Methodology
+            </h2>
+            <p className="text-4xl font-bold tracking-tighter text-slate-900 leading-tight">
+              A repeatable engine for <br />
+              <span className="text-slate-400 italic font-medium">uncommon</span> results.
+            </p>
+          </div>
+          <p className="text-slate-400 text-xs font-medium max-w-[240px] leading-relaxed border-l border-slate-100 pl-6">
+            We don't believe in "phases." We believe in a continuous cycle of value extraction.
           </p>
-          <h2 className="text-3xl font-light">
-            How we deliver results
-          </h2>
         </div>
 
         {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-20">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 cursor-pointer">
           {steps.map((item, index) => (
             <div
               key={item.step}
-              className="flex flex-col items-center text-center"
+              className="group relative flex flex-col items-start"
             >
-              {/* Circle Wrapper - Centering the Connector relative to the Circle only */}
-              <div className="relative flex items-center justify-center">
-                
-                {/* The Circle */}
-                <div className="relative z-10 w-40 h-40 rounded-full border border-border  border-black
-                  flex items-center justify-center text-lg font-medium bg-background shadow-sm">
-                  {item.title}
+              {/* The Step Header: Number and SVG Line */}
+              <div className="w-full flex items-center gap-4 mb-8">
+                <span className="text-sm font-black font-mono text-slate-700 group-hover:text-blue-600 transition-colors duration-500">
+                  {item.step}
+                </span>
+                <div className="relative h-px flex-grow bg-slate-200 overflow-hidden">
+                  <div className="absolute inset-0 bg-blue-600 -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-in-out" />
                 </div>
-
-                {/* The SVG Connector */}
-                {index !== steps.length - 1 && (
-                  <div className="hidden md:block absolute left-full w-full z-0">
-                    <svg
-                      className="w-full h-20 overflow-visible"
-                      viewBox="0 0 100 60"
-                      fill="none"
-                      preserveAspectRatio="none"
-                    >
-                      <path
-                        d="M0 30 C 25 0, 75 60, 100 30"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeDasharray="6 8"
-                        className="text-muted-foreground/40"
-                      />
-                    </svg>
-                  </div>
-                )}
               </div>
 
-              {/* Description - Positioned below the Circle Wrapper */}
-              <div className="mt-8">
-                <span className="text-sm font-mono text-muted-foreground/60 block mb-2">
-                  # {item.step}
-                </span>
-                <p className="text-md text-muted-foreground leading-relaxed ">
+              {/* The Circle/Node */}
+              <div className="relative mb-8">
+                <div className="w-20 h-20 rounded-full border border-slate-500 flex items-center justify-center bg-white group-hover:border-blue-600 group-hover:shadow-xl group-hover:shadow-blue-500/10 transition-all duration-500">
+                   <div className="w-2 h-2 rounded-full bg-slate-200 group-hover:bg-blue-600 transition-colors" />
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="space-y-4">
+                <h3 className="text-xl font-bold tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-slate-500 max-w-[240px]">
                   {item.description}
                 </p>
               </div>
-
+              
+              {/* Optional Decoration: Vertical line for mobile flow */}
+              {index !== steps.length - 1 && (
+                <div className="md:hidden w-px h-12 bg-slate-100 ml-10 my-4" />
+              )}
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

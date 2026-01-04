@@ -37,12 +37,13 @@ export default function TrustedLogos() {
   ];
 
   return (
-    <section className="w-full py-32  overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 mb-20">
+    <section className="w-full py-20">
+      <div className="max-w-7xl mx-auto px-6">
+        
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row justify-between items-end gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-20">
           <div className="max-w-xl">
-            <h2 className="text-[14px] font-black uppercase tracking-[0.4em] text-blue-600 mb-4">
+            <h2 className="text-[18px] font-black uppercase tracking-[0.4em] text-blue-600 mb-4">
               The Scaling Stack
             </h2>
             <p className="text-4xl font-bold tracking-tighter text-slate-900 leading-tight">
@@ -53,56 +54,59 @@ export default function TrustedLogos() {
             We use a proven, five-pillar ecosystem designed for 100x traffic.
           </p>
         </div>
-      </div>
 
-      {/* Infinite Scrolling Pillars */}
-      <div className="relative flex w-full">
-        {/* Side Fades to mask the entry/exit */}
-        <div className="absolute left-0 top-0 z-10 h-full w-40 bg-gradient-to-r from-white to-transparent" />
-        <div className="absolute right-0 top-0 z-10 h-full w-40 bg-gradient-to-l from-white to-transparent" />
+        {/* HIGH-SPEED CONTRAINED MARQUEE */}
+        <div className="relative w-full overflow-hidden border-y border-slate-50 py-12">
+          
+          {/* Internal Side Fades */}
+          <div className="absolute left-0 top-0 z-10 h-full w-32 bg-gradient-to-r from-white via-white/90 to-transparent" />
+          <div className="absolute right-0 top-0 z-10 h-full w-32 bg-gradient-to-l from-white via-white/90 to-transparent" />
 
-        <div className="flex animate-marquee-slow whitespace-nowrap items-start">
-          {/* We repeat the array 3 times to ensure no gaps at slow speeds */}
-          {[...stack, ...stack, ...stack].map((item, i) => (
-            <div 
-              key={i} 
-              className="group flex flex-col items-start px-12 sm:px-20 transition-all duration-500"
-              style={{ minWidth: '350px' }}
-            >
-              <div className="h-12 mb-8 flex items-center">
-                <img
-                  src={item.src}
-                  alt={item.name}
-                  className="h-7 w-auto opacity-40 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700"
-                />
+          {/* Marquee Track */}
+          <div className="flex animate-marquee-fast whitespace-nowrap items-start">
+            {/* Triple buffer for seamless looping */}
+            {[...stack, ...stack, ...stack].map((item, i) => (
+              <div 
+                key={i} 
+                className="group flex flex-col items-start px-12 sm:px-16 transition-all duration-500"
+                style={{ minWidth: '380px' }}
+              >
+                <div className="h-10 mb-8 flex items-center">
+                  <img
+                    src={item.src}
+                    alt={item.name}
+                    className="h-7 w-auto opacity-30 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700"
+                  />
+                </div>
+                
+                <div className="whitespace-normal max-w-[280px]">
+                  <p className="text-[11px] font-bold text-blue-600 uppercase tracking-[0.2em] mb-2">
+                    {item.role}
+                  </p>
+                  <h3 className="text-lg font-bold text-slate-900 tracking-tight mb-3">
+                    {item.name}
+                  </h3>
+                  <p className="text-slate-500 text-[13px] leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity">
+                    {item.description}
+                  </p>
+                </div>
               </div>
-              
-              <div className="whitespace-normal max-w-[280px]">
-                <p className="text-[9px] font-bold text-blue-600 uppercase tracking-[0.2em] mb-2">
-                  {item.role}
-                </p>
-                <h3 className="text-lg font-bold text-slate-900 tracking-tight mb-3">
-                  {item.name}
-                </h3>
-                <p className="text-slate-500 text-[13px] leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
 
       <style jsx global>{`
-        @keyframes marquee-slow {
+        @keyframes marquee-fast {
           0% { transform: translateX(0); }
-          100% { transform: translateX(-33.33%); }
+          /* Precisely 1/3 of the total container width */
+          100% { transform: translateX(-33.333333%); }
         }
-        .animate-marquee-slow {
-          animation: marquee-slow 60s linear infinite;
+        .animate-marquee-fast {
+          /* 12s provides high energy while remaining professional */
+          animation: marquee-fast 12s linear infinite;
         }
-        /* Pause on hover to allow reading */
-        .animate-marquee-slow:hover {
+        .animate-marquee-fast:hover {
           animation-play-state: paused;
         }
       `}</style>

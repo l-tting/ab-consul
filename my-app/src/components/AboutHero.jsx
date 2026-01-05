@@ -11,7 +11,7 @@ export default function AboutHero() {
           <div className="lg:col-span-8">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-[1px] bg-blue-600" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-blue-600">
+              <span className="text-[14px] italic font-bold uppercase tracking-[0.3em] text-blue-600">
                 Established 2024
               </span>
             </div>

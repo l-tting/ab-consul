@@ -46,7 +46,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <MountainIcon className="h-6 w-6" />
-            <span className="text-xl font-semibold tracking-tighter">AB CONSUL</span>
+            <span className="text-xl italic font-semibold tracking-tighter">AB CONSUL</span>
           </Link>
 
           {/* Desktop Nav */}

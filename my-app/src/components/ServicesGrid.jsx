@@ -1,75 +1,92 @@
+"use client";
+
+import React from "react";
+
 const services = [
   {
     title: "SaaS Architecture",
     tag: "Scale",
     desc: "End-to-end development of multi-tenant platforms with complex RBAC and automated billing systems.",
-    features: ["Next.js/React", "Stripe Integration", "Multi-tenant DB Architecture"],
-    metric: "99.9% Uptime Goal"
+    features: ["Next.js/React", "Stripe Integration", "Multi-tenant DB"],
+    metric: "99.9% UPTIME",
+    accent: "from-blue-500 to-cyan-400"
   },
   {
     title: "Cloud Infrastructure",
     tag: "Stability",
     desc: "Migrating legacy systems to serverless or containerized environments on AWS and Vercel.",
     features: ["Terraform (IaC)", "CI/CD Pipelines", "Edge Computing"],
-    metric: "<200ms Latency"
+    metric: "<200MS LATENCY",
+    accent: "from-purple-500 to-indigo-400"
   },
   {
     title: "Product Engineering",
     tag: "Velocity",
     desc: "Rapid development of mission-critical features without compromising on technical debt or code quality.",
-    features: ["TypeScript / Node.js", "GraphQL & REST APIs", "Real-time WebSockets"],
-    metric: "Fast-Track Delivery"
+    features: ["TypeScript / Node", "GraphQL APIs", "WebSockets"],
+    metric: "FAST-TRACK",
+    accent: "from-emerald-500 to-teal-400"
   },
   {
     title: "System Migration",
     tag: "Modernize",
     desc: "Phased replacement of monolithic architectures with modular, maintainable microservices.",
-    features: ["Database Migration", "Legacy Code Refactoring", "API Bridge Design"],
-    metric: "Zero Downtime"
+    features: ["DB Migration", "Legacy Refactoring", "Bridge Design"],
+    metric: "ZERO DOWNTIME",
+    accent: "from-orange-500 to-red-400"
   }
 ];
 
 export default function ServiceGrid() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-32 ">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Changed to 2 columns on medium screens and up */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-slate-200 border border-slate-200 overflow-hidden rounded-xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((s, i) => (
             <div 
               key={i} 
-              className="bg-white p-12 lg:p-16 group relative overflow-hidden transition-all duration-500 hover:bg-slate-50"
+              className="group relative p-[1px] rounded-3xl transition-all duration-500 hover:scale-[1.01]"
             >
-              {/* Subtle background accent on hover */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -mr-16 -mt-16" />
+              {/* Animated Gradient Border (Visible on Hover) */}
+              <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${s.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-[2px]`} />
               
-              <div className="relative z-10">
-                <div className="flex justify-between items-start mb-12">
-                  <span className="text-[10px] font-black text-blue-600 uppercase tracking-[0.3em] bg-blue-50 px-3 py-1 rounded-full">
-                    {s.tag}
-                  </span>
-                  <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest">
-                    {s.metric}
-                  </span>
-                </div>
-
-                <h3 className="text-3xl lg:text-4xl font-bold mb-6 tracking-tighter text-slate-900 group-hover:translate-x-2 transition-transform duration-500">
-                  {s.title}
-                </h3>
+              {/* Main Card Body */}
+              <div className="relative h-full bg-slate-950 rounded-[23px] p-10 lg:p-12 overflow-hidden">
                 
-                <p className="text-slate-500 mb-10 leading-relaxed max-w-sm text-base lg:text-lg">
-                  {s.desc}
-                </p>
+                {/* Background Glow */}
+                <div className={`absolute -top-24 -right-24 w-64 h-64 bg-gradient-to-br ${s.accent} opacity-10 blur-[80px] group-hover:opacity-20 transition-opacity duration-500`} />
 
-                <div className="grid grid-cols-1 gap-4">
-                  {s.features.map(f => (
-                    <div key={f} className="flex items-center group/item">
-                      <div className="w-6 h-[1px] bg-blue-600 mr-4 group-hover/item:w-10 transition-all duration-300" />
-                      <span className="text-xs font-bold text-slate-900 uppercase tracking-widest opacity-60 group-hover/item:opacity-100 transition-opacity">
-                        {f}
-                      </span>
-                    </div>
-                  ))}
+                <div className="relative z-10 flex flex-col h-full">
+                  {/* Top Bar */}
+                  <div className="flex justify-between items-center mb-12">
+                    <span className="text-[10px] font-black text-white/90 uppercase tracking-[0.3em] bg-white/10 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/10">
+                      {s.tag}
+                    </span>
+                    <span className="text-[11px] font-mono text-slate-500 tracking-widest">
+                      {s.metric}
+                    </span>
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-3xl lg:text-4xl font-bold mb-6 tracking-tighter text-white">
+                    {s.title}
+                  </h3>
+                  
+                  <p className="text-slate-400 mb-10 leading-relaxed text-lg max-w-sm">
+                    {s.desc}
+                  </p>
+
+                  {/* Features / Tech Stack */}
+                  <div className="mt-auto pt-8 border-t border-white/5 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    {s.features.map(f => (
+                      <div key={f} className="flex flex-col gap-1">
+                        <div className="h-[2px] w-4 bg-slate-700 group-hover:w-8 group-hover:bg-blue-500 transition-all duration-500" />
+                        <span className="text-[9px] font-bold text-slate-500 uppercase tracking-tighter group-hover:text-slate-300">
+                          {f}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>

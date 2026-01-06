@@ -2,7 +2,7 @@ const services = [
   {
     title: "SaaS Architecture",
     tag: "Scale",
-    desc: "End-to-end development of multi-tenant platforms with complex RBAC and automated billing.",
+    desc: "End-to-end development of multi-tenant platforms with complex RBAC and automated billing systems.",
     features: ["Next.js/React", "Stripe Integration", "Multi-tenant DB Architecture"],
     metric: "99.9% Uptime Goal"
   },
@@ -12,18 +12,33 @@ const services = [
     desc: "Migrating legacy systems to serverless or containerized environments on AWS and Vercel.",
     features: ["Terraform (IaC)", "CI/CD Pipelines", "Edge Computing"],
     metric: "<200ms Latency"
+  },
+  {
+    title: "Product Engineering",
+    tag: "Velocity",
+    desc: "Rapid development of mission-critical features without compromising on technical debt or code quality.",
+    features: ["TypeScript / Node.js", "GraphQL & REST APIs", "Real-time WebSockets"],
+    metric: "Fast-Track Delivery"
+  },
+  {
+    title: "System Migration",
+    tag: "Modernize",
+    desc: "Phased replacement of monolithic architectures with modular, maintainable microservices.",
+    features: ["Database Migration", "Legacy Code Refactoring", "API Bridge Design"],
+    metric: "Zero Downtime"
   }
 ];
 
 export default function ServiceGrid() {
   return (
-    <section className="py-24 ">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
+        {/* Changed to 2 columns on medium screens and up */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-slate-200 border border-slate-200 overflow-hidden rounded-xl">
           {services.map((s, i) => (
             <div 
               key={i} 
-              className="bg-white p-16 group relative overflow-hidden transition-all duration-500 hover:bg-slate-50"
+              className="bg-white p-12 lg:p-16 group relative overflow-hidden transition-all duration-500 hover:bg-slate-50"
             >
               {/* Subtle background accent on hover */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -mr-16 -mt-16" />
@@ -38,11 +53,11 @@ export default function ServiceGrid() {
                   </span>
                 </div>
 
-                <h3 className="text-4xl font-bold mb-6 tracking-tighter text-slate-900 group-hover:translate-x-2 transition-transform duration-500">
+                <h3 className="text-3xl lg:text-4xl font-bold mb-6 tracking-tighter text-slate-900 group-hover:translate-x-2 transition-transform duration-500">
                   {s.title}
                 </h3>
                 
-                <p className="text-slate-500 mb-10 leading-relaxed max-w-sm text-lg">
+                <p className="text-slate-500 mb-10 leading-relaxed max-w-sm text-base lg:text-lg">
                   {s.desc}
                 </p>
 

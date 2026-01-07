@@ -10,53 +10,40 @@ const ArrowRightIcon = (props) => (
 
 export const BentoGrid = ({ children, className }) => {
   return (
-    <div className={cn("grid w-full auto-rows-[25rem] grid-cols-1 md:grid-cols-6 gap-3", className)}>
+    <div className={cn("grid w-full auto-rows-[25rem] grid-cols-1 md:grid-cols-6 gap-4", className)}>
       {children}
     </div>
   );
 };
 
-export const BentoCard = ({ name, className, background, Icon, description, href, cta, color }) => (
+export const BentoCard = ({ name, className, background, Icon, description, href, cta, theme }) => (
   <div className={cn(
-    "group relative flex flex-col justify-between overflow-hidden rounded-[2.5rem] border p-8 transition-all duration-500",
-    "bg-slate-950 border-slate-800 hover:shadow-2xl",
-    // Dynamic shadow color based on the card theme
-    color === "blue" && "hover:shadow-blue-500/10",
-    color === "emerald" && "hover:shadow-emerald-500/10",
-    color === "purple" && "hover:shadow-purple-500/10",
-    color === "amber" && "hover:shadow-amber-500/10",
+    "group relative flex flex-col justify-between overflow-hidden rounded-[2.5rem] border p-10 transition-all duration-700 hover:scale-[1.01]",
+    theme.bg,      // Unique Background
+    theme.border,  // Unique Border
+    theme.shadow,  // Unique Hover Shadow
     className
   )}>
-    <div className="absolute inset-0 z-0 opacity-40">{background}</div>
+    {/* Background Pattern/Overlay */}
+    <div className="absolute inset-0 z-0 opacity-30 mix-blend-overlay">{background}</div>
     
     <div className="z-10 flex flex-col gap-2 transition-all duration-500 group-hover:-translate-y-2">
       {Icon && (
         <div className={cn(
-          "mb-4 flex h-14 w-14 items-center justify-center rounded-2xl text-white shadow-inner transition-all duration-500 group-hover:scale-110",
-          "bg-slate-900", // Default bg
-          color === "blue" && "group-hover:bg-blue-600",
-          color === "emerald" && "group-hover:bg-emerald-600",
-          color === "purple" && "group-hover:bg-purple-600",
-          color === "amber" && "group-hover:bg-amber-600",
+          "mb-6 flex h-14 w-14 items-center justify-center rounded-2xl text-white shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:rotate-3",
+          theme.iconBg
         )}>
-          <Icon size={26} strokeWidth={1.5} />
+          <Icon size={28} strokeWidth={1.5} />
         </div>
       )}
-      <h3 className="text-2xl font-bold tracking-tight text-white">{name}</h3>
-      <p className="max-w-[280px] text-sm font-medium leading-relaxed text-slate-400 group-hover:text-slate-200 transition-colors">
+      <h3 className="text-3xl font-bold tracking-tighter text-white">{name}</h3>
+      <p className="max-w-[280px] text-sm font-medium leading-relaxed text-white/70 group-hover:text-white transition-colors">
         {description}
       </p>
     </div>
 
     <div className="z-10 flex items-center pt-4">
-      <a href={href} className={cn(
-        "flex items-center text-xs font-black uppercase tracking-[0.2em] transition-colors",
-        "text-slate-500",
-        color === "blue" && "hover:text-blue-400",
-        color === "emerald" && "hover:text-emerald-400",
-        color === "purple" && "hover:text-purple-400",
-        color === "amber" && "hover:text-amber-400",
-      )}>
+      <a href={href} className="flex items-center text-xs font-black uppercase tracking-[0.2em] text-white/50 transition-colors hover:text-white">
         {cta} <ArrowRightIcon />
       </a>
     </div>
@@ -71,8 +58,13 @@ const features = [
     href: "#",
     cta: "View Framework",
     className: "md:col-span-3",
-    color: "blue",
-    background: <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-transparent to-transparent" />
+    theme: {
+      bg: "bg-[#0f172a]", // Deep Navy
+      border: "border-blue-500/20",
+      shadow: "hover:shadow-blue-500/20",
+      iconBg: "bg-blue-600"
+    },
+    background: <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-blue-400/20 via-transparent to-transparent" />
   },
   {
     Icon: Zap,
@@ -81,35 +73,50 @@ const features = [
     href: "#",
     cta: "See Process",
     className: "md:col-span-3",
-    color: "emerald",
-    background: <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/20 via-transparent to-transparent" />
+    theme: {
+      bg: "bg-[#064e3b]", // Deep Forest
+      border: "border-emerald-500/20",
+      shadow: "hover:shadow-emerald-500/20",
+      iconBg: "bg-emerald-600"
+    },
+    background: <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-emerald-400/20 via-transparent to-transparent" />
   },
   {
     Icon: ShieldCheck,
     name: "Risk Mitigation",
-    description: "Audit-ready systems designed for the $50M+ ARR stage. Security as a growth enabler.",
+    description: "Audit-ready systems designed for the $50M+ ARR stage.",
     href: "#",
     cta: "Read Case Study",
     className: "md:col-span-2",
-    color: "purple",
-    background: <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 via-transparent to-transparent" />
+    theme: {
+      bg: "bg-[#4c1d95]", // Deep Royal Purple
+      border: "border-violet-500/20",
+      shadow: "hover:shadow-violet-500/20",
+      iconBg: "bg-violet-600"
+    },
+    background: <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-violet-400/20 via-transparent to-transparent" />
   },
   {
     Icon: Globe2,
     name: "Global Ops",
-    description: "Multi-region deployment and data compliance for international expansion.",
+    description: "Multi-region deployment and data compliance for expansion.",
     href: "#",
     cta: "Scale Globally",
     className: "md:col-span-4",
-    color: "amber",
-    background: <div className="absolute inset-0 bg-gradient-to-br from-amber-600/20 via-transparent to-transparent" />
+    theme: {
+      bg: "bg-[#7c2d12]", // Deep Terracotta/Rust
+      border: "border-orange-500/20",
+      shadow: "hover:shadow-orange-500/20",
+      iconBg: "bg-orange-600"
+    },
+    background: <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-orange-400/20 via-transparent to-transparent" />
   }
 ];
 
 export default function HeroHome() {
   return (
-    <div className="w-full py-12 flex justify-center"> 
-      <div className="w-[95%] lg:w-[92%]"> 
+    <div className="w-full py-20 flex justify-center bg-slate-50"> 
+      <div className="w-[95%] lg:w-[90%]"> 
         <BentoGrid>
           {features.map((feature, idx) => (
             <BentoCard key={idx} {...feature} />
@@ -118,4 +125,4 @@ export default function HeroHome() {
       </div>
     </div>
   );
-}home 
+}

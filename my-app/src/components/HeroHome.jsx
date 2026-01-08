@@ -19,31 +19,31 @@ export const BentoGrid = ({ children, className }) => {
 export const BentoCard = ({ name, className, background, Icon, description, href, cta, theme }) => (
   <div className={cn(
     "group relative flex flex-col justify-between overflow-hidden rounded-[2.5rem] border p-10 transition-all duration-700 hover:scale-[1.01]",
-    theme.bg,      // Unique Background
-    theme.border,  // Unique Border
-    theme.shadow,  // Unique Hover Shadow
+    theme.bg,      // Muted background
+    theme.border,  // Low-opacity border
+    theme.shadow,  // Subtle glow
     className
   )}>
-    {/* Background Pattern/Overlay */}
-    <div className="absolute inset-0 z-0 opacity-30 mix-blend-overlay">{background}</div>
+    {/* Subtle Glow Overlay */}
+    <div className="absolute inset-0 z-0 opacity-20 transition-opacity duration-500 group-hover:opacity-40">{background}</div>
     
     <div className="z-10 flex flex-col gap-2 transition-all duration-500 group-hover:-translate-y-2">
       {Icon && (
         <div className={cn(
-          "mb-6 flex h-14 w-14 items-center justify-center rounded-2xl text-white shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:rotate-3",
+          "mb-6 flex h-14 w-14 items-center justify-center rounded-2xl text-white/90 shadow-sm transition-all duration-500 group-hover:scale-110",
           theme.iconBg
         )}>
-          <Icon size={28} strokeWidth={1.5} />
+          <Icon size={24} strokeWidth={1.5} />
         </div>
       )}
-      <h3 className="text-3xl font-bold tracking-tighter text-white">{name}</h3>
-      <p className="max-w-[280px] text-sm font-medium leading-relaxed text-white/70 group-hover:text-white transition-colors">
+      <h3 className="text-2xl font-bold tracking-tight text-slate-100">{name}</h3>
+      <p className="max-w-[280px] text-sm font-medium leading-relaxed text-slate-400 group-hover:text-slate-200 transition-colors">
         {description}
       </p>
     </div>
 
     <div className="z-10 flex items-center pt-4">
-      <a href={href} className="flex items-center text-xs font-black uppercase tracking-[0.2em] text-white/50 transition-colors hover:text-white">
+      <a href={href} className="flex items-center text-xs font-black uppercase tracking-[0.2em] text-slate-600 transition-colors hover:text-slate-300">
         {cta} <ArrowRightIcon />
       </a>
     </div>
@@ -54,17 +54,17 @@ const features = [
   {
     Icon: BarChart3,
     name: "Revenue Architecture",
-    description: "We align your technical roadmap with your P&L, ensuring every feature is a revenue lever.",
+    description: "Aligning technical roadmap with P&L to turn features into revenue levers.",
     href: "#",
     cta: "View Framework",
     className: "md:col-span-3",
     theme: {
-      bg: "bg-[#0f172a]", // Deep Navy
-      border: "border-blue-500/20",
-      shadow: "hover:shadow-blue-500/20",
-      iconBg: "bg-blue-600"
+      bg: "bg-[#0a0f1a]", // Muted Midnight Blue
+      border: "border-blue-900/30",
+      shadow: "hover:shadow-blue-900/20",
+      iconBg: "bg-blue-950/50 border border-blue-800/30"
     },
-    background: <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-blue-400/20 via-transparent to-transparent" />
+    background: <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-transparent" />
   },
   {
     Icon: Zap,
@@ -74,12 +74,12 @@ const features = [
     cta: "See Process",
     className: "md:col-span-3",
     theme: {
-      bg: "bg-[#064e3b]", // Deep Forest
-      border: "border-emerald-500/20",
-      shadow: "hover:shadow-emerald-500/20",
-      iconBg: "bg-emerald-600"
+      bg: "bg-[#0a1a15]", // Muted Deep Moss
+      border: "border-emerald-900/30",
+      shadow: "hover:shadow-emerald-900/20",
+      iconBg: "bg-emerald-950/50 border border-emerald-800/30"
     },
-    background: <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-emerald-400/20 via-transparent to-transparent" />
+    background: <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-transparent to-transparent" />
   },
   {
     Icon: ShieldCheck,
@@ -88,13 +88,14 @@ const features = [
     href: "#",
     cta: "Read Case Study",
     className: "md:col-span-2",
+    color: "purple",
     theme: {
-      bg: "bg-[#4c1d95]", // Deep Royal Purple
-      border: "border-violet-500/20",
-      shadow: "hover:shadow-violet-500/20",
-      iconBg: "bg-violet-600"
+      bg: "bg-[#130d1f]", // Muted Deep Plum
+      border: "border-purple-900/30",
+      shadow: "hover:shadow-purple-900/20",
+      iconBg: "bg-purple-950/50 border border-purple-800/30"
     },
-    background: <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-violet-400/20 via-transparent to-transparent" />
+    background: <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-transparent" />
   },
   {
     Icon: Globe2,
@@ -104,18 +105,18 @@ const features = [
     cta: "Scale Globally",
     className: "md:col-span-4",
     theme: {
-      bg: "bg-[#7c2d12]", // Deep Terracotta/Rust
-      border: "border-orange-500/20",
-      shadow: "hover:shadow-orange-500/20",
-      iconBg: "bg-orange-600"
+      bg: "bg-[#1a120a]", // Muted Dark Bronze
+      border: "border-orange-900/30",
+      shadow: "hover:shadow-orange-900/20",
+      iconBg: "bg-orange-950/50 border border-orange-800/30"
     },
-    background: <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-orange-400/20 via-transparent to-transparent" />
+    background: <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-transparent" />
   }
 ];
 
 export default function HeroHome() {
   return (
-    <div className="w-full py-20 flex justify-center bg-slate-50"> 
+    <div className="w-full py-20 flex justify-center bg-white"> 
       <div className="w-[95%] lg:w-[90%]"> 
         <BentoGrid>
           {features.map((feature, idx) => (

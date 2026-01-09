@@ -18,7 +18,7 @@ export default function TrustedLogos() {
         {/* Header Section */}
         <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-20">
           <div className="max-w-xl">
-            <h2 className="text-[14px] font-black uppercase tracking-[0.4em] text-blue-600 mb-4 font-sans">
+            <h2 className="text-[16px] font-black uppercase tracking-[0.4em] text-blue-600 mb-4 font-sans">
               The Scaling Stack
             </h2>
             <p className="text-4xl font-bold tracking-tighter text-slate-900 leading-tight">
@@ -34,8 +34,8 @@ export default function TrustedLogos() {
         <div className="relative w-full overflow-hidden border-y border-slate-50 py-12">
           
           {/* Side Fades */}
-          <div className="absolute left-0 top-0 z-30 h-full w-32 bg-gradient-to-r from-white via-white/80 to-transparent pointer-events-none" />
-          <div className="absolute right-0 top-0 z-30 h-full w-32 bg-gradient-to-l from-white via-white/80 to-transparent pointer-events-none" />
+          <div className="absolute left-0 top-0 z-30 h-full w-32 bg-gradient-to-r from-w via-white/80 to-transparent pointer-events-none" />
+          <div className="absolute right-0 top-0 z-30 h-full w-32 bg-gradient-to-l from-w via-white/80 to-transparent pointer-events-none" />
 
           {/* ANIMATION LOGIC:
               Reduced speed to 35s for a smooth, high-end feel.
@@ -58,13 +58,13 @@ export default function TrustedLogos() {
                 </div>
                 
                 <div className="whitespace-normal w-full">
-                  <p className="text-[9px] font-bold text-blue-600 uppercase tracking-[0.2em] mb-2">
+                  <p className="text-[13px] font-bold text-blue-600 uppercase tracking-[0.2em] mb-2">
                     {item.role}
                   </p>
                   <h3 className="text-lg font-bold text-slate-900 tracking-tight mb-3">
                     {item.name}
                   </h3>
-                  <p className="text-slate-500 text-[13px] leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity">
+                  <p className="text-slate-500 text-[16px] leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity">
                     {item.description}
                   </p>
                 </div>

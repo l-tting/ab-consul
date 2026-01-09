@@ -33,7 +33,7 @@ export default function Process() {
         {/* Heading - Aligned with your "Quiet" brand */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-6">
           <div className="max-w-xl">
-            <h2 className="text-[14px] font-black uppercase tracking-[0.4em] text-blue-600 mb-4">
+            <h2 className="text-[16px] font-black uppercase tracking-[0.4em] text-blue-600 mb-4">
               Our Methodology
             </h2>
             <p className="text-4xl font-bold tracking-tighter text-slate-900 leading-tight">
@@ -41,7 +41,7 @@ export default function Process() {
               <span className="text-slate-400 italic font-medium">uncommon</span> results.
             </p>
           </div>
-          <p className="text-slate-400 text-xs font-medium max-w-[240px] leading-relaxed border-l border-slate-100 pl-6">
+          <p className="text-slate-400 text-sm font-medium max-w-[240px] leading-relaxed border-l border-slate-500 pl-6">
             We don't believe in "phases." We believe in a continuous cycle of value extraction.
           </p>
         </div>
@@ -55,7 +55,7 @@ export default function Process() {
             >
               {/* The Step Header: Number and SVG Line */}
               <div className="w-full flex items-center gap-4 mb-8">
-                <span className="text-sm font-black font-mono text-slate-700 group-hover:text-blue-600 transition-colors duration-500">
+                <span className="text-md font-black font-mono text-slate-700 group-hover:text-blue-600 transition-colors duration-500">
                   {item.step}
                 </span>
                 <div className="relative h-px flex-grow bg-slate-200 overflow-hidden">
@@ -75,7 +75,7 @@ export default function Process() {
                 <h3 className="text-xl font-bold tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-slate-500 max-w-[240px]">
+                <p className="text-md leading-relaxed text-slate-500 max-w-[240px]">
                   {item.description}
                 </p>
               </div>

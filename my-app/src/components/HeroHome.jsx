@@ -16,39 +16,43 @@ export const BentoGrid = ({ children, className }) => {
   );
 };
 
-export const BentoCard = ({ name, className, background, Icon, description, href, cta, theme }) => (
+export const BentoCard = ({ name, className, Icon, description, href, cta, theme }) => (
   <div className={cn(
-    "group relative flex flex-col justify-between overflow-hidden rounded-[2.5rem] border p-10 transition-all duration-500 hover:-translate-y-1",
-    "bg-slate-50/50 border-slate-200 hover:bg-white hover:shadow-xl hover:shadow-slate-200/50",
-    theme.borderHover, // Dynamic border color on hover
+    "group relative flex flex-col justify-between overflow-hidden rounded-[3rem] border-2 p-10 transition-all duration-500 hover:-translate-y-2",
+    "bg-white",
+    theme.border,      // Bright colored border
+    theme.shadow,      // Matching neon shadow
     className
   )}>
-    {/* Subtle Color Wash background */}
-    <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-      {background}
-    </div>
     
+    {/* Inner Electric Glow */}
+    <div className={cn(
+        "absolute -bottom-24 -left-24 w-80 h-80 rounded-full blur-[100px] opacity-10 transition-opacity duration-500 group-hover:opacity-30",
+        theme.glow
+    )} />
+
     <div className="z-10 flex flex-col gap-2">
       {Icon && (
         <div className={cn(
-          "mb-6 flex h-14 w-14 items-center justify-center rounded-2xl transition-all duration-500 shadow-sm",
-          "bg-white text-slate-400 group-hover:text-white",
-          theme.iconHover
+          "mb-6 flex h-14 w-14 items-center justify-center rounded-2xl shadow-md transition-all duration-500 group-hover:scale-110",
+          theme.iconBg,
+          "text-white" // Keep icons white for punchiness
         )}>
-          <Icon size={24} strokeWidth={1.5} />
+          <Icon size={26} strokeWidth={2.5} />
         </div>
       )}
-      <h3 className="text-2xl font-bold tracking-tight text-slate-900">{name}</h3>
-      <p className="max-w-[280px] text-sm font-medium leading-relaxed text-slate-500 group-hover:text-slate-600 transition-colors">
+      <h3 className="text-3xl font-black tracking-tighter text-slate-900 leading-none">
+        {name}
+      </h3>
+      <p className="max-w-[280px] text-[15px] font-bold leading-relaxed text-slate-500 mt-2">
         {description}
       </p>
     </div>
 
-    <div className="z-10 flex items-center pt-4 border-t border-slate-100">
+    <div className="z-10 flex items-center pt-4">
       <a href={href} className={cn(
-        "flex items-center text-xs font-black uppercase tracking-[0.2em] transition-colors",
-        "text-slate-400",
-        theme.textHover
+        "flex items-center text-xs font-black uppercase tracking-[0.25em] transition-all",
+        theme.textLink
       )}>
         {cta} <ArrowRightIcon />
       </a>
@@ -65,39 +69,42 @@ const features = [
     cta: "View Framework",
     className: "md:col-span-3",
     theme: {
-      borderHover: "hover:border-blue-400/50",
-      iconHover: "group-hover:bg-blue-500 group-hover:shadow-blue-200",
-      textHover: "hover:text-blue-600"
-    },
-    background: <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent" />
+      border: "border-blue-500 hover:border-blue-600",
+      shadow: "hover:shadow-[0_20px_60px_-15px_rgba(59,130,246,0.5)]",
+      iconBg: "bg-blue-500",
+      textLink: "text-blue-500 hover:text-blue-700",
+      glow: "bg-blue-500"
+    }
   },
   {
     Icon: Zap,
-    name: "Infrastructure Liquidation",
+    name: "Infra Liquidation",
     description: "Eliminating technical debt that acts as a tax on your scaling velocity.",
     href: "#",
     cta: "See Process",
     className: "md:col-span-3",
     theme: {
-      borderHover: "hover:border-emerald-400/50",
-      iconHover: "group-hover:bg-emerald-500 group-hover:shadow-emerald-200",
-      textHover: "hover:text-emerald-600"
-    },
-    background: <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-transparent" />
+      border: "border-emerald-500 hover:border-emerald-600",
+      shadow: "hover:shadow-[0_20px_60px_-15px_rgba(16,185,129,0.5)]",
+      iconBg: "bg-emerald-500",
+      textLink: "text-emerald-500 hover:text-emerald-700",
+      glow: "bg-emerald-500"
+    }
   },
   {
     Icon: ShieldCheck,
     name: "Risk Mitigation",
     description: "Audit-ready systems designed for the $50M+ ARR stage.",
     href: "#",
-    cta: "Read Case Study",
+    cta: "The Standards",
     className: "md:col-span-2",
     theme: {
-      borderHover: "hover:border-purple-400/50",
-      iconHover: "group-hover:bg-purple-500 group-hover:shadow-purple-200",
-      textHover: "hover:text-purple-600"
-    },
-    background: <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-transparent" />
+      border: "border-purple-500 hover:border-purple-600",
+      shadow: "hover:shadow-[0_20px_60px_-15px_rgba(139,92,246,0.5)]",
+      iconBg: "bg-purple-500",
+      textLink: "text-purple-500 hover:text-purple-700",
+      glow: "bg-purple-500"
+    }
   },
   {
     Icon: Globe2,
@@ -107,17 +114,18 @@ const features = [
     cta: "Scale Globally",
     className: "md:col-span-4",
     theme: {
-      borderHover: "hover:border-orange-400/50",
-      iconHover: "group-hover:bg-orange-500 group-hover:shadow-orange-200",
-      textHover: "hover:text-orange-600"
-    },
-    background: <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-transparent" />
+      border: "border-orange-500 hover:border-orange-600",
+      shadow: "hover:shadow-[0_20px_60px_-15px_rgba(249,115,22,0.5)]",
+      iconBg: "bg-orange-500",
+      textLink: "text-orange-500 hover:text-orange-700",
+      glow: "bg-orange-500"
+    }
   }
 ];
 
 export default function HeroHome() {
   return (
-    <div className="w-full py-20 flex justify-center bg-white"> 
+    <div className="w-full py-24 flex justify-center "> 
       <div className="w-[95%] lg:w-[90%]"> 
         <BentoGrid>
           {features.map((feature, idx) => (

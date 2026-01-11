@@ -2,15 +2,16 @@
 
 import { cn } from "@/lib/utils";
 import React from "react";
-import { ArrowRight, BarChart3, Zap, ShieldCheck, Globe2 } from "lucide-react";
+import { ArrowUpRight, BarChart3, Target, ShieldCheck, Globe2 } from "lucide-react";
 
-const ArrowRightIcon = (props) => (
-  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" {...props} />
+// Use an "Upward Growth" icon for the CTA
+const GrowthArrow = () => (
+  <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
 );
 
 export const BentoGrid = ({ children, className }) => {
   return (
-    <div className={cn("grid w-full auto-rows-[25rem] grid-cols-1 md:grid-cols-6 gap-6", className)}>
+    <div className={cn("grid w-full auto-rows-[25rem] grid-cols-1 md:grid-cols-6 gap-4", className)}>
       {children}
     </div>
   );
@@ -18,43 +19,42 @@ export const BentoGrid = ({ children, className }) => {
 
 export const BentoCard = ({ name, className, Icon, description, href, cta, theme }) => (
   <div className={cn(
-    "group relative flex flex-col justify-between overflow-hidden rounded-[3rem] border-2 p-10 transition-all duration-500 hover:-translate-y-2",
-    "bg-white",
-    theme.border,      // Bright colored border
-    theme.shadow,      // Matching neon shadow
+    "group relative flex flex-col justify-between overflow-hidden rounded-[2.5rem] border p-10 transition-all duration-700 hover:shadow-2xl",
+    theme.bg,      // The "Base" rich color
+    theme.border,  // Sophisticated border
     className
   )}>
     
-    {/* Inner Electric Glow */}
+    {/* VIBRANT ACCENT GLOW (The "Energy" of Growth) */}
     <div className={cn(
-        "absolute -bottom-24 -left-24 w-80 h-80 rounded-full blur-[100px] opacity-10 transition-opacity duration-500 group-hover:opacity-30",
+        "absolute -right-10 -top-10 h-64 w-64 rounded-full blur-[80px] opacity-20 transition-all duration-700 group-hover:opacity-40 group-hover:scale-125",
         theme.glow
     )} />
 
     <div className="z-10 flex flex-col gap-2">
       {Icon && (
         <div className={cn(
-          "mb-6 flex h-14 w-14 items-center justify-center rounded-2xl shadow-md transition-all duration-500 group-hover:scale-110",
+          "mb-6 flex h-14 w-14 items-center justify-center rounded-xl shadow-lg transition-all duration-500 group-hover:scale-110",
           theme.iconBg,
-          "text-white" // Keep icons white for punchiness
+          theme.iconColor
         )}>
-          <Icon size={26} strokeWidth={2.5} />
+          <Icon size={28} strokeWidth={2} />
         </div>
       )}
-      <h3 className="text-3xl font-black tracking-tighter text-slate-900 leading-none">
+      <h3 className="text-3xl font-bold tracking-tight text-white leading-tight">
         {name}
       </h3>
-      <p className="max-w-[280px] text-[15px] font-bold leading-relaxed text-slate-500 mt-2">
+      <p className="max-w-[280px] text-[15px] font-medium leading-relaxed text-white/60 group-hover:text-white/90 transition-colors">
         {description}
       </p>
     </div>
 
-    <div className="z-10 flex items-center pt-4">
+    <div className="z-10 flex items-center pt-6 border-t border-white/10">
       <a href={href} className={cn(
-        "flex items-center text-xs font-black uppercase tracking-[0.25em] transition-all",
+        "flex items-center text-xs font-bold uppercase tracking-[0.2em] transition-all",
         theme.textLink
       )}>
-        {cta} <ArrowRightIcon />
+        {cta} <GrowthArrow />
       </a>
     </div>
   </div>
@@ -63,69 +63,73 @@ export const BentoCard = ({ name, className, Icon, description, href, cta, theme
 const features = [
   {
     Icon: BarChart3,
-    name: "Revenue Architecture",
-    description: "Aligning technical roadmap with P&L to turn features into revenue levers.",
+    name: "Revenue Optimization",
+    description: "Systemic audit of your pricing, churn, and LTV to unlock immediate cash flow.",
     href: "#",
-    cta: "View Framework",
+    cta: "Strategic Audit",
     className: "md:col-span-3",
     theme: {
-      border: "border-blue-500 hover:border-blue-600",
-      shadow: "hover:shadow-[0_20px_60px_-15px_rgba(59,130,246,0.5)]",
+      bg: "bg-[#06162e]", // Midnight Navy
+      border: "border-blue-500/30 hover:border-blue-400",
       iconBg: "bg-blue-500",
-      textLink: "text-blue-500 hover:text-blue-700",
-      glow: "bg-blue-500"
+      iconColor: "text-white",
+      textLink: "text-blue-400 hover:text-white",
+      glow: "bg-blue-400"
     }
   },
   {
-    Icon: Zap,
-    name: "Infra Liquidation",
-    description: "Eliminating technical debt that acts as a tax on your scaling velocity.",
+    Icon: Target,
+    name: "Market Penetration",
+    description: "High-velocity GTM strategies for new verticals and international territories.",
     href: "#",
-    cta: "See Process",
+    cta: "GTM Framework",
     className: "md:col-span-3",
     theme: {
-      border: "border-emerald-500 hover:border-emerald-600",
-      shadow: "hover:shadow-[0_20px_60px_-15px_rgba(16,185,129,0.5)]",
+      bg: "bg-[#062e1f]", // Deep British Racing Green
+      border: "border-emerald-500/30 hover:border-emerald-400",
       iconBg: "bg-emerald-500",
-      textLink: "text-emerald-500 hover:text-emerald-700",
-      glow: "bg-emerald-500"
+      iconColor: "text-white",
+      textLink: "text-emerald-400 hover:text-white",
+      glow: "bg-emerald-400"
     }
   },
   {
     Icon: ShieldCheck,
-    name: "Risk Mitigation",
-    description: "Audit-ready systems designed for the $50M+ ARR stage.",
+    name: "Capital Efficiency",
+    description: "Ensuring growth is sustainable by optimizing OpEx and infrastructure burn.",
     href: "#",
-    cta: "The Standards",
+    cta: "Efficiency Specs",
     className: "md:col-span-2",
     theme: {
-      border: "border-purple-500 hover:border-purple-600",
-      shadow: "hover:shadow-[0_20px_60px_-15px_rgba(139,92,246,0.5)]",
-      iconBg: "bg-purple-500",
-      textLink: "text-purple-500 hover:text-purple-700",
-      glow: "bg-purple-500"
+      bg: "bg-[#2e0616]", // Deep Wine / Burgundy
+      border: "border-rose-500/30 hover:border-rose-400",
+      iconBg: "bg-rose-500",
+      iconColor: "text-white",
+      textLink: "text-rose-400 hover:text-white",
+      glow: "bg-rose-400"
     }
   },
   {
     Icon: Globe2,
-    name: "Global Ops",
-    description: "Multi-region deployment and data compliance for expansion.",
+    name: "Growth Ops",
+    description: "Aligning people, processes, and tools to maintain $100M+ scale.",
     href: "#",
-    cta: "Scale Globally",
+    cta: "Scale Manual",
     className: "md:col-span-4",
     theme: {
-      border: "border-orange-500 hover:border-orange-600",
-      shadow: "hover:shadow-[0_20px_60px_-15px_rgba(249,115,22,0.5)]",
-      iconBg: "bg-orange-500",
-      textLink: "text-orange-500 hover:text-orange-700",
-      glow: "bg-orange-500"
+      bg: "bg-[#2e1f06]", // Deep Amber / Tobacco
+      border: "border-amber-500/30 hover:border-amber-400",
+      iconBg: "bg-amber-500",
+      iconColor: "text-white",
+      textLink: "text-amber-400 hover:text-white",
+      glow: "bg-amber-400"
     }
   }
 ];
 
 export default function HeroHome() {
   return (
-    <div className="w-full py-24 flex justify-center "> 
+    <div className="w-full py-2 flex justify-center "> 
       <div className="w-[95%] lg:w-[90%]"> 
         <BentoGrid>
           {features.map((feature, idx) => (

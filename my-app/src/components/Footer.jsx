@@ -27,7 +27,7 @@ function Footer() {
   ];
 
   return (
-    <footer className="mt-auto py-10 px-4 sm:px-6 lg:px-8 font-inter relative overflow-hidden">
+    <footer className="mt-auto bg-gray-500 py-10 px-4 sm:px-6 lg:px-8 font-inter relative overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col items-center relative z-10">
         <div className="mb-6 flex items-center justify-center">
           <MountainIcon className="h-6 w-6 text-gray-900 dark:text-white" />

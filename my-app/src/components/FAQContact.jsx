@@ -40,7 +40,7 @@ export default function ContactTrust() {
 
           {/* Quick Trust Signals Column */}
           <div className="space-y-6 pt-10">
-            <div className="p-8 bg-white rounded-3xl border border-slate-200 shadow-sm">
+            <div className="p-8 bg-white rounded-3xl border border-slate-300 shadow-sm">
               <h4 className="font-bold text-slate-900 mb-6 uppercase text-sm tracking-widest">Our Promise</h4>
               
               <div className="space-y-6">

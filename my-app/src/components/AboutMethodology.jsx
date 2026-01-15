@@ -45,8 +45,8 @@ export default function StrategicVelocity() {
             </p>
             
             <div className="mt-12 flex items-center gap-4 text-slate-300">
-                <div className="w-12 h-[1px] bg-slate-200" />
-                <span className="text-[10px] font-black uppercase tracking-[0.2em]">The Three-Stage Pivot</span>
+                <div className="w-12 h-[1px] bg-slate-400" />
+                <span className="text-[12px] font-black uppercase tracking-[0.2em]">The Three-Stage Pivot</span>
             </div>
           </div>
 

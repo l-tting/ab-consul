@@ -4,7 +4,7 @@ import { XCircle, CheckCircle2, TrendingUp, Cpu } from "lucide-react";
 
 export default function AboutContrast() {
   return (
-    <section className="w-full py-24 flex justify-center bg-white">
+    <section className="w-full py-24 flex justify-center ">
       <div className="w-[92%] max-w-7xl">
         {/* Section Label */}
         <div className="mb-12 flex flex-col items-center text-center">

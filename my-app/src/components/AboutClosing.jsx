@@ -1,57 +1,69 @@
 "use client";
 import React from "react";
-import { MoveRight } from "lucide-react";
+import { MoveRight, Target, BarChart4 } from "lucide-react";
+import Link from "next/link";
 
 export default function AboutClosing() {
   return (
-    <section className="w-full py-20 flex justify-center  border-t border-slate-100">
+    <section className="w-full py-20 flex justify-center border-t border-slate-100 ">
       <div className="w-[92%] max-w-7xl">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-20">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-16 lg:gap-32">
           
-          {/* Left: The Requirements */}
-          <div className="md:w-1/2">
-            <h2 className="text-[30px] font-black uppercase tracking-[0.4em] text-blue-600 mb-8">
-              The Ideal Fit
+          {/* Left: The Requirements - Professional Qualification */}
+          <div className="lg:w-1/2">
+            <h2 className="text-[16px] font-black uppercase tracking-[0.5em] text-blue-600 mb-10 italic">
+              The Ideal Partnership
             </h2>
-            <div className="space-y-12">
-              <div className="group border-b border-slate-100 pb-8 last:border-0">
-                <h3 className="text-xl font-bold text-slate-900 mb-3 tracking-tight">Post-Revenue Complexity</h3>
-                <p className="text-slate-500 text-sm leading-relaxed">
-                  You’ve moved past the MVP stage and your technical debt is now actively 
-                  throttling your ability to capture new revenue.
+            <div className="space-y-16">
+              <div className="group border-b border-slate-100 pb-10 last:border-0">
+                <div className="flex items-center gap-3 mb-4">
+                  <Target className="w-5 h-5 text-blue-600" />
+                  <h3 className="text-2xl font-black text-slate-900 tracking-tighter">Post-Revenue Complexity</h3>
+                </div>
+                <p className="text-slate-500 text-base font-medium leading-relaxed">
+                  You have achieved product-market fit, but your current technical velocity is 
+                  now the primary bottleneck. We excel when debt is actively throttling 
+                  your ability to capture top-line revenue.
                 </p>
               </div>
-              <div className="group border-b border-slate-100 pb-8 last:border-0">
-                <h3 className="text-xl font-bold text-slate-900 mb-3 tracking-tight">Scale-Ready Mindset</h3>
-                <p className="text-slate-500 text-sm leading-relaxed">
-                  You view software as a capital asset, not an expense. You want 
-                  infrastructure that handles 10x growth, not just "bug fixes."
+
+              <div className="group border-b border-slate-100 pb-10 last:border-0">
+                <div className="flex items-center gap-3 mb-4">
+                  <BarChart4 className="w-5 h-5 text-blue-600" />
+                  <h3 className="text-2xl font-black text-slate-900 tracking-tighter">Asset-First Mindset</h3>
+                </div>
+                <p className="text-slate-500 text-base font-medium leading-relaxed">
+                  You view your infrastructure as a capital asset to be optimized for exit or 
+                  institutional scale. You are looking for a partner to engineer 10x 
+                  resilience, not just a vendor to clear a backlog.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Right: The Final Action */}
-          <div className="md:w-1/3 bg-slate-900 rounded-[2.5rem] mt-8 p-12 text-white relative overflow-hidden">
-            <div className="absolute top-10 right-0 w-32 h-32 bg-blue-500/20 blur-[60px]" />
+          {/* Right: The Final Action - The "Boardroom" Card */}
+          <div className="lg:w-[400px] bg-slate-900 rounded-[3rem] p-12 text-white relative overflow-hidden shadow-[0_40px_80px_-15px_rgba(15,23,42,0.3)] border border-slate-800">
+            {/* Soft Glow Effect */}
+            <div className="absolute top-0 right-0 w-48 h-48 bg-blue-600/20 blur-[80px] pointer-events-none" />
             
-            <p className="text-sm font-bold text-blue-400 mb-6 uppercase tracking-widest">Next Step</p>
-            <h3 className="text-3xl font-bold mb-8 tracking-tighter">
-              Verify the <span className="italic text-slate-400">results.</span>
+            <p className="text-[10px] font-black text-blue-400 mb-8 uppercase tracking-[0.3em]">Institutional Verification</p>
+            <h3 className="text-4xl font-black mb-8 tracking-tighter leading-[0.9]">
+              Verify the <br/>
+              <span className="italic font-serif text-slate-400 font-medium text-3xl">Strategic Results.</span>
             </h3>
             
-            <p className="text-slate-400 text-sm mb-12 leading-relaxed">
-              Before we talk, see how we’ve applied this methodology to companies 
-              doing $5M—$50M ARR.
+            <p className="text-slate-400 text-sm mb-12 leading-relaxed font-medium">
+              See the documented impact of the AB CONSUL methodology across portfolios 
+              scaling from $5M to $50M ARR.
             </p>
 
-            <button 
-              onClick={() => window.location.href = '/case-studies'}
-              className="w-full py-5 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold transition-all flex items-center justify-center gap-3 group"
+            <Link 
+              href="/case-studies"
+              className="w-full py-6 bg-blue-600 hover:bg-white hover:text-blue-600 text-white rounded-2xl font-black text-sm uppercase tracking-widest transition-all duration-500 flex items-center justify-center gap-4 group shadow-xl shadow-blue-900/20"
             >
               Browse Case Studies
-              <MoveRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-            </button>
+              <MoveRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+            </Link>
           </div>
 
         </div>

@@ -1,46 +1,73 @@
 "use client";
 import React from "react";
-import { XCircle, CheckCircle2 } from "lucide-react";
+import { XCircle, CheckCircle2, TrendingUp, Cpu } from "lucide-react";
 
 export default function AboutContrast() {
   return (
-    <section className="w-full py-24 flex justify-center ">
+    <section className="w-full py-24 flex justify-center bg-white">
       <div className="w-[92%] max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        {/* Section Label */}
+        <div className="mb-12 flex flex-col items-center text-center">
+            <h2 className="text-[12px] font-black uppercase tracking-[0.5em] text-blue-600 mb-4 italic">
+                Strategic Dissonance
+            </h2>
+            <p className="text-3xl font-black tracking-tighter text-slate-900 max-w-xl">
+                The difference between <span className="text-slate-400">writing code</span> and <span className="italic font-serif">engineering equity.</span>
+            </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           
           {/* The Status Quo */}
-          <div className="p-10 rounded-[2.5rem] bg-white border border-slate-200 shadow-sm">
-            <h3 className="text-sm font-bold uppercase tracking-[0.3em] text-slate-400 mb-8 flex items-center gap-2">
-              <XCircle className="w-4 h-4 text-red-400" />
+          <div className="p-12 rounded-[3.5rem] bg-white border border-slate-200 shadow-sm relative group hover:border-slate-300 transition-colors">
+            <h3 className="text-[11px] font-black uppercase tracking-[0.3em] text-slate-400 mb-10 flex items-center gap-3">
+              <XCircle className="w-5 h-5 text-red-500/50" />
               The Industry Standard
             </h3>
-            <ul className="space-y-8">
-              <li className="group">
-                <p className="font-bold text-slate-900 text-lg mb-2">Build-to-Spec</p>
-                <p className="text-slate-500 text-sm">Agencies build exactly what you ask for, even if it’s the wrong move for your revenue.</p>
+            <ul className="space-y-12">
+              <li className="relative">
+                <p className="font-black text-slate-900 text-xl tracking-tighter mb-3">Feature-First Delivery</p>
+                <p className="text-slate-500 text-sm font-medium leading-relaxed">
+                  Typical agencies build exactly what is in the ticket—even if those features create technical debt that kills your long-term valuation.
+                </p>
               </li>
-              <li className="group">
-                <p className="font-bold text-slate-900 text-lg mb-2">Technical Isolation</p>
-                <p className="text-slate-500 text-sm">Developers focus on code quality but have no idea how that code affects your CAC or LTV.</p>
+              <li className="relative">
+                <p className="font-black text-slate-900 text-xl tracking-tighter mb-3">Siloed Engineering</p>
+                <p className="text-slate-500 text-sm font-medium leading-relaxed">
+                  Developers who focus on "clean code" in a vacuum, with zero visibility into how performance latency affects your customer acquisition cost (CAC).
+                </p>
               </li>
             </ul>
           </div>
 
-          {/* The Acme Model */}
-          <div className="p-10 rounded-[2.5rem] bg-slate-900 text-white shadow-2xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 blur-[100px]" />
-            <h3 className="text-sm font-bold uppercase tracking-[0.3em] text-blue-400 mb-8 flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4" />
-              The Acme Model
+          {/* The AB CONSUL Model */}
+          <div className="p-12 rounded-[3.5rem] bg-slate-900 text-white shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] relative overflow-hidden border border-slate-800">
+            {/* Visual Flare */}
+            <div className="absolute top-0 right-0 w-80 h-80 bg-blue-600/20 blur-[120px] pointer-events-none" />
+            
+            <h3 className="text-[11px] font-black uppercase tracking-[0.3em] text-blue-400 mb-10 flex items-center gap-3">
+              <CheckCircle2 className="w-5 h-5" />
+              The AB CONSUL Model
             </h3>
-            <ul className="space-y-8 relative z-10">
+
+            <ul className="space-y-12 relative z-10">
               <li className="group">
-                <p className="font-bold text-white text-lg mb-2">Outcome-Architected</p>
-                <p className="text-slate-400 text-sm">We don't build features; we build "revenue levers." Every line of code is measured against growth.</p>
+                <div className="flex items-center gap-2 mb-3">
+                    <TrendingUp className="w-4 h-4 text-blue-500" />
+                    <p className="font-black text-white text-xl tracking-tighter">Outcome-Architected</p>
+                </div>
+                <p className="text-slate-400 text-sm font-medium leading-relaxed">
+                  We don't build software; we build <span className="text-white italic font-serif">Revenue Engines</span>. Every architectural decision is filtered through the lens of EBITDA and unit economics.
+                </p>
               </li>
               <li className="group">
-                <p className="font-bold text-white text-lg mb-2">Full-Stack Context</p>
-                <p className="text-slate-400 text-sm">We integrate with your P&L. We understand your marketing spend. We ship for the bottom line.</p>
+                <div className="flex items-center gap-2 mb-3">
+                    <Cpu className="w-4 h-4 text-blue-500" />
+                    <p className="font-black text-white text-xl tracking-tighter">Unified Operations</p>
+                </div>
+                <p className="text-slate-400 text-sm font-medium leading-relaxed">
+                  We bridge the gap between your P&L and your stack. By integrating with marketing and finance data, we eliminate infra-waste while  optimizing  growth funnels.
+                </p>
               </li>
             </ul>
           </div>

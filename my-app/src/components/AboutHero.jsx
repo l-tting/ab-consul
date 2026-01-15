@@ -4,7 +4,7 @@ import React from "react";
 
 export default function AboutHero() {
   return (
-    <section className="w-full pt-32 pb-20 flex justify-center bg-white">
+    <section className="w-full pt-32 pb-20 flex justify-center ">
       <div className="w-[92%] max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
           

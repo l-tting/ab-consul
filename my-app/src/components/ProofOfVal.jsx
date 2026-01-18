@@ -31,7 +31,7 @@ const results = [
 
 export default function ResultsSection() {
   return (
-    <section className="w-full py-32 flex justify-center bg-white">
+    <section className="w-full py-32 flex justify-center ">
       <div className="w-[92%] max-w-7xl">
         {/* Advisory Header */}
         <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-20">

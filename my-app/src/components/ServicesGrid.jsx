@@ -1,39 +1,44 @@
 "use client";
 
 import React from "react";
+import { TrendingUp, ShieldCheck, Zap, BarChart3 } from "lucide-react";
 
 const services = [
   {
-    title: "SaaS Architecture",
-    tag: "Scale",
-    desc: "End-to-end development of multi-tenant platforms with complex RBAC and automated billing systems.",
-    features: ["Next.js/React", "Stripe Integration", "Multi-tenant DB"],
-    metric: "99.9% UPTIME",
-    accent: "from-blue-500 to-cyan-400"
+    title: "Monetization Architecture",
+    tag: "Revenue Growth",
+    desc: "Redesigning multi-tenant billing logic and RBAC to unlock enterprise-grade revenue tiers and complex monetization models.",
+    features: ["LTV Optimization", "Pricing Logic", "Usage Attribution"],
+    metric: "EBIDTA FOCUS",
+    accent: "from-blue-600 to-cyan-500",
+    icon: <TrendingUp className="w-6 h-6" />
   },
   {
-    title: "Cloud Infrastructure",
-    tag: "Stability",
-    desc: "Migrating legacy systems to serverless or containerized environments on AWS and Vercel.",
-    features: ["Terraform (IaC)", "CI/CD Pipelines", "Edge Computing"],
-    metric: "<200MS LATENCY",
-    accent: "from-purple-500 to-indigo-400"
+    title: "Infrastructure Liquidation",
+    tag: "Margin Lift",
+    desc: "De-risking legacy systems and liquidating technical debt that acts as a silent tax on your operational velocity.",
+    features: ["OpEx Reduction", "Scale Resilience", "Cloud Optimization"],
+    metric: "40% AVG SAVINGS",
+    accent: "from-indigo-600 to-purple-500",
+    icon: <ShieldCheck className="w-6 h-6" />
   },
   {
-    title: "Product Engineering",
+    title: "Precision Engineering",
     tag: "Velocity",
-    desc: "Rapid development of mission-critical features without compromising on technical debt or code quality.",
-    features: ["TypeScript / Node", "GraphQL APIs", "WebSockets"],
-    metric: "FAST-TRACK",
-    accent: "from-emerald-500 to-teal-400"
+    desc: "Rapid deployment of high-conviction features that move the needle on terminal value without introducing technical drag.",
+    features: ["Zero-Debt Shipping", "Strategic GTM", "Core IP Build"],
+    metric: "ACCELERATED ROI",
+    accent: "from-emerald-600 to-teal-500",
+    icon: <Zap className="w-6 h-6" />
   },
   {
-    title: "System Migration",
-    tag: "Modernize",
-    desc: "Phased replacement of monolithic architectures with modular, maintainable microservices.",
-    features: ["DB Migration", "Legacy Refactoring", "Bridge Design"],
-    metric: "ZERO DOWNTIME",
-    accent: "from-orange-500 to-red-400"
+    title: "Economic System Migration",
+    tag: "Asset Stability",
+    desc: "Converting monolithic liabilities into modular assets. We ensure zero-downtime migrations that preserve data integrity and capital.",
+    features: ["Data Integrity", "Micro-Asset Pivot", "Risk Mitigation"],
+    metric: "ZERO-TAX SCALE",
+    accent: "from-blue-700 to-blue-900",
+    icon: <BarChart3 className="w-6 h-6" />
   }
 ];
 
@@ -41,47 +46,49 @@ export default function ServiceGrid() {
   return (
     <section className="py-32 ">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {services.map((s, i) => (
             <div 
               key={i} 
-              className="group relative p-[1px] rounded-3xl transition-all duration-500 hover:scale-[1.01]"
+              className="group relative rounded-[3rem] transition-all duration-700 hover:-translate-y-2"
             >
-              {/* Animated Gradient Border (Visible on Hover) */}
-              <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${s.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-[2px]`} />
-              
               {/* Main Card Body */}
-              <div className="relative h-full bg-slate-950 rounded-[23px] p-10 lg:p-12 overflow-hidden">
+              <div className="relative h-full bg-slate-900 rounded-[3rem] p-12 lg:p-14 overflow-hidden shadow-2xl">
                 
-                {/* Background Glow */}
-                <div className={`absolute -top-24 -right-24 w-64 h-64 bg-gradient-to-br ${s.accent} opacity-10 blur-[80px] group-hover:opacity-20 transition-opacity duration-500`} />
+                {/* Boardroom Subtle Glow */}
+                <div className={`absolute -top-24 -right-24 w-80 h-80 bg-gradient-to-br ${s.accent} opacity-10 blur-[100px] group-hover:opacity-30 transition-opacity duration-700`} />
 
                 <div className="relative z-10 flex flex-col h-full">
                   {/* Top Bar */}
-                  <div className="flex justify-between items-center mb-12">
-                    <span className="text-[10px] font-black text-white/90 uppercase tracking-[0.3em] bg-white/10 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/10">
-                      {s.tag}
-                    </span>
-                    <span className="text-[11px] font-mono text-slate-500 tracking-widest">
-                      {s.metric}
-                    </span>
+                  <div className="flex justify-between items-start mb-16">
+                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10 text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-xl">
+                      {s.icon}
+                    </div>
+                    <div className="text-right">
+                      <span className="block text-[10px] font-black text-blue-400 uppercase tracking-[0.3em] mb-2">
+                        {s.tag}
+                      </span>
+                      <span className="text-[11px] font-black text-slate-500 tracking-[0.2em] uppercase">
+                        {s.metric}
+                      </span>
+                    </div>
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-3xl lg:text-4xl font-bold mb-6 tracking-tighter text-white">
+                  <h3 className="text-4xl lg:text-5xl font-black mb-8 tracking-tighter text-white leading-[0.9]">
                     {s.title}
                   </h3>
                   
-                  <p className="text-slate-400 mb-10 leading-relaxed text-lg max-w-sm">
+                  <p className="text-slate-400 mb-12 leading-relaxed text-lg max-w-sm font-medium">
                     {s.desc}
                   </p>
 
-                  {/* Features / Tech Stack */}
-                  <div className="mt-auto pt-8 border-t border-white/5 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {/* Strategic Outcomes (Formerly Features) */}
+                  <div className="mt-auto pt-10 border-t border-white/10 flex flex-wrap gap-x-8 gap-y-4">
                     {s.features.map(f => (
-                      <div key={f} className="flex flex-col gap-1">
-                        <div className="h-[2px] w-4 bg-slate-700 group-hover:w-8 group-hover:bg-blue-500 transition-all duration-500" />
-                        <span className="text-[9px] font-bold text-slate-500 uppercase tracking-tighter group-hover:text-slate-300">
+                      <div key={f} className="flex items-center gap-3">
+                        <div className="h-[1px] w-4 bg-blue-600" />
+                        <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest group-hover:text-white transition-colors">
                           {f}
                         </span>
                       </div>

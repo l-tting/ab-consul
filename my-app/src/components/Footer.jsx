@@ -37,7 +37,7 @@ function Footer() {
         </div>
 
         <nav className="mb-6 w-full">
-          <ul className="flex flex-wrap justify-center gap-x-16 gap-y-4 text-base font-medium">
+          <ul className="flex flex-wrap justify-center gap-x-16 gap-y-4 pt-8 text-base font-medium">
             {NAV_LINKS.map((link) => {
               const isActive = pathname === link.href;
               return (

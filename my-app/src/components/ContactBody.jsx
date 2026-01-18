@@ -39,7 +39,7 @@ export default function ContactBody() {
                 <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
                 <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">Currently Accepting Clients</p>
               </div>
-              <p className="text-slate-900 font-black text-2xl tracking-tighter italic font-serif">brian@abconsul.com</p>
+              <p className="text-slate-900 font-black text-2xl tracking-tighter italic font-serif">andrew@abconsul.com</p>
               <p className="text-slate-500 text-sm mt-3 font-medium">Direct line to engineering & growth partners.</p>
             </div>
           </div>

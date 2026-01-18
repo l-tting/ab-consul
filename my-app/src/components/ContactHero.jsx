@@ -31,7 +31,7 @@ export default function ContactHero() {
         <div className="flex flex-wrap justify-center gap-10 text-[11px] font-black text-slate-400 uppercase tracking-[0.2em]">
           <div className="flex items-center gap-3 group cursor-pointer hover:text-slate-900 transition-colors">
             <Mail className="w-4 h-4 text-blue-600" />
-            <span>brian@abconsul.com</span>
+            <span>andrew@abconsul.com</span>
           </div>
           <div className="flex items-center gap-3 group cursor-pointer hover:text-slate-900 transition-colors">
             <MessageSquare className="w-4 h-4 text-blue-600" />

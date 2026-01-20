@@ -4,6 +4,8 @@ import Process from "@/components/Process"
 import ResultsSection from "@/components/ProofOfVal"
 
 const HomePage = () => {
+
+   
     return (
         <div>
             <section className="ml-4 ">

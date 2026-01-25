@@ -30,11 +30,11 @@ export default function AboutHero() {
               {/* Vertical Accent Line */}
               <div className="absolute -left-6 top-0 bottom-0 w-[1px] bg-slate-400" />
               
-              <p className="text-slate-600 text-[17px] font-semibold leading-relaxed tracking-tight">
+              <p className="text-slate-600 text-[17px] font-bold leading-relaxed tracking-tight">
                 AB CONSUL is a high-conviction partner for founders moving from <span className="text-slate-900">product-market fit to global scale.</span>
               </p>
               
-              <p className="text-slate-400 text-sm leading-relaxed mt-6 font-medium">
+              <p className="text-slate-400 text-md leading-relaxed mt-6 font-medium">
                 We don't just solve tickets. We align your engineering velocity with your P&L, ensuring your tech stack behaves like a financial asset.
               </p>
             </div>

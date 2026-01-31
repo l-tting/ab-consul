@@ -23,7 +23,7 @@ export default function TeamSection() {
   ];
 
   return (
-    <section className="w-full py-24 flex justify-center ">
+    <section className="w-full py-20 flex justify-center ">
       <div className="w-[92%] max-w-6xl">
 
         {/* Header - Boardroom Alignment */}

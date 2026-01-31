@@ -43,7 +43,7 @@ export default function AboutHero() {
         </div>
         
         {/* Bottom Metric Bar */}
-        <div className="flex flex-wrap gap-x-16 gap-y-8 mt-24 pt-12 border-t border-slate-100">
+        <div className="flex flex-wrap gap-x-16 gap-y-8 mt-24 pt-8 border-t border-slate-100">
             <div>
                 <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Portfolio Value Managed</p>
                 <p className="text-2xl font-bold text-slate-900 tracking-tight">$250M+</p>

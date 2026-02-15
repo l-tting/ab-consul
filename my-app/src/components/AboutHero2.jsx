@@ -8,7 +8,7 @@ export default function AboutContrast() {
       <div className="w-[92%] max-w-7xl">
         {/* Section Label */}
         <div className="mb-12 flex flex-col items-center text-center">
-            <h2 className="text-[12px] font-black uppercase tracking-[0.5em] text-blue-600 mb-4 italic">
+            <h2 className="text-[15px] font-black uppercase tracking-[0.5em] text-blue-600 mb-4 italic">
                 Strategic Dissonance
             </h2>
             <p className="text-3xl font-black tracking-tighter text-slate-900 max-w-xl">

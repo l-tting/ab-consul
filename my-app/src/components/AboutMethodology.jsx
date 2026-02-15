@@ -31,7 +31,7 @@ export default function StrategicVelocity() {
           
           {/* Left: Advisory Context */}
           <div className="lg:sticky lg:top-40">
-            <h2 className="text-[16px] font-black uppercase tracking-[0.4em] text-blue-600 mb-6 italic">
+            <h2 className="text-[18px] font-black uppercase tracking-[0.4em] text-blue-600 mb-6 italic">
               Our Methodology
             </h2>
             <p className="text-5xl md:text-6xl font-black tracking-tighter text-slate-900 leading-[0.9] mb-8">
@@ -66,13 +66,13 @@ export default function StrategicVelocity() {
                 </div>
 
                 <div className="pt-2">
-                  <p className="text-[10px] font-black uppercase tracking-[0.3em] text-blue-600/60 mb-3">
+                  <p className="text-[12px] font-black uppercase tracking-[0.3em] text-blue-600/60 mb-3">
                     {shift.state}
                   </p>
                   <h3 className="text-3xl font-black text-slate-900 mb-5 tracking-tighter">
                     {shift.title}
                   </h3>
-                  <p className="text-slate-500 text-[16px] leading-relaxed max-w-lg font-medium">
+                  <p className="text-slate-500 text-[18px] leading-relaxed max-w-lg font-medium">
                     {shift.impact}
                   </p>
                 </div>

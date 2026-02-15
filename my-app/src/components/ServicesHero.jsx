@@ -7,7 +7,7 @@ export default function ServicesHero() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Label with established style */}
         <div className="flex items-center gap-4 mb-8">
-          <h2 className="text-[12px] font-black uppercase tracking-[0.5em] text-blue-600 italic">
+          <h2 className="text-[15px] font-black uppercase tracking-[0.5em] text-blue-600 italic">
             Strategic Capabilities
           </h2>
           <div className="h-[1px] flex-grow bg-slate-100" />
@@ -32,18 +32,18 @@ export default function ServicesHero() {
 
           {/* Sub-Context / Stats */}
           <div className="lg:col-span-5 lg:pl-12 border-l border-slate-100">
-            <p className="text-sm text-slate-400 leading-relaxed font-medium italic">
+            <p className="text-md text-slate-400 leading-relaxed font-medium italic">
               Specialized in high-load architecture and revenue-linked infrastructure for 
               Series B+ organizations and private equity portfolios.
             </p>
             <div className="mt-6 flex gap-8">
                 <div>
                     <p className="text-[10px] font-black uppercase tracking-widest text-blue-600 mb-1">Focus A</p>
-                    <p className="text-sm font-bold text-slate-900">Capital Efficiency</p>
+                    <p className="text-md font-bold text-slate-900">Capital Efficiency</p>
                 </div>
                 <div>
                     <p className="text-[10px] font-black uppercase tracking-widest text-blue-600 mb-1">Focus B</p>
-                    <p className="text-sm font-bold text-slate-900">Terminal Scalability</p>
+                    <p className="text-md font-bold text-slate-900">Terminal Scalability</p>
                 </div>
             </div>
           </div>

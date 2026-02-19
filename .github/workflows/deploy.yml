@@ -1,19 +1,14 @@
 name: Deploy Next.js App via Compose
 
 on:
-  workflow_dispatch:
   push:
-    branches: [main]        # triggers automatically on pushes to main
+    branches: [main]
   pull_request:
-    branches: [main]        # optional: triggers on PRs to main
+    branches: [main]
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    
-
-
-
 
     steps:
       # 1️⃣ Checkout code
@@ -24,23 +19,23 @@ jobs:
       - name: Log in to Docker Hub
         run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
 
-      # 3️⃣ Build & Push Docker image with tag ab-consul
+      # 3️⃣ Build & Push Docker image from my-app folder
       - name: Build and Push Docker image
         run: |
-          docker build -t letting/ab-consul:latest .
+          docker build -t letting/ab-consul:latest -f my-app/Dockerfile my-app
           docker push letting/ab-consul:latest
 
-      # 4️⃣ Setup SSH Agent
+      # 4️⃣ Setup SSH Agent for deployment
       - name: Set up SSH
         uses: webfactory/ssh-agent@v0.9.0
         with:
           ssh-private-key: ${{ secrets.SSH_DEPLOY_KEY }}
 
-      # # 5️⃣ Deploy via Docker Compose on server
-      # - name: Deploy via SSH and Compose
-      #   run: |
-      #     ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
-      #       cd ~/ab-consul &&
-      #       docker-compose pull &&
-      #       docker-compose up -d --force-recreate
-      #     "
+      # 5️⃣ Deploy via Docker Compose on the server
+      - name: Deploy via SSH and Compose
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
+            cd ~/ab-consul &&
+            docker-compose pull &&
+            docker-compose up -d --force-recreate
+          "

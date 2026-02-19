@@ -17,7 +17,7 @@ export default function AboutHero() {
               </span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-slate-900 leading-[0.95] lg:pr-10">
+            <h1 className="text-3xl md:text-7xl font-black tracking-tighter text-slate-900 leading-[0.95] lg:pr-10">
               Transforming <br />
               <span className="text-slate-300 italic font-serif">infrastructure</span> <br />
               into <span className="text-blue-600">equity value.</span>
@@ -30,7 +30,7 @@ export default function AboutHero() {
               {/* Vertical Accent Line */}
               <div className="absolute -left-6 top-0 bottom-0 w-[1px] bg-slate-400" />
               
-              <p className="text-slate-600 text-[15px] font-bold leading-relaxed tracking-tight">
+              <p className="text-slate-600 text-[12px] font-bold leading-relaxed tracking-tight">
                 AB CONSUL is a high-conviction partner for founders moving from <span className="text-slate-900">product-market fit to global scale.</span>
               </p>
               
@@ -46,15 +46,15 @@ export default function AboutHero() {
         <div className="flex flex-wrap gap-x-16 gap-y-8 mt-12 pt-4 border-t border-slate-100">
             <div>
                 <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Portfolio Value Managed</p>
-                <p className="text-2xl font-bold text-slate-900 tracking-tight">$250M+</p>
+                <p className="text-xl font-bold text-slate-900 tracking-tight">$250M+</p>
             </div>
             <div>
                 <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Efficiency Lift</p>
-                <p className="text-2xl font-bold text-slate-900 tracking-tight">40% Avg.</p>
+                <p className="text-xl font-bold text-slate-900 tracking-tight">40% Avg.</p>
             </div>
             <div>
                 <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Primary Objective</p>
-                <p className="text-2xl font-bold text-blue-600 tracking-tight">Revenue Velocity</p>
+                <p className="text-xl font-bold text-blue-600 tracking-tight">Revenue Velocity</p>
             </div>
         </div>
       </div>

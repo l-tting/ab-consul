@@ -1,8 +1,8 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Remove top-level instantiation
+// const resend = new Resend(process.env.RESEND_API_KEY);
 
-//async func 
 export async function POST(request) {
   if (!process.env.RESEND_API_KEY) {
     return Response.json(
@@ -10,6 +10,8 @@ export async function POST(request) {
       { status: 500 },
     );
   }
+
+  const resend = new Resend(process.env.RESEND_API_KEY); // ✅ runtime
 
   try {
     const body = await request.json();
@@ -23,10 +25,8 @@ export async function POST(request) {
     }
 
     const { data, error } = await resend.emails.send({
-      // Use this exact address for testing
       from: "onboarding@resend.dev",
-      // This MUST be the email you used to sign up for Resend
-      to: "brianletting01@gmail.com",
+      to: "brianletting01@gmail.com", // or use `to`
       subject: subject,
       html: html,
     });

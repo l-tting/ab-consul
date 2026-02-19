@@ -1,6 +1,7 @@
 name: Deploy Next.js App via Compose
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]        # triggers automatically on pushes to main
   pull_request:

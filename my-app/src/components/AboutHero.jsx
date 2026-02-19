@@ -5,14 +5,14 @@ import React from "react";
 export default function AboutHero() {
   return (
     <section className="w-full pt-20 pb-20 flex justify-center ">
-      <div className="w-[92%] max-w-7xl">
+      <div className="w-[70%] max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
           
           {/* Main Title - Spans 8 columns */}
           <div className="lg:col-span-8">
             <div className="flex items-center gap-3 mb-8">
               <div className="w-8 h-[1px] bg-blue-600" />
-              <span className="text-[22px] italic font-black uppercase tracking-[0.3em] text-blue-600">
+              <span className="text-[17px] italic font-black uppercase tracking-[0.3em] text-blue-600">
                 EST. 2025
               </span>
             </div>
@@ -30,7 +30,7 @@ export default function AboutHero() {
               {/* Vertical Accent Line */}
               <div className="absolute -left-6 top-0 bottom-0 w-[1px] bg-slate-400" />
               
-              <p className="text-slate-600 text-[19px] font-bold leading-relaxed tracking-tight">
+              <p className="text-slate-600 text-[15px] font-bold leading-relaxed tracking-tight">
                 AB CONSUL is a high-conviction partner for founders moving from <span className="text-slate-900">product-market fit to global scale.</span>
               </p>
               

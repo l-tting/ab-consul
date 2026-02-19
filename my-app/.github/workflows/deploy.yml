@@ -35,11 +35,11 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_DEPLOY_KEY }}
 
-      # 5️⃣ Deploy via Docker Compose on server
-      - name: Deploy via SSH and Compose
-        run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
-            cd ~/ab-consul &&
-            docker-compose pull &&
-            docker-compose up -d --force-recreate
-          "
+      # # 5️⃣ Deploy via Docker Compose on server
+      # - name: Deploy via SSH and Compose
+      #   run: |
+      #     ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
+      #       cd ~/ab-consul &&
+      #       docker-compose pull &&
+      #       docker-compose up -d --force-recreate
+      #     "

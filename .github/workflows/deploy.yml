@@ -19,6 +19,7 @@ jobs:
       - name: Log in to Docker Hub
         run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
 
+        #just for fun
       # 3️⃣ Build & Push Docker image from my-app folder
       - name: Build and Push Docker image
         run: |

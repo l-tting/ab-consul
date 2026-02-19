@@ -49,7 +49,7 @@ export default function Navbar() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className={`relative text-md font-semibold transition-colors pb-1 ${
+                  className={`relative text-sm font-semibold transition-colors pb-1 ${
                     isActive 
                       ? "text-gray-900 dark:text-white" 
                       : "text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
@@ -68,7 +68,7 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <Link
               href="/contact"
-              className="hidden sm:inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-4 text-md font-medium text-white hover:bg-gray-800 dark:bg-white dark:text-gray-900"
+              className="hidden sm:inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-4 text-sm font-medium text-white hover:bg-gray-800 dark:bg-white dark:text-gray-900"
             >
               Get Started
             </Link>

@@ -1,7 +1,7 @@
 
 import AboutHero from "@/components/AboutHero"
-import AboutContrast from "@/components/AboutHero2"
 import TeamSection from "@/components/Team"
+import AboutContrast from "@/components/AboutHero2"
 import StrategicVelocity from "@/components/AboutMethodology"
 import AboutClosing from "@/components/AboutClosing"
 

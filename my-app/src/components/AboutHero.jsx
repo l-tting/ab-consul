@@ -17,7 +17,7 @@ export default function AboutHero() {
               </span>
             </div>
             
-            <h1 className="text-xl md:text-7xl font-black tracking-tighter text-slate-900 leading-[0.95] lg:pr-10">
+            <h1 className="text-xl md:text-5xl font-black tracking-tighter text-slate-900 leading-[0.95] lg:pr-10">
               Transforming <br />
               <span className="text-slate-300 italic font-serif">infrastructure</span> <br />
               into <span className="text-blue-600">equity value.</span>

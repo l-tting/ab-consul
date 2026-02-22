@@ -16,7 +16,7 @@ export default function AboutContrast() {
             </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid grid-cols-4 lg:grid-cols-2 gap-8 lg:gap-12">
           
           {/* The Status Quo */}
           <div className="p-12 rounded-[3.5rem] bg-white border border-slate-200 shadow-sm relative group hover:border-slate-300 transition-colors">

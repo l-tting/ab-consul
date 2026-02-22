@@ -63,7 +63,7 @@ export const BentoCard = ({ name, className, Icon, description, href, cta, theme
 const features = [
   {
     Icon: BarChart3,
-    name: "Revenue Optimization",
+    name: "Revenue ",
     description: "Systemic audit of your pricing, churn, and LTV to unlock immediate cash flow.",
     href: "#",
     cta: "Strategic Audit",

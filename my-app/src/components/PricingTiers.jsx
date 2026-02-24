@@ -63,7 +63,7 @@ export default function PricingCalculator() {
                   <label className="text-sm font-bold uppercase tracking-widest text-slate-400 font-mono">Team Size</label>
                   <select 
                     onChange={(e) => setCompanySize(e.target.value)}
-                    className="w-full h-14 px-4 rounded-2xl border border-slate-200 bg-slate-50/50 focus:ring-2 focus:ring-blue-500/20 outline-none font-medium transition-all"
+                    className="w-full h-12 px-4 rounded-2xl border border-slate-200 bg-slate-50/50 focus:ring-2 focus:ring-blue-500/20 outline-none font-medium transition-all"
                   >
                     <option value="1-10">1-10 Employees</option>
                     <option value="11-50">11-50 Employees</option>
@@ -76,7 +76,7 @@ export default function PricingCalculator() {
                   <label className="text-sm font-bold uppercase tracking-widest text-slate-400 font-mono">Funding Stage</label>
                   <button 
                     onClick={() => setIsSeeded(!isSeeded)}
-                    className={`w-full h-14 px-6 rounded-2xl border transition-all flex items-center justify-between ${
+                    className={`w-full h-12 px-6 rounded-2xl border transition-all flex items-center justify-between ${
                       isSeeded ? "border-blue-600 bg-blue-50/50 text-blue-700" : "border-slate-200 bg-slate-50/50 text-slate-600"
                     }`}
                   >
@@ -100,7 +100,7 @@ export default function PricingCalculator() {
               <p className="text-blue-400 text-xs font-bold uppercase tracking-[0.3em] mb-4">Estimated Monthly Investment</p>
               
               <div className="flex items-baseline justify-center lg:justify-start gap-2 mb-8">
-                <span className="text-6xl md:text-7xl font-bold text-white tracking-tighter">
+                <span className="text-5xl md:text-5xl font-bold text-white tracking-tighter">
                   ${Math.floor(estimate / 100) * 100}
                 </span>
                 <span className="text-slate-500 text-xl font-medium">/mo</span>
@@ -117,7 +117,7 @@ export default function PricingCalculator() {
                 </div>
               </div>
 
-              <button className="w-full py-6 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold text-lg flex items-center justify-center gap-3 group transition-all shadow-xl shadow-blue-900/20">
+              <button className="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold text-lg flex items-center justify-center gap-3 group transition-all shadow-xl shadow-blue-900/20">
                 Confirm Engagement
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
               </button>

@@ -38,7 +38,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <img
-              src="/logo.png"
+              src="/ab.png"
               alt="AB Consul Logo"
               className="h-8 w-auto"
             />

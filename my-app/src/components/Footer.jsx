@@ -56,7 +56,7 @@ function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-semibold mb-6">Explore</h4>
+            <h4 className="text-white font-semibold mb-6">Explore Our World</h4>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-8 text-sm">
               {NAV_LINKS.map((link) => {
                 const isActive = pathname === link.href;

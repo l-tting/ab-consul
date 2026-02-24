@@ -4,7 +4,7 @@ import { Mail, MessageSquare, Clock } from "lucide-react";
 
 export default function ContactHero() {
   return (
-    <section className="relative w-full py-20 md:py-24 flex justify-center overflow-hidden bg-stone-100">
+    <section className="relative w-full py-18 md:py-24 flex justify-center overflow-hidden bg-stone-100">
       {/* Background Decorative Grid - Standard Sera UI pattern adjusted for Stone bg */}
       <div className="absolute inset-0 z-0 opacity-[0.05] [mask-image:radial-gradient(ellipse_at_center,black,transparent)]">
         <div className="absolute inset-0" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M60 60H0V0h60v60zM1 1v58h58V1H1z\' fill=\'%23000\' fill-rule=\'evenodd\'/%3E%3C/svg%3E")' }} />
@@ -18,7 +18,7 @@ export default function ContactHero() {
         </div>
 
         {/* Main Title - Boardroom Black */}
-        <h1 className="text-6xl md:text-8xl font-black tracking-tighter text-slate-900 leading-[0.9] mb-8">
+        <h1 className="text-5xl md:text-5xl font-black tracking-tighter text-slate-900 leading-[0.9] mb-8">
           Initiate <br className="md:hidden" />
           <span className="text-blue-600">Partnership.</span>
         </h1>

@@ -18,7 +18,7 @@ export default function ContactTrust() {
 
   return (
     <section className="w-full py-8 pb-24 flex justify-center bg-slate-50/50 border-t border-slate-100">
-      <div className="w-[92%] max-w-5xl">
+      <div className="w-[92%] max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
           
           {/* FAQ Column */}

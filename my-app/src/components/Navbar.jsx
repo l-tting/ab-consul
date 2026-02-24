@@ -43,7 +43,7 @@ export default function Navbar() {
               className="h-8 w-auto"
             />
             <span className="text-lg font-extrabold tracking-tighter">
-              AB CONSUL
+              CONSUL
             </span>
           </Link>
 

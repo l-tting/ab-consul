@@ -104,11 +104,11 @@ export default function ContactBody() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-3">
                     <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Principal Name</label>
-                    <input name="name" required placeholder="E.g. Alexander Hamilton" className="w-full h-16 px-5 rounded-2xl border-2 border-black focus:outline-none focus:ring-4 focus:ring-blue-600/10 focus:border-blue-500 font-bold text-slate-900" />
+                    <input name="name" required placeholder="E.g. Alexander Hamilton" className="w-full h-12 px-5 rounded-2xl border-2 border-black focus:outline-none focus:ring-4 focus:ring-blue-600/10 focus:border-blue-500 font-bold text-slate-900" />
                   </div>
                   <div className="space-y-3">
                     <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Corporate Email</label>
-                    <input name="email" type="email" required placeholder="ceo@company.com" className="w-full h-16 px-5 rounded-2xl border-2 border-black focus:outline-none focus:ring-4 focus:ring-blue-600/10 focus:border-blue-500 font-bold text-slate-900" />
+                    <input name="email" type="email" required placeholder="ceo@company.com" className="w-full h-12 px-5 rounded-2xl border-2 border-black focus:outline-none focus:ring-4 focus:ring-blue-600/10 focus:border-blue-500 font-bold text-slate-900" />
                   </div>
                 </div>
 
@@ -122,7 +122,7 @@ export default function ContactBody() {
                   type="submit"
                   className="w-full h-20 bg-slate-900 hover:bg-slate-800 text-white text-lg font-bold rounded-[2rem] transition-all duration-500 flex items-center justify-center gap-4 group disabled:opacity-50"
                 >
-                  {isPending ? <Loader2 className="w-6 h-6 animate-spin" /> : <span>Initiate Consultation</span>}
+                  {isPending ? <Loader2 className="w-6 h-4 animate-spin" /> : <span>Initiate Consultation</span>}
                 </button>
               </form>
             )}

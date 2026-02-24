@@ -41,30 +41,30 @@ function Footer() {
     <footer className="bg-gray-950 text-gray-300">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
         {/* Top Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-24">
 
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-0 mb-4">
+            <div className="inline-flex items-center gap-3 bg-white px-4 py-2 rounded-md mb-6">
               <img
                 src="/ab.png"
                 alt="AB Consul Logo"
                 className="h-8 w-auto"
               />
-              <span className="text-xl font-bold text-white tracking-wide">
+              <span className="text-lg font-bold text-black tracking-wide">
                 CONSUL
               </span>
             </div>
+
             <p className="text-sm leading-relaxed text-gray-400 max-w-sm">
               Strategic consulting and technology solutions that help businesses
               scale efficiently and sustainably.
             </p>
           </div>
 
-          {/* Navigation */}
+          {/* Quick Links */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Quick Links</h4>
-
+            <h4 className="text-white font-semibold mb-6">Quick Links</h4>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-8 text-sm">
               {NAV_LINKS.map((link) => {
                 const isActive = pathname === link.href;
@@ -79,10 +79,9 @@ function Footer() {
                         }`}
                     >
                       {link.label}
-
                       <span
                         className={`absolute left-0 bottom-0 h-[2px] bg-white transition-all duration-300 ${isActive ? "w-full" : "w-0"
-                          } group-hover:w-full`}
+                          }`}
                       />
                     </Link>
                   </li>
@@ -91,9 +90,9 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Contact / Social */}
+          {/* Connect */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Connect With Us</h4>
+            <h4 className="text-white font-semibold mb-6">Connect With Us</h4>
 
             <div className="flex gap-4 mb-6">
               {socialIcons.map((icon) => (
@@ -113,6 +112,7 @@ function Footer() {
               Email: contact@ab-consul.com
             </p>
           </div>
+
         </div>
 
         {/* Divider */}

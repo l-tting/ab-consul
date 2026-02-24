@@ -42,17 +42,17 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
         {/* Top Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          
+
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-0 mb-4">
               <img
                 src="/ab.png"
                 alt="AB Consul Logo"
                 className="h-8 w-auto"
               />
               <span className="text-xl font-bold text-white tracking-wide">
-                AB CONSUL
+                CONSUL
               </span>
             </div>
             <p className="text-sm leading-relaxed text-gray-400 max-w-sm">
@@ -64,18 +64,19 @@ function Footer() {
           {/* Navigation */}
           <div>
             <h4 className="text-white font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-3 text-sm">
+
+            <ul className="grid grid-cols-2 gap-y-3 gap-x-8 text-sm">
               {NAV_LINKS.map((link) => {
                 const isActive = pathname === link.href;
+
                 return (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className={`transition-colors duration-200 ${
-                        isActive
+                      className={`transition-colors duration-200 ${isActive
                           ? "text-white"
                           : "text-gray-400 hover:text-white"
-                      }`}
+                        }`}
                     >
                       {link.label}
                     </Link>

@@ -13,11 +13,7 @@ function Footer() {
       name: "X",
       href: "https://x.com/yourhandle",
       svg: (
-        <svg
-          className="h-5 w-5"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-        >
+        <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
           <path d="M10.488 14.651L15.25 21h7l-7.858-10.478L20.93 3h-2.65l-5.117 5.886L8.75 3h-7l7.51 10.015L2.32 21h2.65zM16.25 19L5.75 5h2l10.5 14z"></path>
         </svg>
       ),
@@ -26,11 +22,7 @@ function Footer() {
       name: "LinkedIn",
       href: "https://linkedin.com/company/yourcompany",
       svg: (
-        <svg
-          className="h-5 w-5"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-        >
+        <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
           <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"></path>
         </svg>
       ),
@@ -41,12 +33,12 @@ function Footer() {
     <footer className="bg-gray-950 text-gray-300">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
         
-        {/* Top Section: Brand / Links / Connect */}
+        {/* Top Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-24">
 
           {/* Brand */}
           <div>
-            <div className="inline-flex items-center gap-3 bg-white px-4 py-2 rounded-md mb-6">
+            <div className="inline-flex items-center gap-0 bg-white px-4 py-2 rounded-md mb-6">
               <img
                 src="/ab.png"
                 alt="AB Consul Logo"
@@ -109,21 +101,15 @@ function Footer() {
               ))}
             </div>
 
-            {/* Email with icon */}
+            {/* Email with proper mail icon */}
             <div className="flex items-center gap-2 text-sm">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-4 w-4 text-gray-400"
-                fill="none"
+                fill="currentColor"
                 viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8m0 0v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8m18 0L12 13 3 8"
-                />
+                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
               </svg>
               <a
                 href="mailto:contact@ab-consul.com"

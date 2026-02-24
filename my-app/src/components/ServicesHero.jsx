@@ -16,14 +16,14 @@ export default function ServicesHero() {
         {/* Hero Headline */}
         <h1 className="text-3xl md:text-5xl font-black tracking-tighter text-slate-900 leading-[0.9] max-w-5xl">
           Engineering 
-          <span className="text-slate-300 italic font-serif">operational leverage</span> <br />
+          <span className="text-slate-300 italic font-serif">  operational leverage</span> <br />
           at scale.
         </h1>
 
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           {/* Main Description */}
           <div className="lg:col-span-7">
-            <p className="text-xl md:text-lg text-slate-600 font-medium leading-relaxed tracking-tight">
+            <p className="text-xl md:text-md text-slate-600 font-medium leading-relaxed tracking-tight">
               We eliminate the technical friction that devalues high-growth companies. 
               Our services are designed to transform your engineering spend from a 
               burn-rate line item into a <span className="text-slate-900 underline decoration-blue-600 underline-offset-4">strategic equity driver.</span>

@@ -45,7 +45,7 @@ const services = [
 export default function ServiceGrid() {
   return (
     <section className="py-32 ">
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {services.map((s, i) => (
             <div 
@@ -75,11 +75,11 @@ export default function ServiceGrid() {
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-2xl lg:text-5xl font-black mb-8 tracking-tighter text-white leading-[0.9]">
+                  <h3 className="text-xl lg:text-5xl font-black mb-8 tracking-tighter text-white leading-[0.9]">
                     {s.title}
                   </h3>
                   
-                  <p className="text-slate-400 mb-12 leading-relaxed text-lg max-w-sm font-medium">
+                  <p className="text-slate-400 mb-12 leading-relaxed text-md max-w-sm font-medium">
                     {s.desc}
                   </p>
 

@@ -45,7 +45,7 @@ function Footer() {
 
           {/* Brand */}
           <div>
-            <div className="inline-flex items-center gap-3 bg-white px-4 py-2 rounded-md mb-6">
+            <div className="inline-flex items-center gap-0 bg-white px-4 py-2 rounded-md mb-6">
               <img
                 src="/ab.png"
                 alt="AB Consul Logo"

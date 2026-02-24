@@ -17,7 +17,7 @@ export default function PricingCalculator() {
   }, [revenue, isSeeded, companySize]);
 
   return (
-    <section className="w-full py-20 px-20 flex justify-center">
+    <section className="w-full py-20 px-28 flex justify-center">
       {/* Increased max-w to 7xl for a wider, more cinematic card */}
       <div className="w-[92%] max-w-7xl">
         
@@ -30,7 +30,7 @@ export default function PricingCalculator() {
                 <Zap className="w-5 h-5 fill-current" />
                 <span className="text-xs font-bold uppercase tracking-[0.2em]">Dynamic Valuation</span>
               </div>
-              <h3 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Tailor your partnership.</h3>
+              <h3 className="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">Tailor your partnership.</h3>
               <p className="text-slate-500 mt-4 leading-relaxed">
                 Our pricing scales with your complexity. Input your current metrics to generate a real-time investment estimate.
               </p>
@@ -41,7 +41,7 @@ export default function PricingCalculator() {
               <div className="space-y-5">
                 <div className="flex justify-between items-end">
                   <label className="text-[10px] font-bold uppercase tracking-widest text-slate-400 font-mono">Annual Revenue</label>
-                  <span className="text-2xl font-bold text-slate-900">
+                  <span className="text-xl font-bold text-slate-900">
                     ${(revenue / 1000).toLocaleString()}k
                   </span>
                 </div>
@@ -60,7 +60,7 @@ export default function PricingCalculator() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Team Size */}
                 <div className="space-y-3">
-                  <label className="text-sm font-bold uppercase tracking-widest text-slate-400 font-mono">Team Size</label>
+                  <label className="text-[14px] font-bold uppercase tracking-widest text-slate-400 font-mono">Team Size</label>
                   <select 
                     onChange={(e) => setCompanySize(e.target.value)}
                     className="w-full h-10 px-4 rounded-2xl border border-slate-200 bg-slate-50/50 focus:ring-2 focus:ring-blue-500/20 outline-none font-medium transition-all"
@@ -73,7 +73,7 @@ export default function PricingCalculator() {
 
                 {/* Funding Status */}
                 <div className="space-y-3">
-                  <label className="text-sm font-bold uppercase tracking-widest text-slate-400 font-mono">Funding Stage</label>
+                  <label className="text-[14px] font-bold uppercase tracking-widest text-slate-400 font-mono">Funding Stage</label>
                   <button 
                     onClick={() => setIsSeeded(!isSeeded)}
                     className={`w-full h-10 px-6 rounded-2xl border transition-all flex items-center justify-between ${
@@ -97,7 +97,7 @@ export default function PricingCalculator() {
 
             <div className="relative z-10 text-center lg:text-left">
               <Calculator className="w-12 h-12 text-blue-500 mb-8 mx-auto lg:mx-0" />
-              <p className="text-blue-400 text-xs font-bold uppercase tracking-[0.3em] mb-4">Estimated Monthly Investment</p>
+              <p className="text-blue-400 text-[16px] font-bold uppercase tracking-[0.3em] mb-4">Estimated Monthly Investment</p>
               
               <div className="flex items-baseline justify-center lg:justify-start gap-2 mb-8">
                 <span className="text-5xl md:text-5xl font-bold text-white tracking-tighter">
@@ -117,7 +117,7 @@ export default function PricingCalculator() {
                 </div>
               </div>
 
-              <button className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold text-lg flex items-center justify-center gap-2 group transition-all shadow-xl shadow-blue-900/20">
+              <button className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold text-md flex items-center justify-center gap-2 group transition-all shadow-xl shadow-blue-900/20">
                 Confirm Engagement
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
               </button>

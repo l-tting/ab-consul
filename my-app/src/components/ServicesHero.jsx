@@ -14,7 +14,7 @@ export default function ServicesHero() {
         </div>
 
         {/* Hero Headline */}
-        <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-slate-900 leading-[0.9] max-w-5xl">
+        <h1 className="text-3xl md:text-8xl font-black tracking-tighter text-slate-900 leading-[0.9] max-w-5xl">
           Engineering <br />
           <span className="text-slate-300 italic font-serif">operational leverage</span> <br />
           at scale.

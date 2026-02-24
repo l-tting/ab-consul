@@ -40,12 +40,13 @@ function Footer() {
   return (
     <footer className="bg-gray-950 text-gray-300">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        {/* Top Section */}
+        
+        {/* Top Section: Brand / Links / Connect */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-24">
 
           {/* Brand */}
           <div>
-            <div className="inline-flex items-center gap-0 bg-white px-4 py-2 rounded-md mb-6">
+            <div className="inline-flex items-center gap-3 bg-white px-4 py-2 rounded-md mb-6">
               <img
                 src="/ab.png"
                 alt="AB Consul Logo"
@@ -55,7 +56,6 @@ function Footer() {
                 CONSUL
               </span>
             </div>
-
             <p className="text-sm leading-relaxed text-gray-400 max-w-sm">
               Strategic consulting and technology solutions that help businesses
               scale efficiently and sustainably.
@@ -68,20 +68,21 @@ function Footer() {
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-8 text-sm">
               {NAV_LINKS.map((link) => {
                 const isActive = pathname === link.href;
-
                 return (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className={`relative inline-block pb-1 transition-colors duration-300 ${isActive
+                      className={`group relative inline-block pb-1 transition-colors duration-300 ${
+                        isActive
                           ? "text-white"
                           : "text-gray-400 hover:text-white"
-                        }`}
+                      }`}
                     >
                       {link.label}
                       <span
-                        className={`absolute left-0 bottom-0 h-[2px] bg-white transition-all duration-300 ${isActive ? "w-full" : "w-0"
-                          }`}
+                        className={`absolute left-0 bottom-0 h-[2px] bg-white transition-all duration-300 ${
+                          isActive ? "w-full" : "w-0 group-hover:w-full"
+                        }`}
                       />
                     </Link>
                   </li>
@@ -93,7 +94,7 @@ function Footer() {
           {/* Connect */}
           <div>
             <h4 className="text-white font-semibold mb-6">Connect With Us</h4>
-
+            
             <div className="flex gap-4 mb-6">
               {socialIcons.map((icon) => (
                 <a
@@ -108,9 +109,29 @@ function Footer() {
               ))}
             </div>
 
-            <p className="text-sm text-gray-400">
-              Email: contact@ab-consul.com
-            </p>
+            {/* Email with icon */}
+            <div className="flex items-center gap-2 text-sm">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4 text-gray-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8m0 0v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8m18 0L12 13 3 8"
+                />
+              </svg>
+              <a
+                href="mailto:contact@ab-consul.com"
+                className="text-white font-medium hover:underline"
+              >
+                contact@ab-consul.com
+              </a>
+            </div>
           </div>
 
         </div>
@@ -119,6 +140,7 @@ function Footer() {
         <div className="border-t border-gray-800 mt-12 pt-6 text-center text-sm text-gray-500">
           © {new Date().getFullYear()} AB CONSUL. All rights reserved.
         </div>
+
       </div>
     </footer>
   );

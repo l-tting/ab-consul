@@ -59,7 +59,7 @@ export default function ContactBody() {
 
   return (
     <section className="w-full py-24 flex justify-center bg-stone-100">
-      <div className="w-[92%] max-w-5xl">
+      <div className="w-[92%] max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
           {/* Left Side (Content from previous steps) */}

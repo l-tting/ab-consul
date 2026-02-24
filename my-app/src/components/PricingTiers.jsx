@@ -17,7 +17,7 @@ export default function PricingCalculator() {
   }, [revenue, isSeeded, companySize]);
 
   return (
-    <section className="w-full py-20 px-8 flex justify-center">
+    <section className="w-full py-20 px-20 flex justify-center">
       {/* Increased max-w to 7xl for a wider, more cinematic card */}
       <div className="w-[92%] max-w-7xl">
         
@@ -40,7 +40,7 @@ export default function PricingCalculator() {
               {/* Revenue Slider */}
               <div className="space-y-5">
                 <div className="flex justify-between items-end">
-                  <label className="text-sm font-bold uppercase tracking-widest text-slate-400 font-mono">Annual Revenue</label>
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-slate-400 font-mono">Annual Revenue</label>
                   <span className="text-2xl font-bold text-slate-900">
                     ${(revenue / 1000).toLocaleString()}k
                   </span>
@@ -51,7 +51,7 @@ export default function PricingCalculator() {
                   onChange={(e) => setRevenue(Number(e.target.value))}
                   className="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-blue-600"
                 />
-                <div className="flex justify-between text-[10px] text-slate-400 font-bold uppercase">
+                <div className="flex justify-between text-[12px] text-slate-400 font-bold uppercase">
                   <span>$50k</span>
                   <span>$5M+</span>
                 </div>
@@ -63,7 +63,7 @@ export default function PricingCalculator() {
                   <label className="text-sm font-bold uppercase tracking-widest text-slate-400 font-mono">Team Size</label>
                   <select 
                     onChange={(e) => setCompanySize(e.target.value)}
-                    className="w-full h-12 px-4 rounded-2xl border border-slate-200 bg-slate-50/50 focus:ring-2 focus:ring-blue-500/20 outline-none font-medium transition-all"
+                    className="w-full h-10 px-4 rounded-2xl border border-slate-200 bg-slate-50/50 focus:ring-2 focus:ring-blue-500/20 outline-none font-medium transition-all"
                   >
                     <option value="1-10">1-10 Employees</option>
                     <option value="11-50">11-50 Employees</option>
@@ -76,7 +76,7 @@ export default function PricingCalculator() {
                   <label className="text-sm font-bold uppercase tracking-widest text-slate-400 font-mono">Funding Stage</label>
                   <button 
                     onClick={() => setIsSeeded(!isSeeded)}
-                    className={`w-full h-12 px-6 rounded-2xl border transition-all flex items-center justify-between ${
+                    className={`w-full h-10 px-6 rounded-2xl border transition-all flex items-center justify-between ${
                       isSeeded ? "border-blue-600 bg-blue-50/50 text-blue-700" : "border-slate-200 bg-slate-50/50 text-slate-600"
                     }`}
                   >
@@ -117,7 +117,7 @@ export default function PricingCalculator() {
                 </div>
               </div>
 
-              <button className="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold text-lg flex items-center justify-center gap-3 group transition-all shadow-xl shadow-blue-900/20">
+              <button className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold text-lg flex items-center justify-center gap-2 group transition-all shadow-xl shadow-blue-900/20">
                 Confirm Engagement
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
               </button>

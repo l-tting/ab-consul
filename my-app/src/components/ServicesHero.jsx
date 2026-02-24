@@ -3,7 +3,7 @@ import React from "react";
 
 export default function ServicesHero() {
   return (
-    <section className="pt-24 pb-20 ">
+    <section className="pt-24 pb-10 ">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Label with established style */}
         <div className="flex items-center gap-4 mb-8">
@@ -14,7 +14,7 @@ export default function ServicesHero() {
         </div>
 
         {/* Hero Headline */}
-        <h1 className="text-3xl md:text-8xl font-black tracking-tighter text-slate-900 leading-[0.9] max-w-5xl">
+        <h1 className="text-3xl md:text-5xl font-black tracking-tighter text-slate-900 leading-[0.9] max-w-5xl">
           Engineering <br />
           <span className="text-slate-300 italic font-serif">operational leverage</span> <br />
           at scale.
@@ -23,7 +23,7 @@ export default function ServicesHero() {
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           {/* Main Description */}
           <div className="lg:col-span-7">
-            <p className="text-xl md:text-2xl text-slate-600 font-medium leading-relaxed tracking-tight">
+            <p className="text-xl md:text-xl text-slate-600 font-medium leading-relaxed tracking-tight">
               We eliminate the technical friction that devalues high-growth companies. 
               Our services are designed to transform your engineering spend from a 
               burn-rate line item into a <span className="text-slate-900 underline decoration-blue-600 underline-offset-4">strategic equity driver.</span>

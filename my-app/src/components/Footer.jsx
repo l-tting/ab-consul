@@ -35,7 +35,7 @@ function Footer() {
               alt="AB Consul Logo"
               className="h-8 w-auto"
             />
-          <span className="text-gray-900 dark:text-white text-2xl font-extrabold tracking-wide ">
+          <span className="text-gray-900 dark:text-white text-lg font-extrabold tracking-wide ">
             CONSUL
           </span>
         </div>

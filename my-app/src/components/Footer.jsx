@@ -65,7 +65,7 @@ function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Quick Links</h4>
 
-            <ul className="grid grid-cols-2 gap-y-3 gap-x-8 text-sm">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-8 text-sm">
               {NAV_LINKS.map((link) => {
                 const isActive = pathname === link.href;
 
@@ -73,12 +73,17 @@ function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className={`transition-colors duration-200 ${isActive
+                      className={`relative inline-block pb-1 transition-colors duration-300 ${isActive
                           ? "text-white"
                           : "text-gray-400 hover:text-white"
                         }`}
                     >
                       {link.label}
+
+                      <span
+                        className={`absolute left-0 bottom-0 h-[2px] bg-white transition-all duration-300 ${isActive ? "w-full" : "w-0"
+                          } group-hover:w-full`}
+                      />
                     </Link>
                   </li>
                 );

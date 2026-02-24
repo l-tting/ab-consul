@@ -37,8 +37,14 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <MountainIcon className="h-6 w-6" />
-            <span className="text-lg font-extrabold tracking-tighter">AB CONSUL</span>
+            <img
+              src="/logo.png"
+              alt="AB Consul Logo"
+              className="h-8 w-auto"
+            />
+            <span className="text-lg font-extrabold tracking-tighter">
+              AB CONSUL
+            </span>
           </Link>
 
           {/* Desktop Nav - Reusing NAV_LINKS */}
@@ -49,11 +55,10 @@ export default function Navbar() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className={`relative text-sm font-semibold transition-colors pb-1 ${
-                    isActive 
-                      ? "text-gray-900 dark:text-white" 
+                  className={`relative text-sm font-semibold transition-colors pb-1 ${isActive
+                      ? "text-gray-900 dark:text-white"
                       : "text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
-                  }`}
+                    }`}
                 >
                   {link.label}
                   {isActive && (
@@ -94,11 +99,10 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`block rounded-md px-3 py-2 text-base font-medium ${
-                    isActive 
-                      ? "bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-white" 
+                  className={`block rounded-md px-3 py-2 text-base font-medium ${isActive
+                      ? "bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-white"
                       : "text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
-                  }`}
+                    }`}
                 >
                   {link.label}
                 </Link>

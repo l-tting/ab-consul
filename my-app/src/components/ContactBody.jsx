@@ -98,7 +98,7 @@ export default function ContactBody() {
                 <p className="text-slate-500 font-medium max-w-xs">Our principals have been notified. Expect a strategic response within 24 hours.</p>
               </div>
             ) : (
-              <form className="space-y-8" onSubmit={handleSubmit}>
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 {error && <p className="text-red-500 font-bold text-xs uppercase tracking-widest">{error}</p>}
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -120,7 +120,7 @@ export default function ContactBody() {
                 <button 
                   disabled={isPending}
                   type="submit"
-                  className="w-full h-20 bg-slate-900 hover:bg-slate-800 text-white text-lg font-bold rounded-[2rem] transition-all duration-500 flex items-center justify-center gap-4 group disabled:opacity-50"
+                  className="w-full h-16 bg-slate-900 hover:bg-slate-800 text-white text-lg font-bold rounded-[2rem] transition-all duration-500 flex items-center justify-center gap-4 group disabled:opacity-50"
                 >
                   {isPending ? <Loader2 className="w-6 h-4 animate-spin" /> : <span>Initiate Consultation</span>}
                 </button>

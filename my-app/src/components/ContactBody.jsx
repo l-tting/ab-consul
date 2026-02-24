@@ -59,11 +59,11 @@ export default function ContactBody() {
 
   return (
     <section className="w-full py-24 flex justify-center bg-stone-100">
-      <div className="w-[92%] max-w-7xl">
+      <div className="w-[92%] max-w-5xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
           {/* Left Side (Content from previous steps) */}
-          <div className="space-y-12">
+          <div className="space-y-8">
             <div>
               <h2 className="text-[12px] font-black uppercase tracking-[0.4em] text-blue-600 mb-6 italic">Protocol</h2>
               <h3 className="text-4xl font-black text-slate-900 mb-10 tracking-tighter leading-none">The Advisory <span className="text-stone-400 italic font-serif">Onboarding.</span></h3>
@@ -78,7 +78,7 @@ export default function ContactBody() {
                       <CheckCircle2 className="w-5 h-5 text-blue-600" />
                     </div>
                     <div>
-                      <p className="font-black text-slate-900 text-xl tracking-tight leading-none mb-2">{item.title}</p>
+                      <p className="font-black text-slate-900 text-lg tracking-tight leading-none mb-2">{item.title}</p>
                       <p className="text-slate-500 leading-relaxed font-medium text-md">{item.desc}</p>
                     </div>
                   </li>

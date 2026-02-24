@@ -66,7 +66,7 @@ export default function ContactBody() {
           <div className="space-y-12">
             <div>
               <h2 className="text-[12px] font-black uppercase tracking-[0.4em] text-blue-600 mb-6 italic">Protocol</h2>
-              <h3 className="text-4xl font-black text-slate-900 mb-10 tracking-tighter leading-none">The Advisory <br/><span className="text-stone-400 italic font-serif">Onboarding.</span></h3>
+              <h3 className="text-4xl font-black text-slate-900 mb-10 tracking-tighter leading-none">The Advisory <span className="text-stone-400 italic font-serif">Onboarding.</span></h3>
               <ul className="space-y-10">
                 {[
                   { title: "Technical Audit", desc: "We perform a deep-dive into your architecture to identify revenue-throttling debt." },
@@ -79,7 +79,7 @@ export default function ContactBody() {
                     </div>
                     <div>
                       <p className="font-black text-slate-900 text-xl tracking-tight leading-none mb-2">{item.title}</p>
-                      <p className="text-slate-500 leading-relaxed font-medium text-lg">{item.desc}</p>
+                      <p className="text-slate-500 leading-relaxed font-medium text-md">{item.desc}</p>
                     </div>
                   </li>
                 ))}

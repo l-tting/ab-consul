@@ -82,7 +82,7 @@ function Footer() {
           ))}
         </div>
 
-        <p className="text-center text-md text-gray-500 dark:text-gray-500 mt-4">
+        <p className="text-center text-sm text-gray-500 dark:text-gray-500 mt-4">
           &copy; {new Date().getFullYear()} AB CONSUL. All rights reserved.
         </p>
       </div>

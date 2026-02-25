@@ -13,7 +13,7 @@ export default function AboutContrast() {
             Strategic Dissonance
           </h2>
           <p className="text-2xl md:text-3xl font-black tracking-tighter text-slate-900 max-w-xl leading-snug">
-            The difference between <span className="text-stone-400">writing code</span> and <span className="italic font-serif">engineering equity.</span>
+            The difference between <span className="text-stone-400 italic">writing code</span> and <span className="italic font-serif">engineering equity.</span>
           </p>
         </div>
 

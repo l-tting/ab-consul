@@ -25,7 +25,7 @@ export default function StrategicVelocity() {
   ];
 
   return (
-    <section className="w-full py-28 flex justify-center">
+    <section className="w-full py-24 flex justify-center">
       <div className="w-[92%] max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
           

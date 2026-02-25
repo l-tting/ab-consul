@@ -33,9 +33,9 @@ export default function TeamSection() {
           </h2>
           <p className="text-2xl md:text-4xl font-black tracking-tighter text-slate-900 mb-6 leading-[0.9]">
             Direct access to 
-            <span className="text-stone-400 italic font-serif font-medium"> the founders.</span>
+            <span className="text-stone-400 italic font-serif font-black"> the founders.</span>
           </p>
-          <p className="text-slate-500 text-sm max-w-xl mx-auto leading-relaxed font-medium">
+          <p className="text-slate-500 text-sm max-w-xl mx-auto leading-relaxed font-bold">
             We don't delegate to account managers. You partner directly with the 
             architects responsible for your scaling engine.
           </p>

@@ -131,7 +131,7 @@ export default function ContactBody() {
                   <button
                     disabled={isPending}
                     type="submit"
-                    className="w-full h-12 bg-slate-900 hover:bg-slate-800 text-white text-lg font-bold rounded-[2rem] transition-all duration-500 flex items-center justify-center gap-4 group disabled:opacity-50"
+                    className="w-full h-14 bg-slate-900 hover:bg-slate-800 text-white text-lg font-bold rounded-[2rem] transition-all duration-500 flex items-center justify-center gap-4 group disabled:opacity-50"
                   >
                     {isPending ? <Loader2 className="w-6 h-4 animate-spin" /> : <span>Initiate Consultation</span>}
                   </button>

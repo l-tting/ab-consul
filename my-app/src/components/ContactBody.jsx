@@ -100,9 +100,13 @@ export default function ContactBody() {
             ) : (
               <>
                 {/* Trust & Info Lines */}
-                <div className="mb-6 space-y-2 bg-blue-50/40 p-4 rounded-xl border border-blue-100 text-center">
-                  <p className="text-sm font-semibold text-blue-700">We typically respond within 24 hours.</p>
-                  <p className="text-sm font-medium text-slate-700 italic">All inquiries are handled under strict confidentiality.</p>
+                <div className="mb-6 space-y-2 bg-gradient-to-r from-blue-50/70 to-blue-100/70 p-5 rounded-2xl border border-blue-200 text-center shadow-sm">
+                  <p className="text-sm font-extrabold text-blue-800 tracking-wide uppercase drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)]">
+                    We typically respond within 24 hours.
+                  </p>
+                  <p className="text-sm font-semibold text-slate-900 italic tracking-wide drop-shadow-[0_1px_1px_rgba(0,0,0,0.05)]">
+                    All inquiries are handled under strict confidentiality.
+                  </p>
                 </div>
 
                 <form className="space-y-6" onSubmit={handleSubmit}>

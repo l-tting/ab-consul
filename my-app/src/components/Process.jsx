@@ -41,7 +41,7 @@ export default function Process() {
               <span className="text-slate-400 italic font-medium"> uncommon</span> results.
             </p>
           </div>
-          <p className="text-slate-400 text-md font-medium max-w-[260px] leading-relaxed border-l border-slate-500 pl-6">
+          <p className="text-slate-400 text-sm font-medium max-w-[280px] leading-relaxed border-l border-slate-500 pl-6">
             We don't believe in "phases." We believe in a continuous cycle of value extraction.
           </p>
         </div>
@@ -75,7 +75,7 @@ export default function Process() {
                 <h3 className="text-xl font-bold tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-md leading-relaxed text-slate-500 max-w-[240px]">
+                <p className="text-sm leading-relaxed text-slate-500 max-w-[240px]">
                   {item.description}
                 </p>
               </div>

@@ -31,7 +31,7 @@ const results = [
 
 export default function ResultsSection() {
   return (
-    <section className="w-full py-32 flex justify-center ">
+    <section className="w-full py-24 flex justify-center ">
       <div className="w-[92%] max-w-6xl">
         {/* Advisory Header */}
         <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-20">
@@ -40,7 +40,7 @@ export default function ResultsSection() {
               Proven Impact
             </h2>
             <p className="text-4xl font-bold tracking-tighter text-slate-900 leading-[0.95]">
-              Hard metrics. <br/>
+              Hard metrics. <br />
               <span className="text-slate-400 italic font-medium">Strategic outcomes.</span>
             </p>
           </div>
@@ -54,7 +54,7 @@ export default function ResultsSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {results.map((item, idx) => (
             <div key={idx} className="group relative bg-white p-10 rounded-[3rem] border border-slate-200 transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] hover:-translate-y-2">
-              
+
               {/* Subtle Internal Glow */}
               <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${item.theme} opacity-0 group-hover:opacity-[0.03] blur-3xl transition-opacity duration-700`} />
 
@@ -68,7 +68,7 @@ export default function ResultsSection() {
                     <ArrowUpRight size={24} />
                   </div>
                 </div>
-                
+
                 <h3 className="text-xl font-extrabold text-slate-900 mb-3 tracking-tight">{item.client}</h3>
                 <p className="text-slate-500 text-[15px] font-medium leading-relaxed mb-8">
                   {item.description}
@@ -76,9 +76,14 @@ export default function ResultsSection() {
               </div>
 
               {/* Strategic Outcomes Footnote */}
-              <div className="relative z-10 flex flex-wrap gap-2 pt-8 border-t border-slate-100">
-                {item.outcomes.map(outcome => (
-                  <span key={outcome} className="text-[10px] font-black bg-blue-50/50 text-blue-700/70 px-3 py-1.5 rounded-full uppercase tracking-wider border border-blue-100/50">
+              <div className="relative z-10 grid grid-cols-2 gap-2 pt-8 border-t border-slate-100">
+                {item.outcomes.map((outcome, i) => (
+                  <span
+                    key={outcome}
+                    className={`text-[10px] font-black bg-blue-50/50 text-blue-700/70 px-3 py-1.5 rounded-full uppercase tracking-wider border border-blue-100/50
+        ${i === 2 ? "col-span-2" : ""}
+      `}
+                  >
                     {outcome}
                   </span>
                 ))}

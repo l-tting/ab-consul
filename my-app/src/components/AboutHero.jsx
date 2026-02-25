@@ -4,7 +4,7 @@ import React from "react";
 
 export default function AboutHero() {
   return (
-    <section className="w-full pt-20 pb-20 flex justify-center ">
+    <section className="w-full pt-16 pb-14 flex justify-center ">
       <div className="w-[70%] max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
 
@@ -43,18 +43,18 @@ export default function AboutHero() {
         </div>
 
         {/* Bottom Metric Bar */}
-        <div className="flex flex-wrap justify-center gap-x-16 gap-y-8 mt-12 pt-4 border-t border-slate-100">
+        <div className="flex flex-wrap justify-center gap-x-16 gap-y-8 mt-8 pt-4 border-t border-slate-100">
           <div>
             <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Portfolio Value Managed</p>
-            <p className="text-xl font-bold text-slate-900 tracking-tight">$250M+</p>
+            <p className="text-xl text-center font-bold text-slate-900 tracking-tight">$250M+</p>
           </div>
           <div>
             <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Efficiency Lift</p>
-            <p className="text-xl font-bold text-slate-900 tracking-tight">40% Avg.</p>
+            <p className="text-xl text-center font-bold text-slate-900 tracking-tight">40% Avg.</p>
           </div>
           <div>
             <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Primary Objective</p>
-            <p className="text-xl font-bold text-blue-600 tracking-tight">Revenue Velocity</p>
+            <p className="text-xl text-center font-bold text-blue-600 tracking-tight">Revenue Velocity</p>
           </div>
         </div>
       </div>

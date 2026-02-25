@@ -20,12 +20,11 @@ export const BentoGrid = ({ children, className }) => {
 export const BentoCard = ({ name, className, Icon, description, href, cta, theme }) => (
   <div className={cn(
     "group relative flex flex-col justify-between overflow-hidden rounded-[2.5rem] border p-10 transition-all duration-700 hover:shadow-2xl",
-    theme.bg,      // The "Base" rich color
-    theme.border,  // Sophisticated border
+    theme.bg,
+    theme.border,
     className
   )}>
     
-    {/* VIBRANT ACCENT GLOW (The "Energy" of Growth) */}
     <div className={cn(
         "absolute -right-10 -top-10 h-64 w-64 rounded-full blur-[80px] opacity-20 transition-all duration-700 group-hover:opacity-40 group-hover:scale-125",
         theme.glow
@@ -69,7 +68,7 @@ const features = [
     cta: "Strategic Audit",
     className: "md:col-span-3",
     theme: {
-      bg: "bg-[#06162e]", // Midnight Navy
+      bg: "bg-[#06162e]",
       border: "border-blue-500/30 hover:border-blue-400",
       iconBg: "bg-blue-500",
       iconColor: "text-white",
@@ -85,7 +84,7 @@ const features = [
     cta: "GTM Framework",
     className: "md:col-span-3",
     theme: {
-      bg: "bg-[#062e1f]", // Deep British Racing Green
+      bg: "bg-[#062e1f]",
       border: "border-emerald-500/30 hover:border-emerald-400",
       iconBg: "bg-emerald-500",
       iconColor: "text-white",
@@ -101,7 +100,7 @@ const features = [
     cta: "Efficiency Specs",
     className: "md:col-span-2",
     theme: {
-      bg: "bg-[#2e0616]", // Deep Wine / Burgundy
+      bg: "bg-[#2e0616]",
       border: "border-rose-500/30 hover:border-rose-400",
       iconBg: "bg-rose-500",
       iconColor: "text-white",
@@ -115,9 +114,9 @@ const features = [
     description: "Aligning people, processes, and tools to maintain $100M+ scale.",
     href: "#",
     cta: "Scale Manual",
-    className: "md:col-span-4",
+    className: "md:col-span-3",
     theme: {
-      bg: "bg-[#2e1f06]", // Deep Amber / Tobacco
+      bg: "bg-[#2e1f06]",
       border: "border-amber-500/30 hover:border-amber-400",
       iconBg: "bg-amber-500",
       iconColor: "text-white",
@@ -129,13 +128,25 @@ const features = [
 
 export default function HeroHome() {
   return (
-    <div className="w-full py-2 flex justify-center "> 
-      <div className="w-[95%] lg:w-[90%]"> 
+    <div className="w-full py-2 flex justify-center"> 
+      <div className="w-[95%] lg:w-[90%]">
+
+        {/* Added Heading */}
+        <div className="text-center py-16">
+          <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">
+            Our Capabilities
+          </p>
+          <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight">
+            A Structured Approach to Sustainable Growth
+          </h2>
+        </div>
+
         <BentoGrid>
           {features.map((feature, idx) => (
             <BentoCard key={idx} {...feature} />
           ))}
         </BentoGrid>
+
       </div>
     </div>
   );

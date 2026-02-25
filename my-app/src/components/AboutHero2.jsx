@@ -5,10 +5,10 @@ import { XCircle, CheckCircle2, TrendingUp, Cpu } from "lucide-react";
 export default function AboutContrast() {
   return (
     <section className="w-full py-24 flex justify-center ">
-      <div className="w-[92%] max-w-7xl">
+      <div className="w-[92%] max-w-6xl">
         {/* Section Label */}
         <div className="mb-12 flex flex-col items-center text-center">
-            <h2 className="text-[15px] font-black uppercase tracking-[0.5em] text-blue-600 mb-4 italic">
+            <h2 className="text-[20px] font-black uppercase tracking-[0.5em] text-blue-600 mb-4 italic">
                 Strategic Dissonance
             </h2>
             <p className="text-3xl font-black tracking-tighter text-slate-900 max-w-xl">

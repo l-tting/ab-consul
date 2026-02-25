@@ -31,12 +31,12 @@ const results = [
 
 export default function ResultsSection() {
   return (
-    <section className="w-full py-24 flex justify-center ">
+    <section className="w-full py-14 flex justify-center ">
       <div className="w-[92%] max-w-6xl">
         {/* Advisory Header */}
         <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-20">
           <div className="max-w-2xl">
-            <h2 className="text-[14px] font-black uppercase tracking-[0.4em] text-blue-600 mb-4">
+            <h2 className="text-[20px] font-black uppercase tracking-[0.4em] text-blue-600 mb-4">
               Proven Impact
             </h2>
             <p className="text-3xl font-bold tracking-tighter text-slate-900 leading-[0.95]">

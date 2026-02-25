@@ -28,12 +28,12 @@ export default function TeamSection() {
 
         {/* Header - Boardroom Alignment */}
         <div className="text-center mb-20">
-          <h2 className="text-[14px] font-black uppercase tracking-[0.4em] text-blue-600 mb-6 italic">
+          <h2 className="text-[20px] font-black uppercase tracking-[0.4em] text-blue-600 mb-6 italic">
              The Personnel
           </h2>
           <p className="text-2xl md:text-4xl font-black tracking-tighter text-slate-900 mb-8 leading-[0.9]">
-            Direct access to <br/>
-            <span className="text-slate-400 italic font-serif font-medium">the founders.</span>
+            Direct access to 
+            <span className="text-slate-400 italic font-serif font-medium"> the founders.</span>
           </p>
           <p className="text-slate-500 text-sm max-w-xl mx-auto leading-relaxed font-medium">
             We don't delegate to account managers. You partner directly with the 

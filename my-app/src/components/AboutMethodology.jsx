@@ -31,15 +31,15 @@ export default function StrategicVelocity() {
           
           {/* Left: Advisory Context */}
           <div className="lg:sticky lg:top-40">
-            <h2 className="text-[18px] font-black uppercase tracking-[0.4em] text-blue-600 mb-6 italic">
+            <h2 className="text-[20px] font-black uppercase tracking-[0.4em] text-blue-600 mb-6 italic">
               Our Methodology
             </h2>
-            <p className="text-5xl md:text-6xl font-black tracking-tighter text-slate-900 leading-[0.9] mb-8">
-              We align <br />
+            <p className="text-5xl md:text-3xl font-black tracking-tighter text-slate-900 leading-[0.9] mb-8">
+              We align 
               <span className="text-slate-300 italic font-serif">architecture</span> <br />
               with the <span className="text-blue-600">P&L.</span>
             </p>
-            <p className="text-slate-500 text-lg max-w-md leading-relaxed font-medium">
+            <p className="text-slate-500 text-md max-w-md leading-relaxed font-medium">
               We remove the technical friction that prevents institutional scaling. 
               Our framework treats your codebase as a high-yield financial instrument.
             </p>

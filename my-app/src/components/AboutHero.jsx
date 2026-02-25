@@ -4,22 +4,22 @@ import React from "react";
 
 export default function AboutHero() {
   return (
-    <section className="w-full pt-20 pb-20 flex justify-center ">
-      <div className="w-[70%] max-w-7xl">
+    <section className="w-full pt-10 pb-20 flex justify-center ">
+      <div className="w-[70%] max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
           
           {/* Main Title - Spans 8 columns */}
           <div className="lg:col-span-8">
             <div className="flex items-center gap-3 mb-8">
               <div className="w-8 h-[1px] bg-blue-600" />
-              <span className="text-[17px] italic font-black uppercase tracking-[0.3em] text-blue-600">
+              <span className="text-[18px] italic font-black uppercase tracking-[0.3em] text-blue-600">
                 EST. 2025
               </span>
             </div>
             
-            <h1 className="text-xl md:text-5xl font-black tracking-tighter text-slate-900 leading-[0.95] lg:pr-10">
-              Transforming <br />
-              <span className="text-slate-300 italic font-serif">infrastructure</span> <br />
+            <h1 className="text-xl md:text-3xl font-black tracking-tighter text-slate-900 leading-[0.95] lg:pr-10">
+              Transforming 
+              <span className="text-slate-300 italic font-serif">infrastructure</span> 
               into <span className="text-blue-600">equity value.</span>
             </h1>
           </div>

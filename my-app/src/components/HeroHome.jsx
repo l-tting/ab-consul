@@ -98,7 +98,7 @@ const features = [
     description: "Ensuring growth is sustainable by optimizing OpEx and infrastructure burn.",
     href: "#",
     cta: "Efficiency Specs",
-    className: "md:col-span-2",
+    className: "md:col-span-2.5",
     theme: {
       bg: "bg-[#2e0616]",
       border: "border-rose-500/30 hover:border-rose-400",
@@ -136,9 +136,7 @@ export default function HeroHome() {
           <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">
             Our Capabilities
           </p>
-          <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight">
-            A Structured Approach to Sustainable Growth
-          </h2>
+          
         </div>
 
         <BentoGrid>

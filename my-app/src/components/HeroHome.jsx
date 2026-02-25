@@ -98,7 +98,7 @@ const features = [
     description: "Ensuring growth is sustainable by optimizing OpEx and infrastructure burn.",
     href: "#",
     cta: "Efficiency Specs",
-    className: "md:col-span-2.5",
+    className: "md:col-span-2",
     theme: {
       bg: "bg-[#2e0616]",
       border: "border-rose-500/30 hover:border-rose-400",
@@ -114,7 +114,7 @@ const features = [
     description: "Aligning people, processes, and tools to maintain $100M+ scale.",
     href: "#",
     cta: "Scale Manual",
-    className: "md:col-span-3",
+    className: "md:col-span-4",
     theme: {
       bg: "bg-[#2e1f06]",
       border: "border-amber-500/30 hover:border-amber-400",
@@ -132,8 +132,8 @@ export default function HeroHome() {
       <div className="w-[95%] lg:w-[90%]">
 
         {/* Added Heading */}
-        <div className="text-center py-16">
-          <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">
+        <div className="text-center py-10">
+          <p className="text-md font-semibold uppercase tracking-[0.3em] text-muted-foreground">
             Our Capabilities
           </p>
           

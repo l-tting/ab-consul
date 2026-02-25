@@ -19,8 +19,8 @@ export default function AboutHero() {
 
             <h1 className="text-xl md:text-3xl font-black tracking-tighter text-slate-900 leading-[0.95] lg:pr-10">
               Transforming
-              <span className="text-slate-300 italic font-serif">infrastructure</span>
-              into <span className="text-blue-600">equity value.</span>
+              <span className="text-slate-300 italic font-serif"> infrastructure </span>
+              into <span className="text-blue-600"> equity value.</span>
             </h1>
           </div>
 
@@ -30,11 +30,11 @@ export default function AboutHero() {
               {/* Vertical Accent Line */}
               <div className="absolute -left-6 top-0 bottom-0 w-[1px] bg-slate-400" />
 
-              <p className="text-slate-600 text-[12px] font-bold leading-relaxed tracking-tight">
-                AB CONSUL partners with founders to move from <span className="text-slate-900">product-market fit to global scale.</span>
+              <p className="text-slate-600 text-sm font-medium leading-relaxed tracking-tight">
+                AB CONSUL partners with founders to move from <span className="text-slate-900 font-medium">product-market fit to global scale.</span>
               </p>
 
-              <p className="text-slate-400 text-md leading-relaxed mt-4 font-medium">
+              <p className="text-slate-600 text-sm font-medium leading-relaxed mt-4">
                 We align engineering velocity with your P&L, turning your tech stack into a financial asset.
               </p>
             </div>
@@ -43,7 +43,7 @@ export default function AboutHero() {
         </div>
 
         {/* Bottom Metric Bar */}
-        <div className="flex flex-wrap gap-x-16 gap-y-8 mt-12 pt-4 border-t border-slate-100">
+        <div className="flex flex-wrap justify-center gap-x-16 gap-y-8 mt-12 pt-4 border-t border-slate-100">
           <div>
             <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Portfolio Value Managed</p>
             <p className="text-xl font-bold text-slate-900 tracking-tight">$250M+</p>

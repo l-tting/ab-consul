@@ -25,7 +25,7 @@ export default function StrategicVelocity() {
   ];
 
   return (
-    <section className="w-full py-24 flex justify-center">
+    <section className="w-full py-28 flex justify-center">
       <div className="w-[92%] max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
           
@@ -61,7 +61,7 @@ export default function StrategicVelocity() {
                 )}
                 
                 {/* Executive Node Style */}
-                <div className="absolute left-0 top-0 w-14 h-14 cursor-pointer rounded-3xl bg-white border border-slate-200 flex items-center justify-center transition-all duration-500 group-hover:border-blue-600 group-hover:shadow-[0_20px_40px_-10px_rgba(37,99,235,0.15)] group-hover:-translate-y-1">
+                <div className="absolute left-0 top-0 w-12 h-12 cursor-pointer rounded-3xl bg-white border border-slate-200 flex items-center justify-center transition-all duration-500 group-hover:border-blue-600 group-hover:shadow-[0_20px_40px_-10px_rgba(37,99,235,0.15)] group-hover:-translate-y-1">
                   {shift.icon}
                 </div>
 
@@ -69,10 +69,10 @@ export default function StrategicVelocity() {
                   <p className="text-[12px] font-black uppercase tracking-[0.3em] text-blue-600/60 mb-3">
                     {shift.state}
                   </p>
-                  <h3 className="text-3xl font-black text-slate-900 mb-5 tracking-tighter">
+                  <h3 className="text-2xl font-black text-slate-900 mb-5 tracking-tighter">
                     {shift.title}
                   </h3>
-                  <p className="text-slate-500 text-[18px] leading-relaxed max-w-lg font-medium">
+                  <p className="text-slate-500 text-[15px] leading-relaxed max-w-lg font-medium">
                     {shift.impact}
                   </p>
                 </div>

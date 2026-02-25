@@ -26,7 +26,7 @@ export default function StrategicVelocity() {
 
   return (
     <section className="w-full py-24 flex justify-center">
-      <div className="w-[92%] max-w-7xl">
+      <div className="w-[92%] max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
           
           {/* Left: Advisory Context */}
@@ -36,7 +36,7 @@ export default function StrategicVelocity() {
             </h2>
             <p className="text-5xl md:text-3xl font-black tracking-tighter text-slate-900 leading-[0.9] mb-8">
               We align 
-              <span className="text-slate-300 italic font-serif">architecture</span> <br />
+              <span className="text-slate-300 italic font-serif"> architecture</span> 
               with the <span className="text-blue-600">P&L.</span>
             </p>
             <p className="text-slate-500 text-md max-w-md leading-relaxed font-medium">

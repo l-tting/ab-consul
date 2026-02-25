@@ -62,7 +62,7 @@ export default function TeamSection() {
               <div className={`absolute inset-0 p-14 flex flex-col justify-end transition-all duration-500 ${hoveredIndex === i ? 'opacity-0 translate-y-10' : 'opacity-100'}`}>
                 <div className="space-y-2">
                   <p className="text-[11px] font-black text-blue-600 uppercase tracking-[0.3em]">{member.title}</p>
-                  <h3 className="text-4xl font-black text-slate-900 tracking-tighter leading-none">{member.name}</h3>
+                  <h3 className="text-3xl font-black text-slate-900 tracking-tighter leading-none">{member.name}</h3>
                 </div>
                 <div className="mt-10 w-12 h-12 rounded-full border border-slate-300 flex items-center justify-center transition-all">
                   <Plus className="w-6 h-6 text-slate-400" />
@@ -77,7 +77,7 @@ export default function TeamSection() {
                   Focus: {member.impact}
                 </span>
                 <h3 className="text-5xl font-black text-white mb-8 tracking-tighter leading-none">{member.name}</h3>
-                <p className="text-blue-50 text-lg leading-relaxed mb-10 max-w-sm font-medium">
+                <p className="text-blue-50 text-md leading-relaxed mb-10 max-w-sm font-medium">
                   {member.description}
                 </p>
 

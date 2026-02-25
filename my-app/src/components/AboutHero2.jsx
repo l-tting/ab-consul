@@ -4,7 +4,7 @@ import { XCircle, CheckCircle2, TrendingUp, Cpu } from "lucide-react";
 
 export default function AboutContrast() {
   return (
-    <section className="w-full py-24 flex justify-center ">
+    <section className="w-full py-18 flex justify-center ">
       <div className="w-[92%] max-w-6xl">
         {/* Section Label */}
         <div className="mb-12 flex flex-col items-center text-center">
@@ -63,7 +63,7 @@ export default function AboutContrast() {
               <li className="group">
                 <div className="flex items-center gap-2 mb-3">
                     <Cpu className="w-4 h-4 text-blue-500" />
-                    <p className="font-black text-white text-xl tracking-tighter">Unified Operations</p>
+                    <p className="font-black text-white text-md tracking-tighter">Unified Operations</p>
                 </div>
                 <p className="text-slate-400 text-md font-medium leading-relaxed">
                   We bridge the gap between your P&L and your stack. By integrating with marketing and finance data, we eliminate infra-waste while  optimizing  growth funnels.

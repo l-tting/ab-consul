@@ -132,7 +132,7 @@ export default function HeroHome() {
       <div className="w-[95%] lg:w-[90%]">
 
         {/* Added Heading */}
-        <div className="text-center py-10">
+        <div className="text-center py-6">
           <p className="text-md font-semibold uppercase tracking-[0.3em] text-muted-foreground">
             Our Capabilities
           </p>

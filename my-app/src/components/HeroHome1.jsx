@@ -3,8 +3,8 @@ import React from 'react'
 const HeroHome1 = () => {
     return (
         <div>
-            <section className="text-center py-24 px-6">
-                <h1 className="text-3xl md:text-4xl text-center font-black tracking-tighter text-slate-900 leading-[0.9] max-w-5xl mx-auto">
+            <section className="text-center py-16 px-6">
+                <h1 className="text-3xl md:text-5xl text-center font-black tracking-tighter text-slate-900 leading-[0.9] max-w-5xl mx-auto">
                     We help startups
                     <span className="text-slate-300 italic font-serif"> turn strategy </span> 
                     into revenue.

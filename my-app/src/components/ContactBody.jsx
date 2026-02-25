@@ -11,7 +11,7 @@ export default function ContactBody() {
     e.preventDefault();
     setIsPending(true);
     setError(null);
-    
+
     const formData = new FormData(e.target);
     const name = formData.get("name");
     const email = formData.get("email");
@@ -61,7 +61,7 @@ export default function ContactBody() {
     <section className="w-full py-24 flex justify-center bg-stone-100">
       <div className="w-[92%] max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          
+
           {/* Left Side (Content from previous steps) */}
           <div className="space-y-6">
             <div>
@@ -98,33 +98,41 @@ export default function ContactBody() {
                 <p className="text-slate-500 font-medium max-w-xs">Our principals have been notified. Expect a strategic response within 24 hours.</p>
               </div>
             ) : (
-              <form className="space-y-6" onSubmit={handleSubmit}>
-                {error && <p className="text-red-500 font-bold text-xs uppercase tracking-widest">{error}</p>}
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="space-y-3">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Principal Name</label>
-                    <input name="name" required placeholder="E.g. Alexander Hamilton" className="w-full h-12 px-5 rounded-2xl border-2 border-black focus:outline-none focus:ring-4 focus:ring-blue-600/10 focus:border-blue-500 font-bold text-slate-900" />
-                  </div>
-                  <div className="space-y-3">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Corporate Email</label>
-                    <input name="email" type="email" required placeholder="ceo@company.com" className="w-full h-12 px-5 rounded-2xl border-2 border-black focus:outline-none focus:ring-4 focus:ring-blue-600/10 focus:border-blue-500 font-bold text-slate-900" />
-                  </div>
+              <>
+                {/* Trust & Info Lines */}
+                <div className="mb-6 text-sm text-slate-500 font-medium space-y-1">
+                  <p>We typically respond within 24 hours.</p>
+                  <p>All inquiries are handled under strict confidentiality.</p>
                 </div>
 
-                <div className="space-y-3">
-                  <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Scaling Bottlenecks</label>
-                  <textarea name="details" required placeholder="Briefly describe the technical hurdles impacting your revenue velocity..." className="w-full min-h-[160px] p-5 rounded-2xl border-2 border-black focus:outline-none focus:ring-4 focus:ring-blue-600/10 focus:border-blue-500 font-bold text-slate-900 resize-none leading-relaxed" />
-                </div>
+                <form className="space-y-6" onSubmit={handleSubmit}>
+                  {error && <p className="text-red-500 font-bold text-xs uppercase tracking-widest">{error}</p>}
 
-                <button 
-                  disabled={isPending}
-                  type="submit"
-                  className="w-full h-16 bg-slate-900 hover:bg-slate-800 text-white text-lg font-bold rounded-[2rem] transition-all duration-500 flex items-center justify-center gap-4 group disabled:opacity-50"
-                >
-                  {isPending ? <Loader2 className="w-6 h-4 animate-spin" /> : <span>Initiate Consultation</span>}
-                </button>
-              </form>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="space-y-3">
+                      <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Principal Name</label>
+                      <input name="name" required placeholder="E.g. Alexander Hamilton" className="w-full h-12 px-5 rounded-2xl border-2 border-black focus:outline-none focus:ring-4 focus:ring-blue-600/10 focus:border-blue-500 font-bold text-slate-900" />
+                    </div>
+                    <div className="space-y-3">
+                      <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Corporate Email</label>
+                      <input name="email" type="email" required placeholder="ceo@company.com" className="w-full h-12 px-5 rounded-2xl border-2 border-black focus:outline-none focus:ring-4 focus:ring-blue-600/10 focus:border-blue-500 font-bold text-slate-900" />
+                    </div>
+                  </div>
+
+                  <div className="space-y-3">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Scaling Bottlenecks</label>
+                    <textarea name="details" required placeholder="Briefly describe the technical hurdles impacting your revenue velocity..." className="w-full min-h-[160px] p-5 rounded-2xl border-2 border-black focus:outline-none focus:ring-4 focus:ring-blue-600/10 focus:border-blue-500 font-bold text-slate-900 resize-none leading-relaxed" />
+                  </div>
+
+                  <button
+                    disabled={isPending}
+                    type="submit"
+                    className="w-full h-16 bg-slate-900 hover:bg-slate-800 text-white text-lg font-bold rounded-[2rem] transition-all duration-500 flex items-center justify-center gap-4 group disabled:opacity-50"
+                  >
+                    {isPending ? <Loader2 className="w-6 h-4 animate-spin" /> : <span>Initiate Consultation</span>}
+                  </button>
+                </form>
+              </>
             )}
           </div>
 

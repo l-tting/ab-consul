@@ -46,7 +46,7 @@ export default function StrategicVelocity() {
             
             <div className="mt-12 flex items-center gap-4 text-slate-300">
                 <div className="w-12 h-[1px] bg-slate-400" />
-                <span className="text-[12px] font-black uppercase tracking-[0.2em]">The Three-Stage Pivot</span>
+                <span className="text-[14px] font-black uppercase tracking-[0.2em]">The Three-Stage Pivot</span>
             </div>
           </div>
 
@@ -61,7 +61,7 @@ export default function StrategicVelocity() {
                 )}
                 
                 {/* Executive Node Style */}
-                <div className="absolute left-0 top-0 w-12 h-12 cursor-pointer rounded-3xl bg-white border border-slate-200 flex items-center justify-center transition-all duration-500 group-hover:border-blue-600 group-hover:shadow-[0_20px_40px_-10px_rgba(37,99,235,0.15)] group-hover:-translate-y-1">
+                <div className="absolute left-0 top-0 w-10 h-10 cursor-pointer rounded-3xl bg-white border border-slate-200 flex items-center justify-center transition-all duration-500 group-hover:border-blue-600 group-hover:shadow-[0_20px_40px_-10px_rgba(37,99,235,0.15)] group-hover:-translate-y-1">
                   {shift.icon}
                 </div>
 
@@ -69,10 +69,10 @@ export default function StrategicVelocity() {
                   <p className="text-[12px] font-black uppercase tracking-[0.3em] text-blue-600/60 mb-3">
                     {shift.state}
                   </p>
-                  <h3 className="text-2xl font-black text-slate-900 mb-5 tracking-tighter">
+                  <h3 className="text-xl font-black text-slate-900 mb-5 tracking-tighter">
                     {shift.title}
                   </h3>
-                  <p className="text-slate-500 text-[15px] leading-relaxed max-w-lg font-medium">
+                  <p className="text-slate-500 text-[13px] leading-relaxed max-w-lg font-medium">
                     {shift.impact}
                   </p>
                 </div>

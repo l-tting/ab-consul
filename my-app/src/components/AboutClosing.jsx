@@ -14,8 +14,8 @@ export default function AboutClosing() {
             <h2 className="text-[20px] font-black uppercase tracking-[0.5em] text-blue-600 mb-10 italic">
               The Ideal Partnership
             </h2>
-            <div className="space-y-10">
-              <div className="group border-b border-slate-100 pb-10 last:border-0">
+            <div className="space-y-12">
+              <div className="group border-b border-slate-100 pb-6 last:border-0">
                 <div className="flex items-center gap-3 mb-4">
                   <Target className="w-5 h-5 text-blue-600" />
                   <h3 className="text-2xl font-black text-slate-900 tracking-tighter">Post-Revenue Complexity</h3>
@@ -42,14 +42,14 @@ export default function AboutClosing() {
           </div>
 
           {/* Right: The Final Action - The "Boardroom" Card */}
-          <div className="lg:w-[400px] bg-slate-900 rounded-[3rem] p-12 text-white relative overflow-hidden shadow-[0_40px_80px_-15px_rgba(15,23,42,0.3)] border border-slate-800">
+          <div className="lg:w-[400px] bg-slate-900 rounded-[3rem] mt-4 p-12 text-white relative overflow-hidden shadow-[0_40px_80px_-15px_rgba(15,23,42,0.3)] border border-slate-800">
             {/* Soft Glow Effect */}
             <div className="absolute top-0 right-0 w-48 h-48 bg-blue-600/20 blur-[80px] pointer-events-none" />
             
             <p className="text-[10px] font-black text-blue-400 mb-8 uppercase tracking-[0.3em]">Institutional Verification</p>
             <h3 className="text-3xl font-black mb-8 tracking-tighter leading-[0.9]">
-              Verify the <br/>
-              <span className="italic font-serif text-slate-400 font-medium text-3xl">Strategic Results.</span>
+              Verify 
+              <span className="italic font-serif text-slate-400 font-medium text-3xl"> Strategic Results.</span>
             </h3>
             
             <p className="text-slate-400 text-sm mb-12 leading-relaxed font-medium">

@@ -4,7 +4,7 @@ import { Mail, MessageSquare, Clock } from "lucide-react";
 
 export default function ContactHero() {
   return (
-    <section className="relative w-full py-18 md:py-24 flex justify-center overflow-hidden bg-stone-100">
+    <section className="relative w-full py-18 md:py-20 flex justify-center overflow-hidden bg-stone-100">
       {/* Background Decorative Grid - Standard Sera UI pattern adjusted for Stone bg */}
       <div className="absolute inset-0 z-0 opacity-[0.05] [mask-image:radial-gradient(ellipse_at_center,black,transparent)]">
         <div className="absolute inset-0" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M60 60H0V0h60v60zM1 1v58h58V1H1z\' fill=\'%23000\' fill-rule=\'evenodd\'/%3E%3C/svg%3E")' }} />

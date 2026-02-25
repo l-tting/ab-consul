@@ -123,7 +123,7 @@ function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-800 mt-12 pt-6 text-center text-sm text-gray-500">
+        <div className="border-t border-gray-800 italic mt-12 pt-6 text-center text-sm text-gray-500">
           © {new Date().getFullYear()} AB CONSUL. All rights reserved.
         </div>
 

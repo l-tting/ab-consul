@@ -23,7 +23,7 @@ export default function TeamSection() {
   ];
 
   return (
-    <section className="w-full py-20 flex justify-center ">
+    <section className="w-full py-16 flex justify-center ">
       <div className="w-[92%] max-w-6xl">
 
         {/* Header - Boardroom Alignment */}
@@ -31,7 +31,7 @@ export default function TeamSection() {
           <h2 className="text-[20px] font-black uppercase tracking-[0.4em] text-blue-600 mb-6 italic">
              The Personnel
           </h2>
-          <p className="text-2xl md:text-4xl font-black tracking-tighter text-slate-900 mb-8 leading-[0.9]">
+          <p className="text-2xl md:text-4xl font-black tracking-tighter text-slate-900 mb-6 leading-[0.9]">
             Direct access to 
             <span className="text-slate-400 italic font-serif font-medium"> the founders.</span>
           </p>

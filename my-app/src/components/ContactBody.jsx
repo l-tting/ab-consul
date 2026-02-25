@@ -65,7 +65,7 @@ export default function ContactBody() {
           {/* Left Side (Content from previous steps) */}
           <div className="space-y-6">
             <div>
-              <h2 className="text-[12px] font-black uppercase tracking-[0.4em] text-blue-600 mb-6 italic">Our Protocol</h2>
+              <h2 className="text-[20px] font-black uppercase tracking-[0.4em] text-blue-600 mb-6 italic">Our Protocol</h2>
               <h3 className="text-3xl font-black text-slate-900 mb-10 tracking-tighter leading-none">The Advisory <span className="text-stone-400 italic font-serif">Onboarding.</span></h3>
               <ul className="space-y-10">
                 {[

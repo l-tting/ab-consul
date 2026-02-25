@@ -1,3 +1,4 @@
+import HeroHome1 from "@/components/HeroHome1"
 import HeroHome from "@/components/HeroHome"
 import TrustedLogos from "@/components/PartnerLogo"
 import Process from "@/components/Process"
@@ -5,7 +6,7 @@ import ResultsSection from "@/components/ProofOfVal"
 
 const HomePage = () => {
 
-   
+
     return (
         <div>
             <section className="ml-4 ">
@@ -20,22 +21,26 @@ const HomePage = () => {
 
             </section>
 
-                {/* Hero comp */}
+            {/* Hero comp */}
+            <div>
+                <HeroHome1 />
+            </div>
+            
             <div>
                 <HeroHome />
             </div>
 
-                {/* Partnerships */}
+            {/* Partnerships */}
             <div>
                 <TrustedLogos />
             </div>
 
-                {/* Process comp */}
+            {/* Process comp */}
             <div>
                 <Process />
             </div>
 
-                {/* final CTA comp */}
+            {/* final CTA comp */}
             <div>
                 <ResultsSection />
             </div>

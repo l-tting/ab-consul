@@ -38,7 +38,7 @@ export default function TrustedLogos() {
 
   return (
     <section className="w-full py-28 ">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         
         {/* Header Section */}
         <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-20">

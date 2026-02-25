@@ -32,14 +32,14 @@ const results = [
 export default function ResultsSection() {
   return (
     <section className="w-full py-32 flex justify-center ">
-      <div className="w-[92%] max-w-5xl">
+      <div className="w-[92%] max-w-6xl">
         {/* Advisory Header */}
         <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-20">
           <div className="max-w-2xl">
             <h2 className="text-[14px] font-black uppercase tracking-[0.4em] text-blue-600 mb-4">
               Proven Impact
             </h2>
-            <p className="text-5xl font-bold tracking-tighter text-slate-900 leading-[0.95]">
+            <p className="text-4xl font-bold tracking-tighter text-slate-900 leading-[0.95]">
               Hard metrics. <br/>
               <span className="text-slate-400 italic font-medium">Strategic outcomes.</span>
             </p>
@@ -61,7 +61,7 @@ export default function ResultsSection() {
               <div className="relative z-10">
                 <div className="flex justify-between items-start mb-10">
                   <div>
-                    <span className="text-5xl font-black text-slate-900 tracking-tighter leading-none">{item.metric}</span>
+                    <span className="text-4xl font-black text-slate-900 tracking-tighter leading-none">{item.metric}</span>
                     <p className="text-[11px] font-black text-blue-600 uppercase tracking-[0.2em] mt-3">{item.label}</p>
                   </div>
                   <div className="p-2 rounded-full bg-slate-50 text-slate-300 group-hover:text-blue-600 group-hover:bg-blue-50 transition-all">

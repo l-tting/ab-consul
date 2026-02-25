@@ -28,7 +28,7 @@ const steps = [
 export default function Process() {
   return (
     <section className="w-full py-12 ">
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
 
         {/* Heading - Aligned with your "Quiet" brand */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-6">

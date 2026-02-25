@@ -17,10 +17,11 @@ export default function AboutHero() {
               </span>
             </div>
 
-            <h1 className="text-xl md:text-3xl font-black tracking-tighter text-slate-900 leading-[0.95] lg:pr-10">
-              Transforming
-              <span className="text-stone-400 italic font-serif"> infrastructure </span>
-              into <span className="text-blue-600"> equity value.</span>
+            <h1 className="text-xl md:text-3xl font-black tracking-tighter text-slate-900 leading-[1.2] lg:pr-10">
+              Transforming{" "}
+              <span className="text-stone-400 italic font-serif mx-1">infrastructure</span>{" "}
+              into{" "}
+              <span className="text-blue-600 mx-1">equity value.</span>
             </h1>
           </div>
 

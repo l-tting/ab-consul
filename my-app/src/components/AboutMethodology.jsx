@@ -36,8 +36,8 @@ export default function StrategicVelocity() {
             </h2>
             <p className="text-5xl md:text-3xl font-black tracking-tighter text-slate-900 leading-[0.9] mb-8">
               We align 
-              <span className="text-slate-300 italic font-serif"> architecture</span> 
-              with the <span className="text-blue-600">P&L.</span>
+              <span className="text-stone-400 italic font-serif"> architecture </span> 
+               with the <span className="text-blue-600">P&L.</span>
             </p>
             <p className="text-slate-500 text-md max-w-md leading-relaxed font-medium">
               We remove the technical friction that prevents institutional scaling. 

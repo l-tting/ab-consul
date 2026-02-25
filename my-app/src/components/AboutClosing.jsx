@@ -6,15 +6,15 @@ import Link from "next/link";
 export default function AboutClosing() {
   return (
     <section className="w-full py-20 flex justify-center border-t border-slate-100 ">
-      <div className="w-[92%] max-w-7xl">
+      <div className="w-[92%] max-w-6xl">
         <div className="flex flex-col lg:flex-row justify-between items-start gap-16 lg:gap-32">
           
           {/* Left: The Requirements - Professional Qualification */}
           <div className="lg:w-1/2">
-            <h2 className="text-[16px] font-black uppercase tracking-[0.5em] text-blue-600 mb-10 italic">
+            <h2 className="text-[20px] font-black uppercase tracking-[0.5em] text-blue-600 mb-10 italic">
               The Ideal Partnership
             </h2>
-            <div className="space-y-16">
+            <div className="space-y-10">
               <div className="group border-b border-slate-100 pb-10 last:border-0">
                 <div className="flex items-center gap-3 mb-4">
                   <Target className="w-5 h-5 text-blue-600" />
@@ -47,7 +47,7 @@ export default function AboutClosing() {
             <div className="absolute top-0 right-0 w-48 h-48 bg-blue-600/20 blur-[80px] pointer-events-none" />
             
             <p className="text-[10px] font-black text-blue-400 mb-8 uppercase tracking-[0.3em]">Institutional Verification</p>
-            <h3 className="text-4xl font-black mb-8 tracking-tighter leading-[0.9]">
+            <h3 className="text-3xl font-black mb-8 tracking-tighter leading-[0.9]">
               Verify the <br/>
               <span className="italic font-serif text-slate-400 font-medium text-3xl">Strategic Results.</span>
             </h3>
@@ -59,7 +59,7 @@ export default function AboutClosing() {
 
             <Link 
               href="/case-studies"
-              className="w-full py-6 bg-blue-600 hover:bg-white hover:text-blue-600 text-white rounded-2xl font-black text-sm uppercase tracking-widest transition-all duration-500 flex items-center justify-center gap-4 group shadow-xl shadow-blue-900/20"
+              className="w-full py-4 bg-blue-600 hover:bg-white hover:text-blue-600 text-white rounded-full font-black text-sm uppercase tracking-widest transition-all duration-500 flex items-center justify-center gap-4 group shadow-xl shadow-blue-900/20"
             >
               Browse Case Studies
               <MoveRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />

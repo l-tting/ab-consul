@@ -43,10 +43,10 @@ export default function TrustedLogos() {
         {/* Header Section */}
         <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-20">
           <div className="max-w-xl">
-            <h2 className="text-[18px] font-black uppercase tracking-[0.4em] text-blue-600 mb-4 font-sans">
+            <h2 className="text-[20px] font-black uppercase tracking-[0.4em] text-blue-600 mb-4 font-sans">
               The Growth Ecosystem
             </h2>
-            <p className="text-4xl font-bold tracking-tighter text-slate-900 leading-tight">
+            <p className="text-3xl font-bold tracking-tighter text-slate-900 leading-tight">
               We leverage the <span className="text-slate-400 italic font-medium">standards</span> of market leaders.
             </p>
           </div>

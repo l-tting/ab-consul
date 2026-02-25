@@ -39,7 +39,7 @@ export default function ResultsSection() {
             <h2 className="text-[14px] font-black uppercase tracking-[0.4em] text-blue-600 mb-4">
               Proven Impact
             </h2>
-            <p className="text-4xl font-bold tracking-tighter text-slate-900 leading-[0.95]">
+            <p className="text-3xl font-bold tracking-tighter text-slate-900 leading-[0.95]">
               Hard metrics. 
               <span className="text-slate-400 italic font-medium"> Strategic outcomes.</span>
             </p>

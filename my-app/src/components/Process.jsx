@@ -36,7 +36,7 @@ export default function Process() {
             <h2 className="text-[20px] font-black uppercase tracking-[0.4em] text-blue-600 mb-4">
               Our Methodology
             </h2>
-            <p className="text-4xl font-bold tracking-tighter text-slate-900 leading-tight">
+            <p className="text-3xl font-bold tracking-tighter text-slate-900 leading-tight">
               A repeatable engine for 
               <span className="text-slate-400 italic font-medium"> uncommon</span> results.
             </p>

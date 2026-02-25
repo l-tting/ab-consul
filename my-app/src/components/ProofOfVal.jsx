@@ -40,8 +40,8 @@ export default function ResultsSection() {
               Proven Impact
             </h2>
             <p className="text-4xl font-bold tracking-tighter text-slate-900 leading-[0.95]">
-              Hard metrics. <br />
-              <span className="text-slate-400 italic font-medium">Strategic outcomes.</span>
+              Hard metrics. 
+              <span className="text-slate-400 italic font-medium"> Strategic outcomes.</span>
             </p>
           </div>
           <div className="flex items-center gap-2 px-6 py-3 bg-slate-50 rounded-full border border-slate-100">

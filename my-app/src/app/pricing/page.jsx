@@ -15,12 +15,12 @@ const PricingPage = () => {
             <PricingCalculator/>
         </div>
 
-        {/* <div>
+         <div>
             <SuccessPage/>
-        </div> */}
-         {/* <div>
+        </div> 
+          <div>
             <PricingCTA/>
-        </div> */}
+        </div> 
       
     </div>
   )

@@ -25,16 +25,16 @@ export default function PricingHero() {
         
         {/* Main Hero Header */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-[10px] font-bold uppercase tracking-[0.2em] mb-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 text-slate-600 text-[10px] font-bold uppercase tracking-[0.2em] mb-8">
             <span>Investment Structure</span>
           </div>
 
-          <h1 className="text-2xl md:text-6xl font-bold tracking-tighter text-slate-900 mb-8 leading-[0.9]">
+          <h1 className="text-2xl md:text-5xl font-black tracking-tighter text-slate-900 mb-8 leading-[0.9]">
             Built for <span className="text-blue-600">ROI</span><br /> 
             {/* not just <span className="text-slate-400">billable hours.</span> */}
           </h1>
 
-          <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-slate-500 font-medium max-w-2xl mx-auto leading-relaxed">
             Standard agencies thrive on inefficiency. We thrive on your growth. 
             Below is the philosophy behind our dynamic pricing model.
           </p>

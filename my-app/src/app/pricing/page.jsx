@@ -1,7 +1,7 @@
 import React from 'react'
 import PricingHero from '@/components/PriceHero'
 import PricingCalculator from '@/components/PricingTiers'
-// import SuccessPage from '@/components/PriceComp'
+import SuccessPage from '@/components/PriceComp'
 import PricingCTA from '@/components/PriceComp'
 
 const PricingPage = () => {

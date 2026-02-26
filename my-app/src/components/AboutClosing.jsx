@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function AboutClosing() {
   return (
-    <section className="w-full py-18 flex justify-center border-t border-slate-100 ">
+    <section className="w-full py-24 flex justify-center border-t border-slate-100 ">
       <div className="w-[92%] max-w-6xl">
         <div className="flex flex-col lg:flex-row justify-between items-start gap-16 lg:gap-32">
           

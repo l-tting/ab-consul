@@ -33,14 +33,14 @@ export function TechnicalHandover() {
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="mb-24 max-w-3xl">
           <div className="flex items-center gap-4 mb-6">
-            <h2 className="text-blue-600 font-black text-[12px] tracking-[0.4em] uppercase italic">
+            <h2 className="text-blue-600 font-black text-[20px] tracking-[0.4em] uppercase italic">
               Asset Handover
             </h2>
             <div className="h-px w-12 bg-blue-600/30" />
           </div>
-          <h3 className="text-5xl md:text-6xl font-black tracking-tighter leading-[0.95] text-slate-900 mb-8">
-            Securing your <br />
-            <span className="text-stone-400 italic font-serif">technical equity.</span>
+          <h3 className="text-5xl md:text-3xl font-black tracking-tighter leading-[0.95] text-slate-900 mb-8">
+            Securing your 
+            <span className="text-stone-400 italic font-serif"> technical equity.</span>
           </h3>
           <p className="text-slate-600 text-lg font-medium max-w-xl leading-relaxed">
             We deliver a mature technical ecosystem designed for institutional-grade 

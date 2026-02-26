@@ -18,7 +18,7 @@ export default function PricingCalculator() {
 
   return (
     <section className="w-full py-16 md:py-20 px-4 sm:px-6 md:px-10 lg:px-20 flex justify-center">
-      <div className="w-full max-w-7xl">
+      <div className="w-full max-w-6xl">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 bg-white rounded-3xl lg:rounded-[3rem] border border-slate-200 shadow-2xl overflow-hidden">
           

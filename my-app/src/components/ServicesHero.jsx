@@ -4,17 +4,17 @@ import React from "react";
 export default function ServicesHero() {
   return (
     <section className="pt-24 pb-10 ">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8">
         {/* Label with established style */}
         <div className="flex items-center gap-4 mb-8">
-          <h2 className="text-[15px] font-black uppercase tracking-[0.5em] text-blue-600 italic">
+          <h2 className="text-[20px] font-black uppercase tracking-[0.5em] text-blue-600 italic">
             Strategic Capabilities
           </h2>
           <div className="h-[1px] flex-grow bg-slate-100" />
         </div>
 
         {/* Hero Headline */}
-        <h1 className="text-3xl md:text-5xl font-black tracking-tighter text-slate-900 leading-[0.9] max-w-5xl">
+        <h1 className="text-3xl md:text-3xl font-black tracking-tighter text-slate-900 leading-[0.9] max-w-5xl">
           Engineering 
           <span className="text-slate-300 italic font-serif">  operational leverage</span> <br />
           at scale.

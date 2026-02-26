@@ -30,7 +30,7 @@ export function TechnicalHandover() {
       {/* Subtle "Engineering" Grid Pattern for Light Mode */}
       <div className="absolute inset-0 opacity-[0.03] [background-image:linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] [background-size:60px_60px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="mb-24 max-w-3xl">
           <div className="flex items-center gap-4 mb-6">
             <h2 className="text-blue-600 font-black text-[12px] tracking-[0.4em] uppercase italic">

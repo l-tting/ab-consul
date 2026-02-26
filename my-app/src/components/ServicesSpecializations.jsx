@@ -29,15 +29,15 @@ const specializations = [
 export default function IndustrySpecializations() {
   return (
     <section className="py-32  border-t border-slate-100">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         
         {/* Header - Boardroom Alignment */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12 mb-24">
           <div className="max-w-2xl">
-            <h2 className="text-[12px] font-black text-blue-600 uppercase tracking-[0.5em] mb-6 italic">
+            <h2 className="text-[20px] font-black text-blue-600 uppercase tracking-[0.5em] mb-6 italic">
               Vertical Expertise
             </h2>
-            <h3 className="text-5xl md:text-6xl font-black tracking-tighter text-slate-900 leading-[0.95]">
+            <h3 className="text-5xl md:text-3xl font-black tracking-tighter text-slate-900 leading-[0.95]">
               Market specific <br />
               <span className="text-slate-300 italic font-serif">capital engineering.</span>
             </h3>

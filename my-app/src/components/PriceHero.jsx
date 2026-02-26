@@ -21,7 +21,7 @@ export default function PricingHero() {
 
   return (
     <section className="w-full pt-2 pb- flex justify-center ">
-      <div className="w-[92%] max-w-7xl inset-0">
+      <div className="w-[92%] max-w-6xl inset-0">
         
         {/* Main Hero Header */}
         <div className="text-center mb-20">

@@ -44,25 +44,25 @@ export default function TeamSection() {
         </div>
 
         {/* Grid */}
-        <div className="flex flex-col md:flex-row gap-8 justify-center items-stretch min-h-[600px]">
+        <div className="flex flex-col md:flex-row gap-8 justify-center items-stretch md:min-h-[600px]">
           {team.map((member, i) => {
             const isActive = activeIndex === i;
 
             return (
               <div
                 key={i}
-                className={`relative rounded-[3.5rem] overflow-hidden transition-all bg-white duration-700 cursor-pointer border border-slate-200
-                md:flex-1
-                ${isActive ? "md:flex-[1.4] md:shadow-2xl md:border-blue-600 shadow-lg" : "shadow-sm"}
-                w-full mb-8 md:mb-0
-              `}
-                // Toggle overlay on mobile tap
+                className={`relative rounded-[3.5rem] transition-all bg-white duration-700 cursor-pointer border border-slate-200
+                  md:flex-1
+                  ${isActive ? "md:flex-[1.4] md:shadow-2xl md:border-blue-600 shadow-lg" : "shadow-sm"}
+                  w-full mb-8 md:mb-0
+                  overflow-visible
+                `}
                 onClick={() => setActiveIndex(activeIndex === i ? null : i)}
                 onMouseEnter={() => setActiveIndex(i)}
                 onMouseLeave={() => setActiveIndex(null)}
               >
                 {/* Default View */}
-                <div className="relative p-14 flex flex-col justify-end">
+                <div className="relative p-8 sm:p-14 flex flex-col justify-end">
                   <div className="space-y-2">
                     <p className="text-[11px] font-black text-blue-600 uppercase tracking-[0.3em]">
                       {member.title}
@@ -78,12 +78,9 @@ export default function TeamSection() {
 
                 {/* Hover / Active Overlay */}
                 <div
-                  className={`absolute inset-0 p-14 flex flex-col justify-end bg-blue-600 transition-all duration-500 transform
-                  ${
-                    isActive
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 translate-y-full md:opacity-0 md:translate-y-full"
-                  }`}
+                  className={`absolute inset-0 p-8 sm:p-14 flex flex-col justify-end bg-blue-600 transition-all duration-500 transform
+                    ${isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-full md:opacity-0 md:translate-y-full"}
+                  `}
                 >
                   <span className="text-[10px] font-black text-blue-200 uppercase tracking-[0.4em] mb-4">
                     Focus: {member.impact}

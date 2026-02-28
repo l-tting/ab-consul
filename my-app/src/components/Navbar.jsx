@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-/* Example NAV_LINKS inside same file */
 const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
@@ -60,6 +59,7 @@ export default function Navbar() {
                     }`}
                   >
                     {link.label}
+
                     {isActive && (
                       <span className="absolute bottom-0 left-0 h-[2px] w-full bg-gray-900 dark:bg-white" />
                     )}
@@ -103,13 +103,17 @@ export default function Navbar() {
                     key={link.label}
                     href={link.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className={`block text-lg font-semibold transition-colors ${
+                    className={`relative block text-lg font-semibold pb-1 transition-colors ${
                       isActive
                         ? "text-gray-900 dark:text-white"
                         : "text-gray-500 hover:text-gray-900 dark:text-gray-300"
                     }`}
                   >
                     {link.label}
+
+                    {isActive && (
+                      <span className="absolute bottom-0 left-0 h-[2px] w-10 bg-gray-900 dark:bg-white" />
+                    )}
                   </Link>
                 );
               })}

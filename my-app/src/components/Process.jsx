@@ -75,7 +75,7 @@ export default function Process() {
                 <h3 className="text-xl font-bold tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-slate-500 max-w-[240px]">
+                <p className="text-sm font-medium leading-relaxed text-slate-500 max-w-[240px]">
                   {item.description}
                 </p>
               </div>

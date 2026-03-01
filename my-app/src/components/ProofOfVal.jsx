@@ -52,7 +52,6 @@ export default function ResultsSection() {
             </p>
           </div>
 
-          {/* ROI Badge */}
           <div className="self-start md:self-auto flex items-center gap-2 px-4 md:px-6 py-2.5 md:py-3 bg-slate-50 rounded-full border border-slate-100">
             <TrendingUp className="w-4 h-4 md:w-5 md:h-5 text-blue-600" />
             <span className="text-xs md:text-sm font-bold text-slate-600 tracking-tight">
@@ -61,20 +60,20 @@ export default function ResultsSection() {
           </div>
         </div>
 
-        {/* Grid */}
+        {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {results.map((item, idx) => (
             <div
               key={idx}
               className="group relative bg-white p-6 md:p-10 rounded-3xl md:rounded-[3rem] border border-slate-200 transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] md:hover:-translate-y-2"
             >
-              {/* Subtle Internal Glow */}
+              {/* Subtle Glow */}
               <div
                 className={`absolute top-0 right-0 w-24 md:w-32 h-24 md:h-32 bg-gradient-to-br ${item.theme} opacity-0 group-hover:opacity-[0.03] blur-3xl transition-opacity duration-700`}
               />
 
               <div className="relative z-10">
-                {/* Metric + Icon */}
+                {/* Metric */}
                 <div className="flex justify-between items-start mb-6 md:mb-10">
                   <div>
                     <span className="text-3xl md:text-4xl font-black text-slate-900 tracking-tighter leading-none">
@@ -100,13 +99,21 @@ export default function ResultsSection() {
               </div>
 
               {/* Outcomes */}
-              <div className="relative z-10 grid grid-cols-2 gap-2 pt-6 md:pt-8 border-t border-slate-100">
-                {item.outcomes.map((outcome, i) => (
+              <div
+                className="relative z-10 
+                  grid grid-cols-2 gap-2 
+                  md:flex md:flex-nowrap md:gap-3 
+                  pt-6 md:pt-8 border-t border-slate-100"
+              >
+                {item.outcomes.map((outcome) => (
                   <span
                     key={outcome}
-                    className={`text-[9px] md:text-[10px] font-black bg-blue-50/50 text-blue-700/70 px-3 py-1.5 rounded-full uppercase tracking-wider border border-blue-100/50 ${
-                      i === 2 ? "col-span-2" : ""
-                    }`}
+                    className="text-[9px] md:text-[10px] font-black 
+                      bg-blue-50/50 text-blue-700/70 
+                      px-3 py-1.5 
+                      rounded-full uppercase tracking-wider 
+                      border border-blue-100/50 
+                      whitespace-nowrap"
                   >
                     {outcome}
                   </span>

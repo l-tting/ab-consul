@@ -67,7 +67,7 @@ export default function ResultsSection() {
               key={idx}
               className="group relative bg-white p-6 md:p-10 rounded-3xl md:rounded-[3rem] border border-slate-200 transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] md:hover:-translate-y-2"
             >
-              {/* Subtle Glow */}
+              {/* Glow */}
               <div
                 className={`absolute top-0 right-0 w-24 md:w-32 h-24 md:h-32 bg-gradient-to-br ${item.theme} opacity-0 group-hover:opacity-[0.03] blur-3xl transition-opacity duration-700`}
               />
@@ -98,13 +98,8 @@ export default function ResultsSection() {
                 </p>
               </div>
 
-              {/* Outcomes */}
-              <div
-                className="relative z-10 
-                  grid grid-cols-2 gap-2 
-                  md:flex md:flex-nowrap md:gap-3 
-                  pt-6 md:pt-8 border-t border-slate-100"
-              >
+              {/* Outcomes (ONLY FIX: whitespace-nowrap) */}
+              <div className="relative z-10 grid grid-cols-2 gap-2 pt-6 md:pt-8 border-t border-slate-100">
                 {item.outcomes.map((outcome) => (
                   <span
                     key={outcome}

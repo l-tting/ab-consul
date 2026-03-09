@@ -1,4 +1,4 @@
-import ServicesHero from "@/components/ServicesHero"
+import ServicesPricingHero from "@/components/ServicesPricingHero"
 import ServiceGrid  from "@/components/ServicesGrid"
 import { TechnicalHandover } from "@/components/TechnicalHandover"
 import  IndustrySpecializations  from "@/components/ServicesSpecializations"
@@ -8,7 +8,7 @@ const ServicesPage = () => {
     return (
         <div> 
             <div>
-                <ServicesHero/>
+               <ServicesPricingHero/>
             </div>
             <div>
                 <ServiceGrid/>

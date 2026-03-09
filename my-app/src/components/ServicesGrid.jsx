@@ -3,7 +3,7 @@
 import React from "react";
 import { TrendingUp, ShieldCheck, Zap, BarChart3 } from "lucide-react";
 
-export  const ServicesGrid = [
+const services = [
   {
     title: "Monetization Architecture",
     tag: "Revenue Growth",
@@ -46,7 +46,7 @@ export  const ServicesGrid = [
   }
 ];
 
-export default function ServicesSection() {
+export default function ServicesGrid() {
   return (
     <section className="py-20 bg-slate-50">
       <div className="max-w-6xl mx-auto px-6">

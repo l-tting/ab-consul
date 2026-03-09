@@ -52,7 +52,7 @@ export default function Navbar() {
                   <Link
                     key={link.label}
                     href={link.href}
-                    className={`relative text-[14px] font-semibold pb-1 transition-colors ${
+                    className={`relative text-[15px] font-semibold pb-1 transition-colors ${
                       isActive
                         ? "text-gray-900 dark:text-white"
                         : "text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"

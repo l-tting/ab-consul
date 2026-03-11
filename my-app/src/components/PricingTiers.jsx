@@ -120,7 +120,7 @@ export default function PricingCalculator() {
             <div className="relative z-10 text-center lg:text-left">
               <Calculator className="w-10 h-10 md:w-12 md:h-12 text-blue-500 mb-6 md:mb-8 mx-auto lg:mx-0" />
 
-              <p className="text-blue-400 text-xs sm:text-sm font-bold uppercase tracking-[0.3em] mb-4">
+              <p className="text-blue-400 text-xs sm:text-sm font-bold uppercase tracking-[0.3em] mb-8">
                 Estimated Monthly Investment
               </p>
               

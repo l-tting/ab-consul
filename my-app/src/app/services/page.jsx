@@ -2,6 +2,7 @@ import ServicesPricingHero from "@/components/ServicesPricingHero"
 import ServiceGrid  from "@/components/ServicesGrid"
 import { TechnicalHandover } from "@/components/TechnicalHandover"
 import  IndustrySpecializations  from "@/components/ServicesSpecializations"
+import PricingCalculator from "@/components/PricingTiers"
 
 const ServicesPage = () => {
 
@@ -13,13 +14,16 @@ const ServicesPage = () => {
             <div>
                 <ServiceGrid/>
             </div>
-           
             <div>
+                <PricingCalculator/>
+            </div>
+           
+            {/* <div>
                 <IndustrySpecializations/>
-            </div>
-             <div>
+            </div> */}
+             {/* <div>
                 <TechnicalHandover/>
-            </div>
+            </div> */}
         </div>
     )
 }

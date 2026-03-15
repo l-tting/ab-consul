@@ -15,9 +15,9 @@ const services = [
     icon: <TrendingUp className="w-6 h-6" />
   },
   {
-    title: "Infrastructure Liquidation",
+    title: "Digital Enablement",
     tag: "Margin Lift",
-    desc: "De-risking legacy systems and liquidating technical debt that acts as a silent tax on your operational velocity.",
+    desc: "Leverage our expertise to digitize your operations by embedding new data, AI, automation tools to improve decision making",
     features: ["OpEx Reduction", "Scale Resilience", "Cloud Optimization"],
     metric: "40% AVG SAVINGS",
     price: "Starting at $12k",

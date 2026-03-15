@@ -34,22 +34,18 @@ export default function ServicesPricingHero() {
         </div>
 
         {/* Hero Headline */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-900 leading-[1.05] max-w-4xl">
+        {/* <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-900 leading-[1.05] max-w-4xl">
           Engineering{" "}
           <span className="text-slate-300 italic font-serif">
             operational leverage
           </span>{" "}
           at scale.
-        </h1>
+        </h1> */}
 
         {/* Subtext */}
         <p className="mt-6 text-lg text-slate-600 font-medium leading-relaxed max-w-3xl">
-          We eliminate the technical friction that devalues high-growth companies.
-          Our services transform engineering spend into a{" "}
-          <span className="text-slate-900 underline decoration-blue-600 underline-offset-4">
-            strategic equity driver
-          </span>
-          — with engagements structured around measurable impact, not billable hours.
+          We eliminate the technical and operational friction that devalues and slows down high-growth companies.
+           Our services transform bottlenecks into strategic pillars with engagements structured around measurable impact, not billable hours.
         </p>
 
         {/* Pillars */}

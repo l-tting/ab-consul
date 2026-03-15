@@ -10,7 +10,7 @@ const services = [
     desc: "Redesigning multi-tenant billing logic and RBAC to unlock enterprise-grade revenue tiers and complex monetization models.",
     features: ["LTV Optimization", "Pricing Logic", "Usage Attribution"],
     metric: "EBITDA FOCUS",
-    price: "Starting at $18k",
+    price: "Starting at $2k",
     accent: "from-blue-600 to-cyan-500",
     icon: <TrendingUp className="w-6 h-6" />
   },
@@ -20,27 +20,28 @@ const services = [
     desc: "Leverage our expertise to digitize your operations by embedding new data, AI, automation tools to improve decision making",
     features: ["OpEx Reduction", "Scale Resilience", "Cloud Optimization"],
     metric: "40% AVG SAVINGS",
-    price: "Starting at $12k",
+    price: "Starting at $2k",
     accent: "from-indigo-600 to-purple-500",
     icon: <ShieldCheck className="w-6 h-6" />
   },
   {
-    title: "Precision Engineering",
+    title: "Fintech & Crypto Growth",
     tag: "Velocity",
-    desc: "Rapid deployment of high-conviction features that move the needle on terminal value without introducing technical drag.",
+    desc: `Use our proven growth methodologies to scale your business using AI-powered personalization, and mobile-first, customer-centric services to expand access, 
+    particularly in underserved markets through fintech and stablecoin solutions`,
     features: ["Zero-Debt Shipping", "Strategic GTM", "Core IP Build"],
     metric: "ACCELERATED ROI",
-    price: "Starting at $15k",
+    price: "Starting at $5k",
     accent: "from-emerald-600 to-teal-500",
     icon: <Zap className="w-6 h-6" />
   },
   {
-    title: "Economic System Migration",
+    title: "Data & Engineering",
     tag: "Asset Stability",
     desc: "Converting monolithic liabilities into modular assets. We ensure zero-downtime migrations that preserve data integrity and capital.",
     features: ["Data Integrity", "Micro-Asset Pivot", "Risk Mitigation"],
     metric: "ZERO-TAX SCALE",
-    price: "Starting at $20k",
+    price: "Starting at $2k",
     accent: "from-blue-700 to-blue-900",
     icon: <BarChart3 className="w-6 h-6" />
   }

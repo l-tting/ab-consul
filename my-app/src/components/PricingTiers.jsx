@@ -10,7 +10,7 @@ export default function PricingCalculator() {
   const [estimate, setEstimate] = useState(0);
 
   useEffect(() => {
-    const base = 2500;
+    const base = 1000;
     const revenueFactor = revenue * 0.004;
     const seedPremium = isSeeded ? 2000 : 0;
     const sizePremium = companySize === "50+" ? 2500 : companySize === "11-50" ? 1200 : 0;

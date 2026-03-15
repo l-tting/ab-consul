@@ -69,9 +69,9 @@ export default function ContactBody() {
               <h3 className="text-3xl font-black text-slate-900 mb-10 tracking-tighter leading-none">The Advisory <span className="text-stone-400 italic font-serif">Onboarding.</span></h3>
               <ul className="space-y-10">
                 {[
-                  { title: "Technical Audit", desc: "We perform a deep-dive into your architecture to identify revenue-throttling debt." },
-                  { title: "Strategic Alignment", desc: "A 30-minute consultation with the founders to map engineering to your P&L." },
-                  { title: "Equity Roadmap", desc: "Receive a high-conviction execution plan designed for terminal scalability." }
+                  { title: "Business Audit", desc: "We perform a deep-dive into your business to identify revenue bottlenecks." },
+                  { title: "Strategic Alignment", desc: "A 1 hour consultation with the team to map agreed solutions to your P&L." },
+                  { title: "Roadmap Planning & Execution", desc: "Receive a high-conviction execution plan designed for terminal scalability and execute with all the stakeholders" }
                 ].map((item, i) => (
                   <li key={i} className="flex gap-6 items-start">
                     <div className="mt-1 bg-blue-50 p-1.5 rounded-full flex-shrink-0">

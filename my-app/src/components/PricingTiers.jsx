@@ -55,7 +55,7 @@ export default function PricingCalculator() {
               <input 
                 type="range" 
                 min="50000" 
-                max="5000000" 
+                max="1000000" 
                 step="50000"
                 value={revenue}
                 onChange={(e) => setRevenue(Number(e.target.value))}
@@ -64,7 +64,7 @@ export default function PricingCalculator() {
 
               <div className="flex justify-between text-[11px] text-slate-400 font-bold uppercase">
                 <span>$50k</span>
-                <span>$5M+</span>
+                <span>$1M+</span>
               </div>
             </div>
 

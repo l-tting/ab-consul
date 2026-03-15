@@ -48,16 +48,16 @@ const services = [
 
 export default function ServicesGrid() {
   return (
-    <section className="py-20 bg-slate-50">
+    <section className="py-20 ">
       <div className="max-w-6xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-blue-600 font-black uppercase tracking-[0.5em] text-sm sm:text-base mb-2">
             Capabilities
           </h2>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 max-w-3xl mx-auto leading-snug">
+          {/* <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 max-w-3xl mx-auto leading-snug">
             Transforming Engineering Spend into Strategic Value
-          </h1>
+          </h1> */}
           <p className="mt-4 text-slate-600 text-lg max-w-2xl mx-auto font-medium">
             We deliver measurable impact across revenue, margin, velocity, and stability. Explore our core service offerings and investments.
           </p>

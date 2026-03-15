@@ -19,7 +19,7 @@ const services = [
     tag: "Margin Lift",
     desc: "Leverage our expertise to digitize your operations by embedding new data, AI, automation tools to improve decision making",
     features: ["OpEx Reduction", "Scale Resilience", "Cloud Optimization"],
-    metric: "40% AVG SAVINGS",
+    metric: "100% AUTOMATION",
     price: "Starting at $2k",
     accent: "from-indigo-600 to-purple-500",
     icon: <ShieldCheck className="w-6 h-6" />
@@ -30,7 +30,7 @@ const services = [
     desc: `Use our proven growth methodologies to scale your business using AI-powered personalization, and mobile-first, customer-centric services to expand access, 
     particularly in underserved markets through fintech and stablecoin solutions`,
     features: ["Zero-Debt Shipping", "Strategic GTM", "Core IP Build"],
-    metric: "ACCELERATED ROI",
+    metric: "NEW CHANNELS",
     price: "Starting at $5k",
     accent: "from-emerald-600 to-teal-500",
     icon: <Zap className="w-6 h-6" />

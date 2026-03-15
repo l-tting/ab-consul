@@ -7,25 +7,29 @@ const steps = [
     step: "01",
     title: "Discovery",
     description:
-      "We audit your technical debt and business bottlenecks to find the highest-leverage entry point.",
+      `We identify the problems and bottlenecks you are facing 
+      to validate that our proposed solutions will work in the market`,
   },
   {
     step: "02",
     title: "Strategy",
     description:
-      "We architect a roadmap where every engineering decision is a calculated move toward revenue.",
+      `We develop the revised technical roadmap, system architecture,
+       operational workflows and detailed user journeys`,
   },
   {
     step: "03",
     title: "Execution",
     description:
-      "High-velocity implementation with transparent PRs and real-time infrastructure visibility.",
+      `We use agile methodologies to build a working product while continuously testing all components to 
+      ensure we identify and fixing all technical and user gaps`,
   },
   {
     step: "04",
     title: "Iteration",
     description:
-      "Post-launch optimization focusing on unit economics and system hardening for 10x scale.",
+      `We provide post-launch monitoring, maintenance 
+      and updates based on user feedback as you scale`,
   },
 ];
 

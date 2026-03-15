@@ -51,13 +51,13 @@ export const BentoCard = ({
       {Icon && (
         <div
           className={cn(
-            "mb-4 flex h-10 w-10 sm:h-12 sm:w-12 md:h-10 md:w-10 items-center justify-center rounded-xl shadow-lg transition-all duration-500 group-hover:scale-110",
+            "mb-4 flex h-10 w-10 sm:h-12 sm:w-12 md:h-12 md:w-12 items-center justify-center rounded-xl shadow-lg transition-all duration-500 group-hover:scale-110",
             theme.iconBg,
             theme.iconColor
           )}
         >
           <Icon
-            className="h-4 w-4 sm:h-6 sm:w-6 md:h-6 md:w-6"
+            className="h-4 w-4 sm:h-6 sm:w-6 md:h-5 md:w-5"
             strokeWidth={2}
           />
         </div>

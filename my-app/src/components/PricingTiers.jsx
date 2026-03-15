@@ -121,16 +121,16 @@ export default function PricingCalculator() {
               <Calculator className="w-10 h-10 md:w-12 md:h-12 text-blue-500 mb-6 md:mb-8 mx-auto lg:mx-0" />
 
               <p className="text-blue-400 text-xs sm:text-sm font-bold uppercase tracking-[0.3em] mb-8">
-                Estimated Monthly Investment
+                Estimated  Investment
               </p>
               
               <div className="flex items-baseline justify-center lg:justify-start gap-2 mb-8">
                 <span className="text-4xl sm:text-5xl font-bold text-white tracking-tighter">
                   ${Math.floor(estimate / 100) * 100}
                 </span>
-                <span className="text-slate-500 text-lg sm:text-xl font-medium">
+                {/* <span className="text-slate-500 text-lg sm:text-xl font-medium">
                   /mo
-                </span>
+                </span> */}
               </div>
 
               <button className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold text-sm sm:text-md flex items-center justify-center gap-2 transition-all shadow-xl shadow-blue-900/20">
@@ -140,7 +140,7 @@ export default function PricingCalculator() {
               
               <p className="mt-6 text-[10px] text-slate-500 uppercase tracking-widest font-bold flex items-center justify-center lg:justify-start gap-2">
                 <ShieldCheck className="w-3 h-3" />
-                No hidden costs. Billed monthly.
+                No hidden costs. 
               </p>
             </div>
           </div>

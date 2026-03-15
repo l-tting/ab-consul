@@ -57,7 +57,7 @@ export const BentoCard = ({
           )}
         >
           <Icon
-            className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7"
+            className="h-4 w-4 sm:h-6 sm:w-6 md:h-7 md:w-7"
             strokeWidth={2}
           />
         </div>
@@ -67,7 +67,7 @@ export const BentoCard = ({
         {name}
       </h3>
 
-      <p className="max-w-[510px] text-sm sm:text-[15px] font-medium leading-relaxed text-white/60 group-hover:text-white/90 transition-colors">
+      <p className="max-w-full text-sm sm:text-[15px] font-medium leading-relaxed text-white/60 group-hover:text-white/90 transition-colors">
         {description}
       </p>
     </div>

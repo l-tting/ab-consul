@@ -74,7 +74,7 @@ export default function Navbar() {
                 href="/contact"
                 className="hidden sm:inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-4 text-sm font-medium text-white hover:bg-gray-800 dark:bg-white dark:text-gray-900"
               >
-                Get Started
+                Book Call
               </Link>
 
               <button

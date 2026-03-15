@@ -16,13 +16,13 @@ const HeroHome1 = () => {
                 </p>
 
                 <div className="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
-                    <button className="w-full sm:w-auto bg-blue-950 text-white px-6 py-3 rounded-full font-semibold">
+                    <a href="/contact" className="w-full sm:w-auto bg-blue-950 text-white px-6 py-3 rounded-full font-semibold text-center">
                         Book a Strategy Call
-                    </button>
+                    </a>
 
-                    <button className="w-full sm:w-auto border border-black px-6 py-3 rounded-full">
-                        Learn More
-                    </button>
+                    <a href="/services" className="w-full sm:w-auto border border-black px-6 py-3 rounded-full text-center">
+                        View Services
+                    </a>
                 </div>
             </section>
         </div>

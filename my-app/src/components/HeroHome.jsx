@@ -92,7 +92,8 @@ const features = [
     Icon: BarChart3,
     name: "Revenue Optimization",
     description:
-      "Systemic audit of your pricing, churn, and LTV to unlock immediate cash flow.",
+      `We help analyzing data from Awareness, Acquisition, Activation, Retention and Revenue by identifying
+       bottlenecks and running targeted experiments `,
     href: "#",
     cta: "Strategic Audit",
     className: "md:col-span-3",
@@ -109,7 +110,8 @@ const features = [
     Icon: Target,
     name: "Market Penetration",
     description:
-      "High-velocity GTM strategies for new verticals and international territories.",
+      `We have experience across Africa with our team having worked across 20 countries in the continent. We bring the expertise you need in market research, navigating new market entry, compliance
+       and launch as you scale across multiple geographies.`,
     href: "#",
     cta: "GTM Framework",
     className: "md:col-span-3",
@@ -126,7 +128,8 @@ const features = [
     Icon: ShieldCheck,
     name: "Capital Efficiency",
     description:
-      "Ensuring growth is sustainable by optimizing OpEx and infrastructure burn.",
+      `Optimize your capital by deploying resources to revenue generating activities with measurable ROI while 
+      reducing costs to ensure you achieve a desired run rate`,
     href: "#",
     cta: "Efficiency Specs",
     className: "md:col-span-2",
@@ -143,7 +146,8 @@ const features = [
     Icon: Globe2,
     name: "Growth Ops",
     description:
-      "Aligning people, processes, and tools to maintain $100M+ scale.",
+    `Lean into our proven growth models modelled according to your company growth stage. Our tailored solutions have worked
+       for startups in the idea stage to scale-ups that have raised Series C rounds and beyond`,
     href: "#",
     cta: "Scale Manual",
     className: "md:col-span-4",

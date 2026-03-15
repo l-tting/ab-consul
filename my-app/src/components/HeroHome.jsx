@@ -67,7 +67,7 @@ export const BentoCard = ({
         {name}
       </h3>
 
-      <p className="max-w-[280px] text-sm sm:text-[15px] font-medium leading-relaxed text-white/60 group-hover:text-white/90 transition-colors">
+      <p className="max-w-[400px] text-sm sm:text-[15px] font-medium leading-relaxed text-white/60 group-hover:text-white/90 transition-colors">
         {description}
       </p>
     </div>

@@ -57,7 +57,7 @@ export const BentoCard = ({
           )}
         >
           <Icon
-            className="h-4 w-4 sm:h-6 sm:w-6 md:h-5 md:w-5"
+            className="h-4 w-4 sm:h-6 sm:w-6 md:h-4 md:w-4"
             strokeWidth={2}
           />
         </div>

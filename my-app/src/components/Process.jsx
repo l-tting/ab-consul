@@ -81,7 +81,7 @@ export default function Process() {
               </div>
 
               {/* Content */}
-              <div className="space-y-3">
+              <div className="space-y-3 flex-1">
                 <h3 className="text-lg md:text-xl font-bold tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">
                   {item.title}
                 </h3>

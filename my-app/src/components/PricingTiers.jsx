@@ -4,17 +4,24 @@ import { useState, useEffect } from "react";
 import { Calculator, ArrowRight, ShieldCheck, Zap } from "lucide-react";
 
 export default function PricingCalculator() {
-  const [revenue, setRevenue] = useState(500000);
+  const BASE_PRICE = 1000;
+  const MIN_REVENUE = 50000;
+
+  const [revenue, setRevenue] = useState(MIN_REVENUE);
   const [isSeeded, setIsSeeded] = useState(false);
   const [companySize, setCompanySize] = useState("1-10");
-  const [estimate, setEstimate] = useState(0);
+  const [estimate, setEstimate] = useState(BASE_PRICE);
 
   useEffect(() => {
-    const base = 1000;
-    const revenueFactor = revenue * 0.004;
+    const revenueFactor = (revenue - MIN_REVENUE) * 0.004;
     const seedPremium = isSeeded ? 2000 : 0;
-    const sizePremium = companySize === "50+" ? 2500 : companySize === "11-50" ? 1200 : 0;
-    setEstimate(base + revenueFactor + seedPremium + sizePremium);
+    const sizePremium =
+      companySize === "50+" ? 2500 :
+      companySize === "11-50" ? 1200 : 0;
+
+    const total = BASE_PRICE + revenueFactor + seedPremium + sizePremium;
+
+    setEstimate(total);
   }, [revenue, isSeeded, companySize]);
 
   return (
@@ -115,25 +122,20 @@ export default function PricingCalculator() {
 
           {/* RIGHT SIDE */}
           <div className="lg:col-span-5 bg-slate-900 p-6 sm:p-8 md:p-12 lg:p-16 flex flex-col justify-center relative">
-            <div className="absolute top-0 right-0 w-40 md:w-64 h-40 md:h-64 bg-blue-600/10 blur-[80px] md:blur-[100px] rounded-full" />
-
             <div className="relative z-10 text-center lg:text-left">
-              <Calculator className="w-10 h-10 md:w-12 md:h-12 text-blue-500 mb-6 md:mb-8 mx-auto lg:mx-0" />
+              <Calculator className="w-10 h-10 text-blue-500 mb-6 mx-auto lg:mx-0" />
 
-              <p className="text-blue-400 text-xs sm:text-sm font-bold uppercase tracking-[0.3em] mb-8">
-                Estimated  Investment
+              <p className="text-blue-400 text-xs font-bold uppercase tracking-[0.3em] mb-8">
+                Estimated Investment
               </p>
               
               <div className="flex items-baseline justify-center lg:justify-start gap-2 mb-8">
-                <span className="text-4xl sm:text-5xl font-bold text-white tracking-tighter">
+                <span className="text-4xl font-bold text-white tracking-tighter">
                   ${Math.floor(estimate / 100) * 100}
                 </span>
-                {/* <span className="text-slate-500 text-lg sm:text-xl font-medium">
-                  /mo
-                </span> */}
               </div>
 
-              <button className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold text-sm sm:text-md flex items-center justify-center gap-2 transition-all shadow-xl shadow-blue-900/20">
+              <button className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold flex items-center justify-center gap-2">
                 Confirm Engagement
                 <ArrowRight className="w-5 h-5" />
               </button>

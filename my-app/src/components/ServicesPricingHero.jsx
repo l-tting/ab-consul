@@ -34,7 +34,7 @@ export default function ServicesPricingHero() {
         </div>
 
    
-       <p className="mt-6 text-lg text-slate-600 font-medium leading-relaxed max-w-3xl mx-auto text-center">
+       <p className="mt-6 text-lg text-slate-600 font-medium leading-relaxed max-w-4xl mx-auto text-center">
   We eliminate the technical and operational friction that devalues and slows down high-growth companies,<br />
   transforming bottlenecks into strategic pillars<br />
   with engagements structured around measurable impact.

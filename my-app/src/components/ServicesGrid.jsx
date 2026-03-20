@@ -49,11 +49,11 @@ const services = [
 
 export default function ServicesGrid() {
   return (
-    <section className="py-20 ">
+    <section className="py-16 ">
       <div className="max-w-6xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-blue-600 font-black uppercase tracking-[0.5em] text-sm sm:text-base mb-2">
+          <h2 className="text-blue-600 font-black uppercase tracking-[0.5em] text-md sm:text-base mb-2">
             Capabilities
           </h2>
           {/* <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 max-w-3xl mx-auto leading-snug">

@@ -38,7 +38,7 @@ function Footer() {
 
           {/* Brand */}
           <div>
-            <div className="inline-flex items-center gap-0 bg-white px-4  rounded-md mb-6">
+            <div className="inline-flex items-center gap-0 bg-white px-4 rounded-md mb-6">
               <img
                 src="/ab.png"
                 alt="AB Consul Logo"
@@ -56,7 +56,13 @@ function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-semibold mb-6">Explore Our World</h4>
+            <h4 className="text-white font-semibold mb-6 flex items-center gap-2">
+              Explore Our World
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+              </span>
+            </h4>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-8 text-sm">
               {NAV_LINKS.map((link) => {
                 const isActive = pathname === link.href;

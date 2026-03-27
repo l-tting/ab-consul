@@ -31,6 +31,21 @@ function Footer() {
 
   return (
     <footer className="bg-gray-950 text-gray-300">
+      {/* Custom animation keyframes */}
+      <style jsx>{`
+        @keyframes spin-slow {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+        .animate-spin-slow {
+          animation: spin-slow 12s linear infinite;
+        }
+      `}</style>
+
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
         
         {/* Top Section */}
@@ -58,10 +73,20 @@ function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-6 flex items-center gap-2">
               Explore Our World
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-              </span>
+              {/* Intertwined Arrows SVG */}
+              <svg
+                className="w-5 h-5 text-blue-400 animate-spin-slow"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M7 7L17 17M7 17L17 7" />
+                <path d="M7 7L7 12M17 7L12 7" />
+                <path d="M17 17L12 17M7 17L7 12" />
+              </svg>
             </h4>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-8 text-sm">
               {NAV_LINKS.map((link) => {

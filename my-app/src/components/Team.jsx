@@ -23,85 +23,95 @@ export default function TeamSection() {
   ];
 
   return (
-    <section className="w-full py-8 md:py-16 flex justify-center">
+    <section className="w-full py-16 flex justify-center">
       <div className="w-[92%] max-w-6xl">
 
         {/* Header - Boardroom Alignment */}
-        <div className="text-center mb-12 md:mb-20">
-          <h2 className="text-[16px] md:text-[20px] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-blue-600 mb-4 italic">
+        <div className="text-center mb-20">
+          <h2 className="text-[20px] font-black uppercase tracking-[0.4em] text-blue-600 mb-4 italic">
             The Personnel
           </h2>
-          <p className="text-xl md:text-4xl font-black tracking-tighter text-slate-900 mb-4 md:mb-6 leading-[1.1] md:leading-[0.9]">
+          <p className="text-2xl md:text-4xl font-black tracking-tighter text-slate-900 mb-6 leading-[0.9]">
             Direct access to 
             <span className="text-stone-400 italic font-serif font-black"> the founders.</span>
           </p>
-          <p className="text-slate-500 text-xs md:text-sm max-w-xl mx-auto leading-relaxed font-bold px-4">
+          <p className="text-slate-500 text-sm max-w-xl mx-auto leading-relaxed font-bold">
             We don't delegate to account managers. You partner directly with the 
             architects responsible for your scaling engine.
           </p>
         </div>
 
-        {/* Dynamic Grid - Mobile Optimized */}
-        <div className="flex flex-col md:flex-row gap-6 md:gap-8 justify-center items-stretch">
+        {/* Dynamic Grid */}
+        <div className="flex flex-col md:flex-row gap-8 justify-center items-stretch min-h-[600px]">
           {team.map((member, i) => (
             <div
               key={i}
               onMouseEnter={() => setHoveredIndex(i)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className="relative rounded-2xl md:rounded-[3.5rem] overflow-hidden transition-all duration-700 bg-white border border-slate-200 md:cursor-pointer"
+              className={`
+                relative rounded-[3.5rem] overflow-hidden transition-all duration-700 
+                bg-white border border-slate-200
+                ${hoveredIndex === i && typeof window !== 'undefined' && window.innerWidth >= 768 
+                  ? 'md:flex-[1.4] shadow-2xl border-blue-600' 
+                  : 'md:flex-1 shadow-sm'
+                }
+              `}
             >
-              {/* Default View - Always visible on mobile */}
-              <div className="p-8 md:p-14 flex flex-col bg-slate-50">
-                <div className="space-y-2">
-                  <p className="text-[10px] md:text-[11px] font-black text-blue-600 uppercase tracking-[0.2em] md:tracking-[0.3em]">
-                    {member.title}
-                  </p>
-                  <h3 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tighter leading-none">
-                    {member.name}
-                  </h3>
-                </div>
-                <div className="mt-8 md:mt-10 w-10 h-10 md:w-12 md:h-12 rounded-full border border-slate-300 flex items-center justify-center">
-                  <Plus className="w-5 h-5 md:w-6 md:h-6 text-slate-400" />
+              {/* Background State */}
+              <div className="absolute inset-0 bg-slate-900">
+                <div className={`absolute inset-0 bg-slate-50 transition-opacity duration-700 ${hoveredIndex === i ? 'opacity-10' : 'opacity-100'}`}>
                 </div>
               </div>
 
-              {/* Hover/Expand View - Conditional for desktop, always visible on mobile as expandable */}
+              {/* Default View - Always visible on mobile, conditionally visible on desktop based on hover */}
               <div className={`
-                md:absolute md:inset-0 md:p-14 md:flex md:flex-col md:justify-end
-                bg-blue-600 transition-all duration-700
-                ${hoveredIndex === i ? 'md:translate-y-0 md:opacity-100' : 'md:translate-y-full md:opacity-0'}
-                md:pointer-events-none
-                mt-4 md:mt-0
+                relative p-14 flex flex-col justify-end min-h-[600px]
+                transition-all duration-500
+                md:absolute md:inset-0
+                ${hoveredIndex === i ? 'md:opacity-0 md:translate-y-10' : 'md:opacity-100'}
               `}>
-                <div className="p-8 md:p-0 pt-0 md:pt-0">
-                  <span className="text-[9px] md:text-[10px] font-black text-blue-200 uppercase tracking-[0.3em] md:tracking-[0.4em] mb-2 md:mb-4 block">
-                    Focus: {member.impact}
-                  </span>
-                  <h3 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-8 tracking-tighter leading-none">
-                    {member.name}
-                  </h3>
-                  <p className="text-blue-50 text-sm md:text-md leading-relaxed mb-6 md:mb-10 max-w-sm font-medium">
-                    {member.description}
-                  </p>
+                <div className="space-y-2">
+                  <p className="text-[11px] font-black text-blue-600 uppercase tracking-[0.3em]">{member.title}</p>
+                  <h3 className="text-3xl font-black text-slate-900 tracking-tighter leading-none">{member.name}</h3>
+                </div>
+                <div className="mt-10 w-12 h-12 rounded-full border border-slate-300 flex items-center justify-center transition-all">
+                  <Plus className="w-6 h-6 text-slate-400" />
+                </div>
+              </div>
 
-                  {/* Metric Badges */}
-                  <div className="flex flex-wrap gap-2 md:gap-3 mb-8 md:mb-12">
-                    {member.metrics.map((m, idx) => (
-                      <span key={idx} className="px-3 md:px-5 py-1.5 md:py-2 rounded-full bg-white/10 text-white text-[9px] md:text-[11px] font-black border border-white/20 backdrop-blur-md tracking-wider md:tracking-widest uppercase">
-                        {m}
-                      </span>
-                    ))}
-                  </div>
+              {/* Hover View - Hidden on mobile, shows on desktop hover */}
+              <div className={`
+                relative p-14 flex flex-col justify-end bg-blue-600 min-h-[600px]
+                transition-all duration-700
+                md:absolute md:inset-0
+                ${hoveredIndex === i ? 'md:translate-y-0 md:opacity-100' : 'md:translate-y-full md:opacity-0'}
+                ${hoveredIndex === i ? 'block' : 'hidden md:block'}
+              `}>
+                <span className="text-[10px] font-black text-blue-200 uppercase tracking-[0.4em] mb-4">
+                  Focus: {member.impact}
+                </span>
+                <h3 className="text-5xl font-black text-white mb-8 tracking-tighter leading-none">{member.name}</h3>
+                <p className="text-blue-50 text-md leading-relaxed mb-10 max-w-sm font-medium">
+                  {member.description}
+                </p>
 
-                  <div className="flex items-center justify-between border-t border-white/20 pt-6 md:pt-8">
-                    <div className="flex items-center gap-2 md:gap-3 text-white text-[10px] md:text-[11px] font-black uppercase tracking-[0.15em] md:tracking-[0.2em]">
-                      <span>Case Studies</span>
-                      <MoveRight className="w-4 h-4 md:w-5 md:h-5" />
-                    </div>
-                    <a href="#" className="p-2 md:p-4 bg-white text-blue-600 rounded-xl md:rounded-2xl hover:bg-blue-50 transition-colors shadow-xl">
-                      <Linkedin className="w-4 h-4 md:w-5 md:h-5 fill-current" />
-                    </a>
+                {/* Metric Badges */}
+                <div className="flex flex-wrap gap-3 mb-12">
+                  {member.metrics.map((m, idx) => (
+                    <span key={idx} className="px-5 py-2 rounded-full bg-white/10 text-white text-[11px] font-black border border-white/20 backdrop-blur-md tracking-widest uppercase">
+                      {m}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex items-center justify-between border-t border-white/20 pt-8">
+                  <div className="flex items-center gap-3 text-white text-[11px] font-black uppercase tracking-[0.2em]">
+                    <span>Case Studies</span>
+                    <MoveRight className="w-5 h-5" />
                   </div>
+                  <a href="#" className="p-4 bg-white text-blue-600 rounded-2xl hover:bg-blue-50 transition-colors shadow-xl">
+                    <Linkedin className="w-5 h-5 fill-current" />
+                  </a>
                 </div>
               </div>
             </div>

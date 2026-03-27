@@ -33,16 +33,17 @@ function Footer() {
     <footer className="bg-gray-950 text-gray-300">
       {/* Custom animation keyframes */}
       <style jsx>{`
-        @keyframes float {
-          0%, 100% {
-            transform: translateY(0px);
+        @keyframes spin-globe {
+          from {
+            transform: rotate(0deg);
           }
-          50% {
-            transform: translateY(-3px);
+          to {
+            transform: rotate(360deg);
           }
         }
-        .animate-float {
-          animation: float 3s ease-in-out infinite;
+        .animate-spin-globe {
+          animation: spin-globe 12s linear infinite;
+          transform-origin: center center;
         }
       `}</style>
 
@@ -73,9 +74,9 @@ function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-6 flex items-center gap-2">
               Explore Our World
-              {/* Stand holding the world icon */}
+              {/* Globe on stand with spinning globe */}
               <svg
-                className="w-5 h-5 text-blue-400 animate-float"
+                className="w-5 h-5 text-blue-400"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -83,15 +84,16 @@ function Footer() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
-                {/* Globe */}
-                <circle cx="12" cy="11" r="4" />
-                <path d="M12 15v3" />
-                <path d="M8 18h8" />
-                {/* Stand / pedestal */}
-                <rect x="10" y="18" width="4" height="2" />
-                <path d="M6 20h12" />
-                <path d="M12 7v2" />
-                <path d="M9 9h6" />
+                {/* Stand */}
+                <rect x="10" y="18" width="4" height="2" fill="currentColor" stroke="none" />
+                <path d="M6 20h12" stroke="currentColor" fill="none" />
+                
+                {/* Spinning globe group */}
+                <g className="animate-spin-globe">
+                  <circle cx="12" cy="11" r="4" stroke="currentColor" fill="none" />
+                  <path d="M12 7v2M12 13v2M9 9h6M9 13h6" stroke="currentColor" fill="none" />
+                  <path d="M8 11h8" stroke="currentColor" fill="none" />
+                </g>
               </svg>
             </h4>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-8 text-sm">

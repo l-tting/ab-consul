@@ -33,16 +33,16 @@ function Footer() {
     <footer className="bg-gray-950 text-gray-300">
       {/* Custom animation keyframes */}
       <style jsx>{`
-        @keyframes spin-slow {
-          from {
-            transform: rotate(0deg);
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0px);
           }
-          to {
-            transform: rotate(360deg);
+          50% {
+            transform: translateY(-3px);
           }
         }
-        .animate-spin-slow {
-          animation: spin-slow 12s linear infinite;
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
         }
       `}</style>
 
@@ -73,9 +73,9 @@ function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-6 flex items-center gap-2">
               Explore Our World
-              {/* Intertwined Arrows SVG */}
+              {/* Stand holding the world icon */}
               <svg
-                className="w-5 h-5 text-blue-400 animate-spin-slow"
+                className="w-5 h-5 text-blue-400 animate-float"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -83,9 +83,15 @@ function Footer() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
-                <path d="M7 7L17 17M7 17L17 7" />
-                <path d="M7 7L7 12M17 7L12 7" />
-                <path d="M17 17L12 17M7 17L7 12" />
+                {/* Globe */}
+                <circle cx="12" cy="11" r="4" />
+                <path d="M12 15v3" />
+                <path d="M8 18h8" />
+                {/* Stand / pedestal */}
+                <rect x="10" y="18" width="4" height="2" />
+                <path d="M6 20h12" />
+                <path d="M12 7v2" />
+                <path d="M9 9h6" />
               </svg>
             </h4>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-8 text-sm">
@@ -132,7 +138,7 @@ function Footer() {
               ))}
             </div>
 
-            {/* Email with proper mail icon */}
+            {/* Email */}
             <div className="flex items-center gap-2 text-sm">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

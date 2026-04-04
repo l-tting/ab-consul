@@ -23,7 +23,7 @@ const HeroHome1 = () => {
             Book a Strategy Call
           </Link>
 
-          <Link href="/services" className="w-full sm:w-auto border border-black px-6 py-3 rounded-full text-center">
+          <Link href="/services" className="w-full sm:w-auto border border-black px-6 py-3 rounded-full font-semibold text-center">
             View Services
           </Link>
         </div>

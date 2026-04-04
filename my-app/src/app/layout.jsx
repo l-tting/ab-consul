@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Your App Name",
+  title: "AB-CONSUL",
   description: "Your description",
   icons: {
     icon: "/favicon.ico",

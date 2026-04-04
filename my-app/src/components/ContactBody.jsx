@@ -37,7 +37,7 @@ export default function ContactBody() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          to: "brianletting01@gmail.com", // Your receiving email
+          to: "admin@ab-consul.com", // Your receiving email
           subject: `Partnership Brief: ${name}`,
           html: emailHtml,
         }),

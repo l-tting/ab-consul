@@ -41,13 +41,13 @@ export default function ServicesPricingHero() {
         {/* Badge */}
         <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white border border-stone-200 text-slate-500 text-[10px] font-black uppercase tracking-[0.2em] mb-8 shadow-sm">
           <span className="w-1.5 h-1.5 bg-blue-600 rounded-full" />
-          Strategic Capabilities
+          Engagement Framework
         </div>
 
         {/* Title */}
         <h1 className="text-5xl md:text-5xl font-black tracking-tighter text-slate-900 leading-[0.95] mb-8">
-          Engineering <br className="md:hidden" />
-          <span className="text-blue-600">value systems.</span>
+          Strategic <br className="md:hidden" />
+          <span className="text-blue-600">Capabilities</span>
         </h1>
 
         {/* Subtext */}

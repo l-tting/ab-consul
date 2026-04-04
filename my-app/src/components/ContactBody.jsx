@@ -114,17 +114,17 @@ export default function ContactBody() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="space-y-3">
-                      <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Principal Name</label>
+                      <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Full Name</label>
                       <input name="name" required placeholder="E.g. Alexander Hamilton" className="w-full h-12 px-5 rounded-2xl border-2 border-black focus:outline-none focus:ring-4 focus:ring-blue-600/10 focus:border-blue-500 font-bold text-slate-900" />
                     </div>
                     <div className="space-y-3">
-                      <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Corporate Email</label>
+                      <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1"> Email</label>
                       <input name="email" type="email" required placeholder="ceo@company.com" className="w-full h-12 px-5 rounded-2xl border-2 border-black focus:outline-none focus:ring-4 focus:ring-blue-600/10 focus:border-blue-500 font-bold text-slate-900" />
                     </div>
                   </div>
 
                   <div className="space-y-3">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Scaling Bottlenecks</label>
+                    <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Brief Description</label>
                     <textarea name="details" required placeholder="Briefly describe the technical hurdles impacting your revenue velocity..." className="w-full min-h-[160px] p-5 rounded-2xl border-2 border-black focus:outline-none focus:ring-4 focus:ring-blue-600/10 focus:border-blue-500 font-bold text-slate-900 resize-none leading-relaxed" />
                   </div>
 

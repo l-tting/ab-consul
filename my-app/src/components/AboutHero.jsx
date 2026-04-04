@@ -39,7 +39,7 @@ export default function AboutHero() {
         </p>
 
         {/* Secondary description (like supporting contact info block style) */}
-        <div className="flex flex-wrap justify-center gap-10 text-[11px] font-black text-slate-400 uppercase tracking-[0.2em]">
+        {/* <div className="flex flex-wrap justify-center gap-10 text-[11px] font-black text-slate-400 uppercase tracking-[0.2em]">
           <div className="flex items-center gap-3 hover:text-slate-900 transition-colors">
             <span className="w-2 h-2 bg-blue-600 rounded-full" />
             <span>Engineering → Capital Alignment</span>
@@ -49,7 +49,7 @@ export default function AboutHero() {
             <span className="w-2 h-2 bg-blue-600 rounded-full" />
             <span>Infrastructure Value Creation</span>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

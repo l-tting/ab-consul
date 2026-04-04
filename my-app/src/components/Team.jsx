@@ -50,7 +50,7 @@ export default function TeamSection() {
             Direct access to 
             <span className="text-stone-400 italic font-serif font-black"> the founders.</span>
           </p>
-          <p className="text-slate-500 text-sm max-w-xl mx-auto leading-relaxed font-bold">
+          <p className="text-slate-600 text-lg max-w-xl mx-auto leading-relaxed font-medium">
             We don't delegate to account managers. You partner directly with the 
             architects responsible for your growth and scaling engine.
           </p>

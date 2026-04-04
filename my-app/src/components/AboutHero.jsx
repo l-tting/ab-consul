@@ -33,7 +33,7 @@ export default function AboutHero() {
 
         {/* Subtext */}
         <p className="text-xl md:text-2xl text-slate-500 max-w-3xl leading-relaxed font-medium mb-12 tracking-tight">
-          AB Consul partners with startups{" "}
+          AB Consul partners with startups,{" "}
           <span className="text-slate-900">growth stage entities and sole proprietors</span> to{" "}
           <span className="text-slate-900">move from product-market fit to global scale</span>
         </p>

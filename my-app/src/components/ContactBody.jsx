@@ -109,7 +109,7 @@ export default function ContactBody() {
                   </p>
                 </div>
 
-                <form className="space-y-6" onSubmit={handleSubmit}>
+                <form className="space-y-6" onSubmit={handleSubmit} id='contact-form'>
                   {error && <p className="text-red-500 font-bold text-xs uppercase tracking-widest">{error}</p>}
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

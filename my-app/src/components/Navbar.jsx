@@ -71,7 +71,7 @@ export default function Navbar() {
             {/* Right Side */}
             <div className="flex items-center gap-4">
               <Link
-                href="/contact"
+                href="/contact#contact-form"
                 className="hidden sm:inline-flex h-10 items-center justify-center rounded-2xl bg-gray-900 px-4 text-sm font-medium text-white hover:bg-gray-800 dark:bg-white dark:text-gray-900"
               >
                 Book Call

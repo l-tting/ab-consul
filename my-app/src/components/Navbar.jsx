@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname,useRouter } from "next/navigation";
+
+const router = useRouter();
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -72,7 +74,7 @@ export default function Navbar() {
             <div className="flex items-center gap-4">
               <Link
                 href="/contact#contact-form"
-                className="hidden sm:inline-flex h-10 items-center justify-center rounded-2xl bg-gray-900 px-4 text-sm font-medium text-white hover:bg-gray-800 dark:bg-white dark:text-gray-900"
+                className="hidden sm:inline-flex h-10 items-center justify-center rounded-2xl bg-blue-950 px-4 text-sm font-medium text-white hover:bg-gray-800 dark:bg-white dark:text-gray-900"
               >
                 Book Call
               </Link>

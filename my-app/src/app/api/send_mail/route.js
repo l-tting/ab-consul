@@ -26,7 +26,7 @@ export async function POST(request) {
 
     const { data, error } = await resend.emails.send({
       from: "no-reply@ab-consul.com",
-      to: "brianletting01@gmail.com", // or use `to`
+      to: "admin@ab-consul.com", // or use `to`
       subject: subject,
       html: html,
     });

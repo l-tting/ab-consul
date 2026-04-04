@@ -76,7 +76,7 @@ function Footer() {
               Explore Our World
               {/* Globe on stand with spinning globe */}
               <svg
-                className="w-5 h-5 text-blue-400"
+                className="w-5 h-5 text-white"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"

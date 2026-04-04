@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { usePathname,useRouter } from "next/navigation";
+import { usePathname} from "next/navigation";
 
-const router = useRouter();
+
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },

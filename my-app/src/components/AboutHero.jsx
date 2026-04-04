@@ -27,15 +27,15 @@ export default function AboutHero() {
         {/* Title */}
         <h1 className="text-5xl md:text-5xl font-black tracking-tighter text-slate-900 leading-[0.9] mb-8">
           Transforming <br className="md:hidden" />
-          <span className="text-stone-400 italic font-serif">infrastructure</span>{" "}
-          into <span className="text-blue-600">equity value.</span>
+          <span className="text-stone-400 italic font-serif">growth ideas</span>{" "}
+          into <span className="text-blue-600">revenue engines</span>
         </h1>
 
         {/* Subtext */}
         <p className="text-xl md:text-2xl text-slate-500 max-w-3xl leading-relaxed font-medium mb-12 tracking-tight">
-          AB CONSUL partners with founders to move from{" "}
-          <span className="text-slate-900">product-market fit</span> to{" "}
-          <span className="text-slate-900">global scale</span>, aligning engineering velocity with financial outcomes.
+          AB CONSUL partners with startups{" "}
+          <span className="text-slate-900">growth stage entities and sole proprietors</span> to{" "}
+          <span className="text-slate-900">move from product-market fit to global scale</span>
         </p>
 
         {/* Secondary description (like supporting contact info block style) */}
@@ -53,4 +53,4 @@ export default function AboutHero() {
       </div>
     </section>
   );
-}
+} 

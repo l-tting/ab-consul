@@ -52,7 +52,7 @@ export default function TeamSection() {
           </p>
           <p className="text-slate-500 text-sm max-w-xl mx-auto leading-relaxed font-bold">
             We don't delegate to account managers. You partner directly with the 
-            architects responsible for your scaling engine.
+            architects responsible for your growth and scaling engine.
           </p>
         </div>
 

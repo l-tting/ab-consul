@@ -30,13 +30,15 @@ export default function AboutContrast() {
               <li className="relative">
                 <p className="font-black text-slate-900 text-lg md:text-xl tracking-tighter mb-2 md:mb-3">Feature-First Delivery</p>
                 <p className="text-slate-500 text-sm md:text-md font-medium leading-relaxed">
-                  Typical agencies build exactly what is in the ticket—even if those features create technical debt that kills your long-term valuation.
+                  Typical agencies build exactly what is in the ticket—even if those features create bottlenecks that kill your long-term vision and scale.
+
                 </p>
               </li>
               <li className="relative">
                 <p className="font-black text-slate-900 text-lg md:text-xl tracking-tighter mb-2 md:mb-3">Siloed Engineering</p>
                 <p className="text-slate-500 text-sm md:text-md font-medium leading-relaxed">
-                  Developers who focus on "clean code" in a vacuum, with zero visibility into how performance latency affects your customer acquisition cost (CAC).
+                  Consultants who focus on their internal fragmented views with zero visibility into how performance latency affects your customer acquisition cost (CAC) and bottom line.
+
                 </p>
               </li>
             </ul>
@@ -59,7 +61,8 @@ export default function AboutContrast() {
                   <p className="font-black text-white text-md md:text-lg tracking-tighter">Outcome-Architected</p>
                 </div>
                 <p className="text-slate-400 text-sm md:text-md font-medium leading-relaxed">
-                  We don't build software; we build <span className="text-white italic font-serif">Revenue Engines</span>. Every architectural decision is filtered through the lens of EBITDA and unit economics.
+                 We don't propose mundane solutions; we build <span className="text-white italic font-serif">Revenue Engines</span>. Every growth and technical decision is filtered through the lens of EBITDA and unit economics.
+
                 </p>
               </li>
               <li className="group">
@@ -68,7 +71,7 @@ export default function AboutContrast() {
                   <p className="font-black text-white text-md md:text-lg tracking-tighter">Unified Operations</p>
                 </div>
                 <p className="text-slate-400 text-sm md:text-md font-medium leading-relaxed">
-                  We bridge the gap between your P&L and your stack. By integrating with marketing and finance data, we eliminate infra-waste while optimizing growth funnels.
+                    We bridge the gap between your P&L and your operations tech stack. By integrating with your historical data, we eliminate day to day waste while optimizing growth funnels.
                 </p>
               </li>
             </ul>

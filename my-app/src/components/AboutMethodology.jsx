@@ -7,7 +7,7 @@ export default function StrategicVelocity() {
     {
       title: "Risk Mitigation & Audit",
       state: "Phase 01: Fragile Systems",
-      impact: "We audit the technical debt acting as a silent tax on your growth. We identify systemic bottlenecks that threaten terminal value during peak market cycles.",
+      impact: "We audit the technical and operational hurdles acting as a silent tax on your growth. We identify systemic bottlenecks that threaten terminal value during peak market cycles.",
       icon: <ShieldAlert className="w-5 h-5 text-red-500" />
     },
     {
@@ -40,8 +40,8 @@ export default function StrategicVelocity() {
                with the <span className="text-blue-600">P&L.</span>
             </p>
             <p className="text-slate-500 text-md max-w-md leading-relaxed font-medium">
-              We remove the technical friction that prevents institutional scaling. 
-              Our framework treats your codebase as a high-yield financial instrument.
+         We remove the technical and operational friction that prevents institutional scaling. 
+         Our framework treats your data as a high-yield financial instrument.
             </p>
             
             <div className="mt-12 flex items-center gap-4 text-slate-300">

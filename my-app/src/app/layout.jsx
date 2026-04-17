@@ -3,8 +3,8 @@ import Navbar from "../components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "AB-CONSUL",
-  description: "Your description",
+  title: "Startup Consulting & MVP Development for Growth | AB Consul",
+  description: "Startup consulting and MVP development to help you launch, grow, and increase revenue. Build faster with data-driven systems and expert guidance.",
   icons: {
     icon: "/favicon.ico",
   },
@@ -23,3 +23,4 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+

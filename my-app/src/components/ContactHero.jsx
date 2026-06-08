@@ -46,7 +46,7 @@ export default function ContactHero() {
             className="flex items-center gap-3 group cursor-pointer hover:text-slate-900 transition-colors"
           >
             <Phone className="w-4 h-4 text-blue-600" />
-            <span>+1 234 567 890</span>
+            <span>+254 717568861</span>
           </a>
         </div>
       </div>

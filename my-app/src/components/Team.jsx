@@ -19,7 +19,7 @@ export default function TeamSection() {
       name: "Andrew Letting",
       title: "Strategy & Growth Architecture",
       impact: "Revenue Performance",
-      description: "Andrew Letting is a fintech growth and revenue specialist with deep expertise in scaling digital financial services across Sub-Saharan Africa. He served as Regional Manager for Africa at Bitget Wallet and growth lead at Bitget exchange, one of the top 3 global crypto exchanges, and previously led fintech partnerships for East Africa and the Indian Ocean Islands at Mastercard. Earlier in his career he advised FloatPays on regulatory strategy across Africa as well as leading banking and digital marketing teams at Cellulant",
+      description: "Andrew Letting is a fintech growth and revenue specialist with deep expertise in scaling digital financial services across Sub-Saharan Africa. He served as Regional Manager for Africa at Bitget Wallet and growth lead at Bitget exchange, one of the top 3 global crypto exchanges and previously led fintech partnerships for East Africa and the Indian Ocean Islands at Mastercard. Earlier in his career he advised FloatPays on regulatory strategy across Africa as well as leading banking and digital marketing teams at Cellulant",
       metrics: ["Commercialization", "User Growth"]
     },
     {

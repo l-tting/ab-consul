@@ -20,7 +20,7 @@ export default function TeamSection() {
       title: "Strategy & Growth Architecture",
       impact: "Revenue Performance",
       description: "Andrew Letting is a fintech growth and revenue specialist with deep expertise in scaling digital financial services across Sub-Saharan Africa. He served as Regional Manager for Africa at Bitget Wallet and growth lead at Bitget exchange, one of the top 3 global crypto exchanges globally, and previously led fintech partnerships for East Africa and the Indian Ocean Islands at Mastercard. Earlier in his career he advised FloatPays on regulatory strategy across Africa as well as leading banking and digital marketing teams at Cellulant",
-      metrics: ["15% LTV Expansion", "Attribution Engineering"]
+      metrics: ["Commercialization", "User Growth"]
     },
     {
       name: "Brian Letting",
@@ -92,30 +92,34 @@ export default function TeamSection() {
                   </div>
 
                   {/* Hover View (desktop) */}
-                  <div className={`absolute inset-0 p-14 flex flex-col justify-end bg-blue-600 transition-all duration-700 transform ${isHovered ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
+                  <div className={`absolute inset-0 p-14 flex flex-col justify-between bg-blue-600 transition-all duration-700 transform ${isHovered ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
                     }`}>
-                    <span className="text-[10px] font-black text-blue-200 uppercase tracking-[0.4em] mb-4">
-                      Focus: {member.impact}
-                    </span>
-                    <h3 className="text-5xl font-black text-white mb-8 tracking-tighter leading-none">{member.name}</h3>
-                    <div className="text-blue-50 text-md leading-relaxed mb-10 max-w-lg font-medium max-h-52 overflow-y-auto pr-2">
-                      {member.description}
-                    </div>
-                    <div className="flex flex-wrap gap-3 mb-12">
-                      {member.metrics.map((m, idx) => (
-                        <span key={idx} className="px-5 py-2 rounded-full bg-white/10 text-white text-[11px] font-black border border-white/20 backdrop-blur-md tracking-widest uppercase">
-                          {m}
+                    <div className="flex flex-col h-full justify-between">
+                      <div>
+                        <span className="text-[10px] font-black text-blue-200 uppercase tracking-[0.4em] mb-4 block">
+                          Focus: {member.impact}
                         </span>
-                      ))}
-                    </div>
-                    <div className="flex items-center justify-between border-t border-white/20 pt-8">
-                      <div className="flex items-center gap-3 text-white text-[11px] font-black uppercase tracking-[0.2em]">
-                        <span>Case Studies</span>
-                        <MoveRight className="w-5 h-5" />
+                        <h3 className="text-5xl font-black text-white mb-8 tracking-tighter leading-none">{member.name}</h3>
+                        <div className="text-blue-50 text-md leading-relaxed mb-10 max-w-lg font-medium">
+                          {member.description}
+                        </div>
+                        <div className="flex flex-wrap gap-3 mb-12">
+                          {member.metrics.map((m, idx) => (
+                            <span key={idx} className="px-5 py-2 rounded-full bg-white/10 text-white text-[11px] font-black border border-white/20 backdrop-blur-md tracking-widest uppercase">
+                              {m}
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                      <a href="#" className="p-4 bg-white text-blue-600 rounded-2xl hover:bg-blue-50 transition-colors shadow-xl">
-                        <Linkedin className="w-5 h-5 fill-current" />
-                      </a>
+                      <div className="flex items-center justify-between border-t border-white/20 pt-8">
+                        <div className="flex items-center gap-3 text-white text-[11px] font-black uppercase tracking-[0.2em]">
+                          <span>Case Studies</span>
+                          <MoveRight className="w-5 h-5" />
+                        </div>
+                        <a href="#" className="p-4 bg-white text-blue-600 rounded-2xl hover:bg-blue-50 transition-colors shadow-xl">
+                          <Linkedin className="w-5 h-5 fill-current" />
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -135,7 +139,7 @@ export default function TeamSection() {
                     </div>
                   ) : (
                     // Expanded mobile view
-                    <div className="p-14 flex flex-col justify-end bg-blue-600 min-h-[600px] relative">
+                    <div className="p-14 flex flex-col justify-between bg-blue-600 min-h-[600px] relative">
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
@@ -145,28 +149,32 @@ export default function TeamSection() {
                       >
                         <X className="w-5 h-5" />
                       </button>
-                      <span className="text-[10px] font-black text-blue-200 uppercase tracking-[0.4em] mb-4">
-                        Focus: {member.impact}
-                      </span>
-                      <h3 className="text-5xl font-black text-white mb-8 tracking-tighter leading-none">{member.name}</h3>
-                      <p className="text-blue-50 text-md leading-relaxed mb-10 max-w-sm font-medium">
-                        {member.description}
-                      </p>
-                      <div className="flex flex-wrap gap-3 mb-12">
-                        {member.metrics.map((m, idx) => (
-                          <span key={idx} className="px-5 py-2 rounded-full bg-white/10 text-white text-[11px] font-black border border-white/20 backdrop-blur-md tracking-widest uppercase">
-                            {m}
+                      <div className="flex flex-col h-full justify-between">
+                        <div>
+                          <span className="text-[10px] font-black text-blue-200 uppercase tracking-[0.4em] mb-4 block">
+                            Focus: {member.impact}
                           </span>
-                        ))}
-                      </div>
-                      <div className="flex items-center justify-between border-t border-white/20 pt-8">
-                        <div className="flex items-center gap-3 text-white text-[11px] font-black uppercase tracking-[0.2em]">
-                          <span>Case Studies</span>
-                          <MoveRight className="w-5 h-5" />
+                          <h3 className="text-5xl font-black text-white mb-8 tracking-tighter leading-none">{member.name}</h3>
+                          <p className="text-blue-50 text-md leading-relaxed mb-10 max-w-sm font-medium">
+                            {member.description}
+                          </p>
+                          <div className="flex flex-wrap gap-3 mb-12">
+                            {member.metrics.map((m, idx) => (
+                              <span key={idx} className="px-5 py-2 rounded-full bg-white/10 text-white text-[11px] font-black border border-white/20 backdrop-blur-md tracking-widest uppercase">
+                                {m}
+                              </span>
+                            ))}
+                          </div>
                         </div>
-                        <a href="#" className="p-4 bg-white text-blue-600 rounded-2xl hover:bg-blue-50 transition-colors shadow-xl">
-                          <Linkedin className="w-5 h-5 fill-current" />
-                        </a>
+                        <div className="flex items-center justify-between border-t border-white/20 pt-8">
+                          <div className="flex items-center gap-3 text-white text-[11px] font-black uppercase tracking-[0.2em]">
+                            <span>Case Studies</span>
+                            <MoveRight className="w-5 h-5" />
+                          </div>
+                          <a href="#" className="p-4 bg-white text-blue-600 rounded-2xl hover:bg-blue-50 transition-colors shadow-xl">
+                            <Linkedin className="w-5 h-5 fill-current" />
+                          </a>
+                        </div>
                       </div>
                     </div>
                   )}

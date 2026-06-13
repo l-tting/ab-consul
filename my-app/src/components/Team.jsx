@@ -47,11 +47,11 @@ export default function TeamSection() {
             The Personnel
           </h2>
           <p className="text-2xl md:text-4xl font-black tracking-tighter text-slate-900 mb-6 leading-[0.9]">
-            Direct access to 
+            Direct access to
             <span className="text-stone-400 italic font-serif font-black"> the founders.</span>
           </p>
           <p className="text-slate-600 text-lg max-w-xl mx-auto leading-relaxed font-medium">
-            We don't delegate to account managers. You partner directly with the 
+            We don't delegate to account managers. You partner directly with the
             architects responsible for your growth and scaling engine.
           </p>
         </div>
@@ -68,9 +68,8 @@ export default function TeamSection() {
                 onMouseEnter={() => !isMobile && setHoveredIndex(i)}
                 onMouseLeave={() => !isMobile && setHoveredIndex(null)}
                 onClick={() => handleCardClick(i)}
-                className={`relative rounded-[3.5rem] overflow-hidden transition-all duration-700 bg-white cursor-pointer border border-slate-200 ${
-                  isHovered && !isExpanded && !isMobile ? 'md:flex-[1.4] shadow-2xl border-blue-600' : 'md:flex-1 shadow-sm'
-                }`}
+                className={`relative rounded-[3.5rem] overflow-hidden transition-all duration-700 bg-white cursor-pointer border border-slate-200 ${isHovered && !isExpanded && !isMobile ? 'md:flex-[1.4] shadow-2xl border-blue-600' : 'md:flex-1 shadow-sm'
+                  }`}
               >
                 {/* Background State */}
                 <div className="absolute inset-0 bg-slate-900">
@@ -81,9 +80,8 @@ export default function TeamSection() {
                 {/* Desktop Hover Structure - only visible on desktop */}
                 <div className="hidden md:block relative h-full">
                   {/* Default View (desktop) */}
-                  <div className={`absolute inset-0 p-14 flex flex-col justify-end transition-all duration-500 ${
-                    isHovered ? 'opacity-0 translate-y-10' : 'opacity-100'
-                  }`}>
+                  <div className={`absolute inset-0 p-14 flex flex-col justify-end transition-all duration-500 ${isHovered ? 'opacity-0 translate-y-10' : 'opacity-100'
+                    }`}>
                     <div className="space-y-2">
                       <p className="text-[11px] font-black text-blue-600 uppercase tracking-[0.3em]">{member.title}</p>
                       <h3 className="text-3xl font-black text-slate-900 tracking-tighter leading-none">{member.name}</h3>
@@ -94,16 +92,15 @@ export default function TeamSection() {
                   </div>
 
                   {/* Hover View (desktop) */}
-                  <div className={`absolute inset-0 p-14 flex flex-col justify-end bg-blue-600 transition-all duration-700 transform ${
-                    isHovered ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
-                  }`}>
+                  <div className={`absolute inset-0 p-14 flex flex-col justify-end bg-blue-600 transition-all duration-700 transform ${isHovered ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
+                    }`}>
                     <span className="text-[10px] font-black text-blue-200 uppercase tracking-[0.4em] mb-4">
                       Focus: {member.impact}
                     </span>
                     <h3 className="text-5xl font-black text-white mb-8 tracking-tighter leading-none">{member.name}</h3>
-                    <p className="text-blue-50 text-md leading-relaxed mb-10 max-w-sm font-medium">
+                    <div className="text-blue-50 text-md leading-relaxed mb-10 max-w-sm font-medium max-h-52 overflow-y-auto pr-2">
                       {member.description}
-                    </p>
+                    </div>
                     <div className="flex flex-wrap gap-3 mb-12">
                       {member.metrics.map((m, idx) => (
                         <span key={idx} className="px-5 py-2 rounded-full bg-white/10 text-white text-[11px] font-black border border-white/20 backdrop-blur-md tracking-widest uppercase">
@@ -139,7 +136,7 @@ export default function TeamSection() {
                   ) : (
                     // Expanded mobile view
                     <div className="p-14 flex flex-col justify-end bg-blue-600 min-h-[600px] relative">
-                      <button 
+                      <button
                         onClick={(e) => {
                           e.stopPropagation();
                           setExpandedIndex(null);

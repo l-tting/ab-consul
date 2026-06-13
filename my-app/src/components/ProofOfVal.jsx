@@ -76,7 +76,7 @@ export default function ResultsSection() {
                 {/* Metric */}
                 <div className="flex justify-between items-start mb-6 md:mb-10">
                   <div>
-                    <span className="text-3xl md:text-4xl font-black text-slate-900 tracking-tighter leading-none">
+                    <span className="text-xl md:text-4xl font-black text-slate-900 tracking-tighter leading-none">
                       {item.metric}
                     </span>
                     <p className="text-[10px] md:text-[11px] font-black text-blue-600 uppercase tracking-[0.2em] mt-2 md:mt-3">

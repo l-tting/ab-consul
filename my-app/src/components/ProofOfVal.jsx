@@ -8,7 +8,7 @@ const results = [
     label: "Deals closed",
     client: "Fintech",
     description:
-      "Our team has successfully signed deals of over $65M with partners such as Wowzi, Cellulant, Eaglelion Ethiopia, Gapstack, Craft Silicon, CPFfinancial services",
+      "Our team has successfully signed deals of over $65M with partners such as Wowzi, Cellulant, Eaglelion Ethiopia, Gapstack, Craft Silicon, CPF Financial Services",
     outcomes: ["Deal Development", "Commercial Strategy", "Sales Pipeline Management"],
     theme: "from-blue-600 to-cyan-500",
   },

@@ -98,7 +98,7 @@ export default function TeamSection() {
                       Focus: {member.impact}
                     </span>
                     <h3 className="text-5xl font-black text-white mb-8 tracking-tighter leading-none">{member.name}</h3>
-                    <div className="text-blue-50 text-md leading-relaxed mb-10 max-w-sm font-medium max-h-52 overflow-y-auto pr-2">
+                    <div className="text-blue-50 text-md leading-relaxed mb-10 max-w-lg font-medium max-h-52 overflow-y-auto pr-2">
                       {member.description}
                     </div>
                     <div className="flex flex-wrap gap-3 mb-12">

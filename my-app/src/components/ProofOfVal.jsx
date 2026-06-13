@@ -93,22 +93,23 @@ export default function ResultsSection() {
                   {item.client}
                 </h3>
 
-                <p className="text-slate-500 text-sm md:text-[15px] font-medium leading-relaxed mb-6 md:mb-8">
+                {/* Description with improved font styling */}
+                <p className="text-slate-600 text-sm md:text-[15px] font-medium leading-relaxed mb-6 md:mb-8 italic border-l-3 border-blue-600 pl-3 md:pl-4">
                   {item.description}
                 </p>
               </div>
 
-              {/* Outcomes (ONLY FIX: whitespace-nowrap) */}
-              <div className="relative z-10 grid grid-cols-2 gap-2 pt-6 md:pt-8 border-t border-slate-100">
+              {/* Outcomes - wider badges with proper text wrapping */}
+              <div className="relative z-10 flex flex-wrap gap-2 pt-6 md:pt-8 border-t border-slate-100">
                 {item.outcomes.map((outcome) => (
                   <span
                     key={outcome}
                     className="text-[9px] md:text-[10px] font-black 
-                      bg-blue-50/50 text-blue-700/70 
-                      px-3 py-1.5 
+                      bg-blue-50 text-blue-700 
+                      px-4 md:px-5 py-1.5 md:py-2 
                       rounded-full uppercase tracking-wider 
-                      border border-blue-100/50 
-                      whitespace-nowrap"
+                      border border-blue-200
+                      inline-block"
                   >
                     {outcome}
                   </span>

@@ -4,30 +4,30 @@ import { ArrowUpRight, TrendingUp } from "lucide-react";
 
 const results = [
   {
-    metric: "+142%",
-    label: "Net Revenue Retention",
-    client: "Nexus Fintech",
+    metric: "$65M+ TLV",
+    label: "Deals closed",
+    client: "Fintech",
     description:
-      "Architected a multi-tier monetization engine and automated churn mitigation workflows.",
-    outcomes: ["Pricing Logic", "LTV Expansion", "Churn Reduction"],
+      "Our team has successfully signed deals of over $65M with partners such as Wowzi, Cellulant, Eaglelion Ethiopia, Gapstack, Craft Silicon, CPFfinancial services",
+    outcomes: ["Deal Development,", "Commercial Strategy,", "Sales Pipeline Management"],
     theme: "from-blue-600 to-cyan-500",
   },
   {
-    metric: "18.5%",
-    label: "EBITDA Margin Lift",
-    client: "EcomFlow",
+    metric: "500k+ Users",
+    label: "Customers Onboarded",
+    client: "Growth",
     description:
-      "Eliminated technical debt taxing operational velocity and optimized unit economics.",
-    outcomes: ["OpEx Optimization", "Scale Readiness", "Infra Liquidation"],
+      "Our user acquisition, growth and retention strategy has delivered over 500k users across different digital payment platforms such as Tingg Cellulant, Bitget and Bitget Wallet",
+    outcomes: ["Digital Marketing", "Growth Strategy", "ARPU","CAC management"],
     theme: "from-emerald-600 to-teal-500",
   },
   {
-    metric: "$2.4M",
-    label: "ARR Pipeline Found",
-    client: "ScaleAI",
+    metric: "+150% Volume Growth",
+    label: "New Product Volumes",
+    client: "Product Development",
     description:
-      "Identified untapped market segments through deep data intelligence and GTM automation.",
-    outcomes: ["Market Expansion", "Pipeline Velocity", "GTM Strategy"],
+      "We have delivered over $100M in new volume from new products such as derivatives, futures, stocks, virtual cards with partners such as Mastercard and Bitget",
+    outcomes: ["Virtual Cards", "Crypto Payments", "Tokenization"],
     theme: "from-purple-600 to-fuchsia-500",
   },
 ];

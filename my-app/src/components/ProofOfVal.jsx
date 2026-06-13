@@ -93,23 +93,25 @@ export default function ResultsSection() {
                   {item.client}
                 </h3>
 
-                {/* Description with improved font styling */}
-                <p className="text-slate-600 text-sm md:text-[15px] font-medium leading-relaxed mb-6 md:mb-8 italic border-l-3 border-blue-600 pl-3 md:pl-4">
+                {/* Description with softer styling */}
+                <p className="text-slate-500 text-sm md:text-[15px] font-normal leading-relaxed mb-6 md:mb-8">
                   {item.description}
                 </p>
               </div>
 
-              {/* Outcomes - wider badges with proper text wrapping */}
-              <div className="relative z-10 flex flex-wrap gap-2 pt-6 md:pt-8 border-t border-slate-100">
+              {/* Outcomes - grid layout with 2 columns */}
+              <div className="relative z-10 grid grid-cols-2 gap-2 pt-6 md:pt-8 border-t border-slate-100">
                 {item.outcomes.map((outcome) => (
                   <span
                     key={outcome}
                     className="text-[9px] md:text-[10px] font-black 
                       bg-blue-50 text-blue-700 
-                      px-4 md:px-5 py-1.5 md:py-2 
+                      px-3 md:px-4 py-1.5 md:py-2 
                       rounded-full uppercase tracking-wider 
                       border border-blue-200
-                      inline-block"
+                      text-center
+                      whitespace-normal
+                      break-words"
                   >
                     {outcome}
                   </span>

@@ -25,14 +25,16 @@ const HomePage = () => {
                 <TrustedLogos />
             </div>
 
-            {/* Process comp */}
-            <div>
-                <Process />
-            </div>
 
             {/* final CTA comp */}
             <div>
                 <ResultsSection />
+            </div>
+
+
+            {/* Process comp */}
+            <div>
+                <Process />
             </div>
 
 

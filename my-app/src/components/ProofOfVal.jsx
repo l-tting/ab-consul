@@ -11,6 +11,8 @@ const results = [
       "Our team has successfully signed deals of over $65M with partners such as Wowzi, Cellulant, Eaglelion Ethiopia, Gapstack, Craft Silicon, CPF Financial Services",
     outcomes: ["Deal Development", "Commercial Strategy", "Sales Pipeline Management"],
     theme: "from-blue-600 to-cyan-500",
+    cardBg: "bg-gradient-to-br from-blue-50/30 to-white",
+    borderHover: "hover:border-blue-200",
   },
   {
     metric: "500k+ Users",
@@ -20,6 +22,8 @@ const results = [
       "Our user acquisition, growth and retention strategy has delivered over 500k users across different digital payment platforms such as Tingg Cellulant, Bitget and Bitget Wallet",
     outcomes: ["Digital Marketing", "Growth Strategy", "ARPU","CAC management"],
     theme: "from-emerald-600 to-teal-500",
+    cardBg: "bg-gradient-to-br from-emerald-50/30 to-white",
+    borderHover: "hover:border-emerald-200",
   },
   {
     metric: "+150% Volume Growth",
@@ -29,6 +33,8 @@ const results = [
       "We have delivered over $100M in new volume from new products such as derivatives, futures, stocks, virtual cards with partners such as Mastercard and Bitget",
     outcomes: ["Virtual Cards", "Crypto Payments", "Tokenization"],
     theme: "from-purple-600 to-fuchsia-500",
+    cardBg: "bg-gradient-to-br from-purple-50/30 to-white",
+    borderHover: "hover:border-purple-200",
   },
 ];
 
@@ -65,11 +71,16 @@ export default function ResultsSection() {
           {results.map((item, idx) => (
             <div
               key={idx}
-              className="group relative bg-white p-6 md:p-10 rounded-3xl md:rounded-[3rem] border border-slate-200 transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] md:hover:-translate-y-2"
+              className={`group relative ${item.cardBg} p-6 md:p-10 rounded-3xl md:rounded-[3rem] border border-slate-200 ${item.borderHover} transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] md:hover:-translate-y-2`}
             >
+              {/* Subtle background pattern */}
+              <div className="absolute inset-0 opacity-5 pointer-events-none">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-current to-transparent rounded-full blur-2xl"></div>
+              </div>
+
               {/* Glow */}
               <div
-                className={`absolute top-0 right-0 w-24 md:w-32 h-24 md:h-32 bg-gradient-to-br ${item.theme} opacity-0 group-hover:opacity-[0.03] blur-3xl transition-opacity duration-700`}
+                className={`absolute top-0 right-0 w-24 md:w-32 h-24 md:h-32 bg-gradient-to-br ${item.theme} opacity-0 group-hover:opacity-[0.08] blur-3xl transition-opacity duration-700`}
               />
 
               <div className="relative z-10">
@@ -84,7 +95,7 @@ export default function ResultsSection() {
                     </p>
                   </div>
 
-                  <div className="p-2 rounded-full bg-slate-50 text-slate-300 group-hover:text-blue-600 group-hover:bg-blue-50 transition-all">
+                  <div className="p-2 rounded-full bg-white/50 backdrop-blur-sm text-slate-400 group-hover:text-blue-600 group-hover:bg-blue-50 transition-all">
                     <ArrowUpRight size={20} />
                   </div>
                 </div>
@@ -104,14 +115,16 @@ export default function ResultsSection() {
                 {item.outcomes.map((outcome) => (
                   <span
                     key={outcome}
-                    className="text-[9px] md:text-[10px] font-black 
-                      bg-blue-50 text-blue-700 
+                    className={`text-[9px] md:text-[10px] font-black 
+                      bg-white/80 backdrop-blur-sm
                       px-3 md:px-4 py-1.5 md:py-2 
                       rounded-full uppercase tracking-wider 
-                      border border-blue-200
+                      border border-slate-200
                       text-center
                       whitespace-normal
-                      break-words"
+                      break-words
+                      transition-all duration-300
+                      group-hover:border-opacity-50`}
                   >
                     {outcome}
                   </span>

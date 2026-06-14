@@ -164,7 +164,7 @@ const features = [
 
 export default function HeroHome() {
   return (
-    <div className="w-full py-4 sm:py-6 md:py-10 flex justify-center">
+    <div className="w-full py-4 sm:py-6 md:py-12 flex justify-center">
       <div className="w-[95%] lg:w-[90%]">
         <div className="text-center py-6">
           <p className="text-sm sm:text-md font-semibold uppercase tracking-[0.3em] text-muted-foreground">

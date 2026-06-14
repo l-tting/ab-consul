@@ -24,11 +24,11 @@ export default function AboutHero() {
           <span>EST. 2025</span>
         </div>
 
-        {/* Title - with word spacing */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter text-slate-900 leading-[1.2] sm:leading-[1.1] md:leading-[0.9] mb-8 [&_span]:whitespace-nowrap">
-          <span>Transforming</span>{" "}
-          <span className="text-stone-400 italic font-serif">growth ideas</span>{" "}
-          <span>into</span>{" "}
+        {/* Title - with word spacing on x-axis */}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter text-slate-900 leading-[1.2] sm:leading-[1.1] md:leading-[0.9] mb-8">
+          <span className="mr-3 sm:mr-4 md:mr-6">Transforming</span>
+          <span className="text-stone-400 italic font-serif mr-3 sm:mr-4 md:mr-6">growth ideas</span>
+          <span className="mr-3 sm:mr-4 md:mr-6">into</span>
           <span className="text-blue-600">revenue engines</span>
         </h1>
 

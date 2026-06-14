@@ -12,7 +12,7 @@ export const BentoGrid = ({ children, className }) => {
   return (
     <div
       className={cn(
-        "grid w-full auto-rows-[18rem] sm:auto-rows-[22rem] md:auto-rows-[25rem] grid-cols-1 md:grid-cols-6 gap-4",
+        "grid w-full auto-rows-[minmax(22rem,auto)] sm:auto-rows-[minmax(26rem,auto)] md:auto-rows-[minmax(28rem,auto)] grid-cols-1 md:grid-cols-6 gap-4",
         className
       )}
     >
@@ -73,7 +73,7 @@ export const BentoCard = ({
     </div>
 
     {/* CTA - Increased spacing above */}
-    <div className="z-10 flex items-center pt-8 sm:pt-10 md:pt-12 border-t border-white/10">
+    <div className="z-10 flex items-center pt-8 sm:pt-10 md:pt-12 border-t border-white/10 mt-auto">
       <a
         href={href}
         className={cn(

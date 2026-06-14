@@ -20,16 +20,18 @@ const HomePage = () => {
                 <HeroHome />
             </div>
 
-            {/* Partnerships */}
-            <div>
-                <TrustedLogos />
-            </div>
-
+            
 
             {/* final CTA comp */}
             <div>
                 <ResultsSection />
             </div>
+
+            {/* Partnerships */}
+            <div>
+                <TrustedLogos />
+            </div>
+
 
 
             {/* Process comp */}

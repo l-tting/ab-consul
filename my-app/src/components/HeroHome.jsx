@@ -92,7 +92,7 @@ const features = [
     Icon: BarChart3,
     name: "Revenue Optimization",
     description:
-      `We help analyzing data from Awareness, Acquisition, Activation, Retention and Revenue by identifying
+      `We help analyze data from Awareness, Acquisition, Activation, Retention and Revenue by identifying
        bottlenecks and running targeted experiments `,
     href: "#",
     cta: "Strategic Audit",

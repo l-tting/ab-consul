@@ -25,7 +25,7 @@ export default function AboutHero() {
         </div>
 
         {/* Title */}
-        <h1 className="text-5xl md:text-5xl font-black tracking-tighter text-slate-900 leading-[0.9] mb-8">
+        <h1 className="text-5xl md:text-5xl sm:text-md font-black tracking-tighter text-slate-900 leading-[0.9] mb-8">
           Transforming <br className="md:hidden" />
           <span className="text-stone-400 italic font-serif">growth ideas</span>{" "}
           into <span className="text-blue-600">revenue engines</span>

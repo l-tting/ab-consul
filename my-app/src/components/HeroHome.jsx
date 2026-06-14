@@ -72,8 +72,8 @@ export const BentoCard = ({
       </p>
     </div>
 
-    {/* CTA */}
-    <div className="z-10 flex items-center pt-4 sm:pt-6 border-t border-white/10">
+    {/* CTA - Increased spacing above */}
+    <div className="z-10 flex items-center pt-8 sm:pt-10 md:pt-12 border-t border-white/10">
       <a
         href={href}
         className={cn(

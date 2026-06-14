@@ -11,8 +11,9 @@ const results = [
       "Our team has successfully signed deals of over $65M with partners such as Wowzi, Cellulant, Eaglelion Ethiopia, Gapstack, Craft Silicon, CPF Financial Services",
     outcomes: ["Deal Development", "Commercial Strategy", "Sales Pipeline Management"],
     theme: "from-blue-600 to-cyan-500",
-    cardBg: "bg-gradient-to-br from-blue-50/30 to-white",
-    borderHover: "hover:border-blue-200",
+    cardBg: "bg-gradient-to-br from-blue-100/40 to-white",
+    outcomeColor: "bg-blue-100 text-blue-800 border-blue-200",
+    borderHover: "hover:border-blue-300",
   },
   {
     metric: "500k+ Users",
@@ -22,8 +23,9 @@ const results = [
       "Our user acquisition, growth and retention strategy has delivered over 500k users across different digital payment platforms such as Tingg Cellulant, Bitget and Bitget Wallet",
     outcomes: ["Digital Marketing", "Growth Strategy", "ARPU","CAC management"],
     theme: "from-emerald-600 to-teal-500",
-    cardBg: "bg-gradient-to-br from-emerald-50/30 to-white",
-    borderHover: "hover:border-emerald-200",
+    cardBg: "bg-gradient-to-br from-emerald-100/40 to-white",
+    outcomeColor: "bg-emerald-100 text-emerald-800 border-emerald-200",
+    borderHover: "hover:border-emerald-300",
   },
   {
     metric: "+150% Volume Growth",
@@ -33,8 +35,9 @@ const results = [
       "We have delivered over $100M in new volume from new products such as derivatives, futures, stocks, virtual cards with partners such as Mastercard and Bitget",
     outcomes: ["Virtual Cards", "Crypto Payments", "Tokenization"],
     theme: "from-purple-600 to-fuchsia-500",
-    cardBg: "bg-gradient-to-br from-purple-50/30 to-white",
-    borderHover: "hover:border-purple-200",
+    cardBg: "bg-gradient-to-br from-purple-100/40 to-white",
+    outcomeColor: "bg-purple-100 text-purple-800 border-purple-200",
+    borderHover: "hover:border-purple-300",
   },
 ];
 
@@ -95,7 +98,7 @@ export default function ResultsSection() {
                     </p>
                   </div>
 
-                  <div className="p-2 rounded-full bg-white/50 backdrop-blur-sm text-slate-400 group-hover:text-blue-600 group-hover:bg-blue-50 transition-all">
+                  <div className="p-2 rounded-full bg-white/60 backdrop-blur-sm text-slate-400 group-hover:text-blue-600 group-hover:bg-blue-50 transition-all">
                     <ArrowUpRight size={20} />
                   </div>
                 </div>
@@ -110,21 +113,21 @@ export default function ResultsSection() {
                 </p>
               </div>
 
-              {/* Outcomes - grid layout with 2 columns */}
+              {/* Outcomes - grid layout with 2 columns with blue backgrounds */}
               <div className="relative z-10 grid grid-cols-2 gap-2 pt-6 md:pt-8 border-t border-slate-100">
                 {item.outcomes.map((outcome) => (
                   <span
                     key={outcome}
                     className={`text-[9px] md:text-[10px] font-black 
-                      bg-white/80 backdrop-blur-sm
+                      ${item.outcomeColor}
                       px-3 md:px-4 py-1.5 md:py-2 
                       rounded-full uppercase tracking-wider 
-                      border border-slate-200
+                      border
                       text-center
                       whitespace-normal
                       break-words
                       transition-all duration-300
-                      group-hover:border-opacity-50`}
+                      group-hover:shadow-sm`}
                   >
                     {outcome}
                   </span>

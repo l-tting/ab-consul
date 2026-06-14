@@ -24,15 +24,15 @@ export default function AboutHero() {
           <span>EST. 2025</span>
         </div>
 
-        {/* Title */}
-        <h1 className="text-5xl md:text-5xl sm:text-md font-black tracking-tighter text-slate-900 leading-[0.9] mb-8">
+        {/* Title - reduced size on mobile */}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter text-slate-900 leading-[1.1] sm:leading-[0.9] mb-8">
           Transforming <br className="md:hidden" />
           <span className="text-stone-400 italic font-serif">growth ideas</span>{" "}
           into <span className="text-blue-600">revenue engines</span>
         </h1>
 
         {/* Subtext */}
-        <p className="text-xl md:text-2xl text-slate-500 max-w-3xl leading-relaxed font-medium mb-12 tracking-tight">
+        <p className="text-lg sm:text-xl md:text-2xl text-slate-500 max-w-3xl leading-relaxed font-medium mb-12 tracking-tight">
           AB Consul partners with startups,{" "}
           <span className="text-slate-900">growth stage entities and sole proprietors</span> to{" "}
           <span className="text-slate-900">move from product-market fit to global scale</span>
@@ -53,4 +53,4 @@ export default function AboutHero() {
       </div>
     </section>
   );
-} 
+}

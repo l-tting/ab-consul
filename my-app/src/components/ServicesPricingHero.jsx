@@ -23,8 +23,7 @@ export default function ServicesPricingHero() {
   ];
 
   return (
-    <section className="relative w-full py-18 md:py-12 flex justify-center overflow-hidden bg-stone-100">
-
+    <section className="relative w-full py-0 flex justify-center overflow-hidden bg-stone-100">
       {/* Background Grid */}
       <div className="absolute inset-0 z-0 opacity-[0.05] [mask-image:radial-gradient(ellipse_at_center,black,transparent)]">
         <div
@@ -37,7 +36,6 @@ export default function ServicesPricingHero() {
       </div>
 
       <div className="w-[92%] max-w-7xl relative z-10 flex flex-col items-center text-center">
-
         {/* Badge */}
         <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white border border-stone-200 text-slate-500 text-[10px] font-black uppercase tracking-[0.2em] mb-8 shadow-sm">
           <span className="w-1.5 h-1.5 bg-blue-600 rounded-full" />
@@ -77,7 +75,6 @@ export default function ServicesPricingHero() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

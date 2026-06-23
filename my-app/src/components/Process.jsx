@@ -35,7 +35,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="w-full py-14 md:py-12">
+    <section className="w-full py-14 md:py-12 mb-8">
       <div className="max-w-6xl mx-auto px-5 md:px-6">
 
         {/* Heading */}

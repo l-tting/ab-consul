@@ -50,9 +50,11 @@ export default function Process() {
             </p>
           </div>
 
-          <p className="text-slate-400 text-sm font-medium max-w-full md:max-w-[290px] leading-relaxed md:border-l md:border-slate-500 md:pl-6">
-            We don't believe in "phases." We believe in a continuous cycle of value extraction.
-          </p>
+          <div className="bg-blue-900 border border-blue-700 rounded-lg p-6">
+            <p className="text-slate-400 text-sm font-medium max-w-full md:max-w-[290px] leading-relaxed md:border-l md:border-slate-500 md:pl-6">
+              We don't believe in "phases." We believe in a continuous cycle of value extraction.
+            </p>
+          </div>
         </div>
 
         {/* Steps */}

@@ -4,7 +4,7 @@ import React from "react";
 
 export default function AboutHero() {
   return (
-    <section className="relative w-full py-12 flex justify-center overflow-hidden bg-stone-100">
+    <section className="relative w-full py-0 flex justify-center overflow-hidden bg-stone-100">
       {/* Background Decorative Grid */}
       <div className="absolute inset-0 z-0 opacity-[0.05] [mask-image:radial-gradient(ellipse_at_center,black,transparent)]">
         <div

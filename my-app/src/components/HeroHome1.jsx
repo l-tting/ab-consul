@@ -6,7 +6,7 @@ import { TrendingUp } from "lucide-react";
 
 const HeroHome1 = () => {
   return (
-    <section className="relative w-full py-18 md:py-12 flex justify-center overflow-hidden bg-stone-100">
+    <section className="relative w-full py-0 flex justify-center overflow-hidden bg-stone-100">
       {/* Background Decorative Grid */}
       <div className="absolute inset-0 z-0 opacity-[0.05] [mask-image:radial-gradient(ellipse_at_center,black,transparent)]">
         <div
@@ -26,7 +26,7 @@ const HeroHome1 = () => {
         </div>
 
         {/* Title */}
-        <h1 className="text-4xl sm:text-5xl md:text-5xl font-black  tracking-normal text-slate-900 leading-[1.2] sm:leading-[1.15] md:leading-[1.1] mb-8">
+        <h1 className="text-4xl sm:text-5xl md:text-5xl font-black tracking-normal text-slate-900 leading-[1.2] sm:leading-[1.15] md:leading-[1.1] mb-8">
           We help startups <br className="md:hidden" />
           <span className="text-slate-400 italic font-serif">
             turn strategy

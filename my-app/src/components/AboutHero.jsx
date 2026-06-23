@@ -18,13 +18,13 @@ export default function AboutHero() {
 
       <div className="w-[92%] max-w-7xl relative z-10 flex flex-col items-center text-center">
         {/* Badge */}
-        <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white border border-stone-200 text-slate-500 text-[10px] font-black uppercase tracking-[0.2em] mb-8 shadow-sm">
+        <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white border border-stone-200 text-slate-500 text-[10px] font-black uppercase tracking-[0.2em] mb-10 shadow-sm">
           <span className="w-1.5 h-1.5 bg-blue-600 rounded-full" />
           <span>EST. 2025</span>
         </div>
 
         {/* Title */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter text-slate-900 leading-[1.2] sm:leading-[1.1] md:leading-[0.9] mb-8">
+        <h1 className="text-4xl sm:text-5xl md:text-5xl font-black tracking-tighter text-slate-900 leading-[1.2] sm:leading-[1.1] md:leading-[0.9] mb-8">
           <span className="mr-3 sm:mr-4 md:mr-6">Transforming</span>
           <span className="text-stone-400 italic font-serif mr-3 sm:mr-4 md:mr-6">growth ideas</span>
           <span className="mr-3 sm:mr-4 md:mr-6">into</span>

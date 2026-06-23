@@ -28,9 +28,9 @@ const HomePage = () => {
             </div>
 
             {/* Partnerships */}
-            <div>
+            {/* <div>
                 <TrustedLogos />
-            </div>
+            </div> */}
 
 
 

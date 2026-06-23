@@ -50,8 +50,9 @@ export default function Process() {
             </p>
           </div>
 
-          <div className="bg-blue-900 border border-blue-700 rounded-lg p-6">
-            <p className="text-slate-400 text-sm font-medium max-w-full md:max-w-[290px] leading-relaxed md:border-l md:border-slate-500 md:pl-6">
+          {/* UPDATED: Dark blue bg with rounded border & smaller padding */}
+          <div className="bg-blue-950 border border-blue-800/50 rounded-2xl px-4 py-3 md:px-5 md:py-4">
+            <p className="text-slate-300 text-sm font-medium max-w-full md:max-w-[290px] leading-relaxed md:border-l md:border-blue-700/50 md:pl-5">
               We don't believe in "phases." We believe in a continuous cycle of value extraction.
             </p>
           </div>

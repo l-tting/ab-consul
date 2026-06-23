@@ -26,7 +26,7 @@ const HeroHome1 = () => {
         </div>
 
         {/* Title */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-wider text-slate-900 leading-[1.2] sm:leading-[1.15] md:leading-[1.1] mb-8">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-normal text-slate-900 leading-[1.2] sm:leading-[1.15] md:leading-[1.1] mb-8">
           We help startups <br className="md:hidden" />
           <span className="text-slate-400 italic font-serif">
             turn strategy

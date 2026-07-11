@@ -54,7 +54,7 @@ export function ChatPanel({ isOpen, onClose }: ChatPanelProps) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="ab-consul-chat-title"
-        className="chat-panel-enter fixed z-50 flex flex-col overflow-hidden border border-stone-200 bg-stone-50 shadow-[0_25px_60px_-15px_rgba(15,23,42,0.25)] inset-x-3 bottom-20 top-auto h-[min(520px,calc(100dvh-6rem))] rounded-3xl sm:inset-x-auto sm:bottom-24 sm:right-6 sm:h-[min(560px,calc(100dvh-8rem))] sm:w-[400px]"
+        className="chat-panel-enter fixed z-50 grid grid-rows-[auto_1fr_auto] overflow-hidden border border-stone-200 bg-stone-50 shadow-[0_25px_60px_-15px_rgba(15,23,42,0.25)] inset-x-3 bottom-20 top-auto h-[min(520px,calc(100dvh-6rem))] rounded-3xl sm:inset-x-auto sm:bottom-24 sm:right-6 sm:h-[min(560px,calc(100dvh-8rem))] sm:w-[400px]"
       >
         {/* Header */}
         <div className="flex items-center justify-between border-b border-stone-200 bg-white px-4 py-3 sm:px-5">
@@ -80,12 +80,14 @@ export function ChatPanel({ isOpen, onClose }: ChatPanelProps) {
           </button>
         </div>
 
-        <ChatMessageList messages={messages} isLoading={isLoading} />
+        <div className="min-h-0 overflow-hidden">
+          <ChatMessageList messages={messages} isLoading={isLoading} />
+        </div>
 
         {error && (
           <div
             role="alert"
-            className="mx-4 mb-2 rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-700"
+            className="shrink-0 mx-4 mb-2 rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-700"
           >
             <div className="flex items-start justify-between gap-2">
               <span>{error}</span>

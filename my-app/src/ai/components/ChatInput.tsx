@@ -19,7 +19,7 @@ export function ChatInput({ onSend, disabled }: ChatInputProps) {
     onSend(value);
     if (textareaRef.current) {
       textareaRef.current.value = "";
-      textareaRef.current.style.height = "auto";
+      textareaRef.current.style.height = "40px";
     }
   }, [disabled, onSend]);
 
@@ -33,13 +33,13 @@ export function ChatInput({ onSend, disabled }: ChatInputProps) {
   const handleInput = () => {
     const el = textareaRef.current;
     if (!el) return;
-    el.style.height = "auto";
+    el.style.height = "40px";
     el.style.height = `${Math.min(el.scrollHeight, 120)}px`;
   };
 
   return (
-    <div className="border-t border-stone-200 bg-white p-3 sm:p-4">
-      <div className="flex items-end gap-2">
+    <div className="shrink-0 border-t border-stone-200 bg-white px-3 py-2.5 sm:px-4 sm:py-3">
+      <div className="flex items-center gap-2">
         <label htmlFor="ab-consul-chat-input" className="sr-only">
           Type your message
         </label>
@@ -49,24 +49,23 @@ export function ChatInput({ onSend, disabled }: ChatInputProps) {
           rows={1}
           disabled={disabled}
           maxLength={AI_CONFIG.maxMessageLength}
-          placeholder="Ask about our services, process, or pricing…"
+          placeholder="Ask about services, process, or pricing…"
           onKeyDown={handleKeyDown}
           onInput={handleInput}
-          className="max-h-[120px] min-h-[44px] flex-1 resize-none rounded-2xl border border-stone-200 bg-stone-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-600 focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600/20 disabled:opacity-60"
+          style={{ height: "40px" }}
+          className="min-h-[40px] max-h-[120px] flex-1 resize-none overflow-hidden rounded-2xl border border-stone-200 bg-stone-50 px-3 py-2 text-sm leading-5 text-slate-900 placeholder:text-slate-600 focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600/20 disabled:opacity-60"
         />
         <button
           type="button"
           onClick={handleSend}
           disabled={disabled}
           aria-label="Send message"
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-blue-950 text-white transition-colors hover:bg-blue-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-blue-950 text-white transition-colors hover:bg-blue-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
         >
           <Send className="h-4 w-4" aria-hidden="true" />
         </button>
       </div>
-      <p className="mt-2 text-[10px] text-slate-500">
-        Enter to send · Shift + Enter for new line
-      </p>
+      <p className="sr-only">Enter to send. Shift plus Enter for a new line.</p>
     </div>
   );
 }

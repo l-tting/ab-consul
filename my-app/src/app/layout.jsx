@@ -1,6 +1,7 @@
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "@/components/Footer";
+import ChatWidgetLoader from "@/components/ChatWidgetLoader";
 
 export const metadata = {
   metadataBase: new URL("https://ab-consul.com"),
@@ -63,6 +64,7 @@ export default function RootLayout({ children }) {
         {/* <ABLogo/> */}
 
         <Footer />
+        <ChatWidgetLoader />
       </body>
     </html>
   );

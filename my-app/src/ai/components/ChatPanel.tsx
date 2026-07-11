@@ -54,7 +54,7 @@ export function ChatPanel({ isOpen, onClose }: ChatPanelProps) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="ab-consul-chat-title"
-        className="chat-panel-enter fixed z-50 grid grid-rows-[auto_1fr_auto] overflow-hidden border border-stone-200 bg-stone-50 shadow-[0_25px_60px_-15px_rgba(15,23,42,0.25)] inset-x-3 bottom-20 top-auto h-[min(520px,calc(100dvh-6rem))] rounded-3xl sm:inset-x-auto sm:bottom-24 sm:right-6 sm:h-[min(560px,calc(100dvh-8rem))] sm:w-[400px]"
+        className="chat-panel-enter fixed z-[60] grid grid-rows-[auto_1fr_auto] overflow-hidden border border-stone-200 bg-stone-50 shadow-[0_25px_60px_-15px_rgba(15,23,42,0.25)] inset-x-3 bottom-20 top-auto h-[min(520px,calc(100dvh-10.5rem))] rounded-3xl sm:inset-x-auto sm:bottom-24 sm:right-6 sm:h-[min(560px,calc(100dvh-12rem))] sm:w-[400px]"
       >
         {/* Header */}
         <div className="flex items-center justify-between border-b border-stone-200 bg-white px-4 py-3 sm:px-5">

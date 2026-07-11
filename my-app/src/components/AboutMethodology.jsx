@@ -36,10 +36,10 @@ export default function StrategicVelocity() {
             </h2>
             <p className="text-5xl md:text-3xl font-black tracking-tighter text-slate-900 leading-[0.9] mb-8">
               We align 
-              <span className="text-stone-500 italic font-serif"> architecture </span> 
+              <span className="text-stone-600 italic font-serif"> architecture </span> 
                with the <span className="text-blue-600">P&L.</span>
             </p>
-            <p className="text-slate-500 text-md max-w-md leading-relaxed font-medium">
+            <p className="text-slate-600 text-md max-w-md leading-relaxed font-medium">
          We remove the technical and operational friction that prevents institutional scaling. 
          Our framework treats your data as a high-yield financial instrument.
             </p>
@@ -72,7 +72,7 @@ export default function StrategicVelocity() {
                   <h3 className="text-xl font-black text-slate-900 mb-5 tracking-tighter">
                     {shift.title}
                   </h3>
-                  <p className="text-slate-500 text-[13px] leading-relaxed max-w-lg font-medium">
+                  <p className="text-slate-600 text-[13px] leading-relaxed max-w-lg font-medium">
                     {shift.impact}
                   </p>
                 </div>

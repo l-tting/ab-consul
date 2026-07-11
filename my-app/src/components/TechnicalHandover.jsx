@@ -40,7 +40,7 @@ export function TechnicalHandover() {
           </div>
           <h3 className="text-5xl md:text-3xl font-black tracking-tighter leading-[0.95] text-slate-900 mb-8">
             Securing your 
-            <span className="text-stone-500 italic font-serif"> technical equity.</span>
+            <span className="text-stone-600 italic font-serif"> technical equity.</span>
           </h3>
           <p className="text-slate-600 text-lg font-medium max-w-xl leading-relaxed">
             We deliver a mature technical ecosystem designed for institutional-grade 
@@ -58,7 +58,7 @@ export function TechnicalHandover() {
                 <p className="text-2xl font-black text-slate-900 tracking-tighter group-hover:text-blue-600 transition-colors duration-500">
                   {asset.value}
                 </p>
-                <p className="text-slate-500 text-base font-medium leading-relaxed max-w-md">
+                <p className="text-slate-600 text-base font-medium leading-relaxed max-w-md">
                   {asset.detail}
                 </p>
               </div>
@@ -70,7 +70,7 @@ export function TechnicalHandover() {
         <div className="mt-24 pt-12 border-t border-stone-200 flex flex-col sm:flex-row justify-between items-center gap-8">
           <div className="flex items-center gap-3">
              <div className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
-             <p className="text-[11px] font-black text-slate-500 uppercase tracking-widest">
+             <p className="text-[11px] font-black text-slate-600 uppercase tracking-widest">
                 Full Intellectual Property Transfer Guaranteed
              </p>
           </div>

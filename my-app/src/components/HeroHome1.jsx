@@ -28,7 +28,7 @@ const HeroHome1 = () => {
         {/* Title */}
         <h1 className="text-4xl sm:text-5xl md:text-5xl font-black tracking-normal text-slate-900 leading-[1.2] sm:leading-[1.15] md:leading-[1.1] mb-8">
           We help startups <br className="md:hidden" />
-          <span className="text-slate-500 italic font-serif">
+          <span className="text-slate-600 italic font-serif">
             turn strategy
           </span>{" "}
           into revenue.

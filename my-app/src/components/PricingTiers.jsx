@@ -43,7 +43,7 @@ export default function PricingCalculator() {
                 Tailor your partnership
               </h2>
 
-              <p className="text-slate-500 mt-4 leading-relaxed text-sm sm:text-base">
+              <p className="text-slate-600 mt-4 leading-relaxed text-sm sm:text-base">
                 Adjust your company metrics below to generate a real-time investment estimate.
               </p>
             </div>
@@ -71,7 +71,7 @@ export default function PricingCalculator() {
                 className="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-blue-600"
               />
 
-              <div className="flex justify-between text-[11px] text-slate-500 font-bold uppercase">
+              <div className="flex justify-between text-[11px] text-slate-600 font-bold uppercase">
                 <span>$50k</span>
                 <span>$1M+</span>
               </div>

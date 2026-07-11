@@ -55,7 +55,7 @@ export default function ResultsSection() {
             </h2>
             <p className="text-2xl md:text-3xl font-bold tracking-tighter text-slate-900 leading-tight">
               Hard metrics.
-              <span className="text-slate-500 italic font-medium">
+              <span className="text-slate-600 italic font-medium">
                 {" "}Strategic outcomes.
               </span>
             </p>
@@ -98,7 +98,7 @@ export default function ResultsSection() {
                     </p>
                   </div>
 
-                  <div className="p-2 rounded-full bg-white/60 backdrop-blur-sm text-slate-500 group-hover:text-blue-600 group-hover:bg-blue-50 transition-all" aria-hidden="true">
+                  <div className="p-2 rounded-full bg-white/60 backdrop-blur-sm text-slate-600 group-hover:text-blue-600 group-hover:bg-blue-50 transition-all" aria-hidden="true">
                     <ArrowUpRight size={20} />
                   </div>
                 </div>

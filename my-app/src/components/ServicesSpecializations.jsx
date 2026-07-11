@@ -39,10 +39,10 @@ export default function IndustrySpecializations() {
             </h2>
             <h3 className="text-5xl md:text-3xl font-black tracking-tighter text-slate-900 leading-[0.95]">
               Market specific <br />
-              <span className="text-slate-500 italic font-serif">capital engineering.</span>
+              <span className="text-slate-600 italic font-serif">capital engineering.</span>
             </h3>
           </div>
-          <p className="text-slate-500 text-lg font-medium max-w-[340px] leading-relaxed border-l-2 border-blue-600 pl-8 pb-1">
+          <p className="text-slate-600 text-lg font-medium max-w-[340px] leading-relaxed border-l-2 border-blue-600 pl-8 pb-1">
             We solve the structural economic problems unique to your specific market segment.
           </p>
         </div>
@@ -56,7 +56,7 @@ export default function IndustrySpecializations() {
             >
               {/* ID & Industry Label */}
               <div className="lg:col-span-4 flex items-start gap-10">
-                <span className="font-mono text-xs font-black text-slate-500 group-hover:text-blue-600 transition-colors pt-2">
+                <span className="font-mono text-xs font-black text-slate-600 group-hover:text-blue-600 transition-colors pt-2">
                   {spec.id}
                 </span>
                 <div>
@@ -77,7 +77,7 @@ export default function IndustrySpecializations() {
                 <p className="text-xl font-black text-slate-900 mb-4 tracking-tight">
                   {spec.focus}
                 </p>
-                <p className="text-slate-500 text-[16px] font-medium leading-relaxed max-w-md">
+                <p className="text-slate-600 text-[16px] font-medium leading-relaxed max-w-md">
                   {spec.desc}
                 </p>
               </div>
@@ -87,7 +87,7 @@ export default function IndustrySpecializations() {
                 {spec.tags.map((tag) => (
                   <span 
                     key={tag} 
-                    className="text-[10px] font-black text-slate-500 border border-slate-200 px-4 py-2 rounded-xl uppercase tracking-widest group-hover:border-blue-600 group-hover:text-blue-600 transition-all duration-500 bg-white"
+                    className="text-[10px] font-black text-slate-600 border border-slate-200 px-4 py-2 rounded-xl uppercase tracking-widest group-hover:border-blue-600 group-hover:text-blue-600 transition-all duration-500 bg-white"
                   >
                     {tag}
                   </span>
@@ -98,11 +98,11 @@ export default function IndustrySpecializations() {
         </div>
 
         {/* Bottom Metadata */}
-        <div className="mt-16 flex justify-between items-center text-[10px] font-black text-slate-500 uppercase tracking-[0.3em]">
+        <div className="mt-16 flex justify-between items-center text-[10px] font-black text-slate-600 uppercase tracking-[0.3em]">
           <div className="flex items-center gap-4">
             <span>AB CONSUL // VERTICAL V1.0</span>
             <div className="w-8 h-px bg-slate-200" />
-            <span className="text-slate-500">Institutional Governance</span>
+            <span className="text-slate-600">Institutional Governance</span>
           </div>
           <span className="hidden sm:block">Standardized Operations // High-Yield Infrastructure</span>
         </div>

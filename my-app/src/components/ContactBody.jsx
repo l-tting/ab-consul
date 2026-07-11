@@ -66,7 +66,7 @@ export default function ContactBody() {
           <div className="space-y-6">
             <div>
               <h2 className="text-[20px] font-black uppercase tracking-[0.4em] text-blue-600 mb-6 italic">Our Protocol</h2>
-              <h3 className="text-3xl font-black text-slate-900 mb-10 tracking-tighter leading-none">The Advisory <span className="text-stone-500 italic font-serif">Onboarding.</span></h3>
+              <h3 className="text-3xl font-black text-slate-900 mb-10 tracking-tighter leading-none">The Advisory <span className="text-stone-600 italic font-serif">Onboarding.</span></h3>
               <ul className="space-y-10">
                 {[
                   { title: "Business Audit", desc: "We perform a deep-dive into your business to identify revenue bottlenecks." },
@@ -95,7 +95,7 @@ export default function ContactBody() {
                   <CheckCircle2 className="w-10 h-10 text-blue-600" />
                 </div>
                 <h3 className="text-3xl font-black tracking-tighter text-slate-900">Protocol Initiated.</h3>
-                <p className="text-slate-500 font-medium max-w-xs">Our principals have been notified. Expect a strategic response within 24 hours.</p>
+                <p className="text-slate-600 font-medium max-w-xs">Our principals have been notified. Expect a strategic response within 24 hours.</p>
               </div>
             ) : (
               <>

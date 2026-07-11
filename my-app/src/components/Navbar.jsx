@@ -57,7 +57,7 @@ export default function Navbar() {
                     className={`relative text-[15px] font-semibold pb-1 transition-colors ${
                       isActive
                         ? "text-gray-900 dark:text-white"
-                        : "text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+                        : "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
                     }`}
                   >
                     {link.label}
@@ -112,7 +112,7 @@ export default function Navbar() {
                     className={`relative block text-lg font-semibold pb-1 transition-colors ${
                       isActive
                         ? "text-gray-900 dark:text-white"
-                        : "text-gray-500 hover:text-gray-900 dark:text-gray-300"
+                        : "text-gray-600 hover:text-gray-900 dark:text-gray-300"
                     }`}
                   >
                     {link.label}

@@ -34,7 +34,7 @@ export default function PricingHero() {
             {/* not just <span className="text-slate-400">billable hours.</span> */}
           </h1>
 
-          <p className="text-lg md:text-xl text-slate-500 font-medium max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed">
             Standard agencies thrive on inefficiency. We thrive on your growth. 
             Below is the philosophy behind our dynamic pricing model.
           </p>
@@ -48,7 +48,7 @@ export default function PricingHero() {
                 {pillar.icon}
               </div>
               <h2 className="text-xl font-bold text-slate-900 mb-4">{pillar.title}</h2>
-              <p className="text-slate-500 text-md leading-relaxed">
+              <p className="text-slate-600 text-md leading-relaxed">
                 {pillar.desc}
               </p>
             </div>
@@ -56,7 +56,7 @@ export default function PricingHero() {
         </div>
 
         {/* Transition to Calculator */}
-        <div className="flex flex-col items-center gap-4 animate-bounce text-slate-500 pt-8 ">
+        <div className="flex flex-col items-center gap-4 animate-bounce text-slate-600 pt-8 ">
           <p className="text-[14px] font-bold uppercase tracking-[0.3em]">Calculate your rate</p>
           <ArrowDown className="w-5 h-5" />
         </div>

@@ -13,7 +13,7 @@ export default function AboutContrast() {
             Strategic Dissonance
           </h2>
           <p className="text-2xl md:text-3xl font-black tracking-tighter text-slate-900 max-w-xl leading-snug">
-            The difference between <span className="text-stone-500 italic">writing code</span> and <span className="italic font-serif">engineering equity.</span>
+            The difference between <span className="text-stone-600 italic">writing code</span> and <span className="italic font-serif">engineering equity.</span>
           </p>
         </div>
 
@@ -22,21 +22,21 @@ export default function AboutContrast() {
 
           {/* The Status Quo */}
           <div className="p-8 md:p-12 rounded-[3.5rem] bg-white border border-slate-200 shadow-sm relative group hover:border-slate-300 transition-colors">
-            <h3 className="text-[13px] md:text-[14px] font-black uppercase tracking-[0.3em] text-slate-500 mb-10 flex items-center gap-3">
+            <h3 className="text-[13px] md:text-[14px] font-black uppercase tracking-[0.3em] text-slate-600 mb-10 flex items-center gap-3">
               <XCircle className="w-5 h-5 text-red-500/50" aria-hidden="true" />
               The Industry Standard
             </h3>
             <ul className="space-y-8 md:space-y-12">
               <li className="relative">
                 <p className="font-black text-slate-900 text-lg md:text-xl tracking-tighter mb-2 md:mb-3">Feature-First Delivery</p>
-                <p className="text-slate-500 text-sm md:text-md font-medium leading-relaxed">
+                <p className="text-slate-600 text-sm md:text-md font-medium leading-relaxed">
                   Typical agencies build exactly what is in the ticket—even if those features create bottlenecks that kill your long-term vision and scale.
 
                 </p>
               </li>
               <li className="relative">
                 <p className="font-black text-slate-900 text-lg md:text-xl tracking-tighter mb-2 md:mb-3">Siloed Engineering</p>
-                <p className="text-slate-500 text-sm md:text-md font-medium leading-relaxed">
+                <p className="text-slate-600 text-sm md:text-md font-medium leading-relaxed">
                   Consultants who focus on their internal fragmented views with zero visibility into how performance latency affects your customer acquisition cost (CAC) and bottom line.
 
                 </p>

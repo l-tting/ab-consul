@@ -9,7 +9,7 @@ export default function PricingCTA() {
         <h2 className="text-4xl md:text-6xl font-bold text-slate-900 tracking-tighter mb-8">
           Ready to <span className="text-blue-600 italic">unlock</span> your next 10x?
         </h2>
-        <p className="text-slate-500 text-lg mb-12 max-w-xl mx-auto">
+        <p className="text-slate-600 text-lg mb-12 max-w-xl mx-auto">
           We only take on 2 new partners per quarter to ensure maximum impact. 
           Secure your audit before the next window closes.
         </p>

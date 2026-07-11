@@ -49,7 +49,7 @@ export default function ServicesPricingHero() {
         </h1>
 
         {/* Subtext */}
-        <p className="text-xl md:text-2xl text-slate-500 max-w-3xl leading-relaxed font-medium mb-12 tracking-tight">
+        <p className="text-xl md:text-2xl text-slate-600 max-w-3xl leading-relaxed font-medium mb-12 tracking-tight">
           We eliminate the technical and operational friction that slows high-growth companies,
           transforming bottlenecks into scalable, measurable systems of value creation.
         </p>
@@ -69,7 +69,7 @@ export default function ServicesPricingHero() {
                 {pillar.title}
               </h2>
 
-              <p className="text-slate-500 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed">
                 {pillar.desc}
               </p>
             </div>

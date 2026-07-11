@@ -26,7 +26,7 @@ export default function AboutHero() {
         {/* Title */}
         <h1  className="text-4xl sm:text-5xl md:text-5xl font-black tracking-tighter text-slate-900 leading-[1.2] sm:leading-[1.15] md:leading-[1.1] mb-8">
           <span className="mr-3 sm:mr-4 md:mr-6">Transforming</span>
-          <span className="text-stone-500 italic font-serif mr-3 sm:mr-4 md:mr-6">growth ideas</span>
+          <span className="text-stone-600 italic font-serif mr-3 sm:mr-4 md:mr-6">growth ideas</span>
           <span className="mr-3 sm:mr-4 md:mr-6">into</span>
           <span className="text-blue-600">revenue engines</span>
         </h1>

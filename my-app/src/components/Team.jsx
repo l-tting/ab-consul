@@ -48,7 +48,7 @@ export default function TeamSection() {
           </h2>
           <p className="text-2xl md:text-4xl font-black tracking-tighter text-slate-900 mb-6 leading-[0.9]">
             Direct access to
-            <span className="text-stone-500 italic font-serif font-black"> the founders.</span>
+            <span className="text-stone-600 italic font-serif font-black"> the founders.</span>
           </p>
           <p className="text-slate-600 text-lg max-w-xl mx-auto leading-relaxed font-medium">
             We don't delegate to account managers. You partner directly with the
@@ -97,7 +97,7 @@ export default function TeamSection() {
                       <h3 className="text-3xl font-black text-slate-900 tracking-tighter leading-none">{member.name}</h3>
                     </div>
                     <div className="mt-10 w-12 h-12 rounded-full border border-slate-300 flex items-center justify-center" aria-hidden="true">
-                      <Plus className="w-6 h-6 text-slate-500" />
+                      <Plus className="w-6 h-6 text-slate-600" />
                     </div>
                   </div>
 
@@ -144,7 +144,7 @@ export default function TeamSection() {
                         <h3 className="text-3xl font-black text-slate-900 tracking-tighter leading-none">{member.name}</h3>
                       </div>
                       <div className="mt-10 w-12 h-12 rounded-full border border-slate-300 flex items-center justify-center" aria-hidden="true">
-                        <Plus className="w-6 h-6 text-slate-500" />
+                        <Plus className="w-6 h-6 text-slate-600" />
                       </div>
                     </div>
                   ) : (

@@ -20,7 +20,7 @@ export default function AboutClosing() {
                   <Target className="w-5 h-5 text-blue-600" />
                   <h3 className="text-xl font-black text-slate-900 tracking-tighter">Post-Revenue Complexity</h3>
                 </div>
-                <p className="text-slate-500 text-md font-medium leading-relaxed">
+                <p className="text-slate-600 text-md font-medium leading-relaxed">
                   You have achieved product-market fit, but your current technical velocity is 
                   now the primary bottleneck. We excel when debt is actively throttling 
                   your ability to capture top-line revenue.
@@ -32,7 +32,7 @@ export default function AboutClosing() {
                   <BarChart4 className="w-5 h-5 text-blue-600" />
                   <h3 className="text-xl font-black text-slate-900 tracking-tighter">Asset-First Mindset</h3>
                 </div>
-                <p className="text-slate-500 text-md font-medium leading-relaxed">
+                <p className="text-slate-600 text-md font-medium leading-relaxed">
                   You view your infrastructure as a capital asset to be optimized for exit or 
                   institutional scale. You are looking for a partner to engineer 10x 
                   resilience, not just a vendor to clear a backlog.

@@ -33,15 +33,15 @@ export default function PricingCalculator() {
           <div className="lg:col-span-7 p-6 sm:p-8 md:p-12 lg:p-16 space-y-10 md:space-y-12">
             <div>
               <div className="flex items-center gap-2 text-blue-600 mb-4">
-                <Zap className="w-5 h-5" />
+                <Zap className="w-5 h-5" aria-hidden="true" />
                 <span className="text-xs font-bold uppercase tracking-[0.2em]">
                   Dynamic Valuation
                 </span>
               </div>
 
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">
                 Tailor your partnership
-              </h3>
+              </h2>
 
               <p className="text-slate-500 mt-4 leading-relaxed text-sm sm:text-base">
                 Adjust your company metrics below to generate a real-time investment estimate.
@@ -51,7 +51,7 @@ export default function PricingCalculator() {
             {/* Revenue Slider */}
             <div className="space-y-4 md:space-y-5">
               <div className="flex justify-between items-end">
-                <label className="text-[10px] font-bold uppercase tracking-widest text-slate-400 font-mono">
+                <label htmlFor="revenue-slider" className="text-[10px] font-bold uppercase tracking-widest text-slate-600 font-mono">
                   Annual Revenue
                 </label>
                 <span className="text-lg sm:text-xl font-bold text-slate-900">
@@ -60,16 +60,18 @@ export default function PricingCalculator() {
               </div>
 
               <input 
+                id="revenue-slider"
                 type="range" 
                 min="50000" 
                 max="1000000" 
                 step="50000"
                 value={revenue}
                 onChange={(e) => setRevenue(Number(e.target.value))}
+                aria-valuetext={`$${(revenue / 1000).toLocaleString()}k annual revenue`}
                 className="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-blue-600"
               />
 
-              <div className="flex justify-between text-[11px] text-slate-400 font-bold uppercase">
+              <div className="flex justify-between text-[11px] text-slate-500 font-bold uppercase">
                 <span>$50k</span>
                 <span>$1M+</span>
               </div>
@@ -78,10 +80,11 @@ export default function PricingCalculator() {
             {/* Team Size & Funding Stage */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 mt-6">
               <div className="space-y-3">
-                <label className="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-400 font-mono">
+                <label htmlFor="team-size" className="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-600 font-mono">
                   Team Size
                 </label>
                 <select 
+                  id="team-size"
                   onChange={(e) => setCompanySize(e.target.value)}
                   className="w-full h-10 px-4 rounded-2xl border border-slate-200 bg-slate-50/50 focus:ring-2 focus:ring-blue-500/20 outline-none font-medium transition-all text-sm"
                 >
@@ -92,11 +95,14 @@ export default function PricingCalculator() {
               </div>
 
               <div className="space-y-3">
-                <label className="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-400 font-mono">
+                <span id="funding-stage-label" className="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-600 font-mono">
                   Funding Stage
-                </label>
+                </span>
 
                 <button 
+                  type="button"
+                  aria-labelledby="funding-stage-label"
+                  aria-pressed={isSeeded}
                   onClick={() => setIsSeeded(!isSeeded)}
                   className={`w-full h-10 px-4 rounded-2xl border transition-all flex items-center justify-between text-sm ${
                     isSeeded 
@@ -123,9 +129,9 @@ export default function PricingCalculator() {
           {/* RIGHT SIDE */}
           <div className="lg:col-span-5 bg-slate-900 p-6 sm:p-8 md:p-12 lg:p-16 flex flex-col justify-center relative">
             <div className="relative z-10 text-center lg:text-left">
-              <Calculator className="w-10 h-10 text-blue-500 mb-6 mx-auto lg:mx-0" />
+              <Calculator className="w-10 h-10 text-blue-500 mb-6 mx-auto lg:mx-0" aria-hidden="true" />
 
-              <p className="text-blue-400 text-xs font-bold uppercase tracking-[0.3em] mb-8">
+              <p className="text-blue-300 text-xs font-bold uppercase tracking-[0.3em] mb-8">
                 Estimated Investment
               </p>
               
@@ -135,13 +141,13 @@ export default function PricingCalculator() {
                 </span>
               </div>
 
-              <button className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold flex items-center justify-center gap-2">
+              <button type="button" className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold flex items-center justify-center gap-2">
                 Confirm Engagement
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5" aria-hidden="true" />
               </button>
               
-              <p className="mt-6 text-[10px] text-slate-500 uppercase tracking-widest font-bold flex items-center justify-center lg:justify-start gap-2">
-                <ShieldCheck className="w-3 h-3" />
+              <p className="mt-6 text-[10px] text-slate-400 uppercase tracking-widest font-bold flex items-center justify-center lg:justify-start gap-2">
+                <ShieldCheck className="w-3 h-3" aria-hidden="true" />
                 No hidden costs. 
               </p>
             </div>

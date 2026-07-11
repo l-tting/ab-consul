@@ -13,7 +13,7 @@ export default function AboutContrast() {
             Strategic Dissonance
           </h2>
           <p className="text-2xl md:text-3xl font-black tracking-tighter text-slate-900 max-w-xl leading-snug">
-            The difference between <span className="text-stone-400 italic">writing code</span> and <span className="italic font-serif">engineering equity.</span>
+            The difference between <span className="text-stone-500 italic">writing code</span> and <span className="italic font-serif">engineering equity.</span>
           </p>
         </div>
 
@@ -22,8 +22,8 @@ export default function AboutContrast() {
 
           {/* The Status Quo */}
           <div className="p-8 md:p-12 rounded-[3.5rem] bg-white border border-slate-200 shadow-sm relative group hover:border-slate-300 transition-colors">
-            <h3 className="text-[13px] md:text-[14px] font-black uppercase tracking-[0.3em] text-slate-400 mb-10 flex items-center gap-3">
-              <XCircle className="w-5 h-5 text-red-500/50" />
+            <h3 className="text-[13px] md:text-[14px] font-black uppercase tracking-[0.3em] text-slate-500 mb-10 flex items-center gap-3">
+              <XCircle className="w-5 h-5 text-red-500/50" aria-hidden="true" />
               The Industry Standard
             </h3>
             <ul className="space-y-8 md:space-y-12">
@@ -49,28 +49,28 @@ export default function AboutContrast() {
             {/* Visual Flare */}
             <div className="absolute top-0 right-0 w-72 md:w-80 h-72 md:h-80 bg-blue-600/20 blur-[120px] pointer-events-none" />
 
-            <h3 className="text-[13px] md:text-[14px] font-black uppercase tracking-[0.3em] text-blue-400 mb-10 flex items-center gap-3">
-              <CheckCircle2 className="w-5 h-5" />
+            <h3 className="text-[13px] md:text-[14px] font-black uppercase tracking-[0.3em] text-blue-300 mb-10 flex items-center gap-3">
+              <CheckCircle2 className="w-5 h-5" aria-hidden="true" />
               The AB CONSUL MODEL
             </h3>
 
             <ul className="space-y-8 md:space-y-12 relative z-10">
               <li className="group">
                 <div className="flex items-center gap-2 mb-2 md:mb-3">
-                  <TrendingUp className="w-4 h-4 text-blue-500" />
+                  <TrendingUp className="w-4 h-4 text-blue-500" aria-hidden="true" />
                   <p className="font-black text-white text-md md:text-lg tracking-tighter">Outcome-Architected</p>
                 </div>
-                <p className="text-slate-400 text-sm md:text-md font-medium leading-relaxed">
+                <p className="text-slate-300 text-sm md:text-md font-medium leading-relaxed">
                  We don't propose mundane solutions; we build <span className="text-white italic font-serif">Revenue Engines</span>. Every growth and technical decision is filtered through the lens of EBITDA and unit economics.
 
                 </p>
               </li>
               <li className="group">
                 <div className="flex items-center gap-2 mb-2 md:mb-3">
-                  <Cpu className="w-4 h-4 text-blue-500" />
+                  <Cpu className="w-4 h-4 text-blue-500" aria-hidden="true" />
                   <p className="font-black text-white text-md md:text-lg tracking-tighter">Unified Operations</p>
                 </div>
-                <p className="text-slate-400 text-sm md:text-md font-medium leading-relaxed">
+                <p className="text-slate-300 text-sm md:text-md font-medium leading-relaxed">
                     We bridge the gap between your P&L and your operations tech stack. By integrating with your historical data, we eliminate day to day waste while optimizing growth funnels.
                 </p>
               </li>

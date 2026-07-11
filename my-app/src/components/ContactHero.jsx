@@ -18,8 +18,8 @@ export default function ContactHero() {
 
       <div className="w-[92%] max-w-7xl relative z-10 flex flex-col items-center text-center">
         {/* Badge */}
-        <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white border border-stone-200 text-slate-500 text-[10px] font-black uppercase tracking-[0.2em] mb-8 shadow-sm">
-          <Clock className="w-3.5 h-3.5 text-blue-600" />
+        <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white border border-stone-200 text-slate-600 text-[10px] font-black uppercase tracking-[0.2em] mb-8 shadow-sm">
+          <Clock className="w-3.5 h-3.5 text-blue-600" aria-hidden="true" />
           <span>Priority Response Protocol Enabled</span>
         </div>
 
@@ -29,23 +29,26 @@ export default function ContactHero() {
           <span className="text-blue-600">Partnership.</span>
         </h1>
 
-        <p className="text-xl md:text-2xl text-slate-500 max-w-3xl leading-relaxed font-medium mb-12 tracking-tight">
+        <p className="text-xl md:text-2xl text-slate-600 max-w-3xl leading-relaxed font-medium mb-12 tracking-tight">
           Whether you require a <span className="text-slate-900">technical audit</span> or an{" "}
           <span className="text-slate-900">operational roadmap</span>, we provide the architectural rigor required to unblock global scale.
         </p>
 
         {/* Contact Info */}
-        <div className="flex flex-wrap justify-center gap-10 text-[11px] font-black text-slate-400 uppercase tracking-[0.2em]">
-          <div className="flex items-center gap-3 group cursor-pointer hover:text-slate-900 transition-colors">
-            <Mail className="w-4 h-4 text-blue-600" />
-            <span>contact@abconsul.com</span>
-          </div>
-
+        <div className="flex flex-wrap justify-center gap-10 text-[11px] font-black text-slate-600 uppercase tracking-[0.2em]">
           <a
-            href="tel:+1234567890"
+            href="mailto:contact@ab-consul.com"
             className="flex items-center gap-3 group cursor-pointer hover:text-slate-900 transition-colors"
           >
-            <Phone className="w-4 h-4 text-blue-600" />
+            <Mail className="w-4 h-4 text-blue-600" aria-hidden="true" />
+            <span>contact@ab-consul.com</span>
+          </a>
+
+          <a
+            href="tel:+254717568861"
+            className="flex items-center gap-3 group cursor-pointer hover:text-slate-900 transition-colors"
+          >
+            <Phone className="w-4 h-4 text-blue-600" aria-hidden="true" />
             <span>+254 717568861</span>
           </a>
         </div>

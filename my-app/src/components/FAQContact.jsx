@@ -24,15 +24,15 @@ export default function ContactTrust() {
           {/* FAQ Column */}
           <div className="lg:col-span-2 space-y-8">
             <div className="flex items-center gap-3 mb-8">
-              <HelpCircle className="w-6 h-6 text-blue-600" />
-              <h3 className="text-2xl font-bold text-slate-900">FAQ</h3>
+              <HelpCircle className="w-6 h-6 text-blue-600" aria-hidden="true" />
+              <h2 className="text-2xl font-bold text-slate-900">FAQ</h2>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
               {faqs.map((faq, i) => (
                 <div key={i} className="space-y-3">
-                  <p className="font-bold text-slate-900 text-lg leading-tight">{faq.q}</p>
-                  <p className="text-slate-500 text-md leading-relaxed">{faq.a}</p>
+                  <h3 className="font-bold text-slate-900 text-lg leading-tight">{faq.q}</h3>
+                  <p className="text-slate-600 text-md leading-relaxed">{faq.a}</p>
                 </div>
               ))}
             </div>
@@ -41,20 +41,20 @@ export default function ContactTrust() {
           {/* Quick Trust Signals Column */}
           <div className="space-y-6 pt-10">
             <div className="p-8 bg-white rounded-3xl border border-slate-300 shadow-sm">
-              <h4 className="font-bold text-slate-900 mb-6 uppercase text-sm tracking-widest">Our Promise</h4>
+              <h3 className="font-bold text-slate-900 mb-6 uppercase text-sm tracking-widest">Our Promise</h3>
               
               <div className="space-y-6">
                 <div className="flex gap-4">
-                  <ShieldCheck className="w-5 h-5 text-emerald-500 shrink-0" />
-                  <p className="text-md text-slate-500"><span className="font-bold text-slate-700">NDA Protected.</span> All technical and business data is kept strictly confidential.</p>
+                  <ShieldCheck className="w-5 h-5 text-emerald-500 shrink-0" aria-hidden="true" />
+                  <p className="text-md text-slate-600"><span className="font-bold text-slate-700">NDA Protected.</span> All technical and business data is kept strictly confidential.</p>
                 </div>
                 <div className="flex gap-4">
-                  <Zap className="w-5 h-5 text-amber-500 shrink-0" />
-                  <p className="text-md text-slate-500"><span className="font-bold text-slate-700">Direct Access.</span> You talk directly to the partners, not an account manager.</p>
+                  <Zap className="w-5 h-5 text-amber-500 shrink-0" aria-hidden="true" />
+                  <p className="text-md text-slate-600"><span className="font-bold text-slate-700">Direct Access.</span> You talk directly to the partners, not an account manager.</p>
                 </div>
                 <div className="flex gap-4">
-                  <Globe className="w-5 h-5 text-blue-500 shrink-0" />
-                  <p className="text-md text-slate-500"><span className="font-bold text-slate-700">Global Coverage.</span> We operate across GMT and EST time zones.</p>
+                  <Globe className="w-5 h-5 text-blue-500 shrink-0" aria-hidden="true" />
+                  <p className="text-md text-slate-600"><span className="font-bold text-slate-700">Global Coverage.</span> We operate across GMT and EST time zones.</p>
                 </div>
               </div>
             </div>

@@ -1,7 +1,6 @@
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "@/components/Footer";
-import ABLogo from "@/components/AbLogo";
 
 export const metadata = {
   metadataBase: new URL("https://ab-consul.com"),
@@ -51,8 +50,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="flex flex-col min-h-screen bg-stone-100">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-blue-950 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
+        >
+          Skip to main content
+        </a>
         <Navbar />
-        <main className="flex-grow">
+        <main id="main-content" className="flex-grow">
           {children}
         </main>
         {/* <ABLogo/> */}

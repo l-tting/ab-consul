@@ -66,7 +66,7 @@ export default function ContactBody() {
           <div className="space-y-6">
             <div>
               <h2 className="text-[20px] font-black uppercase tracking-[0.4em] text-blue-600 mb-6 italic">Our Protocol</h2>
-              <h3 className="text-3xl font-black text-slate-900 mb-10 tracking-tighter leading-none">The Advisory <span className="text-stone-400 italic font-serif">Onboarding.</span></h3>
+              <h3 className="text-3xl font-black text-slate-900 mb-10 tracking-tighter leading-none">The Advisory <span className="text-stone-500 italic font-serif">Onboarding.</span></h3>
               <ul className="space-y-10">
                 {[
                   { title: "Business Audit", desc: "We perform a deep-dive into your business to identify revenue bottlenecks." },
@@ -75,11 +75,11 @@ export default function ContactBody() {
                 ].map((item, i) => (
                   <li key={i} className="flex gap-6 items-start">
                     <div className="mt-1 bg-blue-50 p-1.5 rounded-full flex-shrink-0">
-                      <CheckCircle2 className="w-5 h-5 text-blue-600" />
+                      <CheckCircle2 className="w-5 h-5 text-blue-600" aria-hidden="true" />
                     </div>
                     <div>
                       <p className="font-black text-slate-900 text-lg tracking-tight leading-none mb-2">{item.title}</p>
-                      <p className="text-slate-500 leading-relaxed font-medium text-md">{item.desc}</p>
+                      <p className="text-slate-600 leading-relaxed font-medium text-md">{item.desc}</p>
                     </div>
                   </li>
                 ))}
@@ -94,7 +94,7 @@ export default function ContactBody() {
                 <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center">
                   <CheckCircle2 className="w-10 h-10 text-blue-600" />
                 </div>
-                <h4 className="text-3xl font-black tracking-tighter text-slate-900">Protocol Initiated.</h4>
+                <h3 className="text-3xl font-black tracking-tighter text-slate-900">Protocol Initiated.</h3>
                 <p className="text-slate-500 font-medium max-w-xs">Our principals have been notified. Expect a strategic response within 24 hours.</p>
               </div>
             ) : (
@@ -110,22 +110,22 @@ export default function ContactBody() {
                 </div>
 
                 <form className="space-y-6" onSubmit={handleSubmit} id='contact-form'>
-                  {error && <p className="text-red-500 font-bold text-xs uppercase tracking-widest">{error}</p>}
+                  {error && <p role="alert" className="text-red-600 font-bold text-xs uppercase tracking-widest">{error}</p>}
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="space-y-3">
-                      <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Full Name</label>
-                      <input name="name" required placeholder="E.g. Alexander Hamilton" className="w-full h-12 px-5 rounded-2xl border-2 border-black focus:outline-none focus:ring-4 focus:ring-blue-600/10 focus:border-blue-500 font-bold text-slate-900" />
+                      <label htmlFor="contact-name" className="text-[10px] font-black uppercase tracking-widest text-slate-600 ml-1">Full Name</label>
+                      <input id="contact-name" name="name" required placeholder="E.g. Alexander Hamilton" className="w-full h-12 px-5 rounded-2xl border-2 border-black focus:outline-none focus:ring-4 focus:ring-blue-600/10 focus:border-blue-500 font-bold text-slate-900" />
                     </div>
                     <div className="space-y-3">
-                      <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1"> Email</label>
-                      <input name="email" type="email" required placeholder="ceo@company.com" className="w-full h-12 px-5 rounded-2xl border-2 border-black focus:outline-none focus:ring-4 focus:ring-blue-600/10 focus:border-blue-500 font-bold text-slate-900" />
+                      <label htmlFor="contact-email" className="text-[10px] font-black uppercase tracking-widest text-slate-600 ml-1"> Email</label>
+                      <input id="contact-email" name="email" type="email" required placeholder="ceo@company.com" className="w-full h-12 px-5 rounded-2xl border-2 border-black focus:outline-none focus:ring-4 focus:ring-blue-600/10 focus:border-blue-500 font-bold text-slate-900" />
                     </div>
                   </div>
 
                   <div className="space-y-3">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Brief Description</label>
-                    <textarea name="details" required placeholder="Briefly describe the technical hurdles impacting your revenue velocity..." className="w-full min-h-[160px] p-5 rounded-2xl border-2 border-black focus:outline-none focus:ring-4 focus:ring-blue-600/10 focus:border-blue-500 font-bold text-slate-900 resize-none leading-relaxed" />
+                    <label htmlFor="contact-details" className="text-[10px] font-black uppercase tracking-widest text-slate-600 ml-1">Brief Description</label>
+                    <textarea id="contact-details" name="details" required placeholder="Briefly describe the technical hurdles impacting your revenue velocity..." className="w-full min-h-[160px] p-5 rounded-2xl border-2 border-black focus:outline-none focus:ring-4 focus:ring-blue-600/10 focus:border-blue-500 font-bold text-slate-900 resize-none leading-relaxed" />
                   </div>
 
                   <button

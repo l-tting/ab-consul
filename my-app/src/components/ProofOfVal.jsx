@@ -55,14 +55,14 @@ export default function ResultsSection() {
             </h2>
             <p className="text-2xl md:text-3xl font-bold tracking-tighter text-slate-900 leading-tight">
               Hard metrics.
-              <span className="text-slate-400 italic font-medium">
+              <span className="text-slate-500 italic font-medium">
                 {" "}Strategic outcomes.
               </span>
             </p>
           </div>
 
           <div className="self-start md:self-auto flex items-center gap-2 px-4 md:px-6 py-2.5 md:py-3 bg-slate-50 rounded-full border border-slate-100">
-            <TrendingUp className="w-4 h-4 md:w-5 md:h-5 text-blue-600" />
+            <TrendingUp className="w-4 h-4 md:w-5 md:h-5 text-blue-600" aria-hidden="true" />
             <span className="text-xs md:text-sm font-bold text-slate-600 tracking-tight">
               Avg. 3.4x ROI
             </span>
@@ -98,7 +98,7 @@ export default function ResultsSection() {
                     </p>
                   </div>
 
-                  <div className="p-2 rounded-full bg-white/60 backdrop-blur-sm text-slate-400 group-hover:text-blue-600 group-hover:bg-blue-50 transition-all">
+                  <div className="p-2 rounded-full bg-white/60 backdrop-blur-sm text-slate-500 group-hover:text-blue-600 group-hover:bg-blue-50 transition-all" aria-hidden="true">
                     <ArrowUpRight size={20} />
                   </div>
                 </div>
@@ -108,7 +108,7 @@ export default function ResultsSection() {
                 </h3>
 
                 {/* Description with softer styling */}
-                <p className="text-slate-500 text-sm md:text-[15px] font-normal leading-relaxed mb-6 md:mb-8">
+                <p className="text-slate-600 text-sm md:text-[15px] font-normal leading-relaxed mb-6 md:mb-8">
                   {item.description}
                 </p>
               </div>

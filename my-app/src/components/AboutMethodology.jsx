@@ -36,7 +36,7 @@ export default function StrategicVelocity() {
             </h2>
             <p className="text-5xl md:text-3xl font-black tracking-tighter text-slate-900 leading-[0.9] mb-8">
               We align 
-              <span className="text-stone-400 italic font-serif"> architecture </span> 
+              <span className="text-stone-500 italic font-serif"> architecture </span> 
                with the <span className="text-blue-600">P&L.</span>
             </p>
             <p className="text-slate-500 text-md max-w-md leading-relaxed font-medium">
@@ -44,7 +44,7 @@ export default function StrategicVelocity() {
          Our framework treats your data as a high-yield financial instrument.
             </p>
             
-            <div className="mt-12 flex items-center gap-4 text-slate-300">
+            <div className="mt-12 flex items-center gap-4 text-slate-600">
                 <div className="w-12 h-[1px] bg-slate-400" />
                 <span className="text-[14px] font-black uppercase tracking-[0.2em]">The Three-Stage Pivot</span>
             </div>
@@ -66,7 +66,7 @@ export default function StrategicVelocity() {
                 </div>
 
                 <div className="pt-2">
-                  <p className="text-[12px] font-black uppercase tracking-[0.3em] text-blue-600/60 mb-3">
+                  <p className="text-[12px] font-black uppercase tracking-[0.3em] text-blue-600 mb-3">
                     {shift.state}
                   </p>
                   <h3 className="text-xl font-black text-slate-900 mb-5 tracking-tighter">

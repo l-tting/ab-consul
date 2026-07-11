@@ -39,15 +39,15 @@ export default function Navbar() {
           <div className="flex h-16 items-center justify-between">
 
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-1">
-              <img src="/ab.png" alt="Logo" className="h-8 w-auto" />
+            <Link href="/" className="flex items-center gap-1" aria-label="AB Consul home">
+              <img src="/ab.png" alt="" width={32} height={32} className="h-8 w-auto" />
               <span className="text-lg font-extrabold tracking-tight">
                 CONSUL
               </span>
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center gap-10">
+            <nav className="hidden md:flex items-center gap-10" aria-label="Main navigation">
               {NAV_LINKS.map((link) => {
                 const isActive = pathname === link.href;
                 return (
@@ -80,13 +80,17 @@ export default function Navbar() {
               </Link>
 
               <button
+                type="button"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="md:hidden rounded-md p-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+                aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={isMenuOpen}
+                aria-controls="mobile-nav"
               >
                 {isMenuOpen ? (
-                  <XIcon className="h-6 w-6" />
+                  <XIcon className="h-6 w-6" aria-hidden="true" />
                 ) : (
-                  <MenuIcon className="h-6 w-6" />
+                  <MenuIcon className="h-6 w-6" aria-hidden="true" />
                 )}
               </button>
             </div>
@@ -95,7 +99,7 @@ export default function Navbar() {
 
         {/* Mobile Dropdown */}
         {isMenuOpen && (
-          <div className="md:hidden border-t bg-white dark:bg-black shadow-lg animate-slideDown">
+          <nav id="mobile-nav" aria-label="Mobile navigation" className="md:hidden border-t bg-white dark:bg-black shadow-lg animate-slideDown">
             <div className="px-6 py-6 space-y-6">
 
               {NAV_LINKS.map((link) => {
@@ -129,7 +133,7 @@ export default function Navbar() {
               </Link>
 
             </div>
-          </div>
+          </nav>
         )}
       </header>
     </>

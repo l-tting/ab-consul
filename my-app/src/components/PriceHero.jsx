@@ -47,7 +47,7 @@ export default function PricingHero() {
               <div className="mb-6 p-4 bg-slate-50 rounded-2xl w-fit group-hover:bg-blue-50 group-hover:scale-110 transition-all duration-500">
                 {pillar.icon}
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-4">{pillar.title}</h3>
+              <h2 className="text-xl font-bold text-slate-900 mb-4">{pillar.title}</h2>
               <p className="text-slate-500 text-md leading-relaxed">
                 {pillar.desc}
               </p>

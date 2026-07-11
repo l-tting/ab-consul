@@ -46,13 +46,13 @@ export default function AboutClosing() {
             {/* Soft Glow Effect */}
             <div className="absolute top-0 right-0 w-48 h-48 bg-blue-600/20 blur-[80px] pointer-events-none" />
             
-            <p className="text-[10px] font-black text-blue-400 mb-8 uppercase tracking-[0.3em]">Institutional Verification</p>
+            <p className="text-[10px] font-black text-blue-300 mb-8 uppercase tracking-[0.3em]">Institutional Verification</p>
             <h3 className="text-3xl font-bold mb-8 tracking-tighter leading-[0.9]">
               Verify 
-              <span className="italic font-serif text-slate-400 font-medium text-3xl"> Strategic Results.</span>
+              <span className="italic font-serif text-slate-300 font-medium text-3xl"> Strategic Results.</span>
             </h3>
             
-            <p className="text-slate-400 text-sm mb-12 leading-relaxed font-medium">
+            <p className="text-slate-300 text-sm mb-12 leading-relaxed font-medium">
               See the documented impact of the AB CONSUL methodology across portfolios 
               scaling from $5M to $50M ARR.
             </p>

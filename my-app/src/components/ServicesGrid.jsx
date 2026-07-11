@@ -78,11 +78,11 @@ export default function ServicesGrid() {
                 <div className="relative z-10 flex flex-col h-full">
                   {/* Top Bar */}
                   <div className="flex justify-between items-start mb-16">
-                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10 text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-xl">
-                      {s.icon}
+                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10 text-blue-300 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-xl">
+                      {React.cloneElement(s.icon, { "aria-hidden": true })}
                     </div>
                     <div className="text-right">
-                      <span className="block text-[10px] font-black text-blue-400 uppercase tracking-[0.3em] mb-2">
+                      <span className="block text-[10px] font-black text-blue-300 uppercase tracking-[0.3em] mb-2">
                         {s.tag}
                       </span>
                       <span className="text-[11px] font-black text-slate-500 tracking-[0.2em] uppercase">
@@ -105,7 +105,7 @@ export default function ServicesGrid() {
                     {s.features.map(f => (
                       <div key={f} className="flex items-center gap-3">
                         <div className="h-[1px] w-4 bg-blue-600" />
-                        <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest group-hover:text-white transition-colors">
+                        <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest group-hover:text-white transition-colors">
                           {f}
                         </span>
                       </div>
@@ -116,7 +116,7 @@ export default function ServicesGrid() {
                   <p className="mt-6 text-lg font-bold text-slate-200">{s.price}</p>
 
                   {/* CTA Button */}
-                  <button className="mt-4 px-6 py-2 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-500 transition">
+                  <button type="button" className="mt-4 px-6 py-2 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-500 transition">
                     Request Proposal
                   </button>
                 </div>

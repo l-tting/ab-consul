@@ -41,7 +41,9 @@ function Footer() {
             <div className="inline-flex items-center gap-0 bg-white px-4 rounded-md mb-6">
               <img
                 src="/ab.png"
-                alt="AB Consul Logo"
+                alt=""
+                width={32}
+                height={32}
                 className="h-8 w-auto"
               />
               <span className="text-md font-bold text-black tracking-wide">
@@ -56,9 +58,8 @@ function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-semibold mb-6 flex items-center gap-2">
+            <h2 className="text-white font-semibold mb-6 flex items-center gap-2">
               Explore Our World
-              {/* Globe on stand with spinning globe */}
               <svg
                 className="w-6 h-6 text-white"
                 viewBox="0 0 24 24"
@@ -67,6 +68,8 @@ function Footer() {
                 strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                aria-hidden="true"
+                focusable="false"
               >
                 {/* Stand */}
                 <rect x="10" y="18" width="4" height="2" fill="currentColor" stroke="none" />
@@ -79,8 +82,8 @@ function Footer() {
                   <path d="M8 11h8" stroke="currentColor" fill="none" />
                 </g>
               </svg>
-            </h4>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-8 text-sm">
+            </h2>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-8 text-sm" aria-label="Footer navigation">
               {NAV_LINKS.map((link) => {
                 const isActive = pathname === link.href;
                 return (
@@ -108,7 +111,7 @@ function Footer() {
 
           {/* Connect */}
           <div>
-            <h4 className="text-white font-semibold mb-6">Connect With Us</h4>
+            <h2 className="text-white font-semibold mb-6">Connect With Us</h2>
             
             <div className="flex gap-4 mb-6">
               {socialIcons.map((icon) => (
@@ -117,9 +120,10 @@ function Footer() {
                   href={icon.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`AB Consul on ${icon.name}`}
                   className="p-2 bg-gray-800 rounded-md hover:bg-gray-700 transition-all duration-200"
                 >
-                  {icon.svg}
+                  <span aria-hidden="true">{icon.svg}</span>
                 </a>
               ))}
             </div>
@@ -128,9 +132,11 @@ function Footer() {
             <div className="flex items-center gap-2 text-sm">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4 text-gray-400"
+                className="h-4 w-4 text-gray-300"
                 fill="currentColor"
                 viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
               >
                 <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
               </svg>
@@ -146,7 +152,7 @@ function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-800 italic mt-12 pt-6 text-center text-sm text-gray-500">
+        <div className="border-t border-gray-800 italic mt-12 pt-6 text-center text-sm text-gray-400">
           © {new Date().getFullYear()} AB CONSUL. All rights reserved.
         </div>
 

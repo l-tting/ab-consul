@@ -46,7 +46,7 @@ export default function Process() {
             </h2>
             <p className="text-2xl md:text-3xl font-bold tracking-tighter text-slate-900 leading-tight">
               A repeatable engine for
-              <span className="text-slate-400 italic font-medium"> uncommon</span> results.
+              <span className="text-slate-500 italic font-medium"> uncommon</span> results.
             </p>
           </div>
 

@@ -48,7 +48,7 @@ export default function TeamSection() {
           </h2>
           <p className="text-2xl md:text-4xl font-black tracking-tighter text-slate-900 mb-6 leading-[0.9]">
             Direct access to
-            <span className="text-stone-400 italic font-serif font-black"> the founders.</span>
+            <span className="text-stone-500 italic font-serif font-black"> the founders.</span>
           </p>
           <p className="text-slate-600 text-lg max-w-xl mx-auto leading-relaxed font-medium">
             We don't delegate to account managers. You partner directly with the
@@ -65,9 +65,19 @@ export default function TeamSection() {
             return (
               <div
                 key={i}
+                role="button"
+                tabIndex={0}
+                aria-expanded={isMobile ? isExpanded : isHovered}
+                aria-label={`View ${member.name} profile`}
                 onMouseEnter={() => !isMobile && setHoveredIndex(i)}
                 onMouseLeave={() => !isMobile && setHoveredIndex(null)}
                 onClick={() => handleCardClick(i)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    handleCardClick(i);
+                  }
+                }}
                 className={`relative rounded-[3.5rem] overflow-hidden transition-all duration-700 bg-white cursor-pointer border border-slate-200 ${isHovered && !isExpanded && !isMobile ? 'md:flex-[1.4] shadow-2xl border-blue-600' : 'md:flex-1 shadow-sm'
                   }`}
               >
@@ -86,8 +96,8 @@ export default function TeamSection() {
                       <p className="text-[11px] font-black text-blue-600 uppercase tracking-[0.3em]">{member.title}</p>
                       <h3 className="text-3xl font-black text-slate-900 tracking-tighter leading-none">{member.name}</h3>
                     </div>
-                    <div className="mt-10 w-12 h-12 rounded-full border border-slate-300 flex items-center justify-center">
-                      <Plus className="w-6 h-6 text-slate-400" />
+                    <div className="mt-10 w-12 h-12 rounded-full border border-slate-300 flex items-center justify-center" aria-hidden="true">
+                      <Plus className="w-6 h-6 text-slate-500" />
                     </div>
                   </div>
 
@@ -114,10 +124,10 @@ export default function TeamSection() {
                       <div className="flex items-center justify-between border-t border-white/20 pt-8">
                         <div className="flex items-center gap-3 text-white text-[11px] font-black uppercase tracking-[0.2em]">
                           <span>Case Studies</span>
-                          <MoveRight className="w-5 h-5" />
+                          <MoveRight className="w-5 h-5" aria-hidden="true" />
                         </div>
-                        <a href="#" className="p-4 bg-white text-blue-600 rounded-2xl hover:bg-blue-50 transition-colors shadow-xl">
-                          <Linkedin className="w-5 h-5 fill-current" />
+                        <a href="#" aria-label={`${member.name} on LinkedIn`} className="p-4 bg-white text-blue-600 rounded-2xl hover:bg-blue-50 transition-colors shadow-xl">
+                          <Linkedin className="w-5 h-5 fill-current" aria-hidden="true" />
                         </a>
                       </div>
                     </div>
@@ -133,21 +143,23 @@ export default function TeamSection() {
                         <p className="text-[11px] font-black text-blue-600 uppercase tracking-[0.3em]">{member.title}</p>
                         <h3 className="text-3xl font-black text-slate-900 tracking-tighter leading-none">{member.name}</h3>
                       </div>
-                      <div className="mt-10 w-12 h-12 rounded-full border border-slate-300 flex items-center justify-center">
-                        <Plus className="w-6 h-6 text-slate-400" />
+                      <div className="mt-10 w-12 h-12 rounded-full border border-slate-300 flex items-center justify-center" aria-hidden="true">
+                        <Plus className="w-6 h-6 text-slate-500" />
                       </div>
                     </div>
                   ) : (
                     // Expanded mobile view
                     <div className="p-14 flex flex-col justify-between bg-blue-600 min-h-[600px] relative">
                       <button
+                        type="button"
                         onClick={(e) => {
                           e.stopPropagation();
                           setExpandedIndex(null);
                         }}
                         className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white"
+                        aria-label={`Close ${member.name} profile`}
                       >
-                        <X className="w-5 h-5" />
+                        <X className="w-5 h-5" aria-hidden="true" />
                       </button>
                       <div className="flex flex-col h-full justify-between">
                         <div>
@@ -169,10 +181,10 @@ export default function TeamSection() {
                         <div className="flex items-center justify-between border-t border-white/20 pt-8">
                           <div className="flex items-center gap-3 text-white text-[11px] font-black uppercase tracking-[0.2em]">
                             <span>Case Studies</span>
-                            <MoveRight className="w-5 h-5" />
+                            <MoveRight className="w-5 h-5" aria-hidden="true" />
                           </div>
-                          <a href="#" className="p-4 bg-white text-blue-600 rounded-2xl hover:bg-blue-50 transition-colors shadow-xl">
-                            <Linkedin className="w-5 h-5 fill-current" />
+                          <a href="#" aria-label={`${member.name} on LinkedIn`} className="p-4 bg-white text-blue-600 rounded-2xl hover:bg-blue-50 transition-colors shadow-xl">
+                            <Linkedin className="w-5 h-5 fill-current" aria-hidden="true" />
                           </a>
                         </div>
                       </div>

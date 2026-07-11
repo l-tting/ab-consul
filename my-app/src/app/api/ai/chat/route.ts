@@ -9,7 +9,7 @@ export const runtime = "nodejs";
 
 /**
  * POST /api/ai/chat
- * Dedicated AI endpoint — keep route thin; business logic lives in services.
+ * Dedicated AI endpoint — routes to the local knowledge assistant (no external LLM).
  */
 export async function POST(request: Request) {
   const clientId = getClientIdentifier(request);

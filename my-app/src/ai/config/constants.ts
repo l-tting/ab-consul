@@ -1,10 +1,6 @@
 /** Shared configuration for the AB Consul AI assistant. */
 
 export const AI_CONFIG = {
-  /** OpenAI model — swap for newer models without touching UI code. */
-  model: "gpt-4o-mini",
-  maxTokens: 800,
-  temperature: 0.4,
   /** Client-side limits */
   maxMessageLength: 2000,
   maxConversationMessages: 30,
@@ -19,8 +15,6 @@ export const WELCOME_MESSAGE =
   "Hello! I'm the AB Consul AI Advisor. I can answer questions about our consulting services, technologies, project process, pricing, and how we can help your business. How can I assist you today?";
 
 export const FALLBACK_MESSAGES = {
-  unavailable:
-    "I'm temporarily unavailable. Please try again shortly or contact us at contact@ab-consul.com for immediate assistance.",
   rateLimited:
     "You've reached the message limit for now. Please try again later or contact us at contact@ab-consul.com.",
   generic:

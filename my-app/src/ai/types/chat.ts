@@ -30,9 +30,3 @@ export interface ChatApiError {
   error: string;
   code?: string;
 }
-
-/** OpenAI-compatible message for the completion service. */
-export interface OpenAIMessage {
-  role: "system" | "user" | "assistant";
-  content: string;
-}

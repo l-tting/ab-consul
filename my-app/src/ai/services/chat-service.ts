@@ -1,6 +1,6 @@
 import { FALLBACK_MESSAGES } from "../config/constants";
 import type { ChatApiRequest, ChatApiResponse } from "../types/chat";
-import { generateChatCompletion, OpenAIServiceError } from "./openai-service";
+import { generateAssistantResponse } from "./knowledge-service";
 import { validateChatRequest } from "../validation/chat-request";
 
 export interface ChatServiceResult {
@@ -18,7 +18,7 @@ export interface ChatServiceError {
 export type ChatServiceResponse = ChatServiceResult | ChatServiceError;
 
 /**
- * Orchestrates chat request handling — validation, AI call, response shaping.
+ * Orchestrates chat request handling — validation, knowledge matching, response shaping.
  * Extend here for logging, analytics, CRM hooks, and conversation persistence.
  */
 export async function handleChatRequest(
@@ -38,27 +38,18 @@ export async function handleChatRequest(
   const { messages } = validation.data as ChatApiRequest;
 
   try {
-    const assistantContent = await generateChatCompletion(messages);
+    const result = generateAssistantResponse(messages);
 
     return {
       ok: true,
       data: {
         message: {
           role: "assistant",
-          content: assistantContent,
+          content: result.content,
         },
       },
     };
-  } catch (error) {
-    if (error instanceof OpenAIServiceError) {
-      return {
-        ok: false,
-        error: error.message || FALLBACK_MESSAGES.unavailable,
-        status: error.statusCode,
-        code: "AI_SERVICE_ERROR",
-      };
-    }
-
+  } catch {
     return {
       ok: false,
       error: FALLBACK_MESSAGES.generic,

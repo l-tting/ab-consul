@@ -31,22 +31,6 @@ function Footer() {
 
   return (
     <footer className="bg-gray-950 text-gray-300">
-      {/* Custom animation keyframes */}
-      <style jsx>{`
-        @keyframes spin-globe {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
-        .animate-spin-globe {
-          animation: spin-globe 12s linear infinite;
-          transform-origin: center center;
-        }
-      `}</style>
-
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
         
         {/* Top Section */}

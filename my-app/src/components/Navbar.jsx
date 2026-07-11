@@ -132,24 +132,6 @@ export default function Navbar() {
           </div>
         )}
       </header>
-
-      {/* Smooth Dropdown Animation */}
-      <style jsx global>{`
-        @keyframes slideDown {
-          from {
-            opacity: 0;
-            transform: translateY(-10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .animate-slideDown {
-          animation: slideDown 0.25s ease-out;
-        }
-      `}</style>
     </>
   );
 }

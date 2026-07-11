@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128px" height="128px" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ProfitWell" preserveAspectRatio="xMidYMid">
+  <rect x="16" y="16" width="96" height="96" rx="22" fill="#00D084"/>
+  <rect x="36" y="72" width="14" height="28" rx="3" fill="#FFFFFF"/>
+  <rect x="57" y="54" width="14" height="46" rx="3" fill="#FFFFFF"/>
+  <rect x="78" y="36" width="14" height="64" rx="3" fill="#FFFFFF"/>
+</svg>

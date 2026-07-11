@@ -1,73 +1,61 @@
 "use client";
 
-import React from "react";
+const LOGOS = [
+  { name: "Stripe", src: "/logos/stripe.svg" },
+  { name: "AWS", src: "/logos/aws.svg" },
+  { name: "HubSpot", src: "/logos/hubspot.svg" },
+  { name: "Snowflake", src: "/logos/snowflake.svg" },
+];
+
+function LogoItem({ name, src }) {
+  return (
+    <div className="logo-marquee-item flex h-16 w-52 shrink-0 items-center justify-center px-8">
+      <img
+        src={src}
+        alt={name}
+        className="max-h-10 w-auto max-w-full object-contain opacity-50 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+        draggable={false}
+      />
+    </div>
+  );
+}
+
+function LogoTrack({ ariaHidden = false }) {
+  return (
+    <div
+      className="flex w-max shrink-0 items-center"
+      aria-hidden={ariaHidden || undefined}
+    >
+      {LOGOS.map((logo) => (
+        <LogoItem key={logo.name} {...logo} />
+      ))}
+    </div>
+  );
+}
 
 export default function TrustedLogos() {
-
-const StripeLogo = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" className="h-8 w-auto">
-    <path d="M165 208.7L121.7 217.9L121.5 360.3C121.5 386.6 141.3 403.6 167.6 403.6C182.2 403.6 192.9 400.9 198.8 397.7L198.8 363.9C193.1 366.2 165.1 374.4 165.1 348.2L165.1 285L198.8 285L198.8 247.2L165.1 247.2L165 208.7zM254.1 260.3L251.4 247.2L213 247.2L213 400.4L257.3 400.4L257.3 297.3C267.8 283.5 285.5 286.2 291.2 288L291.2 247.2C285.2 245.1 264.5 241.2 254.1 260.3zM346.4 188L301.8 197.5L301.8 233.7L346.4 224.2L346.4 188zM44.9 292.3C44.9 285.4 50.7 282.7 60 282.6C73.5 282.6 90.7 286.7 104.2 294L104.2 252.2C89.5 246.4 74.8 244.1 60.1 244.1C24.1 244.1 .1 262.9 .1 294.3C.1 343.5 67.6 335.5 67.6 356.7C67.6 364.9 60.5 367.6 50.6 367.6C35.9 367.6 16.9 361.5 2 353.4L2 393.4C18.5 400.5 35.2 403.5 50.5 403.5C87.4 403.5 112.8 387.7 112.8 355.7C112.8 302.8 44.9 312.3 44.9 292.3zM640 325.6C640 280.1 618 244.2 575.8 244.2C533.6 244.2 507.9 280.1 507.9 325.3C507.9 378.8 538.2 403.5 581.4 403.5C602.6 403.5 618.5 398.7 630.6 392L630.6 358.6C618.5 364.7 604.6 368.4 587 368.4C569.7 368.4 554.5 362.3 552.5 341.5L639.4 341.5C639.6 339.2 640 329.9 640 325.6zM552.1 308.8C552.1 288.8 564.4 280.4 575.5 280.4C586.4 280.4 598 288.8 598 308.8L552.1 308.8zM439.2 244.2C421.8 244.2 410.6 252.4 404.4 258.1L402.1 247.1L363 247.1L363 451.9L407.4 442.5L407.5 392.3C413.9 397 423.4 403.5 438.9 403.5C470.7 403.5 499.7 380.3 499.7 323.9C499.8 272.3 470.4 244.2 439.2 244.2zM428.6 366.7C418.2 366.7 412 362.9 407.7 358.3L407.4 292.3C412 287.2 418.4 283.5 428.6 283.5C444.8 283.5 456 301.7 456 324.9C456.1 348.8 445.1 366.7 428.6 366.7zM301.9 400.4L346.5 400.4L346.5 247.2L301.9 247.2L301.9 400.4z"/>
-  </svg>
-);
-
-
-
-
-  const stack = [
-    { name: "Stripe", logo: StripeLogo },
-    { name: "AWS", src: "/logos/aws.svg" },
-    { name: "HubSpot", src: "/logos/hubspot.svg" },
-    { name: "Snowflake", src: "/logos/snowflake.svg" },
-    { name: "ProfitWell", src: "/logos/profitwell.svg" },
-  ];
-
   return (
     <section className="w-full py-20">
-      <div className="max-w-6xl mx-auto px-6">
-
-        {/* Minimal Header */}
-        <div className="text-center mb-16">
-          <p className="text-sm uppercase tracking-[0.35em] text-slate-400 mb-4">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="mb-16 text-center">
+          <p className="mb-4 text-sm uppercase tracking-[0.35em] text-slate-400">
             Trusted Stack
           </p>
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-slate-900">
+          <h2 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
             Built on industry standards.
           </h2>
         </div>
 
-        {/* Clean Infinite Logo Track */}
-        <div className="relative overflow-hidden">
-          <div className="flex items-center gap-20 animate-scroll-minimal whitespace-nowrap">
-            {[...stack, ...stack].map((item, i) => (
-              <div
-                key={i}
-                className="flex items-center justify-center shrink-0"
-              >
-                <img
-                  src={item.src}
-                  alt={item.name}
-                  className="h-8 w-auto opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-500"
-                />
-              </div>
-            ))}
+        <div className="logo-marquee relative overflow-hidden">
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-stone-100 to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-stone-100 to-transparent" />
+
+          <div className="flex w-max animate-marquee-left">
+            <LogoTrack />
+            <LogoTrack ariaHidden />
           </div>
         </div>
       </div>
-
-      <style jsx global>{`
-        @keyframes scroll-minimal {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-
-        .animate-scroll-minimal {
-          animation: scroll-minimal 40s linear infinite;
-        }
-
-        .animate-scroll-minimal:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </section>
   );
 }

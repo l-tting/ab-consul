@@ -41,7 +41,7 @@ export const companyOverviewEntries: KnowledgeEntry[] = [
     id: "co-006",
     category: "company-overview",
     keywords: ["hello", "hi", "hey", "good morning", "good afternoon", "greetings", "howdy"],
-    answer: "Hello! I'm the AB Consul Advisor. I can help with questions about our consulting services, technologies, development process, pricing approach, and how to get started. What would you like to know?",
+    answer: "Welcome to AB Consul. Tell me about the business challenge or project you're exploring — I'll help you think through the right approach.",
     priority: 1,
   },
 ];

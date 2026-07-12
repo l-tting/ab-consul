@@ -15,11 +15,26 @@ export type ProjectFocus =
   | "enterprise"
   | "consulting";
 
+/** Stage of the client's initiative. */
+export type ProjectStage = "new" | "improve" | "scale" | "unknown";
+
+/** Active conversation topic for chip routing. */
+export type ConversationTopic =
+  | "pricing"
+  | "services"
+  | "technical"
+  | "process"
+  | "contact"
+  | "erp"
+  | "mvp"
+  | "general";
+
 /** Parsed session memory — scoped to the current conversation only. */
 export interface SessionContext {
   turnCount: number;
   userMessageCount: number;
   projectFocus: ProjectFocus[];
+  projectStage: ProjectStage;
   mentionedTimeline: boolean;
   mentionedBudget: boolean;
   mentionedTeam: boolean;
@@ -27,8 +42,14 @@ export interface SessionContext {
   challenges: string[];
   /** Topics already surfaced so we avoid repeating the same follow-up. */
   discussedTopics: string[];
+  /** Inferred business type or industry phrase. */
+  businessHint?: string;
   /** Raw concatenation of user messages for phrase detection. */
   userText: string;
+  /** Richness score for lead-generation timing (0–6). */
+  contextRichness: number;
+  /** Primary topic of the latest user message. */
+  activeTopic: ConversationTopic;
 }
 
 /** Rich consultant-style content attached to a knowledge entry. */

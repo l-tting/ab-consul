@@ -48,6 +48,7 @@ export async function handleChatRequest(
           content: result.content,
         },
         suggestions: result.suggestions,
+        primarySuggestion: result.primarySuggestion,
       },
     };
   } catch {

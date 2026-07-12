@@ -9,6 +9,8 @@ export interface ChatMessage {
   createdAt: number;
   /** Context-aware suggestion chips for the latest assistant turn. */
   suggestions?: string[];
+  /** Primary CTA chip label for prominent styling. */
+  primarySuggestion?: string;
 }
 
 /** Payload sent from the client to the chat API. */
@@ -27,6 +29,8 @@ export interface ChatApiResponse {
   };
   /** Interactive suggestion chips shown below the assistant message. */
   suggestions?: string[];
+  /** Highlighted primary CTA chip (e.g. Book a Discovery Call). */
+  primarySuggestion?: string;
 }
 
 /** Standardized API error shape. */

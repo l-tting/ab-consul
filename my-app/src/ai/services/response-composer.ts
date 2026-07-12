@@ -1,8 +1,15 @@
 import type { EnrichedKnowledgeEntry, MatchResult } from "../types/knowledge";
 import type { SessionContext } from "../types/consultant";
-import { pickContextualHook } from "../data/consultant-content";
 import {
-  focusLabel,
+  composeConsultationNudge,
+  composeDiscoveryProbe,
+  filterFollowUpQuestions,
+  isTopicAlreadyDiscussed,
+  shouldProbeFirst,
+} from "./discovery-engine";
+import { buildTopicChips } from "./suggestion-chips";
+import {
+  buildContextReference,
   prefersDirectAnswer,
 } from "./session-context";
 import {
@@ -13,10 +20,12 @@ import {
 export interface ComposedResponse {
   content: string;
   suggestions: string[];
+  primarySuggestion?: string;
 }
 
 /**
- * Assembles a consultative reply: acknowledge → explain → reason → (context) → follow-up.
+ * Assembles a premium consultative reply:
+ * acknowledge → explain (concise) → optional reason → one follow-up.
  */
 export function composeConsultantResponse(
   entry: EnrichedKnowledgeEntry,
@@ -28,189 +37,118 @@ export function composeConsultantResponse(
   const seed = `${entry.id}:${query}`;
   const turn = session.userMessageCount;
 
-  const hook = pickContextualHook(
-    content.contextualHooks,
-    session.projectFocus,
-  );
-
-  let acknowledgment = pickVariant(content.acknowledgments, seed, turn);
-  if (hook && session.projectFocus.length) {
-    acknowledgment = `${hook}${acknowledgment.charAt(0).toLowerCase()}${acknowledgment.slice(1)}`;
+  // Discovery-first for vague questions lacking context
+  if (shouldProbeFirst(entry.category, query, session)) {
+    const probe = composeDiscoveryProbe(entry.category, session, seed);
+    const chipSet = buildTopicChips(entry, session, alternates, seed, turn);
+    return {
+      content: probe,
+      suggestions: chipSet.chips,
+      primarySuggestion: chipSet.primary,
+    };
   }
 
+  const contextRef = buildContextReference(session);
+  const acknowledgment = pickVariant(content.acknowledgments, seed, turn);
   const explanation = pickVariant(content.explanations, `${seed}:exp`, turn);
-  const reasoning = pickVariant(content.reasoning, `${seed}:reason`, turn);
 
-  const parts: string[] = [acknowledgment, explanation, reasoning];
+  const parts: string[] = [];
 
-  // Reference prior session context naturally
-  if (session.projectFocus.length && !hook) {
-    const focusRef = session.projectFocus
-      .slice(0, 2)
-      .map((f) => focusLabel(f))
-      .join(" and ");
-    parts.push(
-      `Given you're exploring ${focusRef}, this is especially relevant to getting scope and architecture right early.`,
-    );
+  if (contextRef) {
+    parts.push(`${contextRef}${explanation.charAt(0).toLowerCase()}${explanation.slice(1)}`);
+  } else {
+    parts.push(acknowledgment, explanation);
   }
 
-  // Occasionally add business context or example for depth
-  if (content.businessContext?.length && turn % 2 === 0) {
-    parts.push(
-      pickVariant(content.businessContext, `${seed}:ctx`, turn),
-    );
-  } else if (content.examples?.length && turn % 3 === 0) {
-    parts.push(pickVariant(content.examples, `${seed}:ex`, turn));
+  // One concise reasoning line — not every turn
+  if (content.reasoning.length && turn % 2 !== 0) {
+    parts.push(pickVariant(content.reasoning, `${seed}:reason`, turn));
   }
 
-  if (content.considerations?.length && turn % 4 === 0) {
-    parts.push(
-      pickVariant(content.considerations, `${seed}:con`, turn),
-    );
-  }
-
+  // Single follow-up — never repeat known info
   const direct = prefersDirectAnswer(query, entry.category);
   if (!direct) {
-    const followUp = pickFollowUpQuestion(
+    const eligible = filterFollowUpQuestions(
       content.followUpQuestions,
+      session,
+    ).filter((q) => !isTopicAlreadyDiscussed(q, session.discussedTopics));
+
+    const followUp = pickFollowUpQuestion(
+      eligible,
       session.discussedTopics,
       `${seed}:fu`,
       turn,
     );
-    if (followUp) {
-      parts.push(followUp);
-    }
+    if (followUp) parts.push(followUp);
   }
 
-  const suggestions = buildSuggestionChips(
-    content.suggestionChips,
-    entry,
-    session,
-    alternates,
-    seed,
-    turn,
-  );
+  // Consultation nudge when enough context gathered
+  const nudge = composeConsultationNudge(session, seed);
+  if (nudge) parts.push(nudge);
+
+  const chipSet = buildTopicChips(entry, session, alternates, seed, turn);
 
   return {
     content: parts.join("\n\n"),
-    suggestions,
+    suggestions: chipSet.chips,
+    primarySuggestion: chipSet.primary,
   };
 }
 
-/** Build context-aware suggestion chips — deduplicated and capped. */
-function buildSuggestionChips(
-  baseChips: string[],
-  entry: EnrichedKnowledgeEntry,
-  session: SessionContext,
-  alternates: MatchResult[],
-  seed: string,
-  turn: number,
-): string[] {
-  const chips: string[] = [];
-
-  // Context-driven chips
-  if (session.projectFocus.includes("mvp") && !baseChips.some((c) => /mvp/i.test(c))) {
-    chips.push("MVP Timeline", "MVP Pricing");
-  }
-  if (session.projectFocus.includes("erp") && !baseChips.some((c) => /erp/i.test(c))) {
-    chips.push("ERP Integration", "Legacy Migration");
-  }
-  if (session.mentionedBudget && !baseChips.some((c) => /pric/i.test(c))) {
-    chips.push("Pricing Approach");
-  }
-  if (session.mentionedTimeline && !baseChips.some((c) => /timeline/i.test(c))) {
-    chips.push("Project Timeline");
-  }
-
-  chips.push(...baseChips);
-
-  // Alternate match intents as chips
-  for (const alt of alternates.slice(0, 2)) {
-    if (alt.entry.id === entry.id) continue;
-    const chip = alt.entry.intent
-      ? capitalizeIntent(alt.entry.intent)
-      : alt.entry.followUps?.[0];
-    if (chip && !chips.includes(chip)) chips.push(chip);
-  }
-
-  // Rotate order slightly for variation
-  if (!chips.length) {
-    return [
-      "Book a Consultation",
-      "How Our Process Works",
-      "Pricing Approach",
-      "What Services Do You Offer?",
-    ];
-  }
-
-  const offset = pickVariant(
-    Array.from({ length: Math.min(chips.length, 5) }, (_, i) => i),
-    seed,
-    turn,
-  );
-
-  const rotated = [...chips.slice(offset), ...chips.slice(0, offset)];
-
-  return [...new Set(rotated)].slice(0, 5);
-}
-
-function capitalizeIntent(intent: string): string {
-  return intent
-    .split(" ")
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(" ");
-}
-
-/** Consultative fallback when no knowledge match is found. */
+/** Confident redirect when more context is needed — never apologetic. */
 export function composeFallbackResponse(session: SessionContext): ComposedResponse {
   const turn = session.userMessageCount;
+  const seed = `fallback:${turn}`;
 
   const intros = [
-    "I want to make sure you get a useful answer — I may not have matched your question precisely.",
-    "That's a bit outside what I can pinpoint automatically, but I'm happy to help you find the right path.",
-    "Let me try a different angle — I didn't find an exact match, but we can still move the conversation forward.",
+    "To give you the most relevant guidance, tell me a bit more about your situation.",
+    "Let me understand your context better so I can point you in the right direction.",
+    "A few details about your business will help me tailor this properly.",
   ];
 
   const bodies = [
-    "AB Consul advises growth-stage businesses on custom software, MVPs, ERP systems, cloud infrastructure, and strategic consulting. If you share a bit about your business and what you're trying to achieve, I can give much more targeted guidance.",
-    "Our team works as senior consultants — not a generic FAQ. Tell me about your project, timeline, or biggest operational challenge and I'll connect the dots to how we typically help.",
+    "AB Consul partners with growth-stage companies on custom software, operational platforms, and strategic technology consulting — always anchored in business outcomes.",
+    "We help businesses solve problems through software: MVPs, ERP systems, platform modernization, and integrations that reduce operational friction.",
   ];
 
-  const followUps = [
-    "What are you building or trying to improve in your business?",
-    "Are you at the idea stage, building an MVP, or scaling an existing platform?",
-    "Would you like to explore pricing, our process, or book a consultation?",
-  ];
+  const followUps = session.projectFocus.length
+    ? [
+        "What's the timeline you're working toward?",
+        "Are there specific constraints — budget, team size, or existing systems — I should factor in?",
+      ]
+    : [
+        "What business challenge or project are you exploring?",
+        "Are you building something new, or improving systems you already have?",
+      ];
 
-  const seed = `fallback:${turn}`;
   const content = [
     pickVariant(intros, seed, turn),
     pickVariant(bodies, `${seed}:body`, turn),
     pickVariant(followUps, `${seed}:fu`, turn),
   ].join("\n\n");
 
-  const suggestions = [
-    "What Services Do You Offer?",
-    "Estimate an MVP",
-    "Pricing Approach",
-    "Book a Consultation",
-    "How Our Process Works",
-  ];
+  const chipSet = buildTopicChips(null, { ...session, activeTopic: "general" }, [], seed, turn);
 
-  return { content, suggestions };
+  return {
+    content,
+    suggestions: chipSet.chips.length
+      ? chipSet.chips
+      : ["Building a New Product", "How We Work", "Book a Discovery Call"],
+    primarySuggestion: chipSet.primary,
+  };
 }
 
-/** Welcome message with initial suggestion chips. */
+/** Concise welcome — consultant tone, no AI self-introduction. */
 export function composeWelcomeResponse(): ComposedResponse {
   return {
     content:
-      "Hello — I'm the AB Consul Advisor. Think of this as an initial conversation with our consulting team: I can help you explore services, timelines, pricing philosophy, and how we work with growth-stage businesses.\n\nWhat brings you here today — a new product idea, scaling an existing platform, or solving an operational challenge?",
+      "Welcome to AB Consul. Tell me about the business challenge or project you're exploring — I'll help you think through the right approach.",
     suggestions: [
-      "What Services Do You Offer?",
-      "Estimate an MVP",
-      "ERP Capabilities",
-      "Pricing Approach",
-      "Book a Consultation",
+      "Building a New Product",
+      "Scaling Operations",
+      "Modernizing Systems",
+      "Book a Discovery Call",
     ],
+    primarySuggestion: "Book a Discovery Call",
   };
 }

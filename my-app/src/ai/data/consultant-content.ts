@@ -21,7 +21,7 @@ export const CATEGORY_CONSULTANT: Partial<
       "What Services Do You Offer?",
       "Who Do You Work With?",
       "How Our Process Works",
-      "Book a Consultation",
+      "Book a Discovery Call",
     ],
   },
   services: {
@@ -38,7 +38,7 @@ export const CATEGORY_CONSULTANT: Partial<
       "Estimate an MVP",
       "ERP Capabilities",
       "Pricing Approach",
-      "Book a Consultation",
+      "Book a Discovery Call",
     ],
   },
   "pricing-philosophy": {
@@ -58,7 +58,7 @@ export const CATEGORY_CONSULTANT: Partial<
       "Estimate an MVP",
       "ERP Pricing",
       "Project Timeline",
-      "Book a Consultation",
+      "Book a Discovery Call",
       "How Our Process Works",
     ],
   },
@@ -76,7 +76,7 @@ export const CATEGORY_CONSULTANT: Partial<
       "MVP Timeline",
       "MVP Pricing",
       "Feature Prioritization",
-      "Book a Consultation",
+      "Book a Discovery Call",
     ],
     contextualHooks: {
       mvp: "Since you're exploring an MVP, ",
@@ -97,7 +97,7 @@ export const CATEGORY_CONSULTANT: Partial<
       "ERP Pricing",
       "ERP Integration",
       "Legacy Migration",
-      "Book a Consultation",
+      "Book a Discovery Call",
     ],
     contextualHooks: {
       erp: "Given your interest in ERP, ",
@@ -123,7 +123,7 @@ export const CATEGORY_CONSULTANT: Partial<
     reasoning: [
       "Native vs. cross-platform is a business trade-off — speed and budget vs. performance and platform-specific features.",
     ],
-    suggestionChips: ["App Store Launch", "MVP Timeline", "UI/UX Design", "Book a Consultation"],
+    suggestionChips: ["App Store Launch", "MVP Timeline", "UI/UX Design", "Book a Discovery Call"],
     contextualHooks: { mobile: "For your mobile app, ", fintech: "In fintech, mobile UX and compliance both matter — " },
   },
   "cloud-solutions": {
@@ -134,7 +134,7 @@ export const CATEGORY_CONSULTANT: Partial<
     reasoning: [
       "We design cloud architecture around reliability, cost predictability, and the ability to grow without emergency re-architecture.",
     ],
-    suggestionChips: ["DevOps & Deployment", "AWS Architecture", "Scalability Planning", "Book a Consultation"],
+    suggestionChips: ["DevOps & Deployment", "AWS Architecture", "Scalability Planning", "Book a Discovery Call"],
     contextualHooks: { cloud: "For your cloud setup, " },
   },
   "development-process": {
@@ -149,7 +149,7 @@ export const CATEGORY_CONSULTANT: Partial<
       "Discovery Workshop",
       "Project Timeline",
       "Quality Assurance",
-      "Book a Consultation",
+      "Book a Discovery Call",
     ],
   },
   "project-timelines": {
@@ -160,7 +160,7 @@ export const CATEGORY_CONSULTANT: Partial<
     reasoning: [
       "We define scope in Discovery before committing to dates — that protects both sides from scope creep and missed deadlines.",
     ],
-    suggestionChips: ["MVP Timeline", "ERP Timeline", "How Our Process Works", "Book a Consultation"],
+    suggestionChips: ["MVP Timeline", "ERP Timeline", "How Our Process Works", "Book a Discovery Call"],
   },
   "consultation-process": {
     acknowledgments: [
@@ -170,7 +170,7 @@ export const CATEGORY_CONSULTANT: Partial<
     reasoning: [
       "The consultation is designed to diagnose fit and outline a path forward — not to hard-sell a build you may not need yet.",
     ],
-    suggestionChips: ["Book a Consultation", "What Happens in Discovery?", "Pricing Approach", "Contact Details"],
+    suggestionChips: ["Book a Discovery Call", "What Happens in Discovery?", "Pricing Approach", "Contact Details"],
   },
   "contact-information": {
     acknowledgments: [
@@ -180,7 +180,7 @@ export const CATEGORY_CONSULTANT: Partial<
     reasoning: [
       "A brief description of your challenge helps our partners prepare for a productive first conversation.",
     ],
-    suggestionChips: ["Book a Consultation", "Consultation Process", "What Services Do You Offer?", "Pricing Approach"],
+    suggestionChips: ["Book a Discovery Call", "Consultation Process", "What Services Do You Offer?", "Pricing Approach"],
   },
   "why-choose-ab-consul": {
     acknowledgments: [
@@ -190,7 +190,7 @@ export const CATEGORY_CONSULTANT: Partial<
     reasoning: [
       "We work as fractional partners with skin in the game — senior architects on your account, not layered account management.",
     ],
-    suggestionChips: ["Our Process", "Pricing Philosophy", "Book a Consultation", "Case Studies & Industries"],
+    suggestionChips: ["Our Process", "Pricing Philosophy", "Book a Discovery Call", "Case Studies & Industries"],
   },
   faq: {
     acknowledgments: [
@@ -200,7 +200,7 @@ export const CATEGORY_CONSULTANT: Partial<
     reasoning: [
       "Fit matters on both sides — we'd rather be honest about whether we're the right partner than oversell.",
     ],
-    suggestionChips: ["Who Do You Work With?", "MVP Development", "Book a Consultation", "Pricing Approach"],
+    suggestionChips: ["Who Do You Work With?", "MVP Development", "Book a Discovery Call", "Pricing Approach"],
   },
   technologies: {
     acknowledgments: [
@@ -209,7 +209,7 @@ export const CATEGORY_CONSULTANT: Partial<
     reasoning: [
       "We favor proven, maintainable technologies that your team can support long after launch.",
     ],
-    suggestionChips: ["Technology Selection", "Cloud Infrastructure", "DevOps", "Book a Consultation"],
+    suggestionChips: ["Technology Selection", "Cloud Infrastructure", "DevOps", "Book a Discovery Call"],
   },
   industries: {
     acknowledgments: [
@@ -218,7 +218,7 @@ export const CATEGORY_CONSULTANT: Partial<
     reasoning: [
       "Domain experience helps us anticipate regulatory, operational, and user-experience constraints early.",
     ],
-    suggestionChips: ["Fintech Expertise", "Services Overview", "Book a Consultation", "Our Process"],
+    suggestionChips: ["Fintech Expertise", "Services Overview", "Book a Discovery Call", "Our Process"],
   },
   "ui-ux-design": {
     acknowledgments: [
@@ -227,7 +227,7 @@ export const CATEGORY_CONSULTANT: Partial<
     reasoning: [
       "We tie UX decisions to measurable outcomes: activation, completion rates, and support ticket volume.",
     ],
-    suggestionChips: ["MVP Design", "Web Applications", "Book a Consultation", "Our Process"],
+    suggestionChips: ["MVP Design", "Web Applications", "Book a Discovery Call", "Our Process"],
     contextualHooks: { uiux: "For your design needs, " },
   },
   devops: {
@@ -237,7 +237,7 @@ export const CATEGORY_CONSULTANT: Partial<
     reasoning: [
       "Reliable pipelines reduce release risk and let your team focus on product instead of firefighting infrastructure.",
     ],
-    suggestionChips: ["Cloud Infrastructure", "Deployment Strategy", "Maintenance & Support", "Book a Consultation"],
+    suggestionChips: ["Cloud Infrastructure", "Deployment Strategy", "Maintenance & Support", "Book a Discovery Call"],
     contextualHooks: { devops: "For your deployment setup, " },
   },
   "business-automation": {
@@ -247,7 +247,7 @@ export const CATEGORY_CONSULTANT: Partial<
     reasoning: [
       "We prioritize automations with clear ROI — hours saved, error reduction, or faster decision cycles.",
     ],
-    suggestionChips: ["ERP Systems", "Digital Transformation", "Pricing Approach", "Book a Consultation"],
+    suggestionChips: ["ERP Systems", "Digital Transformation", "Pricing Approach", "Book a Discovery Call"],
     contextualHooks: { automation: "For your automation goals, " },
   },
   "api-integrations": {
@@ -257,7 +257,7 @@ export const CATEGORY_CONSULTANT: Partial<
     reasoning: [
       "Well-designed APIs and event flows prevent the sync issues and manual workarounds that slow teams down.",
     ],
-    suggestionChips: ["ERP Integration", "Cloud Architecture", "Book a Consultation", "Project Timeline"],
+    suggestionChips: ["ERP Integration", "Cloud Architecture", "Book a Discovery Call", "Project Timeline"],
     contextualHooks: { api: "For your integration needs, " },
   },
 };
@@ -266,21 +266,21 @@ export const CATEGORY_CONSULTANT: Partial<
 export const ENTRY_CONSULTANT: Record<string, PartialConsultant> = {
   "co-006": {
     acknowledgments: [
-      "Hello — great to meet you. I'm here to help you explore how AB Consul might fit your goals.",
-      "Hi there! Think of me as a first conversation with our consulting team — ask me anything about services, process, or pricing.",
+      "Welcome to AB Consul.",
+      "Good to connect.",
     ],
     explanations: [
-      "AB Consul partners with growth-stage businesses on custom software, MVPs, ERP systems, and strategic consulting — always with an eye on measurable business outcomes rather than just shipping code.",
+      "Tell me about the business challenge or project you're exploring — I'll help you think through the right approach.",
     ],
     followUpQuestions: [
-      "What are you looking to build or improve in your business right now?",
-      "Are you exploring a new product, scaling an existing platform, or solving an operational challenge?",
+      "What are you looking to build or improve?",
+      "Are you starting something new or solving an operational challenge?",
     ],
     suggestionChips: [
-      "What Services Do You Offer?",
-      "Estimate an MVP",
-      "Pricing Approach",
-      "Book a Consultation",
+      "Building a New Product",
+      "Scaling Operations",
+      "Modernizing Systems",
+      "Book a Discovery Call",
     ],
   },
   "price-001": {
@@ -344,7 +344,7 @@ export const ENTRY_CONSULTANT: Record<string, PartialConsultant> = {
     followUpQuestions: [
       "What's the main challenge you're trying to solve — revenue, operations, or product velocity?",
     ],
-    suggestionChips: ["Discovery Workshop", "Project Timeline", "Book a Consultation", "Pricing Approach"],
+    suggestionChips: ["Discovery Workshop", "Project Timeline", "Book a Discovery Call", "Pricing Approach"],
   },
   "con-004": {
     explanations: [
@@ -365,10 +365,10 @@ export const ENTRY_CONSULTANT: Record<string, PartialConsultant> = {
 };
 
 const DEFAULT_ACKNOWLEDGMENTS = [
-  "That's a thoughtful question — let me share how we typically advise clients on this.",
-  "Happy to help with that — here's the consulting perspective.",
-  "Good question. Let me explain this in practical business terms.",
-  "I can walk you through this — we discuss it often with prospective clients.",
+  "Understood.",
+  "That's an important consideration.",
+  "Let me share how we typically approach this.",
+  "Here's how we think about that with clients.",
 ];
 
 const DEFAULT_REASONING = [
@@ -385,7 +385,7 @@ const DEFAULT_FOLLOW_UPS = [
 ];
 
 const DEFAULT_CHIPS = [
-  "Book a Consultation",
+  "Book a Discovery Call",
   "How Our Process Works",
   "Pricing Approach",
   "What Services Do You Offer?",

@@ -34,7 +34,7 @@ export function ChatMessageList({
       aria-label="Chat messages"
     >
       <ul className="space-y-4 list-none m-0 p-0" role="list">
-        {messages.map((message) => (
+        {messages.map((message, index) => (
           <li key={message.id}>
             <ChatMessageBubble
               message={message}
@@ -42,6 +42,11 @@ export function ChatMessageList({
                 message.id === lastAssistantId ? onSuggestionSelect : undefined
               }
               suggestionsDisabled={isLoading}
+              animate={
+                message.role === "assistant" &&
+                index === messages.length - 1 &&
+                !isLoading
+              }
             />
           </li>
         ))}

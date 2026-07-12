@@ -1,6 +1,5 @@
 import type { GeneratedResponse } from "../types/knowledge";
 import type { SessionContext } from "../types/consultant";
-import { buildSessionContext } from "./session-context";
 import { matchingEngine } from "./matching-engine";
 import {
   composeConsultantResponse,
@@ -23,6 +22,7 @@ export function generateKnowledgeResponse(
       matched: false,
       confidence: 0,
       suggestions: fallback.suggestions,
+      primarySuggestion: fallback.primarySuggestion,
     };
   }
 
@@ -35,6 +35,7 @@ export function generateKnowledgeResponse(
       matched: false,
       confidence: 0,
       suggestions: fallback.suggestions,
+      primarySuggestion: fallback.primarySuggestion,
     };
   }
 
@@ -53,10 +54,6 @@ export function generateKnowledgeResponse(
     category: primary.entry.category,
     confidence: primary.confidence,
     suggestions: composed.suggestions,
+    primarySuggestion: composed.primarySuggestion,
   };
-}
-
-/** @deprecated Legacy formatter — kept for reference; chips replace bullet follow-ups. */
-export function formatAnswer(answer: string): string {
-  return answer;
 }

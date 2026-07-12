@@ -22,8 +22,8 @@ export const MATCHING_CONFIG = {
   },
 } as const;
 
-export const NO_MATCH_FALLBACK = `I want to make sure you get a useful answer — I may not have matched your question precisely, but I'm happy to help you find the right path.
+export const NO_MATCH_FALLBACK = `To give you the most relevant guidance, tell me a bit more about your situation.
 
-AB Consul advises growth-stage businesses on custom software, MVPs, ERP systems, cloud infrastructure, and strategic consulting. Share a bit about your business and what you're trying to achieve, and I can give much more targeted guidance.
+AB Consul partners with growth-stage companies on custom software, operational platforms, and strategic technology consulting — always anchored in business outcomes.
 
-You can also reach us directly at contact@ab-consul.com, call +254 717568861, or visit ab-consul.com/contact to book a consultation.`;
+What business challenge or project are you exploring?`;

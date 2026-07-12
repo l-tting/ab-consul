@@ -2,7 +2,7 @@
 
 import { useCallback, useRef, type KeyboardEvent } from "react";
 import { Send } from "lucide-react";
-import { AI_CONFIG } from "../config/constants";
+import { AI_CONFIG, INPUT_PLACEHOLDER } from "../config/constants";
 
 interface ChatInputProps {
   onSend: (message: string) => void;
@@ -49,7 +49,7 @@ export function ChatInput({ onSend, disabled }: ChatInputProps) {
           rows={1}
           disabled={disabled}
           maxLength={AI_CONFIG.maxMessageLength}
-          placeholder="Ask about services, process, or pricing…"
+          placeholder={INPUT_PLACEHOLDER}
           onKeyDown={handleKeyDown}
           onInput={handleInput}
           style={{ height: "40px" }}

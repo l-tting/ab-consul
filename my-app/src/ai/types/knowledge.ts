@@ -116,4 +116,5 @@ export interface GeneratedResponse {
   category?: KnowledgeCategory;
   confidence: number;
   suggestions?: string[];
+  primarySuggestion?: string;
 }

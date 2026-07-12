@@ -1,5 +1,10 @@
 import type { ChatApiRequest } from "../types/chat";
-import type { ProjectFocus, SessionContext } from "../types/consultant";
+import type {
+  ConversationTopic,
+  ProjectFocus,
+  ProjectStage,
+  SessionContext,
+} from "../types/consultant";
 import { normalizeText } from "./normalization";
 
 const FOCUS_PATTERNS: Array<{ focus: ProjectFocus; patterns: RegExp }> = [
@@ -28,12 +33,21 @@ const CHALLENGE_PATTERNS: Array<{ label: string; pattern: RegExp }> = [
 ];
 
 const TOPIC_PATTERNS: Array<{ topic: string; pattern: RegExp }> = [
-  { topic: "pricing", pattern: /\b(price|pricing|cost|budget|investment|quote|fee)\b/i },
+  { topic: "pricing", pattern: /\b(price|pricing|cost|budget|investment|quote|fee|how much)\b/i },
   { topic: "timeline", pattern: /\b(timeline|how long|duration|deadline|when can)\b/i },
   { topic: "process", pattern: /\b(process|methodology|how do you work|discovery|agile)\b/i },
   { topic: "contact", pattern: /\b(contact|email|phone|book|call|consultation|meeting)\b/i },
   { topic: "services", pattern: /\b(service|offer|capability|what do you do)\b/i },
-  { topic: "technology", pattern: /\b(tech|stack|technology|framework|react|aws)\b/i },
+  { topic: "technology", pattern: /\b(tech|stack|technology|framework|react|aws|architecture)\b/i },
+];
+
+const BUSINESS_PATTERNS: Array<{ hint: string; pattern: RegExp }> = [
+  { hint: "logistics and warehousing", pattern: /\b(warehouse|logistics|supply chain|distribution|freight)\b/i },
+  { hint: "retail and e-commerce", pattern: /\b(retail|ecommerce|e-commerce|store|shop)\b/i },
+  { hint: "financial services", pattern: /\b(fintech|bank|insurance|lending|payments)\b/i },
+  { hint: "healthcare", pattern: /\b(healthcare|health|medical|clinic|hospital)\b/i },
+  { hint: "manufacturing", pattern: /\b(manufacturing|factory|production line)\b/i },
+  { hint: "SaaS and technology", pattern: /\b(saas|software company|tech startup|platform)\b/i },
 ];
 
 /**
@@ -45,12 +59,11 @@ export function buildSessionContext(
 ): SessionContext {
   const userMessages = messages.filter((m) => m.role === "user");
   const userText = userMessages.map((m) => m.content).join(" ");
+  const lastUserMessage = userMessages[userMessages.length - 1]?.content ?? "";
 
   const projectFocus = new Set<ProjectFocus>();
   for (const { focus, patterns } of FOCUS_PATTERNS) {
-    if (patterns.test(userText)) {
-      projectFocus.add(focus);
-    }
+    if (patterns.test(userText)) projectFocus.add(focus);
   }
 
   const challenges: string[] = [];
@@ -63,18 +76,100 @@ export function buildSessionContext(
     if (pattern.test(userText)) discussedTopics.push(topic);
   }
 
+  let businessHint: string | undefined;
+  for (const { hint, pattern } of BUSINESS_PATTERNS) {
+    if (pattern.test(userText)) {
+      businessHint = hint;
+      break;
+    }
+  }
+
+  const mentionedTimeline = /\b(timeline|how long|when|deadline|schedule|weeks|months|asap|urgent)\b/i.test(userText);
+  const mentionedBudget = /\b(budget|cost|price|afford|investment|quote|\$|spend|capital)\b/i.test(userText);
+  const mentionedTeam = /\b(team|employees|headcount|staff|developers|\d+\s*(people|employees|staff))\b/i.test(userText);
+  const mentionedScale = /\b(scale|users|customers|traffic|volume|\d+k?\s*(users|customers))\b/i.test(userText);
+
+  const projectStage = detectProjectStage(userText);
+  const activeTopic = detectActiveTopic(lastUserMessage, [...projectFocus]);
+  const contextRichness = computeRichness({
+    projectFocus: [...projectFocus],
+    challenges,
+    mentionedTimeline,
+    mentionedBudget,
+    mentionedTeam,
+    mentionedScale,
+    businessHint,
+    projectStage,
+    userMessageCount: userMessages.length,
+  });
+
   return {
     turnCount: messages.length,
     userMessageCount: userMessages.length,
     projectFocus: [...projectFocus],
-    mentionedTimeline: /\b(timeline|how long|when|deadline|schedule|weeks|months)\b/i.test(userText),
-    mentionedBudget: /\b(budget|cost|price|afford|investment|quote|\$|spend)\b/i.test(userText),
-    mentionedTeam: /\b(team|employees|headcount|staff|developers)\b/i.test(userText),
-    mentionedScale: /\b(scale|users|customers|traffic|volume)\b/i.test(userText),
+    projectStage,
+    mentionedTimeline,
+    mentionedBudget,
+    mentionedTeam,
+    mentionedScale,
     challenges,
     discussedTopics,
+    businessHint,
     userText,
+    contextRichness,
+    activeTopic,
   };
+}
+
+function detectProjectStage(text: string): ProjectStage {
+  if (/\b(from scratch|new product|greenfield|starting|build something new|launch|idea)\b/i.test(text)) {
+    return "new";
+  }
+  if (/\b(improve|upgrade|modernize|refactor|redesign|fix|enhance|existing)\b/i.test(text)) {
+    return "improve";
+  }
+  if (/\b(scale|scaling|grow|expansion|series [abc]|post-pmf|product-market fit)\b/i.test(text)) {
+    return "scale";
+  }
+  return "unknown";
+}
+
+function detectActiveTopic(
+  lastMessage: string,
+  focus: ProjectFocus[],
+): ConversationTopic {
+  const q = lastMessage.toLowerCase();
+  if (/\b(price|pricing|cost|budget|quote|how much|investment)\b/.test(q)) return "pricing";
+  if (/\b(contact|email|phone|book|call|consultation|meeting)\b/.test(q)) return "contact";
+  if (/\b(process|methodology|discovery|how do you work|timeline|how long)\b/.test(q)) return "process";
+  if (/\b(service|offer|capability|what do you do)\b/.test(q)) return "services";
+  if (focus.includes("erp") || /\b(erp|inventory|warehouse|procurement)\b/.test(q)) return "erp";
+  if (focus.includes("mvp") || /\b(mvp|prototype|startup)\b/.test(q)) return "mvp";
+  if (/\b(tech|stack|architecture|cloud|devops|api|integration|scalab)\b/.test(q)) return "technical";
+  return "general";
+}
+
+function computeRichness(input: {
+  projectFocus: ProjectFocus[];
+  challenges: string[];
+  mentionedTimeline: boolean;
+  mentionedBudget: boolean;
+  mentionedTeam: boolean;
+  mentionedScale: boolean;
+  businessHint?: string;
+  projectStage: ProjectStage;
+  userMessageCount: number;
+}): number {
+  let score = 0;
+  if (input.projectFocus.length) score += 1;
+  if (input.challenges.length) score += 1;
+  if (input.mentionedTimeline) score += 1;
+  if (input.mentionedBudget) score += 1;
+  if (input.mentionedTeam || input.mentionedScale) score += 1;
+  if (input.businessHint) score += 1;
+  if (input.projectStage !== "unknown") score += 1;
+  if (input.userMessageCount >= 3) score += 1;
+  return Math.min(6, score);
 }
 
 /** Category → project focus affinity for context-aware scoring boosts. */
@@ -118,8 +213,32 @@ export function focusLabel(focus: ProjectFocus): string {
 export function prefersDirectAnswer(query: string, category?: string): boolean {
   const q = normalizeText(query);
   const directPatterns =
-    /^(what is your|email|phone|contact|how do i contact|book a call|website|url)/;
+    /^(what is your|email|phone|contact|how do i contact|book a call|website|url|call you|reach you)/;
   if (directPatterns.test(q)) return true;
-  if (category === "contact-information") return q.length < 80;
+  if (category === "contact-information") return q.length < 100;
   return false;
+}
+
+/** Build a natural reference to information already shared in the session. */
+export function buildContextReference(session: SessionContext): string | null {
+  const parts: string[] = [];
+
+  if (session.businessHint) {
+    parts.push(`your ${session.businessHint} business`);
+  } else if (session.projectFocus.length) {
+    parts.push(focusLabel(session.projectFocus[0]!));
+  }
+
+  if (session.challenges.length) {
+    parts.push(`the ${session.challenges[0]} challenges you mentioned`);
+  }
+
+  if (!parts.length) return null;
+
+  const refs =
+    parts.length === 2
+      ? `${parts[0]} and ${parts[1]}`
+      : parts[0]!;
+
+  return `Given ${refs}, `;
 }

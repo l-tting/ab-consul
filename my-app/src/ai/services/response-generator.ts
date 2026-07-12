@@ -1,12 +1,7 @@
 import type { GeneratedResponse } from "../types/knowledge";
+import { NO_MATCH_FALLBACK } from "../config/matching";
 import { matchingEngine } from "./matching-engine";
-import { getAllKnowledgeEntries } from "./knowledge-repository";
-
-const NO_MATCH_FALLBACK = `Thank you for your question. I specialize in AB Consul's consulting services, technology capabilities, and engagement process.
-
-For questions outside this scope, or for tailored advice on your specific situation, our team would be happy to help directly.
-
-Contact us at contact@ab-consul.com, call +254 717568861, or visit ab-consul.com/contact to schedule a strategy consultation.`;
+import { pickAlternateSuggestion } from "./match-selector";
 
 /**
  * Formats a knowledge entry into a chat response with optional follow-ups.
@@ -14,43 +9,48 @@ Contact us at contact@ab-consul.com, call +254 717568861, or visit ab-consul.com
 export function formatAnswer(
   answer: string,
   followUps?: string[],
+  extraSuggestion?: string,
 ): string {
-  if (!followUps?.length) return answer;
+  const suggestions = [...(followUps ?? [])];
+  if (extraSuggestion && !suggestions.includes(extraSuggestion)) {
+    suggestions.push(extraSuggestion);
+  }
 
-  const suggestions = followUps.map((q) => `• ${q}`).join("\n");
-  return `${answer}\n\nYou might also ask:\n${suggestions}`;
+  if (!suggestions.length) return answer;
+
+  const limited = suggestions.slice(0, 3);
+  const list = limited.map((q) => `• ${q}`).join("\n");
+  return `${answer}\n\nYou might also ask:\n${list}`;
 }
 
 /**
  * Generates an assistant response from the user's latest message.
- * This is the single swap point for a future LLM or RAG pipeline.
+ * Swap point for a future LLM or RAG pipeline.
  */
 export function generateKnowledgeResponse(query: string): GeneratedResponse {
   const trimmed = query.trim();
   if (!trimmed) {
-    return {
-      content: NO_MATCH_FALLBACK,
-      matched: false,
-      confidence: 0,
-    };
+    return { content: NO_MATCH_FALLBACK, matched: false, confidence: 0 };
   }
 
-  const entries = getAllKnowledgeEntries();
-  const match = matchingEngine.findBestMatch(trimmed, entries);
+  const result = matchingEngine.findBestMatchWithAlternates(trimmed);
 
-  if (!match) {
-    return {
-      content: NO_MATCH_FALLBACK,
-      matched: false,
-      confidence: 0,
-    };
+  if (!result) {
+    return { content: NO_MATCH_FALLBACK, matched: false, confidence: 0 };
   }
+
+  const { primary, alternates } = result;
+  const extraSuggestion = pickAlternateSuggestion(primary, alternates);
 
   return {
-    content: formatAnswer(match.entry.answer, match.entry.followUps),
+    content: formatAnswer(
+      primary.entry.answer,
+      primary.entry.followUps,
+      extraSuggestion,
+    ),
     matched: true,
-    entryId: match.entry.id,
-    category: match.entry.category,
-    confidence: match.score,
+    entryId: primary.entry.id,
+    category: primary.entry.category,
+    confidence: primary.confidence,
   };
 }

@@ -1,4 +1,4 @@
-import type { KnowledgeCategory, KnowledgeEntry } from "../types/knowledge";
+import type { KnowledgeCategory, KnowledgeEntry, EnrichedKnowledgeEntry } from "../types/knowledge";
 import { companyOverviewEntries } from "../data/entries/company-overview";
 import { servicesEntries } from "../data/entries/services";
 import {
@@ -28,12 +28,9 @@ import {
   consultationEntries,
   whyChooseEntries,
 } from "../data/entries/contact-consultation";
+import { enrichEntry } from "./entry-enrichment";
 
-/**
- * Central knowledge repository.
- * Future: load from CMS, database, or vector store — keep this interface stable.
- */
-const ALL_ENTRIES: KnowledgeEntry[] = [
+const RAW_ENTRIES: KnowledgeEntry[] = [
   ...companyOverviewEntries,
   ...servicesEntries,
   ...mvpEntries,
@@ -56,18 +53,26 @@ const ALL_ENTRIES: KnowledgeEntry[] = [
   ...whyChooseEntries,
 ];
 
+/** Cached enriched entries — built once at module load. */
+const ENRICHED_ENTRIES: EnrichedKnowledgeEntry[] = RAW_ENTRIES.map(enrichEntry);
+
+export function getEnrichedKnowledgeEntries(): EnrichedKnowledgeEntry[] {
+  return ENRICHED_ENTRIES;
+}
+
+/** @deprecated Use getEnrichedKnowledgeEntries — kept for backward compatibility. */
 export function getAllKnowledgeEntries(): KnowledgeEntry[] {
-  return ALL_ENTRIES;
+  return ENRICHED_ENTRIES;
 }
 
 export function getEntriesByCategory(
   category: KnowledgeCategory,
-): KnowledgeEntry[] {
-  return ALL_ENTRIES.filter((entry) => entry.category === category);
+): EnrichedKnowledgeEntry[] {
+  return ENRICHED_ENTRIES.filter((entry) => entry.category === category);
 }
 
-export function getKnowledgeEntryById(id: string): KnowledgeEntry | undefined {
-  return ALL_ENTRIES.find((entry) => entry.id === id);
+export function getKnowledgeEntryById(id: string): EnrichedKnowledgeEntry | undefined {
+  return ENRICHED_ENTRIES.find((entry) => entry.id === id);
 }
 
 export function getKnowledgeStats(): {
@@ -75,8 +80,8 @@ export function getKnowledgeStats(): {
   categories: Record<KnowledgeCategory, number>;
 } {
   const categories = {} as Record<KnowledgeCategory, number>;
-  for (const entry of ALL_ENTRIES) {
+  for (const entry of ENRICHED_ENTRIES) {
     categories[entry.category] = (categories[entry.category] ?? 0) + 1;
   }
-  return { totalEntries: ALL_ENTRIES.length, categories };
+  return { totalEntries: ENRICHED_ENTRIES.length, categories };
 }

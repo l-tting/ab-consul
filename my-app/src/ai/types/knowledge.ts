@@ -21,25 +21,86 @@ export type KnowledgeCategory =
   | "consultation-process"
   | "why-choose-ab-consul";
 
+/** How a query term matched an entry term. */
+export type MatchType =
+  | "exact"
+  | "phrase"
+  | "token"
+  | "fuzzy"
+  | "synonym"
+  | "partial";
+
 /** A single knowledge entry in the assistant repository. */
 export interface KnowledgeEntry {
   id: string;
   category: KnowledgeCategory;
-  /** Keywords and phrases that may trigger this answer (include synonyms). */
+  /** Primary intent label used for weighted intent matching. */
+  intent?: string;
+  /** Keywords and phrases that may trigger this answer. */
   keywords: string[];
-  /** Professional, concise answer text. */
+  /** Alternative full phrasings users might type. */
+  phrasings?: string[];
+  /** Synonyms and equivalent terms. */
+  synonyms?: string[];
+  /** Related terms that should contribute partial score. */
+  relatedTerms?: string[];
+  /** Common misspellings mapped to this entry. */
+  typos?: string[];
+  /** Abbreviations (e.g. "erp", "mvp", "ui ux"). */
+  abbreviations?: string[];
+  /** Importance multiplier for scoring (default 1). */
+  weight?: number;
   answer: string;
-  /** Optional related questions suggested after the answer. */
   followUps?: string[];
-  /** Optional score boost for tie-breaking toward comprehensive entries. */
   priority?: number;
+}
+
+/** Entry after enrichment — includes flattened searchable terms. */
+export interface EnrichedKnowledgeEntry extends KnowledgeEntry {
+  searchTerms: SearchTerm[];
+}
+
+/** A weighted searchable term derived from an entry. */
+export interface SearchTerm {
+  text: string;
+  weight: number;
+  source:
+    | "intent"
+    | "keyword"
+    | "phrasing"
+    | "synonym"
+    | "related"
+    | "typo"
+    | "abbreviation";
+}
+
+/** Normalized and expanded query ready for matching. */
+export interface ProcessedQuery {
+  raw: string;
+  normalized: string;
+  /** Tokens after stop-word removal and stemming. */
+  tokens: string[];
+  /** Tokens plus synonym/typo expansions. */
+  expandedTokens: string[];
+  /** Normalized full query variants (original + corrected). */
+  variants: string[];
 }
 
 /** Result of matching user input against the knowledge base. */
 export interface MatchResult {
-  entry: KnowledgeEntry;
+  entry: EnrichedKnowledgeEntry;
   score: number;
-  matchedKeywords: string[];
+  /** Normalized confidence between 0 and 1. */
+  confidence: number;
+  matchedTerms: string[];
+  matchTypes: MatchType[];
+}
+
+/** Final selection from the match selector. */
+export interface MatchSelection {
+  primary: MatchResult;
+  /** Close alternate matches for tie-breaking / suggestions. */
+  alternates: MatchResult[];
 }
 
 /** Output from the response generator. */

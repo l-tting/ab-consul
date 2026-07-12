@@ -91,7 +91,7 @@ export function ChatPanel({ isOpen, onClose }: ChatPanelProps) {
               id="ab-consul-chat-title"
               className="text-sm font-bold tracking-tight text-white"
             >
-              AB Consul AI Advisor
+              AB Consul Advisor
             </h2>
             <p className="text-[11px] text-blue-100/80">
               Consulting · Services · Process

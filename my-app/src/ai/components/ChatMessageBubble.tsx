@@ -27,7 +27,7 @@ export function ChatMessageBubble({
       >
         {!isUser && (
           <p className="mb-1 text-[10px] font-black uppercase tracking-[0.2em] text-blue-600">
-            AB Consul AI
+            AB Consul
           </p>
         )}
         <p className="whitespace-pre-wrap break-words">{message.content}</p>

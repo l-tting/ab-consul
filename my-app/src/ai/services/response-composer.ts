@@ -204,7 +204,7 @@ export function composeFallbackResponse(session: SessionContext): ComposedRespon
 export function composeWelcomeResponse(): ComposedResponse {
   return {
     content:
-      "Hello — I'm the AB Consul AI Advisor. Think of this as an initial conversation with our consulting team: I can help you explore services, timelines, pricing philosophy, and how we work with growth-stage businesses.\n\nWhat brings you here today — a new product idea, scaling an existing platform, or solving an operational challenge?",
+      "Hello — I'm the AB Consul Advisor. Think of this as an initial conversation with our consulting team: I can help you explore services, timelines, pricing philosophy, and how we work with growth-stage businesses.\n\nWhat brings you here today — a new product idea, scaling an existing platform, or solving an operational challenge?",
     suggestions: [
       "What Services Do You Offer?",
       "Estimate an MVP",

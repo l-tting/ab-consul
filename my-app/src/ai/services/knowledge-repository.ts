@@ -28,6 +28,7 @@ import {
   consultationEntries,
   whyChooseEntries,
 } from "../data/entries/contact-consultation";
+import { consultingTopicEntries } from "../data/entries/consulting-topics";
 import { enrichEntry } from "./entry-enrichment";
 
 const RAW_ENTRIES: KnowledgeEntry[] = [
@@ -51,6 +52,7 @@ const RAW_ENTRIES: KnowledgeEntry[] = [
   ...contactEntries,
   ...consultationEntries,
   ...whyChooseEntries,
+  ...consultingTopicEntries,
 ];
 
 /** Cached enriched entries — built once at module load. */

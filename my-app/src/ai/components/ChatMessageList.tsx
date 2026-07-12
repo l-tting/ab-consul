@@ -7,14 +7,23 @@ import { ChatMessageBubble, ChatTypingIndicator } from "./ChatMessageBubble";
 interface ChatMessageListProps {
   messages: ChatMessage[];
   isLoading: boolean;
+  onSuggestionSelect?: (suggestion: string) => void;
 }
 
-export function ChatMessageList({ messages, isLoading }: ChatMessageListProps) {
+export function ChatMessageList({
+  messages,
+  isLoading,
+  onSuggestionSelect,
+}: ChatMessageListProps) {
   const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, isLoading]);
+
+  const lastAssistantId = [...messages]
+    .reverse()
+    .find((m) => m.role === "assistant")?.id;
 
   return (
     <div
@@ -27,7 +36,13 @@ export function ChatMessageList({ messages, isLoading }: ChatMessageListProps) {
       <ul className="space-y-4 list-none m-0 p-0" role="list">
         {messages.map((message) => (
           <li key={message.id}>
-            <ChatMessageBubble message={message} />
+            <ChatMessageBubble
+              message={message}
+              onSuggestionSelect={
+                message.id === lastAssistantId ? onSuggestionSelect : undefined
+              }
+              suggestionsDisabled={isLoading}
+            />
           </li>
         ))}
       </ul>

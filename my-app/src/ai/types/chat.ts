@@ -7,6 +7,8 @@ export interface ChatMessage {
   role: ChatMessageRole;
   content: string;
   createdAt: number;
+  /** Context-aware suggestion chips for the latest assistant turn. */
+  suggestions?: string[];
 }
 
 /** Payload sent from the client to the chat API. */
@@ -23,6 +25,8 @@ export interface ChatApiResponse {
     role: "assistant";
     content: string;
   };
+  /** Interactive suggestion chips shown below the assistant message. */
+  suggestions?: string[];
 }
 
 /** Standardized API error shape. */

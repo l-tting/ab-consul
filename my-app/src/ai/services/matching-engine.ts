@@ -1,4 +1,5 @@
 import type { EnrichedKnowledgeEntry, MatchResult } from "../types/knowledge";
+import type { SessionContext } from "../types/consultant";
 import { getMatchSelector } from "./match-selector";
 import { getEnrichedKnowledgeEntries } from "./knowledge-repository";
 
@@ -14,13 +15,16 @@ export class MatchingEngine {
     return selection?.primary ?? null;
   }
 
-  findBestMatchWithAlternates(query: string): {
+  findBestMatchWithAlternates(
+    query: string,
+    session?: SessionContext,
+  ): {
     primary: MatchResult;
     alternates: MatchResult[];
   } | null {
     const entries = getEnrichedKnowledgeEntries();
     const selector = getMatchSelector(entries);
-    const selection = selector.select(query);
+    const selection = selector.select(query, session);
     if (!selection) return null;
     return selection;
   }

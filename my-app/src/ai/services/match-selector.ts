@@ -1,4 +1,5 @@
 import type { EnrichedKnowledgeEntry, MatchResult, MatchSelection } from "../types/knowledge";
+import type { SessionContext } from "../types/consultant";
 import { MATCHING_CONFIG } from "../config/matching";
 import { processQuery, buildVocabulary } from "./query-processor";
 import { scoreAllEntries } from "./scoring";
@@ -14,9 +15,9 @@ export class MatchSelector {
     this.vocabulary = buildVocabulary(entries);
   }
 
-  select(query: string): MatchSelection | null {
+  select(query: string, session?: SessionContext): MatchSelection | null {
     const processed = processQuery(query, this.vocabulary);
-    const ranked = scoreAllEntries(processed, this.entries);
+    const ranked = scoreAllEntries(processed, this.entries, session);
 
     if (!ranked.length) return null;
 

@@ -1,15 +1,20 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import { AI_CONFIG, FALLBACK_MESSAGES, WELCOME_MESSAGE } from "../config/constants";
-import type { ChatMessage, ChatMessageRole } from "../types/chat";
+import { AI_CONFIG, FALLBACK_MESSAGES, WELCOME_MESSAGE, WELCOME_SUGGESTIONS } from "../config/constants";
+import type { ChatApiResponse, ChatMessage, ChatMessageRole } from "../types/chat";
 
-function createMessage(role: ChatMessageRole, content: string): ChatMessage {
+function createMessage(
+  role: ChatMessageRole,
+  content: string,
+  suggestions?: string[],
+): ChatMessage {
   return {
     id: `${role}-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`,
     role,
     content,
     createdAt: Date.now(),
+    suggestions,
   };
 }
 
@@ -27,7 +32,7 @@ export interface UseChatReturn {
  */
 export function useChat(): UseChatReturn {
   const [messages, setMessages] = useState<ChatMessage[]>(() => [
-    createMessage("assistant", WELCOME_MESSAGE),
+    createMessage("assistant", WELCOME_MESSAGE, [...WELCOME_SUGGESTIONS]),
   ]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -62,8 +67,7 @@ export function useChat(): UseChatReturn {
         body: JSON.stringify({ messages: payload }),
       });
 
-      const data = (await response.json()) as {
-        message?: { role: "assistant"; content: string };
+      const data = (await response.json()) as ChatApiResponse & {
         error?: string;
       };
 
@@ -77,7 +81,11 @@ export function useChat(): UseChatReturn {
 
       setMessages((prev) => [
         ...prev,
-        createMessage("assistant", data.message!.content),
+        createMessage(
+          "assistant",
+          data.message.content,
+          data.suggestions,
+        ),
       ]);
     } catch (err) {
       const message =

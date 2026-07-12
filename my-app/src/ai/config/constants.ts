@@ -12,7 +12,15 @@ export const AI_CONFIG = {
 } as const;
 
 export const WELCOME_MESSAGE =
-  "Hello! I'm the AB Consul AI Advisor. I can answer questions about our consulting services, technologies, project process, pricing, and how we can help your business. How can I assist you today?";
+  "Hello — I'm the AB Consul AI Advisor. Think of this as an initial conversation with our consulting team: I can help you explore services, timelines, pricing philosophy, and how we work with growth-stage businesses.\n\nWhat brings you here today — a new product idea, scaling an existing platform, or solving an operational challenge?";
+
+export const WELCOME_SUGGESTIONS = [
+  "What Services Do You Offer?",
+  "Estimate an MVP",
+  "ERP Capabilities",
+  "Pricing Approach",
+  "Book a Consultation",
+] as const;
 
 export const FALLBACK_MESSAGES = {
   rateLimited:

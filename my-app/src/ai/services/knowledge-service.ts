@@ -1,5 +1,6 @@
 import type { ChatApiRequest } from "../types/chat";
 import type { GeneratedResponse } from "../types/knowledge";
+import { buildSessionContext } from "./session-context";
 import { generateKnowledgeResponse } from "./response-generator";
 
 /**
@@ -10,10 +11,12 @@ import { generateKnowledgeResponse } from "./response-generator";
 export function generateAssistantResponse(
   messages: ChatApiRequest["messages"],
 ): GeneratedResponse {
+  const session = buildSessionContext(messages);
+
   const lastUserMessage = [...messages]
     .reverse()
     .find((message) => message.role === "user");
 
   const query = lastUserMessage?.content ?? "";
-  return generateKnowledgeResponse(query);
+  return generateKnowledgeResponse(query, session);
 }

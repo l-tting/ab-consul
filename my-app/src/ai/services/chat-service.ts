@@ -47,6 +47,7 @@ export async function handleChatRequest(
           role: "assistant",
           content: result.content,
         },
+        suggestions: result.suggestions,
       },
     };
   } catch {

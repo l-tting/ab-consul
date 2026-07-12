@@ -1,4 +1,5 @@
 import type { KnowledgeEntry, SearchTerm } from "../types/knowledge";
+import { buildConsultantContent } from "../data/consultant-content";
 import {
   CATEGORY_ENRICHMENTS,
   SEARCH_ENRICHMENTS,
@@ -90,5 +91,6 @@ export function enrichEntry(entry: KnowledgeEntry) {
   return {
     ...enriched,
     searchTerms: buildSearchTerms(enriched),
+    consultant: buildConsultantContent(enriched),
   };
 }

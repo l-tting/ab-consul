@@ -1,3 +1,5 @@
+import type { ConsultantContent } from "./consultant";
+
 /** Knowledge categories — extend as the company offering grows. */
 export type KnowledgeCategory =
   | "company-overview"
@@ -53,11 +55,14 @@ export interface KnowledgeEntry {
   answer: string;
   followUps?: string[];
   priority?: number;
+  /** Rich consultant response templates for conversational replies. */
+  consultant?: ConsultantContent;
 }
 
-/** Entry after enrichment — includes flattened searchable terms. */
+/** Entry after enrichment — includes flattened searchable terms and consultant content. */
 export interface EnrichedKnowledgeEntry extends KnowledgeEntry {
   searchTerms: SearchTerm[];
+  consultant: ConsultantContent;
 }
 
 /** A weighted searchable term derived from an entry. */
@@ -110,4 +115,5 @@ export interface GeneratedResponse {
   entryId?: string;
   category?: KnowledgeCategory;
   confidence: number;
+  suggestions?: string[];
 }

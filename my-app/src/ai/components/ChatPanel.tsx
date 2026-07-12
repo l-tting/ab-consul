@@ -124,7 +124,11 @@ export function ChatPanel({ isOpen, onClose }: ChatPanelProps) {
         </div>
 
         <div className="min-h-0 overflow-hidden">
-          <ChatMessageList messages={messages} isLoading={isLoading} />
+          <ChatMessageList
+            messages={messages}
+            isLoading={isLoading}
+            onSuggestionSelect={sendMessage}
+          />
         </div>
 
         {error && (

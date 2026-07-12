@@ -4,7 +4,9 @@ import type {
   MatchType,
   ProcessedQuery,
 } from "../types/knowledge";
+import type { SessionContext } from "../types/consultant";
 import { MATCHING_CONFIG } from "../config/matching";
+import { CATEGORY_FOCUS_MAP } from "./session-context";
 import { normalizeText, tokenize } from "./normalization";
 import { queryContainsPhrase, tokenOverlap } from "./query-processor";
 import { fuzzySimilarity } from "./fuzzy-matching";
@@ -15,6 +17,7 @@ const { weights } = MATCHING_CONFIG;
 export function scoreEntry(
   query: ProcessedQuery,
   entry: EnrichedKnowledgeEntry,
+  session?: SessionContext,
 ): MatchResult {
   const expandedSet = new Set(query.expandedTokens);
   const queryTokenSet = new Set([...query.tokens, ...query.expandedTokens]);
@@ -101,6 +104,17 @@ export function scoreEntry(
     maxPossible += entry.priority * 0.5;
   }
 
+  // Boost entries aligned with session project focus
+  if (session?.projectFocus.length) {
+    const affinities = CATEGORY_FOCUS_MAP[entry.category] ?? [];
+    const overlap = session.projectFocus.filter((f) => affinities.includes(f));
+    if (overlap.length) {
+      const boost = overlap.length * 1.5;
+      rawScore += boost;
+      maxPossible += boost;
+    }
+  }
+
   const confidence =
     maxPossible > 0
       ? Math.min(1, rawScore / Math.max(maxPossible * 0.35, 8))
@@ -119,9 +133,10 @@ export function scoreEntry(
 export function scoreAllEntries(
   query: ProcessedQuery,
   entries: EnrichedKnowledgeEntry[],
+  session?: SessionContext,
 ): MatchResult[] {
   return entries
-    .map((entry) => scoreEntry(query, entry))
+    .map((entry) => scoreEntry(query, entry, session))
     .filter((r) => r.score > 0)
     .sort((a, b) => {
       if (Math.abs(b.confidence - a.confidence) > 0.001) {

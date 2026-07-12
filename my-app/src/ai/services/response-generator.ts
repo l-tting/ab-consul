@@ -1,56 +1,62 @@
 import type { GeneratedResponse } from "../types/knowledge";
-import { NO_MATCH_FALLBACK } from "../config/matching";
+import type { SessionContext } from "../types/consultant";
+import { buildSessionContext } from "./session-context";
 import { matchingEngine } from "./matching-engine";
-import { pickAlternateSuggestion } from "./match-selector";
+import {
+  composeConsultantResponse,
+  composeFallbackResponse,
+} from "./response-composer";
 
 /**
- * Formats a knowledge entry into a chat response with optional follow-ups.
- */
-export function formatAnswer(
-  answer: string,
-  followUps?: string[],
-  extraSuggestion?: string,
-): string {
-  const suggestions = [...(followUps ?? [])];
-  if (extraSuggestion && !suggestions.includes(extraSuggestion)) {
-    suggestions.push(extraSuggestion);
-  }
-
-  if (!suggestions.length) return answer;
-
-  const limited = suggestions.slice(0, 3);
-  const list = limited.map((q) => `• ${q}`).join("\n");
-  return `${answer}\n\nYou might also ask:\n${list}`;
-}
-
-/**
- * Generates an assistant response from the user's latest message.
+ * Generates a consultative assistant response from conversation history.
  * Swap point for a future LLM or RAG pipeline.
  */
-export function generateKnowledgeResponse(query: string): GeneratedResponse {
+export function generateKnowledgeResponse(
+  query: string,
+  session: SessionContext,
+): GeneratedResponse {
   const trimmed = query.trim();
   if (!trimmed) {
-    return { content: NO_MATCH_FALLBACK, matched: false, confidence: 0 };
+    const fallback = composeFallbackResponse(session);
+    return {
+      content: fallback.content,
+      matched: false,
+      confidence: 0,
+      suggestions: fallback.suggestions,
+    };
   }
 
-  const result = matchingEngine.findBestMatchWithAlternates(trimmed);
+  const result = matchingEngine.findBestMatchWithAlternates(trimmed, session);
 
   if (!result) {
-    return { content: NO_MATCH_FALLBACK, matched: false, confidence: 0 };
+    const fallback = composeFallbackResponse(session);
+    return {
+      content: fallback.content,
+      matched: false,
+      confidence: 0,
+      suggestions: fallback.suggestions,
+    };
   }
 
   const { primary, alternates } = result;
-  const extraSuggestion = pickAlternateSuggestion(primary, alternates);
+  const composed = composeConsultantResponse(
+    primary.entry,
+    trimmed,
+    session,
+    alternates,
+  );
 
   return {
-    content: formatAnswer(
-      primary.entry.answer,
-      primary.entry.followUps,
-      extraSuggestion,
-    ),
+    content: composed.content,
     matched: true,
     entryId: primary.entry.id,
     category: primary.entry.category,
     confidence: primary.confidence,
+    suggestions: composed.suggestions,
   };
+}
+
+/** @deprecated Legacy formatter — kept for reference; chips replace bullet follow-ups. */
+export function formatAnswer(answer: string): string {
+  return answer;
 }

@@ -80,7 +80,7 @@ export function ChatPanel({ isOpen, onClose }: ChatPanelProps) {
         className={cn(
           "chat-panel-enter fixed z-[60] grid grid-rows-[auto_1fr_auto] overflow-hidden border border-stone-200 bg-stone-50 shadow-[0_25px_60px_-15px_rgba(15,23,42,0.25)] transition-all duration-300 ease-out rounded-3xl",
           isExpanded
-            ? "inset-3 bottom-20 sm:inset-4 sm:bottom-6 sm:right-6 sm:left-auto sm:top-6 sm:w-[min(680px,calc(100vw-2rem))] sm:max-w-3xl h-[calc(100dvh-5.5rem)] sm:h-[calc(100dvh-3rem)]"
+            ? "top-16 inset-x-3 bottom-20 sm:inset-x-auto sm:bottom-6 sm:right-6 sm:left-auto sm:w-[min(680px,calc(100vw-2rem))] sm:max-w-3xl h-[calc(100dvh-4rem-5.5rem)] sm:h-[calc(100dvh-4rem-1.5rem)]"
             : "inset-x-3 bottom-20 top-auto h-[min(520px,calc(100dvh-10.5rem))] sm:inset-x-auto sm:bottom-24 sm:right-6 sm:h-[min(560px,calc(100dvh-12rem))] sm:w-[400px]",
         )}
       >

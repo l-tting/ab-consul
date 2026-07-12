@@ -85,15 +85,15 @@ export function ChatPanel({ isOpen, onClose }: ChatPanelProps) {
         )}
       >
         {/* Header */}
-        <div className="flex items-center justify-between border-b border-stone-200 bg-white px-4 py-3 sm:px-5">
+        <div className="flex items-center justify-between border-b border-blue-900/50 bg-[#172554] px-4 py-3 sm:px-5">
           <div>
             <h2
               id="ab-consul-chat-title"
-              className="text-sm font-bold tracking-tight text-slate-900"
+              className="text-sm font-bold tracking-tight text-white"
             >
               AB Consul AI Advisor
             </h2>
-            <p className="text-[11px] text-slate-600">
+            <p className="text-[11px] text-blue-100/80">
               Consulting · Services · Process
             </p>
           </div>
@@ -103,7 +103,7 @@ export function ChatPanel({ isOpen, onClose }: ChatPanelProps) {
               onClick={toggleExpanded}
               aria-label={isExpanded ? "Restore chat window" : "Expand chat window"}
               aria-pressed={isExpanded}
-              className="flex h-9 w-9 items-center justify-center rounded-xl text-slate-600 transition-colors hover:bg-stone-100 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+              className="flex h-9 w-9 items-center justify-center rounded-xl text-blue-100 transition-colors hover:bg-white/10 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
             >
               {isExpanded ? (
                 <Minimize2 className="h-4 w-4" aria-hidden="true" />
@@ -116,7 +116,7 @@ export function ChatPanel({ isOpen, onClose }: ChatPanelProps) {
               type="button"
               onClick={handleClose}
               aria-label="Close chat"
-              className="flex h-9 w-9 items-center justify-center rounded-xl text-slate-600 transition-colors hover:bg-stone-100 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+              className="flex h-9 w-9 items-center justify-center rounded-xl text-blue-100 transition-colors hover:bg-white/10 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
             >
               <X className="h-5 w-5" aria-hidden="true" />
             </button>
